@@ -4,3 +4,5 @@ from django.shortcuts import render
 
 def mainView(request):
     return render(request, 'partials/base.html')
+def studentView(request):
+    return render(request, 'users/students.html')
