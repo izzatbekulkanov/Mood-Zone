@@ -1,0 +1,31 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Sign Out" %}{% endblock title %}
+    
+{% block content %}
+                                <div class="p-lg-5 p-4 text-center">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/hzomhqxz.json"
+                                        trigger="loop"
+                                        colors="primary:#405189,secondary:#08a88a"
+                                        style="width:180px;height:180px">
+                                    </lord-icon>
+
+                                    <div class="mt-4">
+                                        <h4>{% trans "Sign Out" %}</h4>
+                                        <p class="text-muted">{% trans 'Are you sure you want to sign out?' %}</p>
+                                        <form method="post" action="{% url 'account_logout' %}">
+                                            {% csrf_token %}
+                                            {% if redirect_field_value %}
+                                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                                            {% endif %}
+                                            <button type="submit" class="btn btn-info w-100">{% trans 'Sign Out' %}</button>
+                                        </form>
+                                    </div>
+                                    <div class="mt-4 text-center">
+                                        <p class="mb-0">Back to home ? <a href="{% url 'dashboards:dashboard' %}" class="fw-semibold text-primary text-decoration-underline"> Dashboard </a> </p>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+{% endblock content %}

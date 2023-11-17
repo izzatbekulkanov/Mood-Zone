@@ -1,0 +1,83 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
+{% load crispy_forms_tags %}
+
+{% block title %}Sign In{% endblock title %}
+    
+{% block content %}
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card mt-4">
+                        
+                            <div class="card-body p-4"> 
+                                <div class="text-center mt-2">
+                                    <h5 class="text-primary">Welcome Back !</h5>
+                                    <p class="text-muted">Sign in to continue to Velzon.</p>
+                                </div>
+                                <div class="p-2 mt-4">
+                                    <form class="needs-validation" novalidate method="POST" action="{% url 'account_login' %}">
+                                        {% for message in messages %}
+                                        <div class="alert {{ message.tags }} mb-4" role="alert">
+                                            <strong>{{ message }}</strong>
+                                        </div>
+                                        {% endfor %} 
+                                        {% if field.help_text %}
+                                            <div class="alert alert-danger mb-4" role="alert">
+                                                <strong>{{ field.help_text }}</strong>
+                                            </div>
+                                        {% endif %}
+                                        {% csrf_token %}
+                                        <div class="mb-3">
+                                            {{ form.login|as_crispy_field }}
+                                        </div>
+
+                                        <div class="mb-3 position-relative">
+                                            <div class="float-end">
+                                                <a href="{% url 'account_reset_password' %}" class="text-muted">Forgot password?</a>
+                                            </div>
+                                            {{ form.password|as_crispy_field }}
+                                            <button class="btn btn-link position-absolute mt-4 end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                        </div>
+
+                                        <div class="form-check">
+                                            {{ form.remember|as_crispy_field }}
+                                        </div>
+                                        
+                                        <div class="mt-4">
+                                            <button class="btn btn-info w-100" type="submit">Sign In</button>
+                                        </div>
+                                    </form>
+                                    <div class="mt-4 text-center">
+                                        <div class="signin-other-title">
+                                            <h5 class="fs-13 mb-4 title">Sign In with</h5>
+                                        </div>
+                                        <div>
+                                            {% comment %} <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button> {% endcomment %}
+                                            <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></a>
+                                            {% comment %} <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
+                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button> {% endcomment %}
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- end card body -->
+                        </div>
+                        <!-- end card -->
+
+                        <div class="mt-4 text-center">
+                            <p class="mb-0">Don't have an account ? <a href="{{ signup_url }}" class="fw-semibold text-primary text-decoration-underline"> Signup </a> </p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end row -->
+{% endblock content %}
+
+{% block extra_js %}
+        <!-- password-addon init -->
+        <script src="{% static 'js/pages/password-addon.init.js'%}"></script>
+{% endblock extra_js %}
+    

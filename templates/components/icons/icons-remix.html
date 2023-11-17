@@ -1,0 +1,39 @@
+{% extends "partials/base.html" %}
+{% load static %}
+{% block title %}Remix Icons{% endblock title %}
+{% block content %}
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    {% block pagetitle %}
+                    {% include "partials/page-title.html" with pagetitle="Icons" title="Remix" %}
+                    {% endblock pagetitle %}
+
+                    <div class="row">
+                        
+                    </div><!-- end row -->
+
+                    <div class="row">
+                        <div class="col-12" id="icons"></div> <!-- end col-->
+                    </div><!-- end row -->
+                    
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+        {% block footer %}
+        {% include "partials/footer.html" %}
+        {% endblock footer %}
+        </div>
+        <!-- end main content-->
+{% endblock content %}
+{% block extra_js %}
+    <!-- materialdesign icon js-->
+    <script src="{% static 'js/pages/remix-icons-listing.js'%}"></script>
+{% endblock extra_js %}
