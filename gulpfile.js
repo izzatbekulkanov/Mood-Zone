@@ -46,36 +46,36 @@ const paths = {
     },
     src: {
         base: {
-            dir: './src',
-            assets: './src/**/*',
+            dir: './staticstatic',
+            assets: './static/**/*',
         },
         js: {
-            dir: './src/js',
-            pages: './src/js/pages',
-            files: './src/js/pages/*.js',
-            main: './src/js/*.js',
+            dir: './static/js',
+            pages: './static/js/pages',
+            files: './static/js/pages/*.js',
+            main: './static/js/*.js',
         },
         scss: {
-            dir: './src/scss',
-            files: './src/scss/**/*',
-            main: './src/scss/config/app.scss'
+            dir: './static/scss',
+            files: './static/scss/**/*',
+            main: './static/scss/config/app.scss'
         },
         icon: {
-            dir: './src/scss',
-            files: './src/scss/icons.scss',
-            main: './src/scss/*.scss'
+            dir: './static/scss',
+            files: './static/scss/icons.scss',
+            main: './static/scss/*.scss'
         },
         bootstrap: {
-            files: './src/scss/config/bootstrap.scss',
-            typeFiles: './src/scss/config/bootstrap.scss',
-            components: './src/scss/components/*',
-            light: './src/scss/config/_theme*',
-            variables: './src/scss/config/_variables*',
+            files: './static/scss/config/bootstrap.scss',
+            typeFiles: './static/scss/config/bootstrap.scss',
+            components: './static/scss/components/*',
+            light: './static/scss/config/_theme*',
+            variables: './static/scss/config/_variables*',
         },
         custom: {
-            dir: './src/scss/config/custom.scss',
-            files: './src/scss/config/custom.scss',
-            main: './src/scss/config/custom.scss'
+            dir: './static/scss/config/custom.scss',
+            files: './static/scss/config/custom.scss',
+            main: './static/scss/config/custom.scss'
         },
     }
 };
