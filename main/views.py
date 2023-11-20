@@ -12,3 +12,7 @@ def friendView(request):
     return render(request, 'home/friend.html')
 def whishlistView(request):
     return render(request, 'home/whishlist.html')
+def userView(request):
+    return render(request, 'home/users.html')
+def inboxView(request):
+    return render(request, 'email/inbox.html')
