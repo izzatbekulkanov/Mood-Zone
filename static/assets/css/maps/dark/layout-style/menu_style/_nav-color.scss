@@ -1,0 +1,19 @@
+// Sidebar Background Colors
+.sidebar {
+    &.sidebar-dark {
+        background-color: $navbar-vertical-dark-bg;
+    }
+
+    &.sidebar-color {
+        background-color: $navbar-vertical-color-bg;
+    }
+
+    &.sidebar-transparent {
+        background-color: transparent;
+    }
+
+    &.sidebar-glass{
+        background-color: rgba($card-bg, .5);
+        border-color: $border-color !important;
+    }
+}

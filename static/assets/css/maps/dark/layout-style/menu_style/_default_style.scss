@@ -1,0 +1,31 @@
+.sidebar{
+    &.sidebar-default{
+        .nav-link{
+            &:not(.static-item){
+                &:hover{
+                    &:not(.active){
+                        &:not([aria-expanded=true]){
+                            background-color: rgba(var(--#{$variable-prefix}primary-rgb), .2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.sidebar-color{
+        &.sidebar-default{
+            .nav-link{
+                &:not(.static-item){
+                    &:hover{
+                        &:not(.active){
+                            &:not([aria-expanded=true]){
+                                color: $white;
+		                        background-color: rgba(var(--bs-white-rgb),.2);;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

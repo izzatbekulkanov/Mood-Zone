@@ -1,0 +1,23 @@
+.iq-email-title {
+    color: $body-color;
+}
+.iq-email-subject {
+    color: $body-color;
+}
+.email-app-details{
+    background: $card-bg;
+}
+.iq-social-media {
+    .iq-social-icons {
+        color: $body-color;
+    }
+}
+.iq-email-listbox{
+    .iq-email-sender-list{
+        >li {
+            .iq-unread-inner {
+				border-color: $border-color;
+            }
+        }
+    }
+}

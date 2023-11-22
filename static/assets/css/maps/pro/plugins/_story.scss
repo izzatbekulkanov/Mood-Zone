@@ -1,0 +1,34 @@
+.storiesWrapper {
+	span.item-preview {
+		border: 1px solid var(--bs-primary) !important;
+		border-radius: 50%;
+		height: auto !important;
+		width: 52px;
+		img {
+			border-radius: 50%;
+			border: 3px solid #FFF;
+			height: 50px !important;
+			width: 50px !important;
+			min-width: 50px !important;
+		}
+	}
+	.story {
+		.info {
+			strong.name {
+				color: var(--bs-primary-shade-80);
+				font-family: var(--bs-heading-font-family);
+				font-size: 1em;
+				font-weight: 500 !important;
+			}
+		}
+		max-height: 100% !important;
+		min-height: 100% !important;
+		width: auto !important;
+		max-width: 60px !important;
+		white-space: normal !important;
+	}
+}
+.stories.carousel {
+	overflow: auto !important;
+	overflow-x: scroll !important;
+}
