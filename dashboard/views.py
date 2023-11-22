@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def mainView(request):
-    return render(request, 'base/index.html')
+def dashboardView(request):
+    return render(request, 'base/dashboard.html')
 def blankPage(request):
     return render(request, 'base/blank-page.html')
 def adminView(request):
