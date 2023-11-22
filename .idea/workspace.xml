@@ -5,14 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bc76727-b533-48ff-9b99-ab8a8d23dd9b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/media/assets/images/avatars/default-user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/maps/hope-ui.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/maps/hope.ui.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/maps/pro.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/maps/rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/avatars/default-user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/brands/fb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/brands/gm.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/brands/im.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/brands/li.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/maps/customizer.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/maps/dark.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/alternate-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/alternate-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/landing-button.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/landing-button.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base/alternate-dashboard.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/app/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/app/user-list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +46,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -54,7 +78,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/uldevuz/Documents/GitHub/Mood-Zone",
+    "last_opened_file_path": "/home/uldevuz/Documents/GitHub/Mood-Zone/media/assets/images/avatars",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -64,6 +88,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/media/assets/images/avatars" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/assets/js" />
       <recent name="$PROJECT_DIR$/templates" />
@@ -109,7 +136,8 @@
       <workItem from="1700494425070" duration="100000" />
       <workItem from="1700494560506" duration="48000" />
       <workItem from="1700494623951" duration="1464000" />
-      <workItem from="1700646207334" duration="7989000" />
+      <workItem from="1700646207334" duration="12269000" />
+      <workItem from="1700659159774" duration="1703000" />
     </task>
     <servers />
   </component>

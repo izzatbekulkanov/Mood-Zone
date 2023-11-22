@@ -8,10 +8,7 @@ def blankPage(request):
     return render(request, 'base/blank-page.html')
 def adminView(request):
     return render(request, 'base/admin.html')
-def alernative_dashboard(request):
-    return render(request, 'base/alternate-dashboard.html')
-def whishlistView(request):
-    return render(request, 'home/whishlist.html')
+
 def userView(request):
     return render(request, 'home/users.html')
 def inboxView(request):
