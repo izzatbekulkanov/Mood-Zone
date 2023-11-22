@@ -61,6 +61,7 @@
                 {% include 'base/footer.html' %}
             <!-- Footer Section End -->
         </main>
+        {% if request.user.is_superuser %}
         <!-- Landing page button Start -->
             {% include 'base/landing-button.html' %}
         <!-- Landing page button End -->
@@ -76,6 +77,7 @@
         <!-- Download button End-->
         <!-- Live Customizer end -->
         <!-- Wrapper End-->
+         {% endif %}
         <!-- Modal -->
             {% include 'base/modals.html' %}
         <!-- Library Bundle Script -->
