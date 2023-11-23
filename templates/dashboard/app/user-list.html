@@ -30,9 +30,9 @@
                                             <tbody>
                                             {% for user in users %}
                                                 <tr>
-                                                    <td class="text-center"><img class="bg-soft-primary rounded img-fluid avatar-40 me-3" src="{{ user.profile_image.url }}" alt="profile" loading="lazy" /></td>
+                                                    <td class="text-center"><img class="bg-soft-primary rounded img-fluid avatar-40 me-3" src="{% if user.profile_image %} {{ user.profile_image.url }} {% endif %}" alt="profile" loading="lazy" /></td>
                                                     <td>{{ user.first_name }} {{ user.last_name }}</td>
-                                                    <td>{{ user.phone_number }}</td>
+                                                    <td>{{ user.username }}</td>
                                                     <td>{{ user.email }}</td>
                                                     <td>USA</td>
                                                     <td><span class="badge bg-primary">{{ user.verified }}</span></td>
