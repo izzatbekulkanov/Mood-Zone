@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import dashboardView, blankPage, adminView, userView, inboxView
+from .views import dashboardView, adminPage, blankPage, userView, inboxView
 
 urlpatterns = [
     path('', dashboardView, name='dashboard'),
-    path('blankPage/', blankPage, name='blankPage'),
-    path('adminView/', adminView, name='adminView'),
+    path('admin-page/', adminPage, name='adminPage'),
+    path('blank-page/', blankPage, name='blankPage'),
     path('user/', userView, name='userView'),
     path('inbox/', inboxView, name='inboxView'),
 ]

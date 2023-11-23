@@ -1,4 +1,4 @@
-/*------------Circle Progress--------------*/
+/*------------Circle Progress--------------*/ 
 const progressBar = document.getElementsByClassName('circle-progress')
 if (typeof progressBar !== typeof undefined) {
   Array.from(progressBar, (elem) => {
