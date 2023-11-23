@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'dashboard',
     'users',
     'django.utils.translation',
+    'social',
 
 ]
 
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'social', 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,6 +136,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # settings.py
 AUTH_USER_MODEL = 'users.CustomUser'
 
+AUTHENTICATION_BACKENDS = [
+    'users.custom_backend.CustomBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 # Jazzmin settings
 
 JAZZMIN_SETTINGS = {

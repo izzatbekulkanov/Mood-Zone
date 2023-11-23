@@ -1,26 +1,42 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
+
+from .models import CustomUser
 
 
-class CustomUserCreationForm(forms.Form):
-    username = forms.CharField(label='Username', max_length=100)
-    email = forms.EmailField(label='Email')
-    password = forms.CharField(label='Password', widget=forms.PasswordInput())
-    confirm_password = forms.CharField(label='Confirm Password', widget=forms.PasswordInput())
+class RegistrationForm(UserCreationForm):
+    email = forms.EmailField(max_length=255, help_text="Required add a valid email address")
 
-    def clean(self):
-        cleaned_data = super().clean()
-        password = cleaned_data.get("password")
-        confirm_password = cleaned_data.get("confirm_password")
+    class Meta:
+        model = CustomUser
+        fields = ['first_name', 'last_name', 'email', 'password1', 'password2']
 
-        if password and confirm_password and password != confirm_password:
-            raise forms.ValidationError("Passwords do not match")
+    def clean_password1(self):
+        password = self.cleaned_data.get('password1')
+        email = self.cleaned_data.get('email')
 
-    def save(self):
-        # Custom save logic, e.g., creating a user in the database
+        # Parol va email orasidagi o'xshashlikni tekshirish
+        if email and password:
+            if password.lower().find(email.lower()) != -1:
+                raise ValidationError("The password is too similar to the email.")
+
+        validate_password(password)
+        return password
+
+    def clean_email(self):
+        email = self.cleaned_data['email'].lower()
+        try:
+            account = CustomUser.objects.get(email=email)
+        except CustomUser.DoesNotExist:
+            return email
+        raise forms.ValidationError(f"Email {email} is already in use")
+
+    def clean_username(self):
         username = self.cleaned_data['username']
-        email = self.cleaned_data['email']
-        password = self.cleaned_data['password']
-
-        # Implement your custom logic here, e.g., creating a user instance and saving it
-        # user = User.objects.create_user(username=username, email=email, password=password)
-        # return user
+        try:
+            account = CustomUser.objects.get(username=username)
+        except CustomUser.DoesNotExist:
+            return username
+        raise forms.ValidationError(f"Username {username} is already in use")

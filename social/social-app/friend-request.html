@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en" dir="ltr">
   
-<!-- Mirrored from templates.iqonic.design/hope-ui/pro/html/social-app/group.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Nov 2023 09:26:24 GMT -->
+<!-- Mirrored from templates.iqonic.design/hope-ui/pro/html/social-app/friend-request.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Nov 2023 09:25:52 GMT -->
 <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,6 +19,8 @@
       <link rel="shortcut icon" href="../assets/images/favicon.ico" >
       <!-- Library / Plugin Css Build -->
       <link rel="stylesheet" href="../assets/css/core/libs.min.css" >
+      <!-- Sweetlaert2 css -->
+      <link rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.min.css" >
       <!-- Hope Ui Design System Css -->
       <link rel="stylesheet" href="../assets/css/hope-ui.min1fc6.css?v=4.0.0" >
       <link rel="stylesheet" href="../assets/css/pro.min1fc6.css?v=4.0.0" >
@@ -34,7 +36,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com/">
       <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="assets/css/social-app.min.css"/>  </head>
+      <link rel="stylesheet" href="../static/assets/css/social-app.min.css"/>  </head>
   <body class="">
     <!-- loader Start -->
     <div id="loading">
@@ -171,7 +173,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="friend-request.html">
+                                <a class="nav-link active" href="friend-request.html">
                                     <i class="icon">
                                         <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <g>
@@ -360,7 +362,7 @@
                         </a>
                         <ul class="sub-nav collapse" id="group" data-bs-parent="#iq-social-app">
                             <li class="nav-item">
-                                <a class="nav-link active" href="group.html">
+                                <a class="nav-link " href="group.html">
                                   <i class="icon">
                                         <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <g>
@@ -400,7 +402,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../chat/index.html" target="_blank">
+                        <a class="nav-link" aria-current="page" href="../../templates/chat/index.html" target="_blank">
                             <i class="icon">
                                 <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.4" d="M12.02 2C6.21 2 2 6.74 2 12C2 13.68 2.49 15.41 3.35 16.99C3.51 17.25 3.53 17.58 3.42 17.89L2.75 20.13C2.6 20.67 3.06 21.07 3.57 20.91L5.59 20.31C6.14 20.13 6.57 20.36 7.081 20.67C8.541 21.53 10.36 21.97 12 21.97C16.96 21.97 22 18.14 22 11.97C22 6.65 17.7 2 12.02 2Z" fill="currentColor"/>
@@ -418,7 +420,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="../dashboard/auth-pro/sign-in.html" target="_blank">
+                        <a class="nav-link " href="../../templates/dashboard/auth-pro/sign-in.html" target="_blank">
                             <i class="icon">
                                 <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.4" d="M2 6.447C2 3.996 4.03024 2 6.52453 2H11.4856C13.9748 2 16 3.99 16 6.437V17.553C16 20.005 13.9698 22 11.4744 22H6.51537C4.02515 22 2 20.01 2 17.563V16.623V6.447Z" fill="currentColor"></path>
@@ -482,7 +484,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between product-offcanvas">
                  <div class="breadcrumb-title border-end me-3 pe-3 d-none d-xl-block">
-                    <small class="mb-0 text-capitalize">Group</small>
+                    <small class="mb-0 text-capitalize">Friend Request</small>
                  </div>
                  <div class="offcanvas offcanvas-end shadow-none iq-product-menu-responsive" tabindex="-1" id="offcanvasBottom">
                     <div class="offcanvas-body">
@@ -503,7 +505,7 @@
                                       href="../dashboard/index.html">Dashboard</a></li>
                                 <li class="nav-item"><a
                                       class="nav-link "
-                                      href="../dashboard/dashboard.html">Alternate Dashboard</a></li>
+                                      href="../../templates/dashboard/dashboard.html">Alternate Dashboard</a></li>
                                 <li class="nav-item">
                                    <a class="nav-link menu-arrow" data-bs-toggle="collapse" href="#menuStyles" role="button"
                                       aria-expanded="false" aria-controls="menuStyles">
@@ -538,22 +540,22 @@
                                 </li>
                                 <li class="nav-item"><a
                                       class="nav-link "
-                                      href="../e-commerce/index.html">E-Commerce</a></li>
+                                      href="../../templates/e-commerce/index.html">E-Commerce</a></li>
                                 <li class="nav-item"><a class="nav-link "
                                       href="index.html">Social App</a></li>
                                 <li class="nav-item"><a
                                       class="nav-link "
-                                      href="../blog/index.html">Blog</a></li>
+                                      href="../../templates/blog/index.html">Blog</a></li>
                                 <li class="nav-item"><a
                                       class="nav-link "
-                                      href="../appointment/index.html">Appointment</a></li>
+                                      href="../../templates/appointment/index.html">Appointment</a></li>
                                 <li class="nav-item"><a
                                       class="nav-link "
-                                      href="../file-manager/index.html">File Manager</a></li>
+                                      href="../../templates/file-manager/index.html">File Manager</a></li>
                                 <li class="nav-item"><a class="nav-link "
-                                      href="../chat/index.html" target="_blank">Chat</a></li>
+                                                        href="../../templates/chat/index.html" target="_blank">Chat</a></li>
                                 <li class="nav-item"><a class="nav-link "
-                                      href="../mail/index.html">Mail</a></li>
+                                      href="../../templates/mail/index.html">Mail</a></li>
                              </ul>
                           </li>
                           <li class="nav-item">
@@ -587,19 +589,19 @@
                                       id="specialPages">
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/special-pages/billing.html">Billing</a></li>
+                                            href="../../templates/dashboard/special-pages/billing.html">Billing</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/special-pages/calender.html">Calender</a></li>
+                                            href="../../templates/dashboard/special-pages/calender.html">Calender</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/special-pages/kanban.html">Kanban</a></li>
+                                            href="../../templates/dashboard/special-pages/kanban.html">Kanban</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/special-pages/pricing.html">Pricing</a></li>
+                                            href="../../templates/dashboard/special-pages/pricing.html">Pricing</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/special-pages/timeline.html">Timeline</a></li>
+                                            href="../../templates/dashboard/special-pages/timeline.html">Timeline</a></li>
                                    </ul>
                                 </li>
                                 <li class="nav-item">
@@ -662,25 +664,25 @@
                                             id="animatedAuth">
                                             <li class="nav-item"><a
                                                   class="nav-link "
-                                                  href="../dashboard/auth-pro/sign-in.html">Sign In</a></li>
+                                                  href="../../templates/dashboard/auth-pro/sign-in.html">Sign In</a></li>
                                             <li class="nav-item"><a
                                                   class="nav-link "
-                                                  href="../dashboard/auth-pro/sign-up.html">Sign Up</a></li>
+                                                  href="../../templates/dashboard/auth-pro/sign-up.html">Sign Up</a></li>
                                             <li class="nav-item"><a
                                                   class="nav-link "
-                                                  href="../dashboard/auth-pro/email.html">Email</a></li>
+                                                  href="../../templates/dashboard/auth-pro/email.html">Email</a></li>
                                             <li class="nav-item"><a
                                                   class="nav-link "
-                                                  href="../dashboard/auth-pro/lock-screen.html">Lock screen</a></li>
+                                                  href="../../templates/dashboard/auth-pro/lock-screen.html">Lock screen</a></li>
                                             <li class="nav-item"><a
                                                   class="nav-link "
-                                                  href="../dashboard/auth-pro/reset-password.html">Reset password</a></li>
+                                                  href="../../templates/dashboard/auth-pro/reset-password.html">Reset password</a></li>
                                             <li class="nav-item"><a
                                                   class="nav-link "
-                                                  href="../dashboard/auth-pro/two-factor.html">Two factor</a></li>
+                                                  href="../../templates/dashboard/auth-pro/two-factor.html">Two factor</a></li>
                                             <li class="nav-item"><a
                                                   class="nav-link "
-                                                  href="../dashboard/auth-pro/account-deactivate.html">Account
+                                                  href="../../templates/dashboard/auth-pro/account-deactivate.html">Account
                                                   deactivate</a></li>
                                          </ul>
                                       </li>
@@ -746,13 +748,13 @@
                                       id="userApps">
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/app/user-profile.html">User Profile</a></li>
+                                            href="../../templates/dashboard/app/user-profile.html">User Profile</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/app/user-add.html">User Add</a></li>
+                                            href="../../templates/dashboard/app/user-add.html">User Add</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/app/user-list.html">User List</a></li>
+                                            href="../../templates/dashboard/app/user-list.html">User List</a></li>
                                    </ul>
                                 </li>
                                 <li class="nav-item">
@@ -771,13 +773,13 @@
                                       id="utilities">
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/errors/maintenance.html">Maintenance</a></li>
+                                            href="../../templates/dashboard/errors/maintenance.html">Maintenance</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/errors/error404.html">404</a></li>
+                                            href="../../templates/dashboard/errors/error404.html">404</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/errors/error500.html">505</a></li>
+                                            href="../../templates/dashboard/errors/error500.html">505</a></li>
                                    </ul>
                                 </li>
                                 <li class="nav-item">
@@ -796,42 +798,42 @@
                                       id="extraPlugins">
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/button-hover.html">Button Hover</a></li>
+                                            href="../../templates/dashboard/plugins/button-hover.html">Button Hover</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/choise-js.html">Choise JS</a></li>
+                                            href="../../templates/dashboard/plugins/choise-js.html">Choise JS</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/fslightbox.html">FSlightbox</a></li>
+                                            href="../../templates/dashboard/plugins/fslightbox.html">FSlightbox</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/select2.html">Select2</a></li>
+                                            href="../../templates/dashboard/plugins/select2.html">Select2</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/sweet-alert.html">Sweetalert</a></li>
+                                            href="../../templates/dashboard/plugins/sweet-alert.html">Sweetalert</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/flatpickr.html">flatpickr</a></li>
+                                            href="../../templates/dashboard/plugins/flatpickr.html">flatpickr</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/apexcharts.html">Apexcharts</a></li>
+                                            href="../../templates/dashboard/plugins/apexcharts.html">Apexcharts</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/gallery-hover.html">Gallery Hover</a></li>
+                                            href="../../templates/dashboard/plugins/gallery-hover.html">Gallery Hover</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/image-croper.html">Image Croper</a></li>
+                                            href="../../templates/dashboard/plugins/image-croper.html">Image Croper</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/loader.html">Loader</a></li>
+                                            href="../../templates/dashboard/plugins/loader.html">Loader</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/rating.html">Rating</a></li>
+                                            href="../../templates/dashboard/plugins/rating.html">Rating</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/plugins/quill-editor.html">Quill</a></li>
+                                            href="../../templates/dashboard/plugins/quill-editor.html">Quill</a></li>
                                       <li class="nav-item"><a class="nav-link "
-                                            href="../dashboard/plugins/uppy.html">Uppy</a></li>
+                                            href="../../templates/dashboard/plugins/uppy.html">Uppy</a></li>
                                    </ul>
                                 </li>
                              </ul>
@@ -855,7 +857,7 @@
                                    <a class="nav-link" href="../index.html">Components</a>
                                 </li>
                                 <li class="nav-item">
-                                   <a class="nav-link" href="../dashboard/plugins/ui-color.html">UI Color</a>
+                                   <a class="nav-link" href="../../templates/dashboard/plugins/ui-color.html">UI Color</a>
                                 </li>
                                 <li class="nav-item">
                                    <a class="nav-link menu-arrow" data-bs-toggle="collapse" href="#widgetsPage" role="button"
@@ -873,13 +875,13 @@
                                       id="widgetsPage">
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/widget/widgetbasic.html">Widget Basic</a></li>
+                                            href="../../templates/dashboard/widget/widgetbasic.html">Widget Basic</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/widget/widgetchart.html">Widget Chart</a></li>
+                                            href="../../templates/dashboard/widget/widgetchart.html">Widget Chart</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/widget/widgetcard.html">Widget Card</a></li>
+                                            href="../../templates/dashboard/widget/widgetcard.html">Widget Card</a></li>
                                    </ul>
                                 </li>
                                 <li class="nav-item">
@@ -898,10 +900,10 @@
                                       id="mapPages">
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/maps/google.html">Google</a></li>
+                                            href="../../templates/dashboard/maps/google.html">Google</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/maps/vector.html">Vector</a></li>
+                                            href="../../templates/dashboard/maps/vector.html">Vector</a></li>
                                    </ul>
                                 </li>
                                 <li class="nav-item">
@@ -920,13 +922,13 @@
                                       id="formsPages">
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/form/form-element.html">Element</a></li>
+                                            href="../../templates/dashboard/form/form-element.html">Element</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/form/form-wizard.html">Wizard</a></li>
+                                            href="../../templates/dashboard/form/form-wizard.html">Wizard</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/form/form-validation.html">Validation</a></li>
+                                            href="../../templates/dashboard/form/form-validation.html">Validation</a></li>
                                    </ul>
                                 </li>
                                 <li class="nav-item">
@@ -945,19 +947,19 @@
                                       id="tablesPages">
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/table/bootstrap-table.html">Bootstrap Table</a></li>
+                                            href="../../templates/dashboard/table/bootstrap-table.html">Bootstrap Table</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/table/table-data.html">Data Table</a></li>
+                                            href="../../templates/dashboard/table/table-data.html">Data Table</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/table/border-table.html">Bordered Table</a></li>
+                                            href="../../templates/dashboard/table/border-table.html">Bordered Table</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/table/fancy-table.html">Fancy Table</a></li>
+                                            href="../../templates/dashboard/table/fancy-table.html">Fancy Table</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/table/fixed-table.html">Fixed Table</a></li>
+                                            href="../../templates/dashboard/table/fixed-table.html">Fixed Table</a></li>
                                    </ul>
                                 </li>
                                 <li class="nav-item">
@@ -976,13 +978,13 @@
                                       id="iconsPages">
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/icons/solid.html">Solid</a></li>
+                                            href="../../templates/dashboard/icons/solid.html">Solid</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/icons/outline.html">Outlined</a></li>
+                                            href="../../templates/dashboard/icons/outline.html">Outlined</a></li>
                                       <li class="nav-item"><a
                                             class="nav-link "
-                                            href="../dashboard/icons/dual-tone.html">Dual Tone</a></li>
+                                            href="../../templates/dashboard/icons/dual-tone.html">Dual Tone</a></li>
                                    </ul>
                                 </li>
                              </ul>
@@ -1285,7 +1287,7 @@
                              </div>
                              <div class="card-footer p-0 text-center">
                                 <div class="d-grid">
-                                   <a href="../e-commerce/order-process.html" class="btn btn-primary">View All</a>
+                                   <a href="../../templates/e-commerce/order-process.html" class="btn btn-primary">View All</a>
                                 </div>
                              </div>
                           </div>
@@ -1310,10 +1312,10 @@
                        </a>
                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                           <li>
-                             <a class="dropdown-item" href="../dashboard/app/user-profile.html">Profile</a>
+                             <a class="dropdown-item" href="../../templates/dashboard/app/user-profile.html">Profile</a>
                           </li>
                           <li>
-                             <a class="dropdown-item" href="../dashboard/app/user-privacy-setting.html">Privacy Setting</a>
+                             <a class="dropdown-item" href="../../templates/dashboard/app/user-privacy-setting.html">Privacy Setting</a>
                           </li>
                           <li>
                              <hr class="dropdown-divider">
@@ -1359,492 +1361,486 @@
         </nav>        <!--Nav End-->
       </div>
       <div class="container-fluid content-inner pb-0" id="page_layout">
-       <div class="d-grid gap-3 d-grid-template-1fr-19">
-           <div class="card mb-0 group-card mb-0">
-               <div class="top-bg-image">
-                   <img src="assets/images/profile-event/01.png" class="img-fluid w-100 rounded-0 rounded-top" alt="group-bg" loading="lazy" />
-               </div>
-               <div class="card-body text-center">
-                   <div class="group-icon">
-                       <img src="assets/images/group/01.jpg" alt="profile-img" class="rounded-circle img-fluid avatar-120" loading="lazy">
-                   </div>
-                   <div class="group-info pt-3 pb-3">
-                       <h4><a href="group-detail.html">Designer</a></h4>
-                       <p>Lorem Ipsum data</p>
-                   </div>
-                   <div class="group-details d-inline-block pb-3">
-                       <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0 gap-3">
-                           <li>
-                               <p class="mb-0">Post</p>
-                               <h6>600</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Member</p>
-                               <h6>320</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Visit</p>
-                               <h6>1.2k</h6>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="group-member mb-3">
-                       <div class="iq-media-group">
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/01.png" alt="img1" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/02.png" alt="img2" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/03.png" alt="img3" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/04.png" alt="img4" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/05.png" alt="img5" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/06.png" alt="img6" loading="lazy" />
-                           </a>
-                       </div>
-                   </div>
-                   <a href="group-detail.html" class="btn btn-primary d-block w-100">Join</a>
-               </div>
-           </div>
-           <div class="card mb-0 group-card mb-0">
-               <div class="top-bg-image">
-                   <img src="assets/images/profile-event/02.png" class="img-fluid w-100 rounded-0 rounded-top" alt="group-bg" loading="lazy" />
-               </div>
-               <div class="card-body text-center">
-                   <div class="group-icon">
-                       <img src="assets/images/group/02.jpg" alt="profile-img" class="rounded-circle img-fluid avatar-120" loading="lazy">
-                   </div>
-                   <div class="group-info pt-3 pb-3">
-                       <h4><a href="group-detail.html">R &amp; D</a></h4>
-                       <p>Lorem Ipsum data</p>
-                   </div>
-                   <div class="group-details d-inline-block pb-3">
-                       <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0 gap-3">
-                           <li>
-                               <p class="mb-0">Post</p>
-                               <h6>300</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Member</p>
-                               <h6>210</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Visit</p>
-                               <h6>1.1k</h6>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="group-member mb-3">
-                       <div class="iq-media-group">
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/01.png" alt="img1" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/02.png" alt="img2" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/03.png" alt="img3" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/04.png" alt="img4" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/05.png" alt="img5" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/06.png" alt="img6" loading="lazy" />
-                           </a>
-                       </div>
-                   </div>
-                   <a href="group-detail.html" class="btn btn-primary d-block w-100">Join</a>
-               </div>
-           </div>
-           <div class="card mb-0 group-card mb-0">
-               <div class="top-bg-image">
-                   <img src="assets/images/profile-event/03.png" class="img-fluid w-100 rounded-0 rounded-top" alt="group-bg" loading="lazy" />
-               </div>
-               <div class="card-body text-center">
-                   <div class="group-icon">
-                       <img src="assets/images/group/03.jpg" alt="profile-img" class="rounded-circle img-fluid avatar-120" loading="lazy">
-                   </div>
-                   <div class="group-info pt-3 pb-3">
-                       <h4><a href="group-detail.html">Graphics</a></h4>
-                       <p>Lorem Ipsum data</p>
-                   </div>
-                   <div class="group-details d-inline-block pb-3">
-                       <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0 gap-3">
-                           <li>
-                               <p class="mb-0">Post</p>
-                               <h6>320</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Member</p>
-                               <h6>100</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Visit</p>
-                               <h6>1.0k</h6>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="group-member mb-3">
-                       <div class="iq-media-group">
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/01.png" alt="img1" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/02.png" alt="img2" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/03.png" alt="img3" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/04.png" alt="img4" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/05.png" alt="img5" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/06.png" alt="img6" loading="lazy" />
-                           </a>
-                       </div>
-                   </div>
-                   <a href="group-detail.html" class="btn btn-primary d-block w-100">Join</a>
-               </div>
-           </div>
-           <div class="card mb-0 group-card mb-0">
-               <div class="top-bg-image">
-                   <img src="assets/images/profile-event/04.png" class="img-fluid w-100 rounded-0 rounded-top" alt="group-bg" loading="lazy" />
-               </div>
-               <div class="card-body text-center">
-                   <div class="group-icon">
-                       <img src="assets/images/group/04.jpg" alt="profile-img" class="rounded-circle img-fluid avatar-120" loading="lazy">
-                   </div>
-                   <div class="group-info pt-3 pb-3">
-                       <h4><a href="group-detail.html">Developer</a></h4>
-                       <p>Lorem Ipsum data</p>
-                   </div>
-                   <div class="group-details d-inline-block pb-3">
-                       <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0 gap-3">
-                           <li>
-                               <p class="mb-0">Post</p>
-                               <h6>800</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Member</p>
-                               <h6>480</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Visit</p>
-                               <h6>2.2k</h6>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="group-member mb-3">
-                       <div class="iq-media-group">
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/01.png" alt="img1" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/02.png" alt="img2" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/03.png" alt="img3" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/04.png" alt="img4" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/05.png" alt="img5" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/06.png" alt="img6" loading="lazy" />
-                           </a>
-                       </div>
-                   </div>
-                   <a href="group-detail.html" class="btn btn-primary d-block w-100">Join</a>
-               </div>
-           </div>
-           <div class="card mb-0 group-card mb-0">
-               <div class="top-bg-image">
-                   <img src="assets/images/profile-event/05.png" class="img-fluid w-100 rounded-0 rounded-top" alt="group-bg" loading="lazy" />
-               </div>
-               <div class="card-body text-center">
-                   <div class="group-icon">
-                       <img src="assets/images/group/05.jpg" alt="profile-img" class="rounded-circle img-fluid avatar-120" loading="lazy">
-                   </div>
-                   <div class="group-info pt-3 pb-3">
-                       <h4><a href="group-detail.html">Tester</a></h4>
-                       <p>Lorem Ipsum data</p>
-                   </div>
-                   <div class="group-details d-inline-block pb-3">
-                       <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0 gap-3">
-                           <li>
-                               <p class="mb-0">Post</p>
-                               <h6>200</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Member</p>
-                               <h6>100</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Visit</p>
-                               <h6>32</h6>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="group-member mb-3">
-                       <div class="iq-media-group">
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/01.png" alt="img1" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/02.png" alt="img2" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/03.png" alt="img3" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/04.png" alt="img4" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/05.png" alt="img5" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/06.png" alt="img6" loading="lazy" />
-                           </a>
-                       </div>
-                   </div>
-                   <a href="group-detail.html" class="btn btn-primary d-block w-100">Join</a>
-               </div>
-           </div>
-           <div class="card mb-0 group-card mb-0">
-               <div class="top-bg-image">
-                   <img src="assets/images/profile-event/06.png" class="img-fluid w-100 rounded-0 rounded-top" alt="group-bg" loading="lazy" />
-               </div>
-               <div class="card-body text-center">
-                   <div class="group-icon">
-                       <img src="assets/images/group/06.jpg" alt="profile-img" class="rounded-circle img-fluid avatar-120" loading="lazy">
-                   </div>
-                   <div class="group-info pt-3 pb-3">
-                       <h4><a href="group-detail.html">Events</a></h4>
-                       <p>Lorem Ipsum data</p>
-                   </div>
-                   <div class="group-details d-inline-block pb-3">
-                       <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0 gap-3">
-                           <li>
-                               <p class="mb-0">Post</p>
-                               <h6>1000</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Member</p>
-                               <h6>500</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Visit</p>
-                               <h6>3.2k</h6>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="group-member mb-3">
-                       <div class="iq-media-group">
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/01.png" alt="img1" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/02.png" alt="img2" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/03.png" alt="img3" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/04.png" alt="img4" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/05.png" alt="img5" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/06.png" alt="img6" loading="lazy" />
-                           </a>
-                       </div>
-                   </div>
-                   <a href="group-detail.html" class="btn btn-primary d-block w-100">Join</a>
-               </div>
-           </div>
-           <div class="card mb-0 group-card mb-0 mb-lg-3">
-               <div class="top-bg-image">
-                   <img src="assets/images/profile-event/07.png" class="img-fluid w-100 rounded-0 rounded-top" alt="group-bg" loading="lazy" />
-               </div>
-               <div class="card-body text-center">
-                   <div class="group-icon">
-                       <img src="assets/images/group/07.jpg" alt="profile-img" class="rounded-circle img-fluid avatar-120" loading="lazy">
-                   </div>
-                   <div class="group-info pt-3 pb-3">
-                       <h4><a href="group-detail.html">Coder</a></h4>
-                       <p>Lorem Ipsum data</p>
-                   </div>
-                   <div class="group-details d-inline-block pb-3">
-                       <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0 gap-3">
-                           <li>
-                               <p class="mb-0">Post</p>
-                               <h6>300</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Member</p>
-                               <h6>220</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Visit</p>
-                               <h6>25k</h6>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="group-member mb-3">
-                       <div class="iq-media-group">
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/01.png" alt="img1" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/02.png" alt="img2" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/03.png" alt="img3" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/04.png" alt="img4" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/05.png" alt="img5" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/06.png" alt="img6" loading="lazy" />
-                           </a>
-                       </div>
-                   </div>
-                   <a href="group-detail.html" class="btn btn-primary d-block w-100">Join</a>
-               </div>
-           </div>
-           <div class="card mb-0 group-card mb-0 mb-lg-3">
-               <div class="top-bg-image">
-                   <img src="assets/images/profile-event/08.png" class="img-fluid w-100 rounded-0 rounded-top" alt="group-bg" loading="lazy" />
-               </div>
-               <div class="card-body text-center">
-                   <div class="group-icon">
-                       <img src="assets/images/group/08.jpg" alt="profile-img" class="rounded-circle img-fluid avatar-120" loading="lazy">
-                   </div>
-                   <div class="group-info pt-3 pb-3">
-                       <h4><a href="group-detail.html">Themes</a></h4>
-                       <p>Lorem Ipsum data</p>
-                   </div>
-                   <div class="group-details d-inline-block pb-3">
-                       <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0 gap-3">
-                           <li>
-                               <p class="mb-0">Post</p>
-                               <h6>1200</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Member</p>
-                               <h6>800</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Visit</p>
-                               <h6>3.2k</h6>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="group-member mb-3">
-                       <div class="iq-media-group">
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/01.png" alt="img1" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/02.png" alt="img2" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/03.png" alt="img3" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/04.png" alt="img4" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/05.png" alt="img5" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/06.png" alt="img6" loading="lazy" />
-                           </a>
-                       </div>
-                   </div>
-                   <a href="group-detail.html" class="btn btn-primary d-block w-100">Join</a>
-               </div>
-           </div>
-           <div class="card mb-0 group-card mb-3">
-               <div class="top-bg-image">
-                   <img src="assets/images/profile-event/01.png" class="img-fluid w-100 rounded-0 rounded-top" alt="group-bg" loading="lazy" />
-               </div>
-               <div class="card-body text-center">
-                   <div class="group-icon">
-                       <img src="assets/images/group/09.jpg" alt="profile-img" class="rounded-circle img-fluid avatar-120" loading="lazy">
-                   </div>
-                   <div class="group-info pt-3 pb-3">
-                       <h4><a href="group-detail.html">Review</a></h4>
-                       <p>Lorem Ipsum data</p>
-                   </div>
-                   <div class="group-details d-inline-block pb-3">
-                       <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0 gap-3">
-                           <li>
-                               <p class="mb-0">Post</p>
-                               <h6>300</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Member</p>
-                               <h6>1000</h6>
-                           </li>
-                           <li>
-                               <p class="mb-0">Visit</p>
-                               <h6>4.5k</h6>
-                           </li>
-                       </ul>
-                   </div>
-                   <div class="group-member mb-3">
-                       <div class="iq-media-group">
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/01.png" alt="img1" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/02.png" alt="img2" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/03.png" alt="img3" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/04.png" alt="img4" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/05.png" alt="img5" loading="lazy" />
-                           </a>
-                           <a href="#" class="iq-media">
-                               <img class="img-fluid avatar-40 rounded-circle" src="assets/images/avatar/06.png" alt="img6" loading="lazy" />
-                           </a>
-                       </div>
-                   </div>
-                   <a href="group-detail.html" class="btn btn-primary d-block w-100">Join</a>
-               </div>
-           </div>
-           </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+            <div class="card-header d-flex justify-content-between p-4 border-bottom">
+                <div class="header-title">
+                    <h4 class="card-title">Friend Request</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="request-list list-inline m-0 p-0">
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/01.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Jaques Amole</h6>
+                                <p class="mb-0">40  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/02.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Lucy Tania</h6>
+                                <p class="mb-0">12  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/03.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Val Adictorian</h6>
+                                <p class="mb-0">0  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/04.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Manny Petty</h6>
+                                <p class="mb-0">3  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/05.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Marsha Mello</h6>
+                                <p class="mb-0">15  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/06.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Caire Innet</h6>
+                                <p class="mb-0">8  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/07.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Gio Metric</h6>
+                                <p class="mb-0">10  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/08.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Chris P. Cream</h6>
+                                <p class="mb-0">18  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/09.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Paul Misunda</h6>
+                                <p class="mb-0">6  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/10.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Reanne Carnation</h6>
+                                <p class="mb-0">12  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                    <div class="d-flex gap-3">
+                                        <a href="javascript:void(0)" class="btn btn-primary rounded confirm-btn">Confirm</a>
+                                        <a href="#" class="btn btn-secondary rounded delete-btn">Delete Request</a>                                    
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-block text-center mb-0 pb-0">
+                        <a href="#" class="btn">View More Request</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="card">
+            <div class="card-header d-flex justify-content-between p-4 border-bottom">
+                <div class="header-title">
+                    <h4 class="card-title">People You May Know</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="request-list m-0 p-0">
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/01.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Jen Youfelct</h6>
+                                <p class="mb-0">4 friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/02.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Cooke Edoh</h6>
+                                <p class="mb-0">20  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/03.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Earl E. Riser</h6>
+                                <p class="mb-0">30  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/04.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Cliff Diver</h6>
+                                <p class="mb-0">5  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/05.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Cliff Diver</h6>
+                                <p class="mb-0">15  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/06.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Vinny Gret</h6>
+                                <p class="mb-0">50  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/07.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Paul Samic</h6>
+                                <p class="mb-0">6  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/08.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Gustav Wind</h6>
+                                <p class="mb-0">14  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/09.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Minnie Strone</h6>
+                                <p class="mb-0">16  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between border-bottom mb-3 pb-3 flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/10.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Ray Volver</h6>
+                                <p class="mb-0">9  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3 justify-content-between  flex-column flex-md-row">
+                        <div class="user-img img-fluid flex-shrink-0">
+                            <img src="../static/assets/images/avatar/11.png" alt="story-img" class="rounded-circle avatar-48" loading="lazy">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between w-100 flex-column flex-md-row">
+                            <div>
+                                <h6>Jen Trification</h6>
+                                <p class="mb-0">42  friends</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-2 mt-md-0">
+                                <div class="d-flex align-items-center mt-2 mt-md-0 gap-3">
+                                    <a href="javascript:void(0)" class="btn btn-primary rounded">
+                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4" d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z" fill="currentColor"></path>
+                                        <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z" fill="currentColor"></path>
+                                        <path opacity="0.4" d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z" fill="currentColor"></path>
+                                        </svg> Add Friend
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-secondary rounded delete-btn">Remove</a>                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
       </div>
       <!-- Footer Section Start -->
       <footer class="footer">
           <div class="footer-body">
               <ul class="left-panel list-inline mb-0 p-0">
-                  <li class="list-inline-item"><a href="../dashboard/extra/privacy-policy.html">Privacy Policy</a></li>
-                  <li class="list-inline-item"><a href="../dashboard/extra/terms-of-service.html">Terms of Use</a></li>
+                  <li class="list-inline-item"><a href="../../templates/dashboard/extra/privacy-policy.html">Privacy Policy</a></li>
+                  <li class="list-inline-item"><a href="../../templates/dashboard/extra/terms-of-service.html">Terms of Use</a></li>
               </ul>
               <div class="right-panel">
                   ©<script>2022</script> <span data-setting="app_name">Hope UI</span>, Made with
@@ -1860,7 +1856,7 @@
     </main>
     <!-- Wrapper End-->
     <!-- landing page start -->
-    <a class="btn btn-secondary btn-dashboard" href="../landing-pages/index.html">
+    <a class="btn btn-secondary btn-dashboard" href="../../templates/landing-pages/index.html">
       Landing Pages
     </a>
      <!-- landing page end -->
@@ -2802,6 +2798,9 @@
     <script src="../assets/js/plugins/slider-tabs.js"></script>
     
     
+    <!-- Sweet-alert Script -->
+    <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js" async></script>
+    <script src="../assets/js/plugins/sweet-alert.js" defer></script>
     
     
     
@@ -2831,7 +2830,7 @@
     <!-- Hopeui Script -->
     <script src="../assets/js/hope-ui1fc6.js?v=4.0.0" defer></script>
     <script src="../assets/js/hope-uipro1fc6.js?v=4.0.0" defer></script>
-    <script src="../assets/js/sidebar1fc6.js?v=4.0.0" defer></script>    <script src="assets/js/sticky-sidebar.js"></script>  </body>
+    <script src="../assets/js/sidebar1fc6.js?v=4.0.0" defer></script>    <script src="../static/assets/js/sticky-sidebar.js"></script>  </body>
 
-<!-- Mirrored from templates.iqonic.design/hope-ui/pro/html/social-app/group.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Nov 2023 09:26:34 GMT -->
+<!-- Mirrored from templates.iqonic.design/hope-ui/pro/html/social-app/friend-request.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Nov 2023 09:25:52 GMT -->
 </html>
