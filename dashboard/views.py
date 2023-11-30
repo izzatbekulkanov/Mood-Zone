@@ -13,3 +13,9 @@ def userView(request):
     return render(request, 'home/users.html')
 def inboxView(request):
     return render(request, 'email/inbox.html')
+def iconSolidView(request):
+    return render(request, 'dashboard/icons/solid.html')
+def iconOutlineView(request):
+    return render(request, 'dashboard/icons/outline.html')
+def iconDualToneView(request):
+    return render(request, 'dashboard/icons/dual-tone.html')

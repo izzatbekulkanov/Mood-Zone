@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'users',
     'django.utils.translation',
     'social',
+    'mail',
 
 ]
 
@@ -61,7 +62,11 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'social', 'templates'],
+        'DIRS': [BASE_DIR / 'social',
+                 'templates',
+                 'landing_page',
+                 'mail',
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
