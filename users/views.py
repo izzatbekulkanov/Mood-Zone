@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate, get_user_model
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from django.http import HttpResponse
@@ -73,6 +74,7 @@ def signUpView(request, *args, **kwargs):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
+            username = form.cleaned_data.get('username')
             first_name = form.cleaned_data.get('first_name').lower()
             last_name = form.cleaned_data.get('last_name').lower()
             email = form.cleaned_data.get('email').lower()
@@ -87,7 +89,7 @@ def signUpView(request, *args, **kwargs):
                 messages.error(request, 'There was an error with your submission. Please correct the errors below.')
                 return render(request, 'dashboard/auth-pro/sign-up.html', context)
 
-            account = authenticate(email=email, password=raw_password, first_name=first_name, last_name=last_name)
+            account = authenticate(email=email, password=raw_password, first_name=first_name, last_name=last_name, username=username)
             destination = kwargs.get("next")
             if destination:
                 return redirect(destination)
@@ -104,12 +106,22 @@ def signUpView(request, *args, **kwargs):
     return render(request, 'dashboard/auth-pro/sign-up.html', context)
 
 
+@login_required(login_url='sign_in')
 def lockScreenView(request):
-    users = CustomUser.objects.all()
-    context = {
-        'users': users
-    }
-    return render(request, 'dashboard/auth-pro/lock-screen.html', context)
+    if request.method == 'POST':
+        password = request.POST.get('lock-pass')
+        user = authenticate(request, username=request.user.username, password=password, backend='django.contrib.auth.backends.ModelBackend')
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'You have successfully unlocked the screen.')
+            return redirect('dashboard')
+            print("You have successfully unlocked the screen.'")
+
+        messages.error(request, 'Invalid password. Please try again.')
+        print("Invalid password. Please try again.'")
+
+    return render(request, 'dashboard/auth-pro/lock-screen.html')  # O'zgartirilishi mumkin
 
 def resetPasswordView(request):
     users = CustomUser.objects.all()
