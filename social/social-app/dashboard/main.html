@@ -1,0 +1,444 @@
+{% extends 'social-app/dashboard/index.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid content-inner pb-0" id="page_layout">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <h4 class="mb-0">Profile Statistics</h4>
+                            <div class="dropdown">
+                                <a href="#" class="text-gray dropdown-toggle" id="profile-statistics"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    Everything
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile-statistics"
+                                    style="">
+                                    <li><a class="dropdown-item" href="#">Everything</a></li>
+                                    <li><a class="dropdown-item" href="#">Social</a></li>
+                                    <li><a class="dropdown-item" href="#">Live Streaming</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-cols-xl-4 row-cols-md-2 row-cols-1">
+                            <div class="col">
+                                <div class="card bg-body shadow-none mb-xl-0 ">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                                            <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
+                                                <img src="{% static 'assets/images/media/01.png' %}" alt="01"
+                                                     class="img-fluid avatar-30 object-contain">
+                                            </button>
+                                            <div>
+                                                <small>Followers</small>
+                                                <h4 class="mb-0">280k</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bg-body shadow-none mb-xl-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                                            <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
+                                                <img src="{% static 'assets/images/media/02.png' %}" alt="01"
+                                                     class="img-fluid avatar-30 object-contain">
+                                            </button>
+                                            <div>
+                                                <small>Join</small>
+                                                <h4 class="mb-0">100k</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bg-body shadow-none mb-md-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                                            <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
+                                                <img src="{% static 'assets/images/media/03.png' %}" alt="01"
+                                                     class="img-fluid avatar-30 object-contain">
+                                            </button>
+                                            <div>
+                                                <small>Subscribers</small>
+                                                <h4 class="mb-0">2.9M</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card bg-body shadow-none mb-0">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                                            <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
+                                                <img src="{% static 'assets/images/media/04.png' %}" alt="01"
+                                                     class="img-fluid avatar-30 object-contain">
+                                            </button>
+                                            <div>
+                                                <small>Like</small>
+                                                <h4 class="mb-0">210k</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <h4 class="mb-0">Profile Reach</h4>
+                            <div class="dropdown">
+                                <a href="#" class="text-gray dropdown-toggle" id="profile-reach"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    Month
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile-reach" style="">
+                                    <li><a class="dropdown-item" href="#">Everything</a></li>
+                                    <li><a class="dropdown-item" href="#">Social</a></li>
+                                    <li><a class="dropdown-item" href="#">Live Streaming</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="overall-chart" id="overall-chart"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card card-block card-stretch card-height">
+                            <div class="card-header">
+                                <h4 class="mb-0">Key Metrics</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex border-bottom pb-3 align-items-center iq-social-keyMetrics">
+                                    <h6 class="iq-key-metrics mb-0">Clicks</h6>
+                                    <div class="iq-drive-progress d-flex align-items-center">
+                                        <span class="key-number">10k</span>
+                                        <div class="shadow-none key-progress progress bg-soft-primary w-50">
+                                            <div class="progress-bar bg-primary" data-toggle="progress-bar"
+                                                 role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="ms-3">12k</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-3 align-items-center iq-social-keyMetrics">
+                                    <h6 class="iq-key-metrics mb-0">Likes</h6>
+                                    <div class="iq-drive-progress d-flex align-items-center">
+                                        <span class="key-number">680</span>
+                                        <div class="shadow-none key-progress progress bg-soft-primary w-50">
+                                            <div class="progress-bar bg-primary" data-toggle="progress-bar"
+                                                 role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="ms-3">520</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-3 align-items-center iq-social-keyMetrics">
+                                    <h6 class="iq-key-metrics mb-0">Followers</h6>
+                                    <div class="iq-drive-progress d-flex align-items-center">
+                                        <span class="key-number">8k</span>
+                                        <div class="shadow-none key-progress progress bg-soft-primary w-50">
+                                            <div class="progress-bar bg-primary" data-toggle="progress-bar"
+                                                 role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="ms-3">121k</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex pt-3 align-items-center iq-social-keyMetrics">
+                                    <h6 class="iq-key-metrics mb-0">Impressions</h6>
+                                    <div class="iq-drive-progress d-flex align-items-center">
+                                        <span class="key-number">369</span>
+                                        <div class="shadow-none key-progress progress bg-soft-primary w-50">
+                                            <div class="progress-bar bg-primary" data-toggle="progress-bar"
+                                                 role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="ms-3">10k</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row row-cols-1 row-cols-md-2">
+                            <div class="col">
+                                <div class="card card-block card-stretch card-height text-center">
+                                    <div class="card-header">
+                                        <h2 class="card-title">20k</h2>
+                                    </div>
+                                    <div class="card-body px-0">
+                                        <span>Enagaged Users</span>
+                                        <div id="social-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card card-block card-stretch card-height text-center">
+                                    <div class="card-header">
+                                        <h2 class="card-title">12.2k</h2>
+                                    </div>
+                                    <div class="card-body px-0">
+                                        <span>Page Impression</span>
+                                        <div id="social-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <h4 class="me-3 mb-0">Requests</h4>
+                            <div>
+                                <span class="btn btn-sm btn-icon btn-soft-primary text-primary rounded-pill">3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex mb-3 pb-3 border-bottom gap-3">
+                            <img src="{% static 'assets/images/avatar/12.png' %}" alt="01"
+                                 class="img-fluid rounded-circle avatar-60">
+                            <div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <h5 class="mb-0">Wade Warren</h5>
+                                    <small>wants to add you to friends</small>
+                                </div>
+                                <div class="d-flex align-items-center mt-2 gap-2">
+                                    <a href="#" class="small">Accept</a>
+                                    <a href="#" class="text-body small">Decline</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3 pb-3 border-bottom gap-3">
+                            <img src="{% static 'assets/images/avatar/12.png' %}" alt="01"
+                                 class="img-fluid rounded-circle avatar-60">
+                            <div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <h5 class="mb-0">Wade Warren</h5>
+                                    <small>wants to add you to friends</small>
+                                </div>
+                                <div class="d-flex align-items-center mt-2 gap-2">
+                                    <a href="#" class="small">Accept</a>
+                                    <a href="#" class="text-body small">Decline</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <img src="{% static 'assets/images/avatar/14.png' %}" alt="02"
+                                 class="img-fluid rounded-circle avatar-60">
+                            <div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <h5 class="mb-0">Jenny Wilson</h5>
+                                    <small>wants to add you to friends</small>
+                                </div>
+                                <div class="d-flex align-items-center mt-2 gap-2">
+                                    <a href="#" class="small">Accept</a>
+                                    <a href="#" class="text-body small">Decline</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Suggestions for you</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="iq-social-user-details">
+                            <div class="d-flex justify-content-center gap-3">
+                                <img src="{% static 'assets/images/avatar/13.png' %}"
+                                     class="img-fluid avatar-48 rounded-circle" alt="profile-image-1" loading="lazy">
+                                <div class="d-flex align-items-center justify-content-between flex-grow-1">
+                                    <div class="me-3">
+                                        <h5>Cameron Williamson</h5>
+                                        <small class="text-ellipsis short-1">@Naoerville</small>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-icon btn-sm btn-primary rounded-pill">
+                                                    <span class="btn-inner">
+                                                        <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.4"
+                                                                  d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z"
+                                                                  fill="currentColor"></path>
+                                                            <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z"
+                                                                  fill="currentColor"></path>
+                                                            <path opacity="0.4"
+                                                                  d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z"
+                                                                  fill="currentColor"></path>
+                                                        </svg>
+                                                    </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center gap-3">
+                                <img src="{% static 'assets/images/avatar/06.png' %}"
+                                     class="img-fluid avatar-48 rounded-circle" alt="profile-image-1" loading="lazy">
+                                <div class="d-flex align-items-center justify-content-between flex-grow-1">
+                                    <div class="me-3">
+                                        <h5>Guy Hawkins</h5>
+                                        <small class="text-ellipsis short-1">@hawkins</small>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-icon btn-sm btn-primary rounded-pill">
+                                                    <span class="btn-inner">
+                                                        <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.4"
+                                                                  d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z"
+                                                                  fill="currentColor"></path>
+                                                            <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z"
+                                                                  fill="currentColor"></path>
+                                                            <path opacity="0.4"
+                                                                  d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z"
+                                                                  fill="currentColor"></path>
+                                                        </svg>
+                                                    </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center gap-3">
+                                <img src="{% static 'assets/images/avatar/27.png' %}"
+                                     class="img-fluid avatar-48 rounded-circle" alt="profile-image-1" loading="lazy">
+                                <div class="d-flex align-items-center justify-content-between flex-grow-1">
+                                    <div class="me-3">
+                                        <h5>Jacob Jones</h5>
+                                        <small class="text-ellipsis short-1">@Austin</small>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-icon btn-sm btn-primary rounded-pill">
+                                                    <span class="btn-inner">
+                                                        <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.4"
+                                                                  d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z"
+                                                                  fill="currentColor"></path>
+                                                            <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z"
+                                                                  fill="currentColor"></path>
+                                                            <path opacity="0.4"
+                                                                  d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z"
+                                                                  fill="currentColor"></path>
+                                                        </svg>
+                                                    </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center gap-3">
+                                <img src="{% static 'assets/images/avatar/28.png' %}"
+                                     class="img-fluid avatar-48 rounded-circle" alt="profile-image-1" loading="lazy">
+                                <div class="d-flex align-items-center justify-content-between flex-grow-1">
+                                    <div class="me-3">
+                                        <h5>Darlene Robertson</h5>
+                                        <small class="text-ellipsis short-1">@Fairfiels</small>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-icon btn-sm btn-primary rounded-pill">
+                                                    <span class="btn-inner">
+                                                        <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.4"
+                                                                  d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z"
+                                                                  fill="currentColor"></path>
+                                                            <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z"
+                                                                  fill="currentColor"></path>
+                                                            <path opacity="0.4"
+                                                                  d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z"
+                                                                  fill="currentColor"></path>
+                                                        </svg>
+                                                    </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <div class="btn btn-primary btn-sm">View All</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="iq-media-group-1">
+                            <a href="#" class="iq-media-1">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/avatar/10.png' %}" alt="01"
+                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
+                                </div>
+                            </a>
+                            <a href="#" class="iq-media-1">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/avatar/25.png' %}" alt="01"
+                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
+                                </div>
+                            </a>
+                            <a href="#" class="iq-media-1">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/avatar/06.png' %}" alt="01"
+                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
+                                </div>
+                            </a>
+                            <a href="#" class="iq-media-1">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/avatar/27.png' %}" alt="01"
+                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
+                                </div>
+                            </a>
+                            <a href="#" class="iq-media-1">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/avatar/15.png' %}" alt="01"
+                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
+                                </div>
+                            </a>
+                            <a href="#" class="iq-media-1">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/avatar/19.png' %}" alt="01"
+                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
+                                </div>
+                            </a>
+                            <a href="#" class="iq-media-1">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/avatar/05.png' %}" alt="01"
+                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
+                                </div>
+                            </a>
+                            <a href="#" class="iq-media-1">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/avatar/01.png' %}" alt="01"
+                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center mt-4">
+                            <h5>184.3k</h5>
+                            <h6 class="ms-2">Followers</h6>
+                        </div>
+                        <span>Active now on your profile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+
+
