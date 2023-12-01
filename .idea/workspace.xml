@@ -5,197 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bc76727-b533-48ff-9b99-ab8a8d23dd9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ecommerce/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/download-button.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/landing-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/loader.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/modals.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/offcanvas.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/setting-sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/e-commerce/shablon.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/static/assets/css/core/libs.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/static/assets/vendor/swiperSlider/swiper-bundle.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/mail/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/mail/mail/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mail/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/account-setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/account-setting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/birthday.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/birthday.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/dashboard/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/event-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/event-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/event-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/event-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/friend-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/friend-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/friend-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/friend-profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/friend-request.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/friend-request.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/group-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/group-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/group.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/group.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/newsfeed.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/newsfeed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/notification.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/notification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/profile-badges.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/profile-badges.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/profile-images.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/profile-images.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/profile-video.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/profile-video.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/social-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/social-profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/charts/alternate-dashboard1fc6.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/charts/alternate-dashboard1fc6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/iqonic-script/setting.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/iqonic-script/setting.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/image-croper.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/plugins/image-croper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/setting-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/setting-init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/sidebar1fc6.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/sidebar1fc6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/doc-viewer/include/SheetJS/xlsx.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/doc-viewer/include/SheetJS/xlsx.full.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/doc-viewer/include/pdf/pdf.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/doc-viewer/include/pdf/pdf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/fullcalendar/core/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/fullcalendar/core/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/fullcalendar/list/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/fullcalendar/list/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/sheperd/dist/js/sheperd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/sheperd/dist/js/sheperd.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/swiperSlider/swiper-bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/swiperSlider/swiper-bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/three.js/DatGUI.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/three.js/DatGUI.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/three.js/GLTFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/three.js/GLTFLoader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/three.js/dat.gui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/three.js/dat.gui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/three.js/three.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/three.js/three.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/book-appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/book-appointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/doctor-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/doctor-visit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-comments.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-comments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-grid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-trending.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-trending.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/extra/privacy-policy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/extra/privacy-policy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/extra/terms-of-service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/extra/terms-of-service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/form/form-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/form/form-element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/form/form-validation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/form/form-validation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/form/form-wizard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/form/form-wizard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/icons/dual-tone.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/icons/dual-tone.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/icons/outline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/icons/outline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/icons/solid.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/icons/solid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/maps/google.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/maps/google.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/maps/vector.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/maps/vector.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/apexcharts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/apexcharts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/button-hover.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/button-hover.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/choise-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/choise-js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/flatpickr.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/flatpickr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/fslightbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/fslightbox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/gallery-hover.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/gallery-hover.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/image-croper.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/image-croper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/loader.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/loader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/quill-editor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/quill-editor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/rating.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/rating.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/select2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/select2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/sweet-alert.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/sweet-alert.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/tree-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/tree-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/ui-color.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/ui-color.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/plugins/uppy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/plugins/uppy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/dashboard/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/e-commerce/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/invoice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/e-commerce/order-process.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/order-process.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/e-commerce/products1936.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/e-commerce/products3632.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/products3632.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/e-commerce/shablon.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/shablon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/e-commerce/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/user-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/e-commerce/user-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/user-profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/special-pages/billing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/special-pages/billing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/special-pages/calender.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/special-pages/calender.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/special-pages/kanban.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/special-pages/kanban.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/special-pages/pricing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/special-pages/pricing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/special-pages/timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/special-pages/timeline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/table/bootstrap-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/table/bootstrap-table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/table/border-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/table/border-table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/table/fancy-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/table/fancy-table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/table/fixed-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/table/fixed-table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/table/table-data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/table/table-data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/widget/widgetbasic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/widget/widgetbasic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/widget/widgetcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/widget/widgetcard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/widget/widgetchart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/widget/widgetchart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/css/e-commerce.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/css/e-commerce.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/app/01.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/app/01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/app/02.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/app/02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/103.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/103.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/20.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/30.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/30.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/31.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/31.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/40.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/40.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/50.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/50.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/52.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/52.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/60.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/60.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/83.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/83.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/bag-product/90.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/bag-product/90.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/cart/01.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/cart/01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/cart/02.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/cart/02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/cart/03.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/cart/03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/offers/06.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/offers/06.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/offers/07.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/offers/07.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/offers/09.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/offers/09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/offers/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/offers/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product-detail/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product-detail/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/01.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/02.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/03.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/04.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/04.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/05.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/06.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/06.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/07.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/07.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/09.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/product/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/product/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/user-cards/01.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/user-cards/01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/user-cards/02.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/user-cards/02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/user-cards/03.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/user-cards/03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/user-cards/04.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/user-cards/04.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/user-cards/05.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/user-cards/05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/user/01.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/user/01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/user/04.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/user/04.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/user/06.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/user/06.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/wishlist/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/wishlist/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/wishlist/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/wishlist/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/wishlist/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/wishlist/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/wishlist/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/wishlist/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/wishlist/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/wishlist/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/wishlist/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/wishlist/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/wishlist/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/wishlist/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/wishlist/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/wishlist/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/images/wishlist/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/images/wishlist/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/js/ecommerce.js" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/js/ecommerce.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/assets/js/threejs-product.js" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/static/assets/js/threejs-product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/categories-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/categories-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/invoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/order-process.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/order-process.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/product-detail-360.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/product-detail-360.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/product-detail-3d.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/product-detail-3d.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/product-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/product-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/products1936.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/products1936.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/products3632.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/products3632.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/shop-left-filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/shop-main.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/shop-main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/shop-right-filter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/user-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/user-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/user-profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/vendor-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/vendor-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/e-commerce/wishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/wishlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/file-manager/all-files.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/file-manager/all-files.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/file-manager/document-folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/file-manager/document-folder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/file-manager/image-folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/file-manager/image-folder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/file-manager/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/file-manager/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/file-manager/trash.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/file-manager/trash.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/file-manager/video-folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/file-manager/video-folder.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,6 +132,7 @@
       <workItem from="1701374946209" duration="4000" />
       <workItem from="1701374968951" duration="3860000" />
       <workItem from="1701420515397" duration="27000" />
+      <workItem from="1701420919551" duration="1559000" />
     </task>
     <servers />
   </component>

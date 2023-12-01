@@ -181,7 +181,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link product-grid" aria-current="page"
-                               href="../products3632.html?type=product-grid">
+                               href="{% url 'ecommerce:productGrid' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -191,21 +191,6 @@
                                     </svg>
                                 </i>
                                 <i class="sidenav-mini-icon"> PG </i>
-                                <span class="item-name">Product Grid View</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link product-list" aria-current="page"
-                               href="../products1936.html?type=product-list">
-                                <i class="icon">
-                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <g>
-                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                                        </g>
-                                    </svg>
-                                </i>
-                                <i class="sidenav-mini-icon"> PL </i>
                                 <span class="item-name">Product List View</span>
                             </a>
                         </li>
@@ -302,7 +287,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="../order-process.html">
+                    <a class="nav-link " aria-current="page" href="{% url 'ecommerce:orderProcess' %}">
                         <i class="icon">
                             <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -320,7 +305,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="../invoice.html">
+                    <a class="nav-link " aria-current="page" href="{% url 'ecommerce:invoice' %}">
                         <i class="icon">
                             <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -353,7 +338,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="../user-profile.html">
+                    <a class="nav-link " href="{% url 'ecommerce:userProfile' %}">
                         <i class="icon">
                             <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -368,7 +353,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="../user-list.html">
+                    <a class="nav-link " href="{% url 'ecommerce:userList' %}">
                         <i class="icon">
                             <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
