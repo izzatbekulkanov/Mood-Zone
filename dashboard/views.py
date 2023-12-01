@@ -181,7 +181,11 @@ def apiControlView(request):
             'curriculum_data': curriculum_data,
             'group_lists': group_lists,
         }
-
+        #     # Topilgan ma'lumotlarni tekshirish
+        #     # if not student_data and bool(search) or bool(passport_number) or bool(passport_pin):
+        #     #     # Ma'lumot topilmagan holatda foydalanuvchiga xabar berish
+        #     #     from django.contrib import messages
+        #     #     messages.warning(request, "Ma'lumot topilmadi")
         return render(request, 'dashboard/api-control.html', context)
 
 
@@ -190,4 +194,27 @@ def apiCustomerView(request):
 
 
 def apiUniversityView(request):
-    return render(request, 'dashboard/api-university.html')
+    url = "https://student.namspi.uz/rest//v1/public/university-list"
+    headers = {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer Tw3PCq8R5KtdP6xlohOjVMzqf7_qHU-k',
+    }
+
+    response = requests.get(url, headers=headers)
+
+    try:
+        university_data_list = response.json()
+        first_item = university_data_list[0]
+        schools = first_item.get('data', {}).get('items', [])
+        print(schools)
+    except (KeyError, IndexError):
+        schools = []
+        print(f"{schools} bosh")
+        print(response.text)
+
+    context = {
+        'responce': response,
+        'university': schools,
+    }
+
+    return render(request, 'dashboard/api-university.html', context)

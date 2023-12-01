@@ -5,45 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bc76727-b533-48ff-9b99-ab8a8d23dd9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/social-app/dashboard/download-button.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/social-app/dashboard/email-compose.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/social-app/dashboard/landing-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/social-app/dashboard/loader.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/social-app/dashboard/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/social-app/dashboard/modal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/social-app/dashboard/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/social-app/dashboard/offcanvas.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/social-app/dashboard/setting-sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/download-button.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/email-compose.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/landing-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/loader.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/modal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/offcanvas.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/setting-sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/api-control.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/api-customers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/api-university.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/e-commerce/shablon.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/e-commerce/shablon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/account-setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/account-setting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/dashboard/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/dashboard/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/dashboard/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/social-app/dashboard/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/social/social-app/dashboard/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/social/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/api-university.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/api-university.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
