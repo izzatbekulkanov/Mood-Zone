@@ -1,7 +1,7 @@
 {% load static %}
 <aside class="sidebar sidebar-base " data-toggle="main-sidebar" data-sidebar="responsive">
     <div class="sidebar-header d-flex align-items-center justify-content-start">
-        <a href="../dashboard/index.html" class="navbar-brand">
+        <a href="{% url 'dashboard' %}" class="navbar-brand">
 
             <!--Logo start-->
             <div class="logo-main">
@@ -234,7 +234,7 @@
                     </a>
                     <ul class="sub-nav collapse" id="products" data-bs-parent="#e-commerce">
                         <li class="nav-item">
-                            <a class="nav-link " href="../product-detail.html">
+                            <a class="nav-link " href="{% url 'ecommerce:productDetail' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -248,7 +248,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../product-detail-3d.html">
+                            <a class="nav-link " href="{% url 'ecommerce:productDetail3d' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -262,7 +262,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../product-detail-360.html">
+                            <a class="nav-link " href="{% url 'ecommerce:productDetail360' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">

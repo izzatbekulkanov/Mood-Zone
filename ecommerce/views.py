@@ -23,3 +23,9 @@ def orderProcessView(request):
     return render(request, 'e-commerce/order-process.html')
 def invoiceView(request):
     return render(request, 'e-commerce/invoice.html')
+def productDetailView(request):
+    return render(request, 'e-commerce/product-detail.html')
+def productDetail3dView(request):
+    return render(request, 'e-commerce/product-detail-3d.html')
+def productDetail360View(request):
+    return render(request, 'e-commerce/product-detail-360.html')
