@@ -188,7 +188,7 @@
         });
     }
     /*--------------Chart3 ----------------*/
-    if (document.querySelectorAll('#d-main').length) {
+    if (document.querySelectorAll('#d-main.html').length) {
         const variableColors = IQUtils.getVariableColor();
             const colors = [variableColors.primary, variableColors.info];
                 const options = {
@@ -268,7 +268,7 @@
                         enabled: true,
                     },
                 };
-        const chart = new ApexCharts(document.querySelector("#d-main"), options);
+        const chart = new ApexCharts(document.querySelector("#d-main.html"), options);
         chart.render();
          //color customizer
         document.addEventListener("theme_color", (e) => {

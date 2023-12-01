@@ -853,7 +853,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 
 .fc-view,
 .fc-view > table {
-  /* so dragged elements can be above the view's main element */
+  /* so dragged elements can be above the view's main.html element */
   position: relative;
   z-index: 1;
 }

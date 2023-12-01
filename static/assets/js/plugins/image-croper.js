@@ -3,7 +3,7 @@ window.onload = function () {
 
   let Cropper = window.Cropper;
   let URL = window.URL || window.webkitURL;
-  let image = document.getElementById('main-img');
+  let image = document.getElementById('main.html-img');
   let download = document.getElementById('download');
   let actions = document.getElementById('actions');
   let dataX = document.getElementById('dataX');

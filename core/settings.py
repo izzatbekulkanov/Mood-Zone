@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.utils.translation',
     'social',
     'mail',
+    'ecommerce'
 
 ]
 
@@ -66,6 +67,7 @@ TEMPLATES = [
                  'templates',
                  'landing_page',
                  'mail',
+                 'ecommerce'
                  ],
         'APP_DIRS': True,
         'OPTIONS': {

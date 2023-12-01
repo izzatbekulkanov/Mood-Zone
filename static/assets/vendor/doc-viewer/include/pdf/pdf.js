@@ -5728,7 +5728,7 @@ var WebGLUtils = function WebGLUtilsClosure() {
                                                                 \
   varying vec2 v_texCoord;                                      \
                                                                 \
-  void main() {                                                 \
+  void main.html() {                                                 \
     vec2 clipSpace = (a_position / u_resolution) * 2.0 - 1.0;   \
     gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);          \
                                                                 \
@@ -5744,7 +5744,7 @@ var WebGLUtils = function WebGLUtilsClosure() {
                                                                 \
   varying vec2 v_texCoord;                                      \
                                                                 \
-  void main() {                                                 \
+  void main.html() {                                                 \
     vec4 imageColor = texture2D(u_image, v_texCoord);           \
     vec4 maskColor = texture2D(u_mask, v_texCoord);             \
     if (u_backdrop.a > 0.0) {                                   \
@@ -5840,7 +5840,7 @@ var WebGLUtils = function WebGLUtilsClosure() {
                                                                 \
   varying vec4 v_color;                                         \
                                                                 \
-  void main() {                                                 \
+  void main.html() {                                                 \
     vec2 position = (a_position + u_offset) * u_scale;          \
     vec2 clipSpace = (position / u_resolution) * 2.0 - 1.0;     \
     gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);          \
@@ -5852,7 +5852,7 @@ var WebGLUtils = function WebGLUtilsClosure() {
                                                                 \
   varying vec4 v_color;                                         \
                                                                 \
-  void main() {                                                 \
+  void main.html() {                                                 \
     gl_FragColor = v_color;                                     \
   }                                                             ';
   var figuresCache = null;

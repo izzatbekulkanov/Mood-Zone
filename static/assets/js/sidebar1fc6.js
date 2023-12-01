@@ -53,12 +53,12 @@
         })
     }
     const sidebarToggleBtn = document.querySelectorAll('[data-toggle="sidebar"]')
-    const sidebar = document.querySelector('[data-toggle="main-sidebar"]')
+    const sidebar = document.querySelector('[data-toggle="main.html-sidebar"]')
     if (sidebar !== null) {
         const sidebarActiveItem = sidebar.querySelectorAll('.active')
         Array.from(sidebarActiveItem, (elem) => {
             elem.classList.add('active')
-            if (!elem.closest('ul').classList.contains('iq-main-menu')) {
+            if (!elem.closest('ul').classList.contains('iq-main.html-menu')) {
                 const childMenu = elem.closest('ul')
                 const parentMenu = childMenu.closest('li').querySelector('.nav-link')
                 parentMenu.classList.add('active')

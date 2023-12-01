@@ -10,6 +10,7 @@ urlpatterns = [
     path('landing-page/', include('landing_page.urls')),
     path('social/', include('social.urls')),
     path('mail/', include('mail.urls')),
+    path('ecommerce/', include('ecommerce.urls')),
 
 ]
 

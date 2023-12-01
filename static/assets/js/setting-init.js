@@ -14,7 +14,7 @@
     }
 
     document.addEventListener('sidebar_show', function (value) {
-        const sidebar = document.querySelector('[data-toggle="main-sidebar"]')
+        const sidebar = document.querySelector('[data-toggle="main.html-sidebar"]')
         if (value.detail.value.length > 0) {
             sidebar.classList.remove('sidebar')
         } else {
