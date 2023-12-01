@@ -125,6 +125,8 @@ def get_curriculum_data():
     curriculum = curriculum_data.get('data', {}).get('items', [])
 
     return curriculum
+
+
 def get_group_list_data():
     url = "https://student.namspi.uz/rest//v1/data/group-list?page=1&limit=200&id=&_department=&_curriculum=&_specialty=&_education_type=&_education_form="
     headers = {
@@ -138,6 +140,7 @@ def get_group_list_data():
     group_lists = group_list.get('data', {}).get('items', [])
 
     return group_lists
+
 
 def apiControlView(request):
     if request.method == 'POST':
@@ -167,13 +170,13 @@ def apiControlView(request):
 
     else:
         # Forma yuborilmagan bo'lsa
-        students = get_student_data(1, 100, 'gulnoza', '', '', '')
+        # students = get_student_data(1, 100, '', '', '')
         departments = get_department_data()
         curriculum_data = get_curriculum_data()
         group_lists = get_group_list_data()
 
         context = {
-            'students': students,
+            # 'students': students,
             'departments': departments,
             'curriculum_data': curriculum_data,
             'group_lists': group_lists,
@@ -181,8 +184,10 @@ def apiControlView(request):
 
         return render(request, 'dashboard/api-control.html', context)
 
+
 def apiCustomerView(request):
     return render(request, 'dashboard/api-customers.html')
+
 
 def apiUniversityView(request):
     return render(request, 'dashboard/api-university.html')
