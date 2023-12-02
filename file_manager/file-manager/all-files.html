@@ -1,0 +1,473 @@
+{% extends 'file-manager/dashboard/index.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid content-inner pb-0" id="page_layout">
+        <div class="border-bottom pb-3 d-flex align-items-center justify-content-between">
+            <h5>All-Files</h5>
+            <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">
+                <span class="d-flex justify-content-center ">
+                    <svg class="icon-22" width="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4"
+                              d="M16.191 2H7.81C4.77 2 3 3.78 3 6.83V17.16C3 20.26 4.77 22 7.81 22H16.191C19.28 22 21 20.26 21 17.16V6.83C21 3.78 19.28 2 16.191 2Z"
+                              fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M8.07996 6.6499V6.6599C7.64896 6.6599 7.29996 7.0099 7.29996 7.4399C7.29996 7.8699 7.64896 8.2199 8.07996 8.2199H11.069C11.5 8.2199 11.85 7.8699 11.85 7.4289C11.85 6.9999 11.5 6.6499 11.069 6.6499H8.07996ZM15.92 12.7399H8.07996C7.64896 12.7399 7.29996 12.3899 7.29996 11.9599C7.29996 11.5299 7.64896 11.1789 8.07996 11.1789H15.92C16.35 11.1789 16.7 11.5299 16.7 11.9599C16.7 12.3899 16.35 12.7399 15.92 12.7399ZM15.92 17.3099H8.07996C7.77996 17.3499 7.48996 17.1999 7.32996 16.9499C7.16996 16.6899 7.16996 16.3599 7.32996 16.1099C7.48996 15.8499 7.77996 15.7099 8.07996 15.7399H15.92C16.319 15.7799 16.62 16.1199 16.62 16.5299C16.62 16.9289 16.319 17.2699 15.92 17.3099Z"
+                              fill="currentColor"></path>
+                    </svg>
+                    <span class="ms-3 mb-0">Add Files</span>
+                </span>
+            </button>
+        </div>
+        <h4 class="py-3 mb-0">Documents</h4>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <a href="#" data-title="PDF" data-load-file="file" data-load-target="#resolte-contaniner"
+                           data-url="{% static 'assets/images/doc-files/demo.pdf' %}" data-bs-toggle="modal"
+                           data-bs-target="#file-documents">
+                            <div class="p-3 d-flex justify-content-center align-items-center iq-document rounded bg-body">
+                                <img src="{% static  'assets/images/pdf.svg' %}" class="img-fluid" alt="pdf.svg' %}"
+                                     loading="lazy">
+                            </div>
+                        </a>
+                        <div class="mt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="small mb-2">Created on Dec 13, 2020</p>
+                                <a href="#">5mb</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M16.191 2H7.81C4.77 2 3 3.78 3 6.83V17.16C3 20.26 4.77 22 7.81 22H16.191C19.28 22 21 20.26 21 17.16V6.83C21 3.78 19.28 2 16.191 2Z"
+                                          fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M8.07996 6.6499V6.6599C7.64896 6.6599 7.29996 7.0099 7.29996 7.4399C7.29996 7.8699 7.64896 8.2199 8.07996 8.2199H11.069C11.5 8.2199 11.85 7.8699 11.85 7.4289C11.85 6.9999 11.5 6.6499 11.069 6.6499H8.07996ZM15.92 12.7399H8.07996C7.64896 12.7399 7.29996 12.3899 7.29996 11.9599C7.29996 11.5299 7.64896 11.1789 8.07996 11.1789H15.92C16.35 11.1789 16.7 11.5299 16.7 11.9599C16.7 12.3899 16.35 12.7399 15.92 12.7399ZM15.92 17.3099H8.07996C7.77996 17.3499 7.48996 17.1999 7.32996 16.9499C7.16996 16.6899 7.16996 16.3599 7.32996 16.1099C7.48996 15.8499 7.77996 15.7099 8.07996 15.7399H15.92C16.319 15.7799 16.62 16.1199 16.62 16.5299C16.62 16.9289 16.319 17.2699 15.92 17.3099Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class=" mb-0 text-dark">Doc-123472578.pdf</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small>You opened <a href="javascript:void(0)">just now</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <a href="#" data-title="XLSX" data-load-file="file" data-load-target="#resolte-contaniner"
+                           data-url="{% static 'assets/images/doc-files/demo.xlsx" data-bs-toggle="modal"
+                           data-bs-target="#file-documents">
+                            <div class="p-3 d-flex justify-content-center align-items-center iq-document rounded bg-body">
+                                <img src="{% static  'assets/images/excel.svg' %}" class="img-fluid" alt="excel.svg' %}"
+                                     loading="lazy">
+                            </div>
+                        </a>
+                        <div class="mt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="small mb-2">Created on Dec 13, 2020</p>
+                                <a href="#">2mb</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M16.191 2H7.81C4.77 2 3 3.78 3 6.83V17.16C3 20.26 4.77 22 7.81 22H16.191C19.28 22 21 20.26 21 17.16V6.83C21 3.78 19.28 2 16.191 2Z"
+                                          fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M8.07996 6.6499V6.6599C7.64896 6.6599 7.29996 7.0099 7.29996 7.4399C7.29996 7.8699 7.64896 8.2199 8.07996 8.2199H11.069C11.5 8.2199 11.85 7.8699 11.85 7.4289C11.85 6.9999 11.5 6.6499 11.069 6.6499H8.07996ZM15.92 12.7399H8.07996C7.64896 12.7399 7.29996 12.3899 7.29996 11.9599C7.29996 11.5299 7.64896 11.1789 8.07996 11.1789H15.92C16.35 11.1789 16.7 11.5299 16.7 11.9599C16.7 12.3899 16.35 12.7399 15.92 12.7399ZM15.92 17.3099H8.07996C7.77996 17.3499 7.48996 17.1999 7.32996 16.9499C7.16996 16.6899 7.16996 16.3599 7.32996 16.1099C7.48996 15.8499 7.77996 15.7099 8.07996 15.7399H15.92C16.319 15.7799 16.62 16.1199 16.62 16.5299C16.62 16.9289 16.319 17.2699 15.92 17.3099Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class=" mb-0 text-dark">Doc-25783.xlsx</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small>You opened <a href="javascript:void(0)">2 days ago</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <a href="#" data-title="DOCX" data-load-file="file" data-load-target="#resolte-contaniner"
+                           data-url="{% static 'assets/images/doc-files/demo.docx" data-bs-toggle="modal"
+                           data-bs-target="#file-documents">
+                            <div class="p-3 d-flex justify-content-center align-items-center iq-document rounded bg-body">
+                                <img src="{% static  'assets/images/word.svg' %}" class="img-fluid" alt="word.svg' %}"
+                                     loading="lazy">
+                            </div>
+                        </a>
+                        <div class="mt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="small mb-2">Created on Dec 13, 2020</p>
+                                <a href="#">7mb</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M16.191 2H7.81C4.77 2 3 3.78 3 6.83V17.16C3 20.26 4.77 22 7.81 22H16.191C19.28 22 21 20.26 21 17.16V6.83C21 3.78 19.28 2 16.191 2Z"
+                                          fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M8.07996 6.6499V6.6599C7.64896 6.6599 7.29996 7.0099 7.29996 7.4399C7.29996 7.8699 7.64896 8.2199 8.07996 8.2199H11.069C11.5 8.2199 11.85 7.8699 11.85 7.4289C11.85 6.9999 11.5 6.6499 11.069 6.6499H8.07996ZM15.92 12.7399H8.07996C7.64896 12.7399 7.29996 12.3899 7.29996 11.9599C7.29996 11.5299 7.64896 11.1789 8.07996 11.1789H15.92C16.35 11.1789 16.7 11.5299 16.7 11.9599C16.7 12.3899 16.35 12.7399 15.92 12.7399ZM15.92 17.3099H8.07996C7.77996 17.3499 7.48996 17.1999 7.32996 16.9499C7.16996 16.6899 7.16996 16.3599 7.32996 16.1099C7.48996 15.8499 7.77996 15.7099 8.07996 15.7399H15.92C16.319 15.7799 16.62 16.1199 16.62 16.5299C16.62 16.9289 16.319 17.2699 15.92 17.3099Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class=" mb-0 text-dark">abc-25783.doc</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small>You opened <a href="javascript:void(0)">a month ago</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <a href="#" data-title="PPTX" data-load-file="file" data-load-target="#resolte-contaniner"
+                           data-url="{% static 'assets/images/doc-files/demo.pptx" data-bs-toggle="modal"
+                           data-bs-target="#file-documents">
+                            <div class="p-3 d-flex justify-content-center align-items-center iq-document rounded bg-body">
+                                <img src="{% static  'assets/images/ppt.svg' %}" class="img-fluid" alt="ppt.svg' %}"
+                                     loading="lazy">
+                            </div>
+                        </a>
+                        <div class="mt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="small mb-2">Created on Dec 13, 2020</p>
+                                <a href="#">12mb</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M16.191 2H7.81C4.77 2 3 3.78 3 6.83V17.16C3 20.26 4.77 22 7.81 22H16.191C19.28 22 21 20.26 21 17.16V6.83C21 3.78 19.28 2 16.191 2Z"
+                                          fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M8.07996 6.6499V6.6599C7.64896 6.6599 7.29996 7.0099 7.29996 7.4399C7.29996 7.8699 7.64896 8.2199 8.07996 8.2199H11.069C11.5 8.2199 11.85 7.8699 11.85 7.4289C11.85 6.9999 11.5 6.6499 11.069 6.6499H8.07996ZM15.92 12.7399H8.07996C7.64896 12.7399 7.29996 12.3899 7.29996 11.9599C7.29996 11.5299 7.64896 11.1789 8.07996 11.1789H15.92C16.35 11.1789 16.7 11.5299 16.7 11.9599C16.7 12.3899 16.35 12.7399 15.92 12.7399ZM15.92 17.3099H8.07996C7.77996 17.3499 7.48996 17.1999 7.32996 16.9499C7.16996 16.6899 7.16996 16.3599 7.32996 16.1099C7.48996 15.8499 7.77996 15.7099 8.07996 15.7399H15.92C16.319 15.7799 16.62 16.1199 16.62 16.5299C16.62 16.9289 16.319 17.2699 15.92 17.3099Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class=" mb-0 text-dark">xyz-25783.pptx</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small>You opened <a href="javascript:void(0)">2 days ago</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="my-3">Image</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <a data-fslightbox="gallery" href="{% static  'assets/images/5.png' %}">
+                            <img src="{% static  'assets/images/5.png' %}" class="img-fluid" alt="5.png' %}" loading="lazy">
+                        </a>
+                        <div class="mt-2">
+                            <p class="small mb-2">Created on Dec 13, 2020</p>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M16.3328 22H7.66618C4.2769 22 2 19.6229 2 16.0843V7.91672C2 4.37811 4.2769 2 7.66618 2H16.3338C19.7231 2 22 4.37811 22 7.91672V16.0843C22 19.6229 19.7231 22 16.3328 22Z"
+                                          fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M11.2451 8.67496C11.2451 10.045 10.1301 11.16 8.7601 11.16C7.3891 11.16 6.2751 10.045 6.2751 8.67496C6.2751 7.30496 7.3891 6.18896 8.7601 6.18896C10.1301 6.18896 11.2451 7.30496 11.2451 8.67496ZM19.4005 14.0876C19.6335 14.3136 19.8005 14.5716 19.9105 14.8466C20.2435 15.6786 20.0705 16.6786 19.7145 17.5026C19.2925 18.4836 18.4845 19.2246 17.4665 19.5486C17.0145 19.6936 16.5405 19.7556 16.0675 19.7556H7.6865C6.8525 19.7556 6.1145 19.5616 5.5095 19.1976C5.1305 18.9696 5.0635 18.4446 5.3445 18.1026C5.8145 17.5326 6.2785 16.9606 6.7465 16.3836C7.6385 15.2796 8.2395 14.9596 8.9075 15.2406C9.1785 15.3566 9.4505 15.5316 9.7305 15.7156C10.4765 16.2096 11.5135 16.8876 12.8795 16.1516C13.8132 15.641 14.3552 14.7673 14.827 14.0069L14.8365 13.9916C14.8682 13.9407 14.8997 13.8898 14.9311 13.8391C15.0915 13.5799 15.2495 13.3246 15.4285 13.0896C15.6505 12.7986 16.4745 11.8886 17.5395 12.5366C18.2185 12.9446 18.7895 13.4966 19.4005 14.0876Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class=" mb-0 text-dark">Gallery-1234725783.jpg</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small>You opened <a href="javascript:void(0)">just now</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <a data-fslightbox="gallery" href="{% static  'assets/images/6.png' %}">
+                            <img src="{% static  'assets/images/6.png' %}" class="img-fluid" alt="6.png' %}" loading="lazy">
+                        </a>
+                        <div class="mt-2">
+                            <p class="small mb-2">Created on Dec 13, 2020</p>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M16.3328 22H7.66618C4.2769 22 2 19.6229 2 16.0843V7.91672C2 4.37811 4.2769 2 7.66618 2H16.3338C19.7231 2 22 4.37811 22 7.91672V16.0843C22 19.6229 19.7231 22 16.3328 22Z"
+                                          fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M11.2451 8.67496C11.2451 10.045 10.1301 11.16 8.7601 11.16C7.3891 11.16 6.2751 10.045 6.2751 8.67496C6.2751 7.30496 7.3891 6.18896 8.7601 6.18896C10.1301 6.18896 11.2451 7.30496 11.2451 8.67496ZM19.4005 14.0876C19.6335 14.3136 19.8005 14.5716 19.9105 14.8466C20.2435 15.6786 20.0705 16.6786 19.7145 17.5026C19.2925 18.4836 18.4845 19.2246 17.4665 19.5486C17.0145 19.6936 16.5405 19.7556 16.0675 19.7556H7.6865C6.8525 19.7556 6.1145 19.5616 5.5095 19.1976C5.1305 18.9696 5.0635 18.4446 5.3445 18.1026C5.8145 17.5326 6.2785 16.9606 6.7465 16.3836C7.6385 15.2796 8.2395 14.9596 8.9075 15.2406C9.1785 15.3566 9.4505 15.5316 9.7305 15.7156C10.4765 16.2096 11.5135 16.8876 12.8795 16.1516C13.8132 15.641 14.3552 14.7673 14.827 14.0069L14.8365 13.9916C14.8682 13.9407 14.8997 13.8898 14.9311 13.8391C15.0915 13.5799 15.2495 13.3246 15.4285 13.0896C15.6505 12.7986 16.4745 11.8886 17.5395 12.5366C18.2185 12.9446 18.7895 13.4966 19.4005 14.0876Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class=" mb-0 text-dark">Gallery-25783.jpg</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small>You opened <a href="javascript:void(0)">2 day ago</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <a data-fslightbox="gallery" href="{% static  'assets/images/7.png' %}">
+                            <img src="{% static  'assets/images/7.png' %}" class="img-fluid" alt="7.png' %}" loading="lazy">
+                        </a>
+                        <div class="mt-2">
+                            <p class="small mb-2">Created on Dec 13, 2020</p>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M16.3328 22H7.66618C4.2769 22 2 19.6229 2 16.0843V7.91672C2 4.37811 4.2769 2 7.66618 2H16.3338C19.7231 2 22 4.37811 22 7.91672V16.0843C22 19.6229 19.7231 22 16.3328 22Z"
+                                          fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M11.2451 8.67496C11.2451 10.045 10.1301 11.16 8.7601 11.16C7.3891 11.16 6.2751 10.045 6.2751 8.67496C6.2751 7.30496 7.3891 6.18896 8.7601 6.18896C10.1301 6.18896 11.2451 7.30496 11.2451 8.67496ZM19.4005 14.0876C19.6335 14.3136 19.8005 14.5716 19.9105 14.8466C20.2435 15.6786 20.0705 16.6786 19.7145 17.5026C19.2925 18.4836 18.4845 19.2246 17.4665 19.5486C17.0145 19.6936 16.5405 19.7556 16.0675 19.7556H7.6865C6.8525 19.7556 6.1145 19.5616 5.5095 19.1976C5.1305 18.9696 5.0635 18.4446 5.3445 18.1026C5.8145 17.5326 6.2785 16.9606 6.7465 16.3836C7.6385 15.2796 8.2395 14.9596 8.9075 15.2406C9.1785 15.3566 9.4505 15.5316 9.7305 15.7156C10.4765 16.2096 11.5135 16.8876 12.8795 16.1516C13.8132 15.641 14.3552 14.7673 14.827 14.0069L14.8365 13.9916C14.8682 13.9407 14.8997 13.8898 14.9311 13.8391C15.0915 13.5799 15.2495 13.3246 15.4285 13.0896C15.6505 12.7986 16.4745 11.8886 17.5395 12.5366C18.2185 12.9446 18.7895 13.4966 19.4005 14.0876Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class=" mb-0 text-dark">Gallery-49895383.jpg</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small>You opened <a href="javascript:void(0)">a month ago</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <a data-fslightbox="gallery" href="{% static  'assets/images/8.png' %}">
+                            <img src="{% static  'assets/images/8.png' %}" class="img-fluid" alt="8.png' %}" loading="lazy">
+                        </a>
+                        <div class="mt-2">
+                            <p class="small mb-2">Created on Dec 13, 2020</p>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M16.3328 22H7.66618C4.2769 22 2 19.6229 2 16.0843V7.91672C2 4.37811 4.2769 2 7.66618 2H16.3338C19.7231 2 22 4.37811 22 7.91672V16.0843C22 19.6229 19.7231 22 16.3328 22Z"
+                                          fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M11.2451 8.67496C11.2451 10.045 10.1301 11.16 8.7601 11.16C7.3891 11.16 6.2751 10.045 6.2751 8.67496C6.2751 7.30496 7.3891 6.18896 8.7601 6.18896C10.1301 6.18896 11.2451 7.30496 11.2451 8.67496ZM19.4005 14.0876C19.6335 14.3136 19.8005 14.5716 19.9105 14.8466C20.2435 15.6786 20.0705 16.6786 19.7145 17.5026C19.2925 18.4836 18.4845 19.2246 17.4665 19.5486C17.0145 19.6936 16.5405 19.7556 16.0675 19.7556H7.6865C6.8525 19.7556 6.1145 19.5616 5.5095 19.1976C5.1305 18.9696 5.0635 18.4446 5.3445 18.1026C5.8145 17.5326 6.2785 16.9606 6.7465 16.3836C7.6385 15.2796 8.2395 14.9596 8.9075 15.2406C9.1785 15.3566 9.4505 15.5316 9.7305 15.7156C10.4765 16.2096 11.5135 16.8876 12.8795 16.1516C13.8132 15.641 14.3552 14.7673 14.827 14.0069L14.8365 13.9916C14.8682 13.9407 14.8997 13.8898 14.9311 13.8391C15.0915 13.5799 15.2495 13.3246 15.4285 13.0896C15.6505 12.7986 16.4745 11.8886 17.5395 12.5366C18.2185 12.9446 18.7895 13.4966 19.4005 14.0876Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class=" mb-0 text-dark">Gallery-4509853.jpg</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small>You opened <a href="javascript:void(0)">2 day ago</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="my-3">Videos</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <div class="position-relative iq-video-hover">
+                            <a data-fslightbox="html5-video" href="../assets/images/pro/plugins/video-2.mp4">
+                                <img src="{% static  'assets/images/5.png' %}" class="img-fluid" alt="file-manager"
+                                     loading="lazy">
+                                <div class="iq-btn-video btn btn-white text-primary rounded-pill btn-icon position-absolute">
+                                    <span class="text-white">
+                                        <svg class="icon-30" width="30" viewBox="0 0 44 44" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.8817 9.20912C14.5492 8.3891 12.8335 9.3478 12.8335 10.9124V33.0875C12.8335 34.6522 14.5492 35.6109 15.8817 34.7908L33.8989 23.7033C35.168 22.9223 35.168 21.0776 33.8989 20.2967L15.8817 9.20912Z"
+                                                  fill="currentColor">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <p class="small mb-2 text-muted">Created on Dec 13, 2020</p>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M21.3309 7.44251C20.9119 7.17855 20.3969 7.1552 19.9579 7.37855L18.4759 8.12677C17.9279 8.40291 17.5879 8.96129 17.5879 9.58261V15.4161C17.5879 16.0374 17.9279 16.5948 18.4759 16.873L19.9569 17.6202C20.1579 17.7237 20.3729 17.7735 20.5879 17.7735C20.8459 17.7735 21.1019 17.7004 21.3309 17.5572C21.7499 17.2943 21.9999 16.8384 21.9999 16.339V8.66179C21.9999 8.1623 21.7499 7.70646 21.3309 7.44251Z"
+                                          fill="currentColor"></path>
+                                    <path d="M11.9051 20H6.11304C3.69102 20 2 18.3299 2 15.9391V9.06091C2 6.66904 3.69102 5 6.11304 5H11.9051C14.3271 5 16.0181 6.66904 16.0181 9.06091V15.9391C16.0181 18.3299 14.3271 20 11.9051 20Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class="mb-0 text-dark">Video-1234725783.mp4</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">You opened <a href="javascript:void(0)">just now</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <div class="position-relative iq-video-hover">
+                            <a data-fslightbox="html5-video" href="../assets/images/pro/plugins/video-2.mp4">
+                                <img src="{% static  'assets/images/6.png' %}" class="img-fluid" alt="file-manager"
+                                     loading="lazy">
+                                <div class="iq-btn-video btn btn-white text-primary rounded-pill btn-icon position-absolute">
+                                    <span class="text-white">
+                                        <svg class="icon-30" width="30" viewBox="0 0 44 44" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.8817 9.20912C14.5492 8.3891 12.8335 9.3478 12.8335 10.9124V33.0875C12.8335 34.6522 14.5492 35.6109 15.8817 34.7908L33.8989 23.7033C35.168 22.9223 35.168 21.0776 33.8989 20.2967L15.8817 9.20912Z"
+                                                  fill="currentColor">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <p class="small mb-2 text-muted">Created on Dec 13, 2020</p>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M21.3309 7.44251C20.9119 7.17855 20.3969 7.1552 19.9579 7.37855L18.4759 8.12677C17.9279 8.40291 17.5879 8.96129 17.5879 9.58261V15.4161C17.5879 16.0374 17.9279 16.5948 18.4759 16.873L19.9569 17.6202C20.1579 17.7237 20.3729 17.7735 20.5879 17.7735C20.8459 17.7735 21.1019 17.7004 21.3309 17.5572C21.7499 17.2943 21.9999 16.8384 21.9999 16.339V8.66179C21.9999 8.1623 21.7499 7.70646 21.3309 7.44251Z"
+                                          fill="currentColor"></path>
+                                    <path d="M11.9051 20H6.11304C3.69102 20 2 18.3299 2 15.9391V9.06091C2 6.66904 3.69102 5 6.11304 5H11.9051C14.3271 5 16.0181 6.66904 16.0181 9.06091V15.9391C16.0181 18.3299 14.3271 20 11.9051 20Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class="mb-0 text-dark">Video-25783.mkv</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">You opened <a href="javascript:void(0)">2 day ago</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <div class="position-relative iq-video-hover">
+                            <a data-fslightbox="html5-video" href="../assets/images/pro/plugins/video-2.mp4">
+                                <img src="{% static  'assets/images/7.png' %}" class="img-fluid" alt="file-manager"
+                                     loading="lazy">
+                                <div class="iq-btn-video btn btn-white text-primary rounded-pill btn-icon position-absolute">
+                                    <span class="text-white">
+                                        <svg class="icon-30" width="30" viewBox="0 0 44 44" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.8817 9.20912C14.5492 8.3891 12.8335 9.3478 12.8335 10.9124V33.0875C12.8335 34.6522 14.5492 35.6109 15.8817 34.7908L33.8989 23.7033C35.168 22.9223 35.168 21.0776 33.8989 20.2967L15.8817 9.20912Z"
+                                                  fill="currentColor">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <p class="small mb-2 text-muted">Created on Dec 13, 2020</p>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M21.3309 7.44251C20.9119 7.17855 20.3969 7.1552 19.9579 7.37855L18.4759 8.12677C17.9279 8.40291 17.5879 8.96129 17.5879 9.58261V15.4161C17.5879 16.0374 17.9279 16.5948 18.4759 16.873L19.9569 17.6202C20.1579 17.7237 20.3729 17.7735 20.5879 17.7735C20.8459 17.7735 21.1019 17.7004 21.3309 17.5572C21.7499 17.2943 21.9999 16.8384 21.9999 16.339V8.66179C21.9999 8.1623 21.7499 7.70646 21.3309 7.44251Z"
+                                          fill="currentColor"></path>
+                                    <path d="M11.9051 20H6.11304C3.69102 20 2 18.3299 2 15.9391V9.06091C2 6.66904 3.69102 5 6.11304 5H11.9051C14.3271 5 16.0181 6.66904 16.0181 9.06091V15.9391C16.0181 18.3299 14.3271 20 11.9051 20Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class="mb-0 text-dark">Video-25783.mkv</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">You opened <a href="javascript:void(0)">a month
+                                    ago</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card iq-file-manager">
+                    <div class="card-body card-thumbnail">
+                        <div class="position-relative iq-video-hover">
+                            <a data-fslightbox="html5-video" href="../assets/images/pro/plugins/video-2.mp4">
+                                <img src="{% static  'assets/images/8.png' %}" class="img-fluid" alt="file-manager"
+                                     loading="lazy">
+                                <div class="iq-btn-video btn btn-white text-primary rounded-pill btn-icon position-absolute">
+                                    <span class="text-white">
+                                        <svg class="icon-30" width="30" viewBox="0 0 44 44" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.8817 9.20912C14.5492 8.3891 12.8335 9.3478 12.8335 10.9124V33.0875C12.8335 34.6522 14.5492 35.6109 15.8817 34.7908L33.8989 23.7033C35.168 22.9223 35.168 21.0776 33.8989 20.2967L15.8817 9.20912Z"
+                                                  fill="currentColor">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <p class="small mb-2 text-muted">Created on Dec 13, 2020</p>
+                            <div class="d-flex align-items-center mb-2 text-primary gap-2">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M21.3309 7.44251C20.9119 7.17855 20.3969 7.1552 19.9579 7.37855L18.4759 8.12677C17.9279 8.40291 17.5879 8.96129 17.5879 9.58261V15.4161C17.5879 16.0374 17.9279 16.5948 18.4759 16.873L19.9569 17.6202C20.1579 17.7237 20.3729 17.7735 20.5879 17.7735C20.8459 17.7735 21.1019 17.7004 21.3309 17.5572C21.7499 17.2943 21.9999 16.8384 21.9999 16.339V8.66179C21.9999 8.1623 21.7499 7.70646 21.3309 7.44251Z"
+                                          fill="currentColor"></path>
+                                    <path d="M11.9051 20H6.11304C3.69102 20 2 18.3299 2 15.9391V9.06091C2 6.66904 3.69102 5 6.11304 5H11.9051C14.3271 5 16.0181 6.66904 16.0181 9.06091V15.9391C16.0181 18.3299 14.3271 20 11.9051 20Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                                <p class="mb-0 text-dark">Video-25783.mkv</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">You opened <a href="javascript:void(0)">2 day ago</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="file-documents" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-end">
+                        <div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div id="resolte-contaniner" style="height: 500px; overflow: auto;">
+                            File not found
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <div id="drag-drop-area">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

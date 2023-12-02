@@ -27,58 +27,16 @@ def inboxView(request):
 
 
 def iconSolidView(request):
-    return render(request, 'dashboard/icons/solid.html')
+    return render(request, 'icons/solid.html')
 
 
 def iconOutlineView(request):
-    return render(request, 'dashboard/icons/outline.html')
+    return render(request, 'icons/outline.html')
 
 
 def iconDualToneView(request):
-    return render(request, 'dashboard/icons/dual-tone.html')
+    return render(request, 'icons/dual-tone.html')
 
-
-# def apiControlView(request):
-#     page = request.GET.get('page', 500)
-#     limit = request.GET.get('limit', 200)
-#     search = request.GET.get('search', '')
-#     passport_pin = request.GET.get('passport_pin', '')
-#     passport_number = request.GET.get('passport_number', '')
-#     url = f"https://student.namspi.uz/rest//v1/data/student-list?page={page}&limit={limit}&search={search}&passport_pin={passport_pin}&passport_number={passport_number}"
-#     headers = {
-#         'Accept': 'application/json',
-#         'Authorization': 'Bearer Tw3PCq8R5KtdP6xlohOjVMzqf7_qHU-k',
-#         'Cookie': 'PHPSESSID=nosq3cop5vpf0dtth3t57qhin4; _csrf=PzHVjYMd84bGQmwoAvSiQszKwHdcGhG0'
-#     }
-#
-#     response = requests.get(url, headers=headers)
-#     data = response.json()
-#     for student in data.get('data', {}).get('items', []):
-#         timestamp = student.get('birth_date', 0)
-#         student['birth_date'] = datetime.utcfromtimestamp(timestamp).strftime('%d.%m.%Y')
-#
-#     student_data = data.get('data', {}).get('items', [])
-#         # if data.get('data', {}).get('items', []) else None
-#
-#     # Topilgan ma'lumotlarni tekshirish
-#     # if not student_data and bool(search) or bool(passport_number) or bool(passport_pin):
-#     #     # Ma'lumot topilmagan holatda foydalanuvchiga xabar berish
-#     #     from django.contrib import messages
-#     #     messages.warning(request, "Ma'lumot topilmadi")
-#
-#     context = {
-#         'student': student_data,
-#         # 'searched': bool(student_data) and bool(search) or bool(passport_number) or bool(passport_pin),
-#     }
-#
-#     # if response.status_code == 200:
-#     #     # JSON ma'lumotlarni olish
-#     #     users = response.json().get('data', [])
-#     return render(request, 'dashboard/api-control.html', context)
-#     # else:
-#     #     # Xatolik sodir bo'lganda
-#     #     error_message = f"Xatolik: {response.status_code}"
-#     #     return render(request, 'dashboard/api-control.html', {'error_message': error_message})
 
 def get_student_data(page, limit, search, passport_pin, passport_number, fakultet, curriculum, group_list, gender):
     url = f"https://student.namspi.uz/rest//v1/data/student-list?page={page}&limit={limit}&_education_form=&_education_type=&_payment_form=&_department={curriculum}&_group={group_list}&_specialty=&_level=&_semester=&_province=&_district=&_gender={gender}&_citizenship=&_student_status=&search={search}&passport_pin={passport_pin}&passport_number={passport_number}"
@@ -166,7 +124,7 @@ def apiControlView(request):
             'group_lists': group_lists,
         }
 
-        return render(request, 'dashboard/api-control.html', context)
+        return render(request, 'api-control/api-control.html', context)
 
     else:
         # Forma yuborilmagan bo'lsa
@@ -186,11 +144,11 @@ def apiControlView(request):
         #     #     # Ma'lumot topilmagan holatda foydalanuvchiga xabar berish
         #     #     from django.contrib import messages
         #     #     messages.warning(request, "Ma'lumot topilmadi")
-        return render(request, 'dashboard/api-control.html', context)
+        return render(request, 'api-control/api-control.html', context)
 
 
 def apiCustomerView(request):
-    return render(request, 'dashboard/api-customers.html')
+    return render(request, 'api-control/api-customers.html')
 
 
 def apiUniversityView(request):
@@ -217,4 +175,4 @@ def apiUniversityView(request):
         'university': schools,
     }
 
-    return render(request, 'dashboard/api-university.html', context)
+    return render(request, 'api-control/api-university.html', context)

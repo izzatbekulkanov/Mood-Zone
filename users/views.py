@@ -17,25 +17,25 @@ def usersListView(request):
     context = {
         'users': users
     }
-    return render(request, 'dashboard/app/user-list.html', context)
+    return render(request, 'app/user-list.html', context)
 def usersAddView(request):
     users = CustomUser.objects.all()
     context = {
         'users': users
     }
-    return render(request, 'dashboard/app/user-add.html', context)
+    return render(request, 'app/user-add.html', context)
 def usersPrivacyView(request):
     users = CustomUser.objects.all()
     context = {
         'users': users
     }
-    return render(request, 'dashboard/app/user-privacy-setting.html', context)
+    return render(request, 'app/user-privacy-setting.html', context)
 def usersProfileView(request):
     users = CustomUser.objects.all()
     context = {
         'users': users
     }
-    return render(request, 'dashboard/app/user-profile.html', context)
+    return render(request, 'app/user-profile.html', context)
 
 def signInVIew(request):
     if request.method == 'POST':
@@ -52,7 +52,7 @@ def signInVIew(request):
             print("muvaffaqiyatsiz")
             messages.error(request, 'Invalid email or password.')
 
-    return render(request, 'dashboard/auth-pro/sign-in.html')  # Change 'your_app' to your app name
+    return render(request, 'auth-pro/sign-in.html')  # Change 'your_app' to your app name
 
 
 def user_logout(request):
@@ -87,7 +87,7 @@ def signUpView(request, *args, **kwargs):
                 form.add_error('password1', e)
                 context['registration_form'] = form
                 messages.error(request, 'There was an error with your submission. Please correct the errors below.')
-                return render(request, 'dashboard/auth-pro/sign-up.html', context)
+                return render(request, 'auth-pro/sign-up.html', context)
 
             account = authenticate(email=email, password=raw_password, first_name=first_name, last_name=last_name, username=username)
             destination = kwargs.get("next")
@@ -103,7 +103,7 @@ def signUpView(request, *args, **kwargs):
         form = RegistrationForm()
         context['registration_form'] = form
 
-    return render(request, 'dashboard/auth-pro/sign-up.html', context)
+    return render(request, 'auth-pro/sign-up.html', context)
 
 
 @login_required(login_url='sign_in')
@@ -121,12 +121,12 @@ def lockScreenView(request):
         messages.error(request, 'Invalid password. Please try again.')
         print("Invalid password. Please try again.'")
 
-    return render(request, 'dashboard/auth-pro/lock-screen.html')  # O'zgartirilishi mumkin
+    return render(request, 'auth-pro/lock-screen.html')  # O'zgartirilishi mumkin
 
 def resetPasswordView(request):
     users = CustomUser.objects.all()
     context = {
         'users': users
     }
-    return render(request, 'dashboard/auth-pro/reset-password.html', context)
+    return render(request, 'auth-pro/reset-password.html', context)
 

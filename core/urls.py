@@ -11,6 +11,10 @@ urlpatterns = [
     path('social/', include('social.urls')),
     path('mail/', include('mail.urls')),
     path('ecommerce/', include('ecommerce.urls')),
+    path('appointment/', include('appointment.urls')),
+    path('blog/', include('blog.urls')),
+    path('file-manager/', include('file_manager.urls')),
+    path('chat/', include('chat.urls')),
 
 ]
 

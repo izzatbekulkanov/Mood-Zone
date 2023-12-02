@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+{% load static %}
+
+<!-- Mirrored from templates.iqonic.design/hope-ui/pro/html/mail/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Nov 2023 09:29:12 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title data-setting="app_name" data-rightJoin=" Pro Mail | Responsive Bootstrap 5 Admin Dashboard Template">Hope UI
+        Pro Mail | Responsive Bootstrap 5 Admin Dashboard Template</title>
+    <meta name="description"
+          content="Hope UI Pro is a revolutionary Bootstrap Admin Dashboard Template and UI Components Library. The Admin Dashboard Template and UI Component features 8 modules.">
+    <meta name="keywords"
+          content="premium, admin, dashboard, template, bootstrap 5, clean ui, hope ui, admin dashboard,responsive dashboard, optimized dashboard, Mail template">
+    <meta name="author" content="Iqonic Design">
+    <meta name="DC.title" content="Hope UI Pro Mail | Responsive Bootstrap 5 Admin Dashboard Template">
+    <link rel="stylesheet" href="{% static 'assets/css/mail.min.css' %}"/>      <!-- Google Font Api KEY-->
+    <meta name="google_font_api" content="AIzaSyBG58yNdAjc20_8jAvLNSVi9E4Xhwjau_k">
+    <!-- Config Options -->
+    <meta name="setting_options"
+          content='{&quot;saveLocal&quot;:&quot;sessionStorage&quot;,&quot;storeKey&quot;:&quot;huisetting-html&quot;,&quot;setting&quot;:{&quot;app_name&quot;:{&quot;value&quot;:&quot;Hope UI&quot;},&quot;theme_scheme_direction&quot;:{&quot;value&quot;:&quot;ltr&quot;},&quot;theme_scheme&quot;:{&quot;value&quot;:&quot;light&quot;},&quot;theme_style_appearance&quot;:{&quot;value&quot;:[&quot;theme-default&quot;]},&quot;theme_color&quot;:{&quot;colors&quot;:{&quot;--{{ prefix }}primary&quot;:&quot;#3a57e8&quot;,&quot;--{{ prefix }}info&quot;:&quot;#08B1BA&quot;},&quot;value&quot;:&quot;theme-color-default&quot;},&quot;theme_transition&quot;:{&quot;value&quot;:&quot;theme-with-animation&quot;},&quot;theme_font_size&quot;:{&quot;value&quot;:&quot;theme-fs-md&quot;},&quot;page_layout&quot;:{&quot;value&quot;:&quot;container-fluid&quot;},&quot;header_navbar&quot;:{&quot;value&quot;:&quot;default&quot;},&quot;header_banner&quot;:{&quot;value&quot;:&quot;default&quot;},&quot;sidebar_color&quot;:{&quot;value&quot;:&quot;sidebar-white&quot;},&quot;card_color&quot;:{&quot;value&quot;:&quot;card-default&quot;},&quot;sidebar_type&quot;:{&quot;value&quot;:[]},&quot;sidebar_menu_style&quot;:{&quot;value&quot;:&quot;left-bordered&quot;},&quot;footer&quot;:{&quot;value&quot;:&quot;default&quot;},&quot;body_font_family&quot;:{&quot;value&quot;:null},&quot;heading_font_family&quot;:{&quot;value&quot;:null}}}'>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+    <!-- Library / Plugin Css Build -->
+    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
+    <!-- Choisejs css -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/choiceJS/style/choices.min.css' %}">
+    <!-- Hope Ui Design System Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+    <!-- Dark Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+    <!-- Customizer Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+    <!-- RTL Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+          rel="stylesheet">
+</head>
+<body class="">
+<!-- loader Start -->
+{% include 'mail/dashboard/loader.html' %}
+<!-- loader END -->
+
+{% include 'mail/dashboard/sidebar.html' %}
+<main class="main-content">
+    {% include 'mail/dashboard/navbar.html' %}
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- Footer Section Start -->
+    {% include 'mail/dashboard/footer.html' %}
+    <!-- Footer Section End -->
+</main>
+<!-- Wrapper End-->
+<!-- landing page start -->
+{% include 'mail/dashboard/landing-page.html' %}
+<!-- landing page end -->
+<!-- Live Customizer start -->
+<!-- Setting offcanvas start here -->
+{% include 'mail/dashboard/offcanvas.html' %}
+<!-- Settings sidebar end here -->
+{% include 'mail/dashboard/setting-sidebar.html' %}
+{% include 'mail/dashboard/download-button.html' %}
+<!-- Live Customizer end -->
+<!-- Modal -->
+{% include 'mail/dashboard/modal.html' %}
+<!-- Library Bundle Script -->
+<script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+<!-- Plugin Scripts -->
+<!-- Slider-tab Script -->
+<script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+<!-- Choisejs Script -->
+<script src="{% static 'assets/vendor/choiceJS/script/choices.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/choice.js' %}" defer></script>
+<!-- Lodash Utility -->
+<script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+<!-- Utilities Functions -->
+<script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+<!-- Settings Script -->
+<script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+<!-- Settings Init Script -->
+<script src="{% static 'assets/js/setting-init.js' %}"></script>
+<!-- External Library Bundle Script -->
+<script src="{% static 'assets/js/core/external.min.js' %}"></script>
+<!-- Widgetchart Script -->
+<script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+<!-- Dashboard Script -->
+<script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+<!-- Hopeui Script -->
+<script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/email.js' %}"></script>
+</body>
+
+</html>

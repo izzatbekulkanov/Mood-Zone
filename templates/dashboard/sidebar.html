@@ -6,21 +6,18 @@
                     <!--Logo start-->
                     <div class="logo-main">
                         <div class="logo-normal">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 64 64">
-                            <path fill="#c4a2fc" d="M43.99839,48.99826a7.011,7.011,0,0,0-6.92871,6H50.9271A7.011,7.011,0,0,0,43.99839,48.99826Z"></path><path fill="#c4a2fc" d="M60.055,54.15841a19.04937,19.04937,0,1,0-7.55811,6.82618l9.292,1.99121A1.001,1.001,0,0,0,62.932,61.63888Zm-8.05664,2.83985h-16a.99974.99974,0,0,1-1-1,9,9,0,0,1,18,0A.99974.99974,0,0,1,51.99839,56.99826Z"></path><path fill="#151a6a" d="M27.00366,1A23.99928,23.99928,0,0,0,6.86157,38.04883L1.10912,49.55273a1.00153,1.00153,0,0,0,1.3418,1.3418l11.50391-5.752A24,24,0,1,0,27.00366,1Zm0,46a21.88288,21.88288,0,0,1-12.41211-3.83691,1.00133,1.00133,0,0,0-1.01221-.06934L4.24,47.76367l4.66993-9.33984a1.001,1.001,0,0,0-.06934-1.0127A21.99881,21.99881,0,1,1,27.00366,47Z"></path><path fill="#151a6a" d="M40.00366,30h-26a1,1,0,0,0-1,1,14,14,0,0,0,28,0A1.00005,1.00005,0,0,0,40.00366,30Zm-13,13a12.01661,12.01661,0,0,1-11.9585-11h23.917A12.01661,12.01661,0,0,1,27.00366,43Z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                            <path fill="#6fabe6" d="M43.69,16a11.31,11.31,0,0,0-16,0L24,19.69,20.31,16a11.31,11.31,0,1,0,0,16L24,28.31,27.69,32a11.31,11.31,0,0,0,16-16ZM16.78,28.46a6.31,6.31,0,1,1,0-8.92L21.24,24Zm23.37,0a6.32,6.32,0,0,1-8.93,0L26.76,24l4.46-4.46a6.31,6.31,0,1,1,8.93,8.92Z"></path><path fill="#82bcf4" d="M27.69,16,24,19.69,20.31,16A11.32,11.32,0,0,0,1.1,22.5,11.32,11.32,0,0,0,20.31,29L24,25.31,27.69,29A11.32,11.32,0,0,0,46.9,22.5,11.32,11.32,0,0,0,27.69,16ZM16.78,28.46c-4.58,4.62-12.2,0-10.59-6a6.29,6.29,0,0,1,6.12-4.81c3.21,0,4.17,1.55,8.93,6.31Zm23.37,0a6.32,6.32,0,0,1-8.93,0L26.76,24c4.26-4.26,5.59-6.31,8.93-6.31A6.32,6.32,0,0,1,40.15,28.46Z"></path>
                             </svg>
                         </div>
                         <div class="logo-mini">
-                            <svg class=" icon-30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="-0.757324" y="19.2427" width="28" height="4" rx="2" transform="rotate(-45 -0.757324 19.2427)" fill="currentColor"/>
-                                <rect x="7.72803" y="27.728" width="28" height="4" rx="2" transform="rotate(-45 7.72803 27.728)" fill="currentColor"/>
-                                <rect x="10.5366" y="16.3945" width="16" height="4" rx="2" transform="rotate(45 10.5366 16.3945)" fill="currentColor"/>
-                                <rect x="10.5562" y="-0.556152" width="28" height="4" rx="2" transform="rotate(45 10.5562 -0.556152)" fill="currentColor"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                            <path d="M43.69,16a11.31,11.31,0,0,0-16,0L24,19.69,20.31,16a11.31,11.31,0,1,0,0,16L24,28.31,27.69,32a11.31,11.31,0,0,0,16-16ZM16.78,28.46a6.31,6.31,0,1,1,0-8.92L21.24,24Zm23.37,0a6.32,6.32,0,0,1-8.93,0L26.76,24l4.46-4.46a6.31,6.31,0,1,1,8.93,8.92Z"></path>
                             </svg>
                         </div>
                     </div>
                     <!--logo End-->
-                    <h4 class="logo-title" data-setting="app_name">Hope UI</h4>
+                    <h4 class="logo-title" data-setting="app_name">MoodZone</h4>
                 </a>
                 <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
                     <i class="icon">
@@ -1010,7 +1007,7 @@
                             <ul class="sub-nav collapse" id="blog" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../blog/index.html">
+                                        href="{% url 'blog:dashboard' %}">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1206,7 +1203,7 @@
                             <ul class="sub-nav collapse" id="appointment" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../appointment/index.html">
+                                        href="{% url 'appointment:dashboard' %}">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1297,7 +1294,7 @@
                             <ul class="sub-nav collapse" id="file-manager" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../file-manager/index.html">
+                                        href="{% url 'file_manager:dashboard' %}">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1316,7 +1313,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../file-manager/image-folder.html">
+                                        href="../../file_manager/file-manager/image-folder.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1337,7 +1334,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../file-manager/video-folder.html">
+                                        href="../../file_manager/file-manager/video-folder.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1355,7 +1352,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../file-manager/document-folder.html">
+                                        href="../../file_manager/file-manager/document-folder.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1377,7 +1374,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " aria-current="page"
-                                        href="../file-manager/all-files.html">
+                                        href="../../file_manager/file-manager/all-files.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1399,7 +1396,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " aria-current="page"
-                                        href="../file-manager/trash.html">
+                                        href="../../file_manager/file-manager/trash.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1419,7 +1416,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page"
-                                href="../chat/index.html" target="_blank">
+                                href="{% url 'chat:dashboard' %}" target="_blank">
                                 <i class="icon" data-bs-toggle="tooltip" title="Chat" data-bs-placement="right">
                                     <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -1458,7 +1455,7 @@
                             </a>
                             <ul class="sub-nav collapse" id="mail" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="../mail/index.html">
+                                    <a class="nav-link " href="{% url 'mail:dashboard' %}">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1476,7 +1473,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../mail/email-compose.html">
+                                        href="{% url 'mail:emailCompose' %}">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1532,7 +1529,7 @@
                             <ul class="sub-nav collapse" id="sidebar-special" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="special-pages/billing.html">
+                                        href="../special-pages/billing.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1548,7 +1545,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="special-pages/calender.html">
+                                        href="../special-pages/calender.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1564,7 +1561,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="special-pages/kanban.html">
+                                        href="../special-pages/kanban.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1579,7 +1576,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="special-pages/pricing.html">
+                                        href="../special-pages/pricing.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1595,7 +1592,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="special-pages/timeline.html">
+                                        href="../special-pages/timeline.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1761,7 +1758,7 @@
                                     </a>
                                     <ul class="sub-nav collapse" id="sidebar-auth2" data-bs-parent="#sidebar-auth">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="auth-pro/sign-in.html">
+                                            <a class="nav-link" href="../auth-pro/sign-in.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1776,7 +1773,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="auth-pro/sign-up.html">
+                                            <a class="nav-link" href="../auth-pro/sign-up.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1791,7 +1788,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="auth-pro/email.html">
+                                            <a class="nav-link" href="../auth-pro/email.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1806,7 +1803,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="auth-pro/lock-screen.html">
+                                            <a class="nav-link" href="../auth-pro/lock-screen.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1821,7 +1818,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="auth-pro/reset-password.html">
+                                            <a class="nav-link" href="../auth-pro/reset-password.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1836,7 +1833,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="auth-pro/two-factor.html">
+                                            <a class="nav-link" href="../auth-pro/two-factor.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1851,7 +1848,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="auth-pro/account-deactivate.html">
+                                            <a class="nav-link" href="../auth-pro/account-deactivate.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1983,7 +1980,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == '/users/ /' %}active{% endif %}" data-bs-toggle="collapse" href="#sidebar-user" role="button" aria-expanded="false"
+                            <a class="nav-link {% if request.path|slice:":7" == '/users/' %}active{% endif %}" data-bs-toggle="collapse" href="#sidebar-user" role="button" aria-expanded="false"
                                 aria-controls="sidebar-user">
                                 <i class="icon" data-bs-toggle="tooltip" title="Users" data-bs-placement="right">
                                     <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2107,7 +2104,7 @@
                             <ul class="sub-nav collapse" id="utilities-error" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="errors/error404.html">
+                                        href="../errors/error404.html">
                                         <i class="icon" data-bs-toggle="tooltip" title="Error 404" data-bs-placement="right">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2121,7 +2118,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="errors/error500.html">
+                                        href="../errors/error500.html">
                                         <i class="icon" data-bs-toggle="tooltip" title="Error 500" data-bs-placement="right">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2135,7 +2132,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="errors/maintenance.html">
+                                        href="../errors/maintenance.html">
                                         <i class="icon" data-bs-toggle="tooltip" title="Maintenance" data-bs-placement="right">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2173,7 +2170,7 @@
                             <ul class="sub-nav collapse" id="sidebar-plugins" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/apexcharts.html">
+                                        href="../plugins/apexcharts.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2189,7 +2186,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/button-hover.html">
+                                        href="../plugins/button-hover.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2205,7 +2202,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/tree-view.html">
+                                        href="../plugins/tree-view.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2221,7 +2218,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/choise-js.html">
+                                        href="../plugins/choise-js.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2237,7 +2234,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/flatpickr.html">
+                                        href="../plugins/flatpickr.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2253,7 +2250,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/fslightbox.html">
+                                        href="../plugins/fslightbox.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2269,7 +2266,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/gallery-hover.html">
+                                        href="../plugins/gallery-hover.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2285,7 +2282,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/image-croper.html">
+                                        href="../plugins/image-croper.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2301,7 +2298,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/loader.html">
+                                        href="../plugins/loader.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2317,7 +2314,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/rating.html">
+                                        href="../plugins/rating.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2333,7 +2330,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/select2.html">
+                                        href="../plugins/select2.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2349,7 +2346,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/sweet-alert.html">
+                                        href="../plugins/sweet-alert.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2365,7 +2362,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/quill-editor.html">
+                                        href="../plugins/quill-editor.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2381,7 +2378,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="plugins/uppy.html">
+                                        href="../plugins/uppy.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2458,7 +2455,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link "
-                                href="plugins/ui-color.html">
+                                href="../plugins/ui-color.html">
                                 <i class="icon" data-bs-toggle="tooltip" title="Colors" data-bs-placement="right">
                                     <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.4"
@@ -2496,7 +2493,7 @@
                             <ul class="sub-nav collapse" id="sidebar-widget" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="widget/widgetbasic.html">
+                                        href="../widget/widgetbasic.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2512,7 +2509,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="widget/widgetchart.html">
+                                        href="../widget/widgetchart.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2528,7 +2525,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="widget/widgetcard.html">
+                                        href="../widget/widgetcard.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2566,7 +2563,7 @@
                             <ul class="sub-nav collapse" id="sidebar-maps" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="maps/google.html">
+                                        href="../maps/google.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2582,7 +2579,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="maps/vector.html">
+                                        href="../maps/vector.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2622,7 +2619,7 @@
                             <ul class="sub-nav collapse" id="sidebar-form" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="form/form-element.html">
+                                        href="../form/form-element.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2638,7 +2635,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="form/form-wizard.html">
+                                        href="../form/form-wizard.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2654,7 +2651,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="form/form-validation.html">
+                                        href="../form/form-validation.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2693,7 +2690,7 @@
                             <ul class="sub-nav collapse" id="sidebar-table" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="table/bootstrap-table.html">
+                                        href="../table/bootstrap-table.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2709,7 +2706,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="table/table-data.html">
+                                        href="../table/table-data.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2725,7 +2722,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="table/border-table.html">
+                                        href="../table/border-table.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2741,7 +2738,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="table/fancy-table.html">
+                                        href="../table/fancy-table.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2757,7 +2754,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="table/fixed-table.html">
+                                        href="../table/fixed-table.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">

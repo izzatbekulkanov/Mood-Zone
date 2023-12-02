@@ -6,9 +6,6 @@
         <entryData>
           <resourceRoots>
             <path value="file://$PROJECT_DIR$/core" />
-            <path value="file://$PROJECT_DIR$/landing_page" />
-            <path value="file://$PROJECT_DIR$/dashboard" />
-            <path value="file://$PROJECT_DIR$/social" />
             <path value="file://$PROJECT_DIR$/users" />
           </resourceRoots>
         </entryData>
