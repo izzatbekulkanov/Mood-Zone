@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import dashboardView, adminPage, blankPage, userView, inboxView, \
-    iconSolidView, iconOutlineView, iconDualToneView, apiControlView, apiCustomerView, \
-    apiUniversityView
+    iconSolidView, iconOutlineView, iconDualToneView
+
 
 urlpatterns = [
     path('', dashboardView, name='dashboard'),
@@ -12,7 +12,4 @@ urlpatterns = [
     path('iconSolid/', iconSolidView, name='iconSolid'),
     path('iconOutline/', iconOutlineView, name='iconOutline'),
     path('iconDual/', iconDualToneView, name='iconDualTone'),
-    path('apiControl/', apiControlView, name='apiControl'),
-    path('apiCustomer/', apiCustomerView, name='apiCustomer'),
-    path('apiUniversity/', apiUniversityView, name='apiUniversity')
 ]

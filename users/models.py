@@ -27,7 +27,7 @@ class CustomUser(AbstractUser):
         return str(self.profile_image)[str(self.profile_image).index('profile_images/' + str(str.pk) + '/'):]
 
     def has_perm(self, perm, obj=None):
-        return self.is_admin
+        return self.is_staff
 
     def has_module_perms(self, app_label):
         return True

@@ -15,6 +15,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('file-manager/', include('file_manager.urls')),
     path('chat/', include('chat.urls')),
+    path('API/', include('API.urls')),
 
 ]
 
