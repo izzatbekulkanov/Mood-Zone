@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bc76727-b533-48ff-9b99-ab8a8d23dd9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/media/profile_cover/Abdulkhafiz.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/profile_image/rasm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0002_role_remove_customuser_is_admin_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0003_role_key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/profile_cover/rasm_88GCpkB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/profile_image/rasm_ZV7pHJ5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +144,7 @@
       <workItem from="1701774485709" duration="935000" />
       <workItem from="1701781322940" duration="8863000" />
       <workItem from="1701979928073" duration="117000" />
-      <workItem from="1702026114608" duration="5482000" />
+      <workItem from="1702026114608" duration="5488000" />
     </task>
     <servers />
   </component>
