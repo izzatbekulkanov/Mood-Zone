@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "468005cb290edaf980a31f57d713b31149a51fdbf1c6a9804f8461b66041052b"
+            "sha256": "742e1ee018a1b3742b419d5000e0993d6bd30ae479a1bb77f5a22454a7c71226"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.12"
+            "python_version": "3.11.6"
         },
         "sources": [
             {
@@ -222,14 +222,6 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==0.4.4"
-        },
-        "tzdata": {
-            "hashes": [
-                "sha256:11ef1e08e54acb0d4f95bdb1be05da659673de4acbd21bf9c69e94cc5e907a3a",
-                "sha256:7e65763eef3120314099b6939b5546db7adce1e7d6f2e179e3df563c70511eda"
-            ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==2023.3"
         },
         "urllib3": {
             "hashes": [
