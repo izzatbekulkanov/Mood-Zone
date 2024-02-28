@@ -1,0 +1,50 @@
+{% extends 'register/sign-page.html' %}
+{% load static %}
+{% block content %}
+<div class="col-10 col-xl-4 offset-xl-7 offset-1">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="text-center mb-4">Sign In</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="form-label" for="text">Email address</label>
+                    <input type="text" name="username" class="form-control" id="text" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+                </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="customCheck11">
+                    <label class="form-check-label" for="customCheck11">Remember Me</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="#">Forget password</a>
+            </div>
+            <p class="text-center mt-3">Or sign in with other accounts?</p>
+            <div class="d-flex justify-content-center">
+                <ul class="list-group list-group-horizontal list-group-flush">
+                    <li class="list-group-item border-0 pb-0">
+                        
+                        <a href="#"><img src="{% static 'assets/images/brands/fb.svg' %}" alt="fb" loading="lazy"></a>
+                    </li>
+                    <li class="list-group-item border-0 pb-0">
+                        <a href="#"><img src="{% static 'assets/images/brands/gm.svg' %}" alt="gm" loading="lazy"></a>
+                    </li>
+                    <li class="list-group-item border-0 pb-0">
+                        <a href="#"><img src="{% static 'assets/images/brands/im.svg' %}" alt="im" loading="lazy"></a>
+                    </li>
+                    <li class="list-group-item border-0 pb-0">
+                        <a href="#"><img src="{% static 'assets/images/brands/li.svg' %}" alt="li" loading="lazy"></a>
+                    </li>
+                </ul>
+            </div>
+            <p class="text-center mt-3">Don't have an account? <a href="{% url 'register' %}" class="ms-2"> Click
+                here to sign up.</a></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,625 @@
+{% load static %}
+<aside class="sidebar sidebar-base " data-toggle="main-sidebar" data-sidebar="responsive">
+    <div class="sidebar-header d-flex align-items-center justify-content-start">
+        <a href="{% url 'university_dashboard' %}" class="navbar-brand">
+
+            <!--Logo start-->
+            <div class="logo-main">
+                <div class="logo-normal">
+                    <svg class=" icon-30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.757324" y="19.2427" width="28" height="4" rx="2"
+                              transform="rotate(-45 -0.757324 19.2427)" fill="currentColor"/>
+                        <rect x="7.72803" y="27.728" width="28" height="4" rx="2" transform="rotate(-45 7.72803 27.728)"
+                              fill="currentColor"/>
+                        <rect x="10.5366" y="16.3945" width="16" height="4" rx="2"
+                              transform="rotate(45 10.5366 16.3945)" fill="currentColor"/>
+                        <rect x="10.5562" y="-0.556152" width="28" height="4" rx="2"
+                              transform="rotate(45 10.5562 -0.556152)" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-mini">
+                    <svg class=" icon-30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-0.757324" y="19.2427" width="28" height="4" rx="2"
+                              transform="rotate(-45 -0.757324 19.2427)" fill="currentColor"/>
+                        <rect x="7.72803" y="27.728" width="28" height="4" rx="2" transform="rotate(-45 7.72803 27.728)"
+                              fill="currentColor"/>
+                        <rect x="10.5366" y="16.3945" width="16" height="4" rx="2"
+                              transform="rotate(45 10.5366 16.3945)" fill="currentColor"/>
+                        <rect x="10.5562" y="-0.556152" width="28" height="4" rx="2"
+                              transform="rotate(45 10.5562 -0.556152)" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+            <!--logo End--> <h4 class="logo-title" data-setting="app_name">Hope UI</h4>
+        </a>
+        <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
+            <i class="icon">
+                <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.25 12.2744L19.25 12.2744" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </i>
+        </div>
+    </div>
+    <div class="sidebar-body pt-0 data-scrollbar">
+        <div class="sidebar-profile-card mt-3">
+            <div class="sidebar-profile-body">
+                <div class="mb-3 d-flex justify-content-center">
+                    <div class="rounded rounded-3 border border-primary p-2">
+                        <img src="{% static 'assets/images/avatars/01.png' %}" alt="User-Profile"
+                             class="img-fluid rounded" loading="lazy">
+                    </div>
+                </div>
+                <div class="sidebar-profile-detail">
+                    <h6 class="sidebar-profile-name">{{ request.user.email }}</h6>
+                    <span class="sidebar-profile-username">Izzatbek Ulkanov</span>
+                </div>
+                <div class="sidebar-profile-action">
+                    <div class="btn btn-primary btn-icon btn-sm rounded-pill btn-action">
+                            <span class="btn-inner">
+                                <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M5.91064 20.5886C5.91064 19.7486 6.59064 19.0686 7.43064 19.0686C8.26064 19.0686 8.94064 19.7486 8.94064 20.5886C8.94064 21.4186 8.26064 22.0986 7.43064 22.0986C6.59064 22.0986 5.91064 21.4186 5.91064 20.5886ZM17.1606 20.5886C17.1606 19.7486 17.8406 19.0686 18.6806 19.0686C19.5106 19.0686 20.1906 19.7486 20.1906 20.5886C20.1906 21.4186 19.5106 22.0986 18.6806 22.0986C17.8406 22.0986 17.1606 21.4186 17.1606 20.5886Z"
+                                          fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M20.1907 6.34909C20.8007 6.34909 21.2007 6.55909 21.6007 7.01909C22.0007 7.47909 22.0707 8.13909 21.9807 8.73809L21.0307 15.2981C20.8507 16.5591 19.7707 17.4881 18.5007 17.4881H7.59074C6.26074 17.4881 5.16074 16.4681 5.05074 15.1491L4.13074 4.24809L2.62074 3.98809C2.22074 3.91809 1.94074 3.52809 2.01074 3.12809C2.08074 2.71809 2.47074 2.44809 2.88074 2.50809L5.26574 2.86809C5.60574 2.92909 5.85574 3.20809 5.88574 3.54809L6.07574 5.78809C6.10574 6.10909 6.36574 6.34909 6.68574 6.34909H20.1907ZM14.1307 11.5481H16.9007C17.3207 11.5481 17.6507 11.2081 17.6507 10.7981C17.6507 10.3781 17.3207 10.0481 16.9007 10.0481H14.1307C13.7107 10.0481 13.3807 10.3781 13.3807 10.7981C13.3807 11.2081 13.7107 11.5481 14.1307 11.5481Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </span>
+                    </div>
+                    <div class="btn btn-primary btn-icon btn-sm rounded-pill btn-action">
+                            <span class="btn-inner">
+                                <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                          d="M11.7761 21.8374C9.49311 20.4273 7.37081 18.7645 5.44807 16.8796C4.09069 15.5338 3.05404 13.8905 2.41735 12.0753C1.27971 8.53523 2.60399 4.48948 6.30129 3.2884C8.2528 2.67553 10.3752 3.05175 12.0072 4.29983C13.6398 3.05315 15.7616 2.67705 17.7132 3.2884C21.4105 4.48948 22.7436 8.53523 21.606 12.0753C20.9745 13.8888 19.944 15.5319 18.5931 16.8796C16.6686 18.7625 14.5465 20.4251 12.265 21.8374L12.0161 22L11.7761 21.8374Z"
+                                          fill="currentColor"></path>
+                                    <path d="M12.0109 22.0001L11.776 21.8375C9.49013 20.4275 7.36487 18.7648 5.43902 16.8797C4.0752 15.5357 3.03238 13.8923 2.39052 12.0754C1.26177 8.53532 2.58605 4.48957 6.28335 3.28849C8.23486 2.67562 10.3853 3.05213 12.0109 4.31067V22.0001Z"
+                                          fill="currentColor"></path>
+                                    <path d="M18.2304 9.99922C18.0296 9.98629 17.8425 9.8859 17.7131 9.72157C17.5836 9.55723 17.5232 9.3434 17.5459 9.13016C17.5677 8.4278 17.168 7.78851 16.5517 7.53977C16.1609 7.43309 15.9243 7.00987 16.022 6.59249C16.1148 6.18182 16.4993 5.92647 16.8858 6.0189C16.9346 6.027 16.9816 6.04468 17.0244 6.07105C18.2601 6.54658 19.0601 7.82641 18.9965 9.22576C18.9944 9.43785 18.9117 9.63998 18.7673 9.78581C18.6229 9.93164 18.4291 10.0087 18.2304 9.99922Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </span>
+                    </div>
+                    <div class="btn btn-primary btn-icon btn-sm rounded-pill btn-action">
+                            <span class="btn-inner">
+                                <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.7695 11.6453C19.039 10.7923 18.7071 10.0531 18.7071 8.79716V8.37013C18.7071 6.73354 18.3304 5.67907 17.5115 4.62459C16.2493 2.98699 14.1244 2 12.0442 2H11.9558C9.91935 2 7.86106 2.94167 6.577 4.5128C5.71333 5.58842 5.29293 6.68822 5.29293 8.37013V8.79716C5.29293 10.0531 4.98284 10.7923 4.23049 11.6453C3.67691 12.2738 3.5 13.0815 3.5 13.9557C3.5 14.8309 3.78723 15.6598 4.36367 16.3336C5.11602 17.1413 6.17846 17.6569 7.26375 17.7466C8.83505 17.9258 10.4063 17.9933 12.0005 17.9933C13.5937 17.9933 15.165 17.8805 16.7372 17.7466C17.8215 17.6569 18.884 17.1413 19.6363 16.3336C20.2118 15.6598 20.5 14.8309 20.5 13.9557C20.5 13.0815 20.3231 12.2738 19.7695 11.6453Z"
+                                          fill="currentColor"></path>
+                                    <path opacity="0.4"
+                                          d="M14.0088 19.2283C13.5088 19.1215 10.4627 19.1215 9.96275 19.2283C9.53539 19.327 9.07324 19.5566 9.07324 20.0602C9.09809 20.5406 9.37935 20.9646 9.76895 21.2335L9.76795 21.2345C10.2718 21.6273 10.8632 21.877 11.4824 21.9667C11.8123 22.012 12.1482 22.01 12.4901 21.9667C13.1083 21.877 13.6997 21.6273 14.2036 21.2345L14.2026 21.2335C14.5922 20.9646 14.8734 20.5406 14.8983 20.0602C14.8983 19.5566 14.4361 19.327 14.0088 19.2283Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </span>
+                        <span class="notification-alert"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="hr-horizontal">
+        <div class="sidebar-list">
+            <!-- Sidebar Menu Start -->
+            <ul class="navbar-nav iq-main-menu" id="e-commerce">
+                <li class="nav-item static-item">
+                    <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+                        <span class="default-icon">Universitet</span>
+                        <span class="mini-icon">-</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.14373 20.7821V17.7152C9.14372 16.9381 9.77567 16.3067 10.5584 16.3018H13.4326C14.2189 16.3018 14.8563 16.9346 14.8563 17.7152V20.7732C14.8562 21.4473 15.404 21.9951 16.0829 22H18.0438C18.9596 22.0023 19.8388 21.6428 20.4872 21.0007C21.1356 20.3586 21.5 19.4868 21.5 18.5775V9.86585C21.5 9.13139 21.1721 8.43471 20.6046 7.9635L13.943 2.67427C12.7785 1.74912 11.1154 1.77901 9.98539 2.74538L3.46701 7.9635C2.87274 8.42082 2.51755 9.11956 2.5 9.86585V18.5686C2.5 20.4637 4.04738 22 5.95617 22H7.87229C8.19917 22.0023 8.51349 21.8751 8.74547 21.6464C8.97746 21.4178 9.10793 21.1067 9.10792 20.7821H9.14373Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="vendor-dashboard.html">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                      d="M16.6756 2H7.33333C3.92889 2 2 3.92889 2 7.33333V16.6667C2 20.0711 3.92889 22 7.33333 22H16.6756C20.08 22 22 20.0711 22 16.6667V7.33333C22 3.92889 20.08 2 16.6756 2Z"
+                                      fill="currentColor"></path>
+                                <path d="M7.36866 9.3689C6.91533 9.3689 6.54199 9.74223 6.54199 10.2045V17.0756C6.54199 17.5289 6.91533 17.9022 7.36866 17.9022C7.83088 17.9022 8.20421 17.5289 8.20421 17.0756V10.2045C8.20421 9.74223 7.83088 9.3689 7.36866 9.3689Z"
+                                      fill="currentColor"></path>
+                                <path d="M12.0352 6.08887C11.5818 6.08887 11.2085 6.4622 11.2085 6.92442V17.0755C11.2085 17.5289 11.5818 17.9022 12.0352 17.9022C12.4974 17.9022 12.8707 17.5289 12.8707 17.0755V6.92442C12.8707 6.4622 12.4974 6.08887 12.0352 6.08887Z"
+                                      fill="currentColor"></path>
+                                <path d="M16.6398 12.9956C16.1775 12.9956 15.8042 13.3689 15.8042 13.8312V17.0756C15.8042 17.5289 16.1775 17.9023 16.6309 17.9023C17.0931 17.9023 17.4664 17.5289 17.4664 17.0756V13.8312C17.4664 13.3689 17.0931 12.9956 16.6398 12.9956Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Rahbariyat</span>
+                    </a>
+                </li>
+                {#                Tuzilma#}
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#shop-main" role="button" aria-expanded="false"
+                       aria-controls="shop-main">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                      d="M16.0756 2H19.4616C20.8639 2 22.0001 3.14585 22.0001 4.55996V7.97452C22.0001 9.38864 20.8639 10.5345 19.4616 10.5345H16.0756C14.6734 10.5345 13.5371 9.38864 13.5371 7.97452V4.55996C13.5371 3.14585 14.6734 2 16.0756 2Z"
+                                      fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M4.53852 2H7.92449C9.32676 2 10.463 3.14585 10.463 4.55996V7.97452C10.463 9.38864 9.32676 10.5345 7.92449 10.5345H4.53852C3.13626 10.5345 2 9.38864 2 7.97452V4.55996C2 3.14585 3.13626 2 4.53852 2ZM4.53852 13.4655H7.92449C9.32676 13.4655 10.463 14.6114 10.463 16.0255V19.44C10.463 20.8532 9.32676 22 7.92449 22H4.53852C3.13626 22 2 20.8532 2 19.44V16.0255C2 14.6114 3.13626 13.4655 4.53852 13.4655ZM19.4615 13.4655H16.0755C14.6732 13.4655 13.537 14.6114 13.537 16.0255V19.44C13.537 20.8532 14.6732 22 16.0755 22H19.4615C20.8637 22 22 20.8532 22 19.44V16.0255C22 14.6114 20.8637 13.4655 19.4615 13.4655Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Tuzilma</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="shop-main" data-bs-parent="#e-commerce">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="shop-main.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> SM </i>
+                                <span class="item-name">Shop Main</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="shop-left-filter.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> SL </i>
+                                <span class="item-name">Shop - Left Filter</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="shop-right-filter.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> SR </i>
+                                <span class="item-name">Shop - Right Filter</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link product-grid" aria-current="page"
+                               href="products3632.html?type=product-grid">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> PG </i>
+                                <span class="item-name">Product Grid View</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link product-list" aria-current="page"
+                               href="products1936.html?type=product-list">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> PL </i>
+                                <span class="item-name">Product List View</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="categories-list.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> C </i>
+                                <span class="item-name"> Categories List</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {#                web malumotlar#}
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#products" role="button" aria-expanded="false"
+                       aria-controls="products">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                      d="M16.34 1.99976H7.67C4.28 1.99976 2 4.37976 2 7.91976V16.0898C2 19.6198 4.28 21.9998 7.67 21.9998H16.34C19.73 21.9998 22 19.6198 22 16.0898V7.91976C22 4.37976 19.73 1.99976 16.34 1.99976Z"
+                                      fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M11.1246 8.18921C11.1246 8.67121 11.5156 9.06421 11.9946 9.06421C12.4876 9.06421 12.8796 8.67121 12.8796 8.18921C12.8796 7.70721 12.4876 7.31421 12.0046 7.31421C11.5196 7.31421 11.1246 7.70721 11.1246 8.18921ZM12.8696 11.362C12.8696 10.88 12.4766 10.487 11.9946 10.487C11.5126 10.487 11.1196 10.88 11.1196 11.362V15.782C11.1196 16.264 11.5126 16.657 11.9946 16.657C12.4766 16.657 12.8696 16.264 12.8696 15.782V11.362Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Sayt uchun</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="products" data-bs-parent="#e-commerce">
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Product Details</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail-3d.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">3D Product Detail</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail-360.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name"> 360 Product Detail</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <hr class="hr-horizontal">
+                </li>
+                <li class="nav-item static-item">
+                    <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+                        <span class="default-icon">Pages</span>
+                        <span class="mini-icon">-</span>
+                    </a>
+                </li>
+                {#                fakultet#}
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#faculty" role="button" aria-expanded="false"
+                       aria-controls="faculty">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                      d="M16.34 1.99976H7.67C4.28 1.99976 2 4.37976 2 7.91976V16.0898C2 19.6198 4.28 21.9998 7.67 21.9998H16.34C19.73 21.9998 22 19.6198 22 16.0898V7.91976C22 4.37976 19.73 1.99976 16.34 1.99976Z"
+                                      fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M11.1246 8.18921C11.1246 8.67121 11.5156 9.06421 11.9946 9.06421C12.4876 9.06421 12.8796 8.67121 12.8796 8.18921C12.8796 7.70721 12.4876 7.31421 12.0046 7.31421C11.5196 7.31421 11.1246 7.70721 11.1246 8.18921ZM12.8696 11.362C12.8696 10.88 12.4766 10.487 11.9946 10.487C11.5126 10.487 11.1196 10.88 11.1196 11.362V15.782C11.1196 16.264 11.5126 16.657 11.9946 16.657C12.4766 16.657 12.8696 16.264 12.8696 15.782V11.362Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Fakultet</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="faculty" data-bs-parent="#e-commerce">
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Product Details</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail-3d.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">3D Product Detail</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail-360.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name"> 360 Product Detail</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {#                Bo'limlar#}
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#Bolimlar" role="button" aria-expanded="false"
+                       aria-controls="Bolimlar">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                      d="M16.34 1.99976H7.67C4.28 1.99976 2 4.37976 2 7.91976V16.0898C2 19.6198 4.28 21.9998 7.67 21.9998H16.34C19.73 21.9998 22 19.6198 22 16.0898V7.91976C22 4.37976 19.73 1.99976 16.34 1.99976Z"
+                                      fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M11.1246 8.18921C11.1246 8.67121 11.5156 9.06421 11.9946 9.06421C12.4876 9.06421 12.8796 8.67121 12.8796 8.18921C12.8796 7.70721 12.4876 7.31421 12.0046 7.31421C11.5196 7.31421 11.1246 7.70721 11.1246 8.18921ZM12.8696 11.362C12.8696 10.88 12.4766 10.487 11.9946 10.487C11.5126 10.487 11.1196 10.88 11.1196 11.362V15.782C11.1196 16.264 11.5126 16.657 11.9946 16.657C12.4766 16.657 12.8696 16.264 12.8696 15.782V11.362Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Bo'limlar</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="Bolimlar" data-bs-parent="#e-commerce">
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Product Details</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail-3d.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">3D Product Detail</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail-360.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name"> 360 Product Detail</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {#                Kafedralar#}
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#kafedra" role="button" aria-expanded="false"
+                       aria-controls="kafedra">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                      d="M16.34 1.99976H7.67C4.28 1.99976 2 4.37976 2 7.91976V16.0898C2 19.6198 4.28 21.9998 7.67 21.9998H16.34C19.73 21.9998 22 19.6198 22 16.0898V7.91976C22 4.37976 19.73 1.99976 16.34 1.99976Z"
+                                      fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M11.1246 8.18921C11.1246 8.67121 11.5156 9.06421 11.9946 9.06421C12.4876 9.06421 12.8796 8.67121 12.8796 8.18921C12.8796 7.70721 12.4876 7.31421 12.0046 7.31421C11.5196 7.31421 11.1246 7.70721 11.1246 8.18921ZM12.8696 11.362C12.8696 10.88 12.4766 10.487 11.9946 10.487C11.5126 10.487 11.1196 10.88 11.1196 11.362V15.782C11.1196 16.264 11.5126 16.657 11.9946 16.657C12.4766 16.657 12.8696 16.264 12.8696 15.782V11.362Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Kafedra</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="kafedra" data-bs-parent="#e-commerce">
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Product Details</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail-3d.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">3D Product Detail</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="product-detail-360.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name"> 360 Product Detail</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="user-profile.html">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.997 15.1746C7.684 15.1746 4 15.8546 4 18.5746C4 21.2956 7.661 21.9996 11.997 21.9996C16.31 21.9996 19.994 21.3206 19.994 18.5996C19.994 15.8786 16.334 15.1746 11.997 15.1746Z"
+                                      fill="currentColor"></path>
+                                <path opacity="0.4"
+                                      d="M11.9971 12.5838C14.9351 12.5838 17.2891 10.2288 17.2891 7.29176C17.2891 4.35476 14.9351 1.99976 11.9971 1.99976C9.06008 1.99976 6.70508 4.35476 6.70508 7.29176C6.70508 10.2288 9.06008 12.5838 11.9971 12.5838Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name"> User Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="user-list.html">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.9488 14.54C8.49884 14.54 5.58789 15.1038 5.58789 17.2795C5.58789 19.4562 8.51765 20.0001 11.9488 20.0001C15.3988 20.0001 18.3098 19.4364 18.3098 17.2606C18.3098 15.084 15.38 14.54 11.9488 14.54Z"
+                                      fill="currentColor"></path>
+                                <path opacity="0.4"
+                                      d="M11.949 12.467C14.2851 12.467 16.1583 10.5831 16.1583 8.23351C16.1583 5.88306 14.2851 4 11.949 4C9.61293 4 7.73975 5.88306 7.73975 8.23351C7.73975 10.5831 9.61293 12.467 11.949 12.467Z"
+                                      fill="currentColor"></path>
+                                <path opacity="0.4"
+                                      d="M21.0881 9.21923C21.6925 6.84176 19.9205 4.70654 17.664 4.70654C17.4187 4.70654 17.1841 4.73356 16.9549 4.77949C16.9244 4.78669 16.8904 4.802 16.8725 4.82902C16.8519 4.86324 16.8671 4.90917 16.8895 4.93889C17.5673 5.89528 17.9568 7.0597 17.9568 8.30967C17.9568 9.50741 17.5996 10.6241 16.9728 11.5508C16.9083 11.6462 16.9656 11.775 17.0793 11.7948C17.2369 11.8227 17.3981 11.8371 17.5629 11.8416C19.2059 11.8849 20.6807 10.8213 21.0881 9.21923Z"
+                                      fill="currentColor"></path>
+                                <path d="M22.8094 14.817C22.5086 14.1722 21.7824 13.73 20.6783 13.513C20.1572 13.3851 18.747 13.205 17.4352 13.2293C17.4155 13.232 17.4048 13.2455 17.403 13.2545C17.4003 13.2671 17.4057 13.2887 17.4316 13.3022C18.0378 13.6039 20.3811 14.916 20.0865 17.6834C20.074 17.8032 20.1698 17.9068 20.2888 17.8888C20.8655 17.8059 22.3492 17.4853 22.8094 16.4866C23.0637 15.9589 23.0637 15.3456 22.8094 14.817Z"
+                                      fill="currentColor"></path>
+                                <path opacity="0.4"
+                                      d="M7.04459 4.77973C6.81626 4.7329 6.58077 4.70679 6.33543 4.70679C4.07901 4.70679 2.30701 6.84201 2.9123 9.21947C3.31882 10.8216 4.79355 11.8851 6.43661 11.8419C6.60136 11.8374 6.76343 11.8221 6.92013 11.7951C7.03384 11.7753 7.09115 11.6465 7.02668 11.551C6.3999 10.6234 6.04263 9.50765 6.04263 8.30991C6.04263 7.05904 6.43303 5.89462 7.11085 4.93913C7.13234 4.90941 7.14845 4.86348 7.12696 4.82926C7.10906 4.80135 7.07593 4.78694 7.04459 4.77973Z"
+                                      fill="currentColor"></path>
+                                <path d="M3.32156 13.5127C2.21752 13.7297 1.49225 14.1719 1.19139 14.8167C0.936203 15.3453 0.936203 15.9586 1.19139 16.4872C1.65163 17.4851 3.13531 17.8066 3.71195 17.8885C3.83104 17.9065 3.92595 17.8038 3.91342 17.6832C3.61883 14.9167 5.9621 13.6046 6.56918 13.3029C6.59425 13.2885 6.59962 13.2677 6.59694 13.2542C6.59515 13.2452 6.5853 13.2317 6.5656 13.2299C5.25294 13.2047 3.84358 13.3848 3.32156 13.5127Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">User List</span>
+                    </a>
+                </li>
+                <li>
+                    <hr class="hr-horizontal">
+                </li>
+                <li class="nav-item static-item">
+                    <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+                        <span class="default-icon">Other</span>
+                        <span class="mini-icon">-</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                       href="{% url 'index' %}">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                      d="M2 6.447C2 3.996 4.03024 2 6.52453 2H11.4856C13.9748 2 16 3.99 16 6.437V17.553C16 20.005 13.9698 22 11.4744 22H6.51537C4.02515 22 2 20.01 2 17.563V16.623V6.447Z"
+                                      fill="currentColor"></path>
+                                <path d="M21.7787 11.4548L18.9329 8.5458C18.6388 8.2458 18.1655 8.2458 17.8723 8.5478C17.5802 8.8498 17.5811 9.3368 17.8743 9.6368L19.4335 11.2298H17.9386H9.54826C9.13434 11.2298 8.79834 11.5748 8.79834 11.9998C8.79834 12.4258 9.13434 12.7698 9.54826 12.7698H19.4335L17.8743 14.3628C17.5811 14.6628 17.5802 15.1498 17.8723 15.4518C18.0194 15.6028 18.2113 15.6788 18.4041 15.6788C18.595 15.6788 18.7868 15.6028 18.9329 15.4538L21.7787 12.5458C21.9199 12.4008 21.9998 12.2048 21.9998 11.9998C21.9998 11.7958 21.9199 11.5998 21.7787 11.4548Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Sign Out</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+
+                                      d="M22 11.9998C22 17.5238 17.523 21.9998 12 21.9998C6.477 21.9998 2 17.5238 2 11.9998C2 6.47776 6.477 1.99976 12 1.99976C17.523 1.99976 22 6.47776 22 11.9998Z"
+                                      fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M12.8701 12.6307C12.8701 13.1127 12.4771 13.5057 11.9951 13.5057C11.5131 13.5057 11.1201 13.1127 11.1201 12.6307V8.21069C11.1201 7.72869 11.5131 7.33569 11.9951 7.33569C12.4771 7.33569 12.8701 7.72869 12.8701 8.21069V12.6307ZM11.1251 15.8035C11.1251 15.3215 11.5161 14.9285 11.9951 14.9285C12.4881 14.9285 12.8801 15.3215 12.8801 15.8035C12.8801 16.2855 12.4881 16.6785 12.0051 16.6785C11.5201 16.6785 11.1251 16.2855 11.1251 15.8035Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Help</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- Sidebar Menu End -->
+        </div>
+    </div>
+    <div class="sidebar-footer"></div>
+</aside>

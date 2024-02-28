@@ -1,9 +1,0 @@
-$prefix: theme-;
-&.#{$prefix}bordered {
-    .sidebar,
-    .iq-navbar,
-    .dropdown-menu,
-    .card {
-        border: 1px solid $border-color;
-    }
-}

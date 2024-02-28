@@ -1,35 +1,32 @@
-import os
+
+
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z=wwe6i7-o7*g5r2@z%7u4egmb_wzp(cxhk#ry-m=&k-ylx%dd'
+SECRET_KEY = 'django-insecure-%rzkb*01#g2vxzo)i^617#6wdd3dx%)e-t8*v%oq#!7bpeofm('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
+
 
 # Application definition
-
-# Mahalliy ilovalar (local apps)
 LOCAL_APPS = [
-    'landing_page',
+    'account',
     'dashboard',
-    'users',
-    'social',
-    'mail',
-    'ecommerce',
-    'appointment',
-    'blog',
-    'file_manager',
-    'chat',
-    'API',
+    'library',
+    'university',
+    'post'
 ]
 
 # Umumiy ilovalar (django.contrib va boshqa global ilovalar)
@@ -43,8 +40,8 @@ GLOBAL_APPS = [
     'django.contrib.staticfiles',
     'django.utils.translation',
 ]
-
 INSTALLED_APPS = LOCAL_APPS + GLOBAL_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,17 +58,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates',  # Asosiy template katalogi
-            BASE_DIR / 'social',  # Social ilova template katalogi
-            BASE_DIR / 'landing_page',  # Landing Page ilova template katalogi
-            BASE_DIR / 'mail',  # Mail ilova template katalogi
-            BASE_DIR / 'ecommerce',  # E-commerce ilova template katalogi
-            BASE_DIR / 'appointment',  # Appointment ilova template katalogi
-            BASE_DIR / 'blog',  # Blog ilova template katalogi
-            BASE_DIR / 'file_manager',  # File Manager ilova template katalogi
-            BASE_DIR / 'chat',  # Chat ilova template katalogi
-        ],
+        'DIRS': [ BASE_DIR / 'templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,13 +71,11 @@ TEMPLATES = [
     },
 ]
 
-MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
-
-
 WSGI_APPLICATION = 'core.wsgi.application'
 
+
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -99,8 +84,9 @@ DATABASES = {
     }
 }
 
+
 # Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -117,213 +103,76 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
+# https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Tashkent'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
 
+
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+# https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
+
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# settings.py
-AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = 'dashboard/'
+LOGOUT_REDIRECT_URL = 'account/login'
+
+AUTH_USER_MODEL = 'account.CustomUser'
 
 AUTHENTICATION_BACKENDS = [
-    'users.custom_backend.CustomBackend',
+    'account.custom_backend.CustomBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
-# Jazzmin settings
 
-JAZZMIN_SETTINGS = {
-    # oynaning sarlavhasi (masofada yoki None bo'lsa, current_admin_site.site_title bo'lmaganda)
-    "site_title": "Kutubxona Admin",
-
-    # Kirish ekranidagi sarlavha (19 belgidan ko'proq bo'lmasa,
-    # current_admin_site.site_header bo'lmaganda yoki None bo'lsa)
-    "site_header": "Kutubxona",
-
-    # Logotip (brand) uchun, static fayllarda bo'lishi kerak, o'ng yuqori burchakda ishlatiladi
-    "site_logo": "books/img/logo.png",
-
-    # Kirish forma logotipi uchun (agar mavjud bo'lsa, site_logo bo'lmaganda)
-    "login_logo": None,
-
-    # Tungi mavzularda kirish formasidagi logotip uchun (login_logo bo'lmaganda)
-    "login_logo_dark": None,
-
-    # Logotipning ustiga qo'yiladigan CSS klasslari
-    "site_logo_classes": "img-circle",
-
-    # Saytingiz uchun faviconning o'rtacha manzili (masofada bo'lmaganda site_logo
-    # bo'lganda avtomatik o'rnatiladi, ideal ravishda 32x32 piksel)
-    "site_icon": None,
-
-    # Kirish ekranidagi xush kelibsiz matn
-    "welcome_sign": "Kutubxonaga xush kelibsiz",
-
-    # Pastkisamdagi mualliflik huquqi
-    "copyright": "Acme Kutubxona Ltd",
-
-    # Qidiruv panelidan izlanadigan model adminlar ro'yxati, agar bekor qilingan bo'lsa qidiruv paneli o'chiriladi
-    # Agar faqatgina bir qidiruv maydonini ishlatmoqchi bo'lsangiz,
-    # ro'yxat ishlatish kerak emas, oddiy matn ishlatishingiz mumkin
-    "search_model": ["auth.User", "auth.Group"],
-
-    # Foydalanuvchi modelida avatarning yo'nalishi ImageField/URLField/Charfield
-    # yoki foydalanuvchini qabul qiladigan funktsiya
-    "user_avatar": None,
-
-    ############
-    # Yuqori Menyu #
-    ############
-
-    # Yuqori menyuga joylashtiriladigan havolalar ro'yxati
-    "topmenu_links": [
-
-        # Qaytarib olinadigan URL (Ruxsatlar qo'shilgan)
-        {"name": "Bosh sahifa", "url": "admin:index", "permissions": ["auth.view_user"]},
-
-        # Yangi oynada ochadigan tashqi URL (Ruxsatlar qo'shilgan)
-        {"name": "Qo'llab-quvvatlash", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
-
-        # Qidiruv paneliga bog'liq model admin
-        {"model": "auth.User"},
-
-        # Drop-down menyuga ega bo'lgan barcha model sahifalari uchun ilova
-        {"app": "books"},
-    ],
-
-    #############
-    # Foydalanuvchi Menyu #
-    #############
-
-    # Yuqori o'ng tarafdagi foydalanuvchi menyusiga qo'shiladigan qo'shimcha
-    # havolalar ro'yxati ("app" url turi mumkin emas)
-    "usermenu_links": [
-        {"name": "Qo'llab-quvvatlash", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
-        {"model": "auth.user"}
-    ],
-
-    #############
-    # Yon Menu #
-    #############
-
-    # Yon menyuni ko'rsatish yoki ko'rsatmaslik
-    "show_sidebar": True,
-
-    # Menyuni avtomatik kengaytirish yoki emas
-    "navigation_expanded": True,
-
-    # Bu ilovalarni menyuni yaratishda yashirish (masalan, auth)
-    "hide_apps": [],
-
-    # Bu modellarni menyuni yaratishda yashirish (masalan, auth.user)
-    "hide_models": [],
-
-    # Menyuning tartibini belgilash uchun ilova (va/yoki modellardan)
-    # ro'yxati (barcha ilovalar/modellarga ega bo'lishi kerak emas)
-    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
-
-    # App guruhi yaratish uchun qo'shimcha havolalar ro'yxati, ilova nomi boyicha
-    "custom_links": {
-        "books": [{
-            "name": "Xabar yaratish",
-            "url": "make_messages",
-            "icon": "fas fa-comments",
-            "permissions": ["books.view_book"]
-        }]
-    },
-
-    # to'liq 5.13.0 bepul ikon klasslarining ro'yxati uchun
-    "icons": {
-        "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
-        "auth.Group": "fas fa-users",
-    },
-    # Qo'l tartibida keltirilgan ikonlar
-    "default_icon_parents": "fas fa-chevron-circle-right",
-    "default_icon_children": "fas fa-circle",
-
-    #################
-    # Bog'liq Modal #
-    #################
-    # Popupalarni o'rnatingan chiqish modalini ishlatish
-    "related_modal_active": False,
-
-    #############
-    # UI Ozgartirishlari #
-    #############
-    # Ma'lumotlar static fayllarda bo'lishi kerak bo'lgan moslashuv CSS/JS skriptlarining
-    # o'rtacha manzillari (masofada bo'lsa, None bo'lishi kerak)
-    "custom_css": None,
-    "custom_js": None,
-    # fonts.googleapis.com manzilidan fontni ulashmoqchi bo'lsangiz (faqat ishlatilmasa,
-    # custom_css orqali fontni taqdim etishingiz mumkin)
-    "use_google_fonts_cdn": True,
-    # Yuqori o'ng tarafdagi UI moslashuvchini ko'rsatish yoki ko'rsatmaslik
-    "show_ui_builder": False,
-
-    ###############
-    # Ko'rishni O'zgartirish #
-    ###############
-    # O'zgartirishni bitta shaklda ko'rsatish, yoki tablar ichida (hozirgi tanlovlar)
-    # - single
-    # - horizontal_tabs (oddiy tanlov)
-    # - vertical_tabs
-    # - collapsible
-    # - carousel
-    "changeform_format": "horizontal_tabs",
-    # modeladmin asosida o'zgartirish formatini o'zgartirish
-    "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
-    # Admin paneldagi til tanlovini qo'shish
-    "language_chooser": False,
-}
-
+USER_LIST_JSON_DIR = os.path.join(BASE_DIR, 'static')
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Library Admin",
+    "site_title": "Jazzmin Admin",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Library",
+    "site_header": "Ulkanov",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Library",
+    "site_brand": "Jazzmin",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "books/img/logo.png",
+    "site_logo": "/assets/img/customizer/light.svg",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": None,
+    "login_logo": "/assets/img/customizer/light.svg",
 
     # Logo to use for login form in dark themes (defaults to login_logo)
-    "login_logo_dark": None,
+    "login_logo_dark": "/assets/customizer/light.svg",
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
 
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": None,
+    "site_icon": "/assets/img/customizer/light.svg",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the library",
+    "welcome_sign": "Assalomu aleykum Izzatbek Ulkanov Admin paneliga hush kelibsiz",
 
     # Copyright on the footer
     "copyright": "Acme Library Ltd",
@@ -333,7 +182,7 @@ JAZZMIN_SETTINGS = {
     "search_model": ["auth.User", "auth.Group"],
 
     # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
-    "user_avatar": None,
+    "user_avatar": "/assets/img/customizer/light.svg",
 
     ############
     # Top Menu #
@@ -400,7 +249,16 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
+        "library.book": "fas fa-book",
+        "account.customuser": "fas fa-user",  # CustomUser model
+        "post.post": "fas fa-newspaper",  # Post model
+        "university.faculty": "fas fa-graduation-cap",  # Faculty model
+        "university.departament": "fas fa-building",  # Departament model
+        "university.education": "fas fa-home",  # Departament model
+        "university.group": "fas fa-users",  # Group model
+        "university.major": "fas fa-bookmark",  # Major model
     },
+
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",
@@ -409,7 +267,7 @@ JAZZMIN_SETTINGS = {
     # Related Modal #
     #################
     # Use modals instead of popups
-    "related_modal_active": False,
+    "related_modal_active": True,
 
     #############
     # UI Tweaks #
@@ -420,7 +278,7 @@ JAZZMIN_SETTINGS = {
     # Whether to link font from fonts.googleapis.com (use custom_css to supply font otherwise)
     "use_google_fonts_cdn": True,
     # Whether to show the UI customizer on the sidebar
-    "show_ui_builder": False,
+    "show_ui_builder": True,
 
     ###############
     # Change view #
@@ -431,9 +289,38 @@ JAZZMIN_SETTINGS = {
     # - vertical_tabs
     # - collapsible
     # - carousel
-    "changeform_format": "horizontal_tabs",
+    "changeform_format": "vertical_tabs",
     # override change forms on a per modeladmin basis
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
     # Add a language dropdown into the admin
     "language_chooser": False,
 }
+
+THEMES = {
+    # light themes
+    "default": "vendor/bootswatch/default/bootstrap.min.css",
+    "cerulean": "vendor/bootswatch/cerulean/bootstrap.min.css",
+    "cosmo": "vendor/bootswatch/cosmo/bootstrap.min.css",
+    "flatly": "vendor/bootswatch/flatly/bootstrap.min.css",
+    "journal": "vendor/bootswatch/journal/bootstrap.min.css",
+    "litera": "vendor/bootswatch/litera/bootstrap.min.css",
+    "lumen": "vendor/bootswatch/lumen/bootstrap.min.css",
+    "lux": "vendor/bootswatch/lux/bootstrap.min.css",
+    "materia": "vendor/bootswatch/materia/bootstrap.min.css",
+    "minty": "vendor/bootswatch/minty/bootstrap.min.css",
+    "pulse": "vendor/bootswatch/pulse/bootstrap.min.css",
+    "sandstone": "vendor/bootswatch/sandstone/bootstrap.min.css",
+    "simplex": "vendor/bootswatch/simplex/bootstrap.min.css",
+    "sketchy": "vendor/bootswatch/sketchy/bootstrap.min.css",
+    "spacelab": "vendor/bootswatch/spacelab/bootstrap.min.css",
+    "united": "vendor/bootswatch/united/bootstrap.min.css",
+    "yeti": "vendor/bootswatch/yeti/bootstrap.min.css",
+    # dark themes
+    "darkly": "vendor/bootswatch/darkly/bootstrap.min.css",
+    "cyborg": "vendor/bootswatch/cyborg/bootstrap.min.css",
+    "slate": "vendor/bootswatch/slate/bootstrap.min.css",
+    "solar": "vendor/bootswatch/solar/bootstrap.min.css",
+    "superhero": "vendor/bootswatch/superhero/bootstrap.min.css",
+}
+
+DARK_THEMES = ("darkly", "cyborg", "slate", "solar", "superhero")
