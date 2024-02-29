@@ -61,6 +61,8 @@ def borrow_book(request, user_id):
         return HttpResponse("Faqat POST so'rovlarni qabul qilamiz!")
 def followers_book(request):
     return render(request, 'app/library/pages/followers_book.html')
+def add_followers_book(request):
+    return render(request, 'app/library/pages/add_followers_book.html')
 
 
 def attach_book(request):

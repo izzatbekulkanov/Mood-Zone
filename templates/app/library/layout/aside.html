@@ -78,7 +78,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/library/' %} active {% endif %}" aria-current="page" href="{% url 'library_dashboard' %}">
+                    <a class="nav-link {% if request.path == '/library/' %} active {% endif %}" aria-current="page"
+                       href="{% url 'library_dashboard' %}">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -149,7 +150,7 @@
                     </a>
                     <ul class="sub-nav collapse" id="products" data-bs-parent="#iq-social-app">
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == '/library/book_list' %} active {% endif %}" 
+                            <a class="nav-link {% if request.path == '/library/book_list' %} active {% endif %}"
                                href="{% url 'book_list' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
@@ -164,7 +165,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == '/library/add_book' %} active {% endif %}" href="{% url 'add_book' %}">
+                            <a class="nav-link {% if request.path == '/library/add_book' %} active {% endif %}"
+                               href="{% url 'add_book' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -178,7 +180,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == '/library/busy_book' %} active {% endif %} " href="{% url 'busy_book' %}">
+                            <a class="nav-link {% if request.path == '/library/busy_book' %} active {% endif %} "
+                               href="{% url 'busy_book' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -218,7 +221,7 @@
                     <ul class="sub-nav collapse" id="event" data-bs-parent="#iq-social-app">
                         {#                            OBUNACHILAR#}
                         <li class="nav-item">
-                            <a class="nav-link " href="{% url 'followers_book' %}">
+                            <a class="nav-link {% if request.path == '/library/followers_book' %} active {% endif %}" href="{% url 'followers_book' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -233,7 +236,7 @@
                         </li>
                         {#                            OBUNACHI QOSHISH#}
                         <li class="nav-item">
-                            <a class="nav-link " href="event-detail.html">
+                            <a class="nav-link {% if request.path == '/library/followers_book' %} active {% endif %}" href="event-detail.html">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -248,7 +251,7 @@
                         </li>
                         {#                            Buyurtmalar#}
                         <li class="nav-item">
-                            <a class="nav-link " href="{% url 'order_book' %}">
+                            <a class="nav-link {% if request.path == '/library/order_book' %} active {% endif %} " href="{% url 'order_book' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -263,7 +266,7 @@
                         </li>
                         {#                            Qarzdorlar#}
                         <li class="nav-item">
-                            <a class="nav-link " href="event-detail.html">
+                            <a class="nav-link {% if request.path == '/library/followers_book' %} active {% endif %} " href="event-detail.html">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
