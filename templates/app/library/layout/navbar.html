@@ -1061,16 +1061,32 @@
                 <div class="col-md-12">
                     <div class="flex-wrap d-flex justify-content-between align-items-center">
                         <div>
-
-                            {% if request.path == '/library/book_list' %}
-                                <h1>Kitoblar ro'yhati</h1>
-                            {% elif request.path == '/library/add_book' %}
-                                <h1>Kitoblar Qo'shish</h1>
-                            {% elif request.path == '/library/busy_book' %}
-                                <h1>Band kitoblar ro'yhati</h1>
-                            {% else %}
+                            {% if request.path == '/library/' %}
                                 <h1>Kutubxona!</h1>
                                 <p>Namangan davlat pedagogika intstituti kutubxona tizimi.</p>
+                            {% elif request.path == '/library/book_list' %}
+                                <h1>Kitoblar ro'yhati</h1>
+                            {% elif request.path == '/library/add_book' %}
+                                <h1>Kitob qo'shish</h1>
+                            {% elif request.path == '/library/give_book' %}
+                                <h1>Kitob berish</h1>
+                            {% elif request.path == '/library/busy_book' %}
+                                <h1>Band kitoblar ro'yhati</h1>
+                            {% elif request.path == '/library/online_book_list' %}
+                                <h1>Onlayn kitoblar</h1>
+                            {% elif request.path == '/library/add_online_book' %}
+                                <h1>Onlayn kitob qo'shish</h1>
+                            {% elif request.path == '/library/order_book' %}
+                                <h1>Kitob buyurtma</h1>
+                            {% elif request.path == '/library/followers_book' %}
+                                <h1>Kitob kuzatuvchi</h1>
+                            {% elif request.path == '/library/add_followers_book' %}
+                                <h1>Kitob kuzatuvchisini qo'shish</h1>
+                            {% elif request.path == '/library/debtors_book' %}
+                                <h1>Qarzdor kitobhonlar</h1>
+                            {% elif request.path == '/library/statistics_book' %}
+                                <h1>Statistika</h1>
+
                             {% endif %}
 
                         </div>

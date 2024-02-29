@@ -1,20 +1,36 @@
 from django.contrib import admin
-from .models import CustomUser
+from .models import CustomUser, BookOrder
 
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
-    list_display = ['email', 'username', 'first_name', 'last_name', 'age', 'phone_number', 'image', 'role', 'is_staff']
-    search_fields = ['email', 'username', 'first_name', 'last_name', 'role']
-    list_filter = ['is_staff', 'is_active', 'user_role']
+    list_display = ['email', 'full_name', 'user_role', 'date_joined', 'is_staff', 'is_active']
+    list_filter = ['user_role', 'date_joined', 'is_staff', 'is_active']
+    search_fields = ['email', 'full_name']
+    readonly_fields = ['date_joined']
     fieldsets = (
-        (None, {'fields': ('email', 'password', 'password_save')}),
-        ('Personal Info', {'fields': ('first_name', 'last_name', 'age', 'phone_number', 'image')}),
-        ('Permissions', {'fields': ('is_staff', 'is_active', 'user_role')}),
-        ('University Info', {'fields': ('passport_serial', 'passport_issue_date', 'birth_date', 'group')}),
+        (None, {
+            'fields': ('email', 'password', 'first_name', 'last_name', 'full_name', 'age', 'phone_number', 'image', 'role', 'user_role', 'is_staff', 'is_active')
+        }),
+        ('University Information', {
+            'fields': ('passport_serial', 'passport_issue_date', 'birth_date',),
+            'classes': ('collapse',)
+        }),
+        ('Important dates', {
+            'fields': ('last_login', 'date_joined'),
+            'classes': ('collapse',)
+        }),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'username', 'password1', 'password2', 'password_save', 'image', 'role', 'is_staff', 'is_active', 'user_role', 'passport_serial', 'passport_issue_date', 'birth_date', 'group')}
+            'fields': ('email', 'password1', 'password2', 'first_name', 'last_name', 'full_name', 'age', 'phone_number', 'image', 'role', 'user_role', 'is_staff', 'is_active')}
         ),
     )
+    ordering = ['-date_joined']
+
+@admin.register(BookOrder)
+class BookOrderAdmin(admin.ModelAdmin):
+    list_display = ['user', 'book_title', 'author', 'order_date', 'status']
+    list_filter = ['status', 'order_date']
+    search_fields = ['user__email', 'book_title', 'author']
+    readonly_fields = ['order_date']

@@ -1,10 +1,8 @@
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from university.models import Group
 import random
 import string
-
 
 
 class CustomUserManager(BaseUserManager):
@@ -46,17 +44,23 @@ class CustomUserManager(BaseUserManager):
         return self._create_user(email, password, **extra_fields)
 
 
+
+
+
 class CustomUser(AbstractUser):
     user_role_choices = [
-        ('dean', 'Dean'),
-        ('head', 'Head'),
-        ('rector', 'Rector'),
-        ('simple', 'Simple'),
-        ('admin', 'Admin'),
+        ('dean', 'Dekan'),
+        ('head', 'Boshqaruvchi'),
+        ('rector', 'Rektor'),
+        ('simple', 'Oddiy'),
+        ('admin', 'Administrator'),
         ('student', 'Student'),
-        ('employee', 'Employee'),
-
+        ('employee', 'Xodim'),
+        ('book_subscriber', 'Kitob Obunachisi'),
+        ('librarian', 'Kutubxonachi'),
+        ('examiner', 'Imtihon Topshiruvchi'),
     ]
+
     email = models.EmailField(_('email address'), unique=True)
     username = models.CharField(max_length=9, default=CustomUserManager()._generate_random_username, unique=True)
     first_name = models.CharField(max_length=30, blank=True)
@@ -76,7 +80,7 @@ class CustomUser(AbstractUser):
     passport_serial = models.CharField(max_length=20, null=True, blank=True)
     passport_issue_date = models.DateField(null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name='universities', null=True, blank=True)
+
 
     def save(self, *args, **kwargs):
         self.full_name = f"{self.first_name} {self.last_name}"
@@ -84,4 +88,5 @@ class CustomUser(AbstractUser):
 
     USERNAME_FIELD = 'email'  # Foydalanuvchilar email orqali login qila oladilar
     REQUIRED_FIELDS = ['username']  # username kerakli maydon
-    objects = CustomUserManager()
+
+

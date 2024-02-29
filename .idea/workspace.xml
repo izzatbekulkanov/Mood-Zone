@@ -18,8 +18,9 @@
       <list>
         <option value="JSX File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="TypeScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -38,6 +39,7 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "Django Server.education.executor": "Run",
+    "Django tests.Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -53,7 +55,28 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django tests.Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation">
+    <configuration name="Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="education" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="library.tests.LibraryModelsTestCase.test_onlinebook_creation" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="education" type="Python.DjangoServer" factoryName="Django server">
       <module name="education" />
       <option name="ENV_FILES" value="" />
@@ -79,6 +102,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -99,11 +127,14 @@
       <workItem from="1709071099857" duration="10352000" />
       <workItem from="1709081662076" duration="12324000" />
       <workItem from="1709141436772" duration="14388000" />
-      <workItem from="1709159471900" duration="16487000" />
+      <workItem from="1709159471900" duration="31609000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/NamDPI$Test__library_tests_LibraryModelsTestCase_test_onlinebook_creation.coverage" NAME="Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation Coverage Results" MODIFIED="1709241825758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
