@@ -1,0 +1,171 @@
+{% extends 'app/library/layout/main.html' %}
+{% load static %}
+
+{% block style %}
+    <!-- Library / Plugin Css Build -->
+    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css ' %}">
+    <!-- Hope Ui Design System Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+    <!-- Dark Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+    <!-- Customizer Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+    <!-- RTL Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/social-app.min.css ' %}"/>
+{% endblock style %}
+
+{% block body %}
+    <!-- Content -->
+    <div class="container-fluid content-inner pb-0" id="page_layout">
+        <div class="row">
+            <div class="col-xl-12 col-lg-8">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Yangi kitob qo'shish</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="fname">Title:</label>
+                                        <input type="text" class="form-control" id="fname" name="title"
+                                               placeholder="Kitob nomi">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="customFile1" class="form-label custom-file-input">Rasmi (Mavjud
+                                            bo'lsa)
+                                            file</label>
+                                        <input class="form-control" type="file" id="customFile1" name="image">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="add1">ISBN:</label>
+                                        <input type="text" class="form-control" id="add1" name="isbn"
+                                               placeholder="ISBN">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="add2">Author:</label>
+                                        <input type="text" class="form-control" id="add2" name="author"
+                                               placeholder="Kitob muallifi">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label class="form-label">Publication Year:</label>
+                                        <select name="publication_year" class="selectpicker form-control"
+                                                data-style="py-0">
+                                            <option value="">Select year</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="quantity">Quantity:</label>
+                                        <input type="number" class="form-control" id="quantity" name="quantity"
+                                               placeholder="Quantity">
+                                    </div>
+                                    <hr>
+                                    <h5 class="mb-3">E'tiborli bo'ling</h5>
+                                    <div class="checkbox">
+                                        <label class="form-label"><input class="form-check-input me-2" type="checkbox"
+                                                                         value=""
+                                                                         id="flexchecked" name="enable_confirmation">Enable
+                                            Tasdiqlash</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Yangi kitob qo'shish</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    
+    <!--/ Content -->
+{% endblock body %}
+
+{% block script %}
+    <!-- Library Bundle Script -->
+    <script src="{% static 'assets/js/core/libs.min.js ' %}"></script>
+    <!-- Plugin Scripts -->
+    <!-- Slider-tab Script -->
+    <script src="{% static 'assets/js/plugins/slider-tabs.js ' %}"></script>
+    <!-- Lodash Utility -->
+    <script src="{% static 'assets/vendor/lodash/lodash.min.js ' %}"></script>
+    <!-- Utilities Functions -->
+    <script src="{% static 'assets/js/iqonic-script/utility.min.js ' %}"></script>
+    <!-- Settings Script -->
+    <script src="{% static 'assets/js/iqonic-script/setting.min.js ' %}"></script>
+    <!-- Settings Init Script -->
+    <script src="{% static 'assets/js/setting-init.js ' %}"></script>
+    <!-- External Library Bundle Script -->
+    <script src="{% static 'assets/js/core/external.min.js ' %}"></script>
+    <!-- Widgetchart Script -->
+    <script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+    <!-- Dashboard Script -->
+    <script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+    <!-- Hopeui Script -->
+    <script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/sticky-sidebar.js ' %}"></script>
+    <script src="{% static 'assets/js/social.js ' %}"></script>
+ <!-- SweetAlert JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <!-- Your JavaScript Code -->
+    <script>
+        // Function to show SweetAlert modal
+        function showSuccessMessage() {
+            swal({
+                title: "Your work has been saved",
+                icon: "success",
+            });
+        }
+
+        // Submit form using AJAX
+        document.getElementById("addBookForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var formData = new FormData(this); // Get form data
+            // Send AJAX request to save book
+            fetch("{% url 'add_book' %}", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showSuccessMessage(); // Show success message if book is saved successfully
+                } else {
+                    swal("Error", "An error occurred while saving the book", "error");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                swal("Error", "An error occurred while saving the book", "error");
+            });
+        });
+    </script>
+{% endblock script %}

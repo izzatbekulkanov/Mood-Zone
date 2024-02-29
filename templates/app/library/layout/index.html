@@ -27,424 +27,106 @@
     <!-- Content -->
     <div class="container-fluid content-inner pb-0" id="page_layout">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-3 col-md-6">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center flex-wrap">
-                            <h4 class="mb-0">Profile Statistics</h4>
-                            <div class="dropdown">
-                                <a href="#" class="text-gray dropdown-toggle" id="profile-statistics"
-                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                    Everything
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile-statistics"
-                                    style="">
-                                    <li><a class="dropdown-item" href="#">Everything</a></li>
-                                    <li><a class="dropdown-item" href="#">Social</a></li>
-                                    <li><a class="dropdown-item" href="#">Live Streaming</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <div class="card-body">
-                        <div class="row row-cols-xl-4 row-cols-md-2 row-cols-1">
-                            <div class="col">
-                                <div class="card bg-body shadow-none mb-xl-0 ">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center gap-3 flex-wrap">
-                                            <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
-                                                <img src="{% static 'assets/images/media/01.png ' %}" alt="01"
-                                                     class="img-fluid avatar-30 object-contain">
-                                            </button>
-                                            <div>
-                                                <small>Followers</small>
-                                                <h4 class="mb-0">280k</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="bg-info text-white rounded p-3">
+                                <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.9488 14.54C8.49884 14.54 5.58789 15.1038 5.58789 17.2795C5.58789 19.4562 8.51765 20.0001 11.9488 20.0001C15.3988 20.0001 18.3098 19.4364 18.3098 17.2606C18.3098 15.084 15.38 14.54 11.9488 14.54Z"
+                                          fill="currentColor"></path>
+                                    <path opacity="0.4"
+                                          d="M11.949 12.467C14.2851 12.467 16.1583 10.5831 16.1583 8.23351C16.1583 5.88306 14.2851 4 11.949 4C9.61293 4 7.73975 5.88306 7.73975 8.23351C7.73975 10.5831 9.61293 12.467 11.949 12.467Z"
+                                          fill="currentColor"></path>
+                                    <path opacity="0.4"
+                                          d="M21.0881 9.21923C21.6925 6.84176 19.9205 4.70654 17.664 4.70654C17.4187 4.70654 17.1841 4.73356 16.9549 4.77949C16.9244 4.78669 16.8904 4.802 16.8725 4.82902C16.8519 4.86324 16.8671 4.90917 16.8895 4.93889C17.5673 5.89528 17.9568 7.0597 17.9568 8.30967C17.9568 9.50741 17.5996 10.6241 16.9728 11.5508C16.9083 11.6462 16.9656 11.775 17.0793 11.7948C17.2369 11.8227 17.3981 11.8371 17.5629 11.8416C19.2059 11.8849 20.6807 10.8213 21.0881 9.21923Z"
+                                          fill="currentColor"></path>
+                                    <path d="M22.8094 14.817C22.5086 14.1722 21.7824 13.73 20.6783 13.513C20.1572 13.3851 18.747 13.205 17.4352 13.2293C17.4155 13.232 17.4048 13.2455 17.403 13.2545C17.4003 13.2671 17.4057 13.2887 17.4316 13.3022C18.0378 13.6039 20.3811 14.916 20.0865 17.6834C20.074 17.8032 20.1698 17.9068 20.2888 17.8888C20.8655 17.8059 22.3492 17.4853 22.8094 16.4866C23.0637 15.9589 23.0637 15.3456 22.8094 14.817Z"
+                                          fill="currentColor"></path>
+                                    <path opacity="0.4"
+                                          d="M7.04459 4.77973C6.81626 4.7329 6.58077 4.70679 6.33543 4.70679C4.07901 4.70679 2.30701 6.84201 2.9123 9.21947C3.31882 10.8216 4.79355 11.8851 6.43661 11.8419C6.60136 11.8374 6.76343 11.8221 6.92013 11.7951C7.03384 11.7753 7.09115 11.6465 7.02668 11.551C6.3999 10.6234 6.04263 9.50765 6.04263 8.30991C6.04263 7.05904 6.43303 5.89462 7.11085 4.93913C7.13234 4.90941 7.14845 4.86348 7.12696 4.82926C7.10906 4.80135 7.07593 4.78694 7.04459 4.77973Z"
+                                          fill="currentColor"></path>
+                                    <path d="M3.32156 13.5127C2.21752 13.7297 1.49225 14.1719 1.19139 14.8167C0.936203 15.3453 0.936203 15.9586 1.19139 16.4872C1.65163 17.4851 3.13531 17.8066 3.71195 17.8885C3.83104 17.9065 3.92595 17.8038 3.91342 17.6832C3.61883 14.9167 5.9621 13.6046 6.56918 13.3029C6.59425 13.2885 6.59962 13.2677 6.59694 13.2542C6.59515 13.2452 6.5853 13.2317 6.5656 13.2299C5.25294 13.2047 3.84358 13.3848 3.32156 13.5127Z"
+                                          fill="currentColor"></path>
+                                </svg>
                             </div>
-                            <div class="col">
-                                <div class="card bg-body shadow-none mb-xl-0">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center gap-3 flex-wrap">
-                                            <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
-                                                <img src="{% static 'assets/images/media/02.png ' %}" alt="01"
-                                                     class="img-fluid avatar-30 object-contain">
-                                            </button>
-                                            <div>
-                                                <small>Join</small>
-                                                <h4 class="mb-0">100k</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card bg-body shadow-none mb-md-0">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center gap-3 flex-wrap">
-                                            <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
-                                                <img src="{% static 'assets/images/media/03.png ' %}" alt="01"
-                                                     class="img-fluid avatar-30 object-contain">
-                                            </button>
-                                            <div>
-                                                <small>Subscribers</small>
-                                                <h4 class="mb-0">2.9M</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card bg-body shadow-none mb-0">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center gap-3 flex-wrap">
-                                            <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
-                                                <img src="{% static 'assets/images/media/04.png ' %}" alt="01"
-                                                     class="img-fluid avatar-30 object-contain">
-                                            </button>
-                                            <div>
-                                                <small>Like</small>
-                                                <h4 class="mb-0">210k</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center flex-wrap">
-                            <h4 class="mb-0">Profile Reach</h4>
-                            <div class="dropdown">
-                                <a href="#" class="text-gray dropdown-toggle" id="profile-reach"
-                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                    Month
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile-reach" style="">
-                                    <li><a class="dropdown-item" href="#">Everything</a></li>
-                                    <li><a class="dropdown-item" href="#">Social</a></li>
-                                    <li><a class="dropdown-item" href="#">Live Streaming</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="overall-chart" id="overall-chart"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card card-block card-stretch card-height">
-                            <div class="card-header">
-                                <h4 class="mb-0">Key Metrics</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex border-bottom pb-3 align-items-center iq-social-keyMetrics">
-                                    <h6 class="iq-key-metrics mb-0">Clicks</h6>
-                                    <div class="iq-drive-progress d-flex align-items-center">
-                                        <span class="key-number">10k</span>
-                                        <div class="shadow-none key-progress progress bg-soft-primary w-50">
-                                            <div class="progress-bar bg-primary" data-toggle="progress-bar"
-                                                 role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                                                 aria-valuemax="100"></div>
-                                        </div>
-                                        <span class="ms-3">12k</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex border-bottom py-3 align-items-center iq-social-keyMetrics">
-                                    <h6 class="iq-key-metrics mb-0">Likes</h6>
-                                    <div class="iq-drive-progress d-flex align-items-center">
-                                        <span class="key-number">680</span>
-                                        <div class="shadow-none key-progress progress bg-soft-primary w-50">
-                                            <div class="progress-bar bg-primary" data-toggle="progress-bar"
-                                                 role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                                 aria-valuemax="100"></div>
-                                        </div>
-                                        <span class="ms-3">520</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex border-bottom py-3 align-items-center iq-social-keyMetrics">
-                                    <h6 class="iq-key-metrics mb-0">Followers</h6>
-                                    <div class="iq-drive-progress d-flex align-items-center">
-                                        <span class="key-number">8k</span>
-                                        <div class="shadow-none key-progress progress bg-soft-primary w-50">
-                                            <div class="progress-bar bg-primary" data-toggle="progress-bar"
-                                                 role="progressbar" aria-valuenow="20" aria-valuemin="0"
-                                                 aria-valuemax="100"></div>
-                                        </div>
-                                        <span class="ms-3">121k</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex pt-3 align-items-center iq-social-keyMetrics">
-                                    <h6 class="iq-key-metrics mb-0">Impressions</h6>
-                                    <div class="iq-drive-progress d-flex align-items-center">
-                                        <span class="key-number">369</span>
-                                        <div class="shadow-none key-progress progress bg-soft-primary w-50">
-                                            <div class="progress-bar bg-primary" data-toggle="progress-bar"
-                                                 role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                                 aria-valuemax="100"></div>
-                                        </div>
-                                        <span class="ms-3">10k</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="row row-cols-1 row-cols-md-2">
-                            <div class="col">
-                                <div class="card card-block card-stretch card-height text-center">
-                                    <div class="card-header">
-                                        <h2 class="card-title">20k</h2>
-                                    </div>
-                                    <div class="card-body px-0">
-                                        <span>Enagaged Users</span>
-                                        <div id="social-1"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card card-block card-stretch card-height text-center">
-                                    <div class="card-header">
-                                        <h2 class="card-title">12.2k</h2>
-                                    </div>
-                                    <div class="card-body px-0">
-                                        <span>Page Impression</span>
-                                        <div id="social-2"></div>
-                                    </div>
-                                </div>
+                            <div class="text-end">
+                                Customers
+                                <h2 class="counter" style="visibility: visible;">75</h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3 col-md-6">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex align-items-center">
-                            <h4 class="me-3 mb-0">Requests</h4>
-                            <div>
-                                <span class="btn btn-sm btn-icon btn-soft-primary text-primary rounded-pill">3</span>
-                            </div>
-                        </div>
-                    </div>
                     <div class="card-body">
-                        <div class="d-flex mb-3 pb-3 border-bottom gap-3">
-                            <img src="{% static 'assets/images/avatar/12.png ' %}" alt="01" class="img-fluid rounded-circle avatar-60">
-                            <div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <h5 class="mb-0">Wade Warren</h5>
-                                    <small>wants to add you to friends</small>
-                                </div>
-                                <div class="d-flex align-items-center mt-2 gap-2">
-                                    <a href="#" class="small">Accept</a>
-                                    <a href="#" class="text-body small">Decline</a>
-                                </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="bg-warning text-white rounded p-3">
+                                <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.997 15.1746C7.684 15.1746 4 15.8546 4 18.5746C4 21.2956 7.661 21.9996 11.997 21.9996C16.31 21.9996 19.994 21.3206 19.994 18.5996C19.994 15.8786 16.334 15.1746 11.997 15.1746Z"
+                                          fill="currentColor"></path>
+                                    <path opacity="0.4"
+                                          d="M11.9971 12.5838C14.9351 12.5838 17.2891 10.2288 17.2891 7.29176C17.2891 4.35476 14.9351 1.99976 11.9971 1.99976C9.06008 1.99976 6.70508 4.35476 6.70508 7.29176C6.70508 10.2288 9.06008 12.5838 11.9971 12.5838Z"
+                                          fill="currentColor"></path>
+                                </svg>
                             </div>
-                        </div>
-                        <div class="d-flex gap-3">
-                            <img src="{% static 'assets/images/avatar/14.png ' %}" alt="02" class="img-fluid rounded-circle avatar-60">
-                            <div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <h5 class="mb-0">Jenny Wilson</h5>
-                                    <small>wants to add you to friends</small>
-                                </div>
-                                <div class="d-flex align-items-center mt-2 gap-2">
-                                    <a href="#" class="small">Accept</a>
-                                    <a href="#" class="text-body small">Decline</a>
-                                </div>
+                            <div class="text-end">
+                                Products
+                                <h2 class="counter" style="visibility: visible;">60</h2>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
                 <div class="card">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                        <div class="header-title">
-                            <h4 class="card-title">Suggestions for you</h4>
-                        </div>
-                    </div>
                     <div class="card-body">
-                        <div class="iq-social-user-details">
-                            <div class="d-flex justify-content-center gap-3">
-                                <img src="{% static 'assets/images/avatar/13.png ' %}" class="img-fluid avatar-48 rounded-circle"
-                                     alt="profile-image-1" loading="lazy">
-                                <div class="d-flex align-items-center justify-content-between flex-grow-1">
-                                    <div class="me-3">
-                                        <h5>Cameron Williamson</h5>
-                                        <small class="text-ellipsis short-1">@Naoerville</small>
-                                    </div>
-                                    <div>
-                                        <button class="btn btn-icon btn-sm btn-primary rounded-pill">
-                                    <span class="btn-inner">
-                                        <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path opacity="0.4"
-                                                  d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z"
-                                                  fill="currentColor"></path>
-                                            <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z"
-                                                  fill="currentColor"></path>
-                                            <path opacity="0.4"
-                                                  d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z"
-                                                  fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                        </button>
-                                    </div>
-                                </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="bg-success text-white rounded p-3">
+                                <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.997 15.1746C7.684 15.1746 4 15.8546 4 18.5746C4 21.2956 7.661 21.9996 11.997 21.9996C16.31 21.9996 19.994 21.3206 19.994 18.5996C19.994 15.8786 16.334 15.1746 11.997 15.1746Z"
+                                          fill="currentColor"></path>
+                                    <path opacity="0.4"
+                                          d="M11.9971 12.5838C14.9351 12.5838 17.2891 10.2288 17.2891 7.29176C17.2891 4.35476 14.9351 1.99976 11.9971 1.99976C9.06008 1.99976 6.70508 4.35476 6.70508 7.29176C6.70508 10.2288 9.06008 12.5838 11.9971 12.5838Z"
+                                          fill="currentColor"></path>
+                                </svg>
                             </div>
-                            <div class="d-flex justify-content-center gap-3">
-                                <img src="{% static 'assets/images/avatar/06.png ' %}" class="img-fluid avatar-48 rounded-circle"
-                                     alt="profile-image-1" loading="lazy">
-                                <div class="d-flex align-items-center justify-content-between flex-grow-1">
-                                    <div class="me-3">
-                                        <h5>Guy Hawkins</h5>
-                                        <small class="text-ellipsis short-1">@hawkins</small>
-                                    </div>
-                                    <div>
-                                        <button class="btn btn-icon btn-sm btn-primary rounded-pill">
-                                    <span class="btn-inner">
-                                        <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path opacity="0.4"
-                                                  d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z"
-                                                  fill="currentColor"></path>
-                                            <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z"
-                                                  fill="currentColor"></path>
-                                            <path opacity="0.4"
-                                                  d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z"
-                                                  fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                        </button>
-                                    </div>
-                                </div>
+                            <div class="text-end">
+                                User
+                                <h2 class="counter" style="visibility: visible;">80</h2>
                             </div>
-                            <div class="d-flex justify-content-center gap-3">
-                                <img src="{% static 'assets/images/avatar/27.png ' %}" class="img-fluid avatar-48 rounded-circle"
-                                     alt="profile-image-1" loading="lazy">
-                                <div class="d-flex align-items-center justify-content-between flex-grow-1">
-                                    <div class="me-3">
-                                        <h5>Jacob Jones</h5>
-                                        <small class="text-ellipsis short-1">@Austin</small>
-                                    </div>
-                                    <div>
-                                        <button class="btn btn-icon btn-sm btn-primary rounded-pill">
-                                    <span class="btn-inner">
-                                        <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path opacity="0.4"
-                                                  d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z"
-                                                  fill="currentColor"></path>
-                                            <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z"
-                                                  fill="currentColor"></path>
-                                            <path opacity="0.4"
-                                                  d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z"
-                                                  fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center gap-3">
-                                <img src="{% static 'assets/images/avatar/28.png ' %}" class="img-fluid avatar-48 rounded-circle"
-                                     alt="profile-image-1" loading="lazy">
-                                <div class="d-flex align-items-center justify-content-between flex-grow-1">
-                                    <div class="me-3">
-                                        <h5>Darlene Robertson</h5>
-                                        <small class="text-ellipsis short-1">@Fairfiels</small>
-                                    </div>
-                                    <div>
-                                        <button class="btn btn-icon btn-sm btn-primary rounded-pill">
-                                    <span class="btn-inner">
-                                        <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path opacity="0.4"
-                                                  d="M21.101 9.58786H19.8979V8.41162C19.8979 7.90945 19.4952 7.5 18.999 7.5C18.5038 7.5 18.1 7.90945 18.1 8.41162V9.58786H16.899C16.4027 9.58786 16 9.99731 16 10.4995C16 11.0016 16.4027 11.4111 16.899 11.4111H18.1V12.5884C18.1 13.0906 18.5038 13.5 18.999 13.5C19.4952 13.5 19.8979 13.0906 19.8979 12.5884V11.4111H21.101C21.5962 11.4111 22 11.0016 22 10.4995C22 9.99731 21.5962 9.58786 21.101 9.58786Z"
-                                                  fill="currentColor"></path>
-                                            <path d="M9.5 15.0156C5.45422 15.0156 2 15.6625 2 18.2467C2 20.83 5.4332 21.5001 9.5 21.5001C13.5448 21.5001 17 20.8533 17 18.269C17 15.6848 13.5668 15.0156 9.5 15.0156Z"
-                                                  fill="currentColor"></path>
-                                            <path opacity="0.4"
-                                                  d="M9.50023 12.5542C12.2548 12.5542 14.4629 10.3177 14.4629 7.52761C14.4629 4.73754 12.2548 2.5 9.50023 2.5C6.74566 2.5 4.5376 4.73754 4.5376 7.52761C4.5376 10.3177 6.74566 12.5542 9.50023 12.5542Z"
-                                                  fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center mt-3">
-                            <div class="btn btn-primary btn-sm">View All</div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
                 <div class="card">
-                    <div class="card-body text-center">
-                        <div class="iq-media-group-1">
-                            <a href="#" class="iq-media-1">
-                                <div class="icon">
-                                    <img src="{% static 'assets/images/avatar/10.png ' %}" alt="01"
-                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
-                                </div>
-                            </a>
-                            <a href="#" class="iq-media-1">
-                                <div class="icon">
-                                    <img src="{% static 'assets/images/avatar/25.png ' %}" alt="01"
-                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
-                                </div>
-                            </a>
-                            <a href="#" class="iq-media-1">
-                                <div class="icon">
-                                    <img src="{% static 'assets/images/avatar/06.png ' %}" alt="01"
-                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
-                                </div>
-                            </a>
-                            <a href="#" class="iq-media-1">
-                                <div class="icon">
-                                    <img src="{% static 'assets/images/avatar/27.png ' %}" alt="01"
-                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
-                                </div>
-                            </a>
-                            <a href="#" class="iq-media-1">
-                                <div class="icon">
-                                    <img src="{% static 'assets/images/avatar/15.png ' %}" alt="01"
-                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
-                                </div>
-                            </a>
-                            <a href="#" class="iq-media-1">
-                                <div class="icon">
-                                    <img src="{% static 'assets/images/avatar/19.png ' %}" alt="01"
-                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
-                                </div>
-                            </a>
-                            <a href="#" class="iq-media-1">
-                                <div class="icon">
-                                    <img src="{% static 'assets/images/avatar/05.png ' %}" alt="01"
-                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
-                                </div>
-                            </a>
-                            <a href="#" class="iq-media-1">
-                                <div class="icon">
-                                    <img src="{% static 'assets/images/avatar/01.png ' %}" alt="01"
-                                         class="img-fluid rounded-circle avatar-48" loading="lazy"/>
-                                </div>
-                            </a>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="bg-danger text-white rounded p-3">
+                                <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.997 15.1746C7.684 15.1746 4 15.8546 4 18.5746C4 21.2956 7.661 21.9996 11.997 21.9996C16.31 21.9996 19.994 21.3206 19.994 18.5996C19.994 15.8786 16.334 15.1746 11.997 15.1746Z"
+                                          fill="currentColor"></path>
+                                    <path opacity="0.4"
+                                          d="M11.9971 12.5838C14.9351 12.5838 17.2891 10.2288 17.2891 7.29176C17.2891 4.35476 14.9351 1.99976 11.9971 1.99976C9.06008 1.99976 6.70508 4.35476 6.70508 7.29176C6.70508 10.2288 9.06008 12.5838 11.9971 12.5838Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="text-end">
+                                Category
+                                <h2 class="counter" style="visibility: visible;">45</h2>
+                            </div>
                         </div>
-                        <div class="d-flex justify-content-center align-items-center mt-4">
-                            <h5>184.3k</h5>
-                            <h6 class="ms-2">Followers</h6>
-                        </div>
-                        <span>Active now on your profile</span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!--/ Content -->
 {% endblock body %}
