@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -44,9 +46,6 @@ class CustomUserManager(BaseUserManager):
         return self._create_user(email, password, **extra_fields)
 
 
-
-
-
 class CustomUser(AbstractUser):
     user_role_choices = [
         ('dean', 'Dekan'),
@@ -68,7 +67,8 @@ class CustomUser(AbstractUser):
     last_name = models.CharField(max_length=150, blank=True)
     age = models.PositiveIntegerField(null=True, blank=True)
     phone_number = models.CharField(max_length=15, blank=True)
-    image = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
+    image = models.ImageField(upload_to='profile_pictures/',
+                              null=True, blank=True)
     role = models.CharField(max_length=20, null=True, blank=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -76,11 +76,11 @@ class CustomUser(AbstractUser):
     password_save = models.CharField(_('password save'), max_length=128)  # Added password_save field
     user_role = models.CharField(max_length=20, choices=user_role_choices, default='simple', null=True, blank=True)
 
+
     # Additional fields for the university
     passport_serial = models.CharField(max_length=20, null=True, blank=True)
     passport_issue_date = models.DateField(null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
-
 
     def save(self, *args, **kwargs):
         self.full_name = f"{self.first_name} {self.last_name}"
@@ -88,5 +88,3 @@ class CustomUser(AbstractUser):
 
     USERNAME_FIELD = 'email'  # Foydalanuvchilar email orqali login qila oladilar
     REQUIRED_FIELDS = ['username']  # username kerakli maydon
-
-

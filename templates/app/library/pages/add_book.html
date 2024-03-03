@@ -1,9 +1,12 @@
 {% extends 'app/library/layout/main.html' %}
 {% load static %}
-
 {% block style %}
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css ' %}">
+    <!-- Uppy Css -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/uppy/uppy.min.css' %}">
+    <!-- Sweetlaert2 css -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/sweetalert2/dist/sweetalert2.min.css' %}">
     <!-- Hope Ui Design System Css -->
     <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
@@ -15,8 +18,6 @@
     <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
     <!-- RTL Css -->
     <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
-
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -24,91 +25,232 @@
           rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/social-app.min.css ' %}"/>
 {% endblock style %}
-
 {% block body %}
     <!-- Content -->
     <div class="container-fluid content-inner pb-0" id="page_layout">
-        <div class="row">
-            <div class="col-xl-12 col-lg-8">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
-                            <h4 class="card-title">Yangi kitob qo'shish</h4>
+        <div class="content-inner pb-0 container-fluid" id="page_layout">
+            <div class="row">
+                <div class="content-inner pb-0 container-fluid" id="page_layout">
+                    <div class="border-bottom pb-3 d-flex align-items-center justify-content-between">
+                        <h5>Kitob kiritish</h5>
+                        <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                type="submit">
+                        <span class="d-flex justify-content-center ">
+                            <svg class="icon-22" width="22" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                      d="M16.191 2H7.81C4.77 2 3 3.78 3 6.83V17.16C3 20.26 4.77 22 7.81 22H16.191C19.28 22 21 20.26 21 17.16V6.83C21 3.78 19.28 2 16.191 2Z"
+                                      fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M8.07996 6.6499V6.6599C7.64896 6.6599 7.29996 7.0099 7.29996 7.4399C7.29996 7.8699 7.64896 8.2199 8.07996 8.2199H11.069C11.5 8.2199 11.85 7.8699 11.85 7.4289C11.85 6.9999 11.5 6.6499 11.069 6.6499H8.07996ZM15.92 12.7399H8.07996C7.64896 12.7399 7.29996 12.3899 7.29996 11.9599C7.29996 11.5299 7.64896 11.1789 8.07996 11.1789H15.92C16.35 11.1789 16.7 11.5299 16.7 11.9599C16.7 12.3899 16.35 12.7399 15.92 12.7399ZM15.92 17.3099H8.07996C7.77996 17.3499 7.48996 17.1999 7.32996 16.9499C7.16996 16.6899 7.16996 16.3599 7.32996 16.1099C7.48996 15.8499 7.77996 15.7099 8.07996 15.7399H15.92C16.319 15.7799 16.62 16.1199 16.62 16.5299C16.62 16.9289 16.319 17.2699 15.92 17.3099Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                            <span class="ms-3 mb-0">Kitob kiritish</span>
+                        </span>
+                        </button>
+                    </div>
+                    <h4 class="py-3 mb-0">Ohirgi kiritilgan kitoblar ro'yhati</h4>
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Oxirgi kiritilgan kitoblar</h5>
+                                </div>
+                                <div class="card-body px-0">
+                                    <div class="table-left-bordered table-responsive mt-3">
+                                        <div id="datatable_wrapper"
+                                             class="dataTables_wrapper dt-bootstrap5 no-footer">
+                                            <div class="table-responsive my-3">
+                                                <table class="table mb-0 dataTable no-footer" id="datatable"
+                                                       data-toggle="data-table"
+                                                       aria-describedby="datatable_info">
+                                                    <thead>
+                                                    <tr class="bg-white">
+                                                        <th scope="col" class="sorting sorting_asc"
+                                                            tabindex="0"
+                                                            aria-controls="datatable" rowspan="1"
+                                                            colspan="1" aria-sort="ascending"
+                                                            aria-label="Profiles: activate to sort column descending">
+                                                            Kitob
+                                                        </th>
+                                                        <th scope="col" class="sorting" tabindex="0"
+                                                            aria-controls="datatable"
+                                                            rowspan="1" colspan="1"
+                                                            aria-label="Contact: activate to sort column ascending">
+                                                            Kutubhona
+                                                        </th>
+                                                        <th scope="col" class="sorting" tabindex="0"
+                                                            aria-controls="datatable"
+                                                            rowspan="1" colspan="1"
+                                                            aria-label="Email ID: activate to sort column ascending">
+                                                            Kutubhonachi
+                                                        </th>
+                                                        <th scope="col" class="sorting" tabindex="0"
+                                                            aria-controls="datatable"
+                                                            rowspan="1" colspan="1"
+                                                            aria-label="Country: activate to sort column ascending">
+                                                            Kitob ID
+                                                        </th>
+                                                        <th scope="col" class="sorting" tabindex="0"
+                                                            aria-controls="datatable"
+                                                            rowspan="1" colspan="1"
+                                                            aria-label="Purchases: activate to sort column ascending">
+                                                            Kitob soni
+                                                        </th>
+                                                        <th scope="col" class="sorting" tabindex="0"
+                                                            aria-controls="datatable"
+                                                            rowspan="1" colspan="1"
+                                                            aria-label="Status: activate to sort column ascending">
+                                                            Yili
+                                                        </th>
+                                                        <th scope="col" class="sorting" tabindex="0"
+                                                            aria-controls="datatable"
+                                                            rowspan="1" colspan="1"
+                                                            aria-label="Action: activate to sort column ascending">
+                                                            Status
+                                                        </th>
+                                                        <th scope="col" class="sorting" tabindex="0"
+                                                            aria-controls="datatable"
+                                                            rowspan="1" colspan="1"
+                                                            aria-label="Action: activate to sort column ascending">
+                                                            Other
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="book-table-body">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="new-user-info">
-                            <form method="post" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="fname">Title:</label>
-                                        <input type="text" class="form-control" id="fname" name="title"
-                                               placeholder="Kitob nomi">
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="card">
+                                        <div class="card-header d-flex justify-content-between">
+                                            <div class="header-title">
+                                                <h4 class="card-title">Input</h4>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="bookForm">
+                                                <div class="form-group">
+                                                    <label class="form-label"
+                                                           for="exampleInputDisabled1">Kutubhonachi</label>
+                                                    <input type="text" class="form-control" id="exampleInputDisabled1"
+                                                           disabled value="{{ request.user.full_name }}">
+                                                </div>
+                                                <div class="card-body">
+                                                    {% csrf_token %}
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                                               for="BookName">Kitob nomi:</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="BookName"
+                                                                   name="title" placeholder="Kitob nomini kiriting"
+                                                                   required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                                               for="author">Kitob muallifi:</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="author"
+                                                                   name="author" placeholder="Kitob muallifini kiriting"
+                                                                   required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                                               for="isbn">Kitob ISBN raqami:</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="isbn"
+                                                                   name="isbn" placeholder="Kitob ISBN raqami" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                                               for="image">Kitob rasmi (Mavjud bo'lsa):</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="file" class="form-control" id="image"
+                                                                   name="image" placeholder="Kitob rasmi">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0">Kitob
+                                                            chiqarilgan yil</label>
+                                                        <div class="col-sm-9">
+                                                            <select class="form-select mb-3 shadow-none"
+                                                                    id="publication_year" name="publication_year"
+                                                                    required>
+                                                                <option selected disabled>Kitob chiqarilgan yil</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                                               for="quantity">Kitob soni:</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" class="form-control" id="quantity"
+                                                                   name="quantity" value="1" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                   value="accepted" id="remebercheck2" name="status">
+                                                            <label class="form-check-label" for="remebercheck2">Tasdiqlash</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="button" class="btn btn-primary"
+                                                                onclick="submitForm()">Saqlash
+                                                        </button>
+                                                        <button type="button" class="btn btn-danger"
+                                                                onclick="closeModal()">Chiqish
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="customFile1" class="form-label custom-file-input">Rasmi (Mavjud
-                                            bo'lsa)
-                                            file</label>
-                                        <input class="form-control" type="file" id="customFile1" name="image">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="add1">ISBN:</label>
-                                        <input type="text" class="form-control" id="add1" name="isbn"
-                                               placeholder="ISBN">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="add2">Author:</label>
-                                        <input type="text" class="form-control" id="add2" name="author"
-                                               placeholder="Kitob muallifi">
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label class="form-label">Publication Year:</label>
-                                        <select name="publication_year" class="selectpicker form-control"
-                                                data-style="py-0">
-                                            <option value="">Select year</option>
-                                            <option value="2020">2020</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="quantity">Quantity:</label>
-                                        <input type="number" class="form-control" id="quantity" name="quantity"
-                                               placeholder="Quantity">
-                                    </div>
-                                    <hr>
-                                    <h5 class="mb-3">E'tiborli bo'ling</h5>
-                                    <div class="checkbox">
-                                        <label class="form-label"><input class="form-check-input me-2" type="checkbox"
-                                                                         value=""
-                                                                         id="flexchecked" name="enable_confirmation">Enable
-                                            Tasdiqlash</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Yangi kitob qo'shish</button>
                                 </div>
-                            </form>
-
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-    </div>
-    
     <!--/ Content -->
 {% endblock body %}
-
 {% block script %}
+    
+
+    <!-- Add library Script -->
+    
+    <script src="{% static 'assets/js/App/library/add_book.js ' %}"></script>
+
     <!-- Library Bundle Script -->
     <script src="{% static 'assets/js/core/libs.min.js ' %}"></script>
-    <!-- Plugin Scripts -->
+    <!-- Flatpickr Script -->
+    <script src="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/flatpickr.js' %}" defer></script>
+    <!-- Sweet-alert Script -->
+    <script src="{% static 'assets/vendor/sweetalert2/dist/sweetalert2.min.js' %}" async></script>
+    <script src="{% static 'assets/js/plugins/sweet-alert.js' %}" defer></script>
     <!-- Slider-tab Script -->
     <script src="{% static 'assets/js/plugins/slider-tabs.js ' %}"></script>
+    <!-- Uppy-tab Script -->
+    <script src="{% static 'assets/vendor/uppy/uppy.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/uppy.js' %}" defer></script>
     <!-- Lodash Utility -->
     <script src="{% static 'assets/vendor/lodash/lodash.min.js ' %}"></script>
     <!-- Utilities Functions -->
@@ -130,42 +272,6 @@
     <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
     <script src="{% static 'assets/js/sticky-sidebar.js ' %}"></script>
     <script src="{% static 'assets/js/social.js ' %}"></script>
- <!-- SweetAlert JS -->
+    <!-- SweetAlert JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-
-    <!-- Your JavaScript Code -->
-    <script>
-        // Function to show SweetAlert modal
-        function showSuccessMessage() {
-            swal({
-                title: "Your work has been saved",
-                icon: "success",
-            });
-        }
-
-        // Submit form using AJAX
-        document.getElementById("addBookForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-            var formData = new FormData(this); // Get form data
-            // Send AJAX request to save book
-            fetch("{% url 'add_book' %}", {
-                method: "POST",
-                body: formData,
-                headers: {
-                    'X-CSRFToken': '{{ csrf_token }}'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    showSuccessMessage(); // Show success message if book is saved successfully
-                } else {
-                    swal("Error", "An error occurred while saving the book", "error");
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                swal("Error", "An error occurred while saving the book", "error");
-            });
-        });
-    </script>
 {% endblock script %}

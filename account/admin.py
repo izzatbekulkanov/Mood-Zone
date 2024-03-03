@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import CustomUser, BookOrder
+from .models import CustomUser
+
 
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
@@ -9,7 +10,9 @@ class CustomUserAdmin(admin.ModelAdmin):
     readonly_fields = ['date_joined']
     fieldsets = (
         (None, {
-            'fields': ('email', 'password', 'first_name', 'last_name', 'full_name', 'age', 'phone_number', 'image', 'role', 'user_role', 'is_staff', 'is_active')
+            'fields': (
+            'email', 'password', 'first_name', 'last_name', 'full_name', 'age', 'phone_number', 'image', 'role',
+            'user_role', 'is_staff', 'is_active')
         }),
         ('University Information', {
             'fields': ('passport_serial', 'passport_issue_date', 'birth_date',),
@@ -23,14 +26,9 @@ class CustomUserAdmin(admin.ModelAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2', 'first_name', 'last_name', 'full_name', 'age', 'phone_number', 'image', 'role', 'user_role', 'is_staff', 'is_active')}
-        ),
+            'fields': (
+            'email', 'password1', 'password2', 'first_name', 'last_name', 'full_name', 'age', 'phone_number', 'image',
+            'role', 'user_role', 'is_staff', 'is_active')}
+         ),
     )
     ordering = ['-date_joined']
-
-@admin.register(BookOrder)
-class BookOrderAdmin(admin.ModelAdmin):
-    list_display = ['user', 'book_title', 'author', 'order_date', 'status']
-    list_filter = ['status', 'order_date']
-    search_fields = ['user__email', 'book_title', 'author']
-    readonly_fields = ['order_date']

@@ -1,11 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.http import HttpResponseForbidden
+from django.http import HttpResponseForbidden, JsonResponse
 from django.utils import timezone
-
-from account.models import CustomUser, BookOrder
-from .forms import BookForm, OnlineBookForm, BookLoanForm
-from .models import Book, BookLoan, OnlineBook
+from account.models import CustomUser
+from .forms import OnlineBookForm, BookLoanForm
+from .models import Book, BookLoan, OnlineBook, BookOrder
 
 
 def check_user_role(user, allowed_roles):
@@ -16,50 +15,151 @@ def library_dashboard(request):
     """Bosh sahifa ko'rsatkichi."""
     # Foydalanuvchi admin yoki librarian bo'lsa
     if check_user_role(request.user, ['admin', 'librarian']):
-        # Foydalanuvchiga tegishli kutubxona obunachilari soni
-        library_subscribers = request.user.library.librarians.all()
+        # Foydalanuvchi bilan bog'liq kutubxona obyekti
+        user_library = request.user.library.library
 
-        # Foydalanuvchiga tegishli kutubxona kitoblari
-        library_books = request.user.library.books.all()
+        # Kitoblar soni
+        book_count = Book.objects.filter(library=user_library).count()
 
-        # Foydalanuvchiga tegishli kutubxona online kitoblar
-        library_online_books = request.user.library.onlinebook_set.all()
+        # Obunachilar soni
+        subscribers_count = CustomUser.objects.filter(user_role='book_subscriber').count()
 
-        # Foydalanuvchiga tegishli kutubxona buyurtma kitoblar
-        library_pending_orders = request.user.library.bookorder_set.filter(status='pending')
+        # Onlayn kitoblar soni
+        online_books_count = OnlineBook.objects.count()
+
+        # Buyurtma qilingan kitoblar soni
+        ordered_books_count = BookOrder.objects.filter(status='pending').count()
 
         context = {
-            'library_subscribers': library_subscribers,
-            'library_books': library_books,
-            'library_online_books': library_online_books,
-            'library_pending_orders': library_pending_orders,
+            'book_count': book_count,
+            'subscribers_count': subscribers_count,
+            'online_books_count': online_books_count,
+            'ordered_books_count': ordered_books_count,
         }
+
         return render(request, 'app/library/layout/index.html', context)
     else:
         return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
+
 
 @login_required
 def book_list(request):
     """Kitoblar ro'yxati sahifasi."""
     if not check_user_role(request.user, ['admin', 'librarian']):
         return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
-    books = Book.objects.all()  # Barcha kitoblarni olish
-    return render(request, 'app/library/pages/book_list.html', {'books': books})
+
+    return render(request, 'app/library/pages/book_list.html')
+
+
+def book_list_json(request):
+    """Kitoblar va ularning kutubhonalari ro'yxati."""
+    latest_books = Book.objects.filter(created__gte=timezone.now() - timezone.timedelta(hours=3))
+    approved_books = Book.objects.filter(status='accepted')  # Tasdiqlangan kitoblarni olish
+    rejected_books = Book.objects.filter(status='rejected')  # Rad etilgan kitoblarni olish
+
+    # Kitoblar va ularning kutubhonalari haqida ma'lumotlar
+    approved_book_data = []
+    rejected_book_data = []
+    latest_books_data = []
+    for book in latest_books:
+        book_info = {
+            'title': book.title,
+            'author': book.author,
+            'quantity': book.quantity,
+            'book_id': book.book_id,
+            'publication_year': book.publication_year,
+            'status': book.status,
+            'added_by': book.added_by.full_name,
+            'library_name': book.library.name if book.library else None  # Kitobning kutubhona nomi (agar mavjud bo'lsa)
+        }
+        latest_books_data.append(book_info)
+    for book in approved_books:
+        book_info = {
+            'title': book.title,
+            'author': book.author,
+            'quantity': book.quantity,
+            'book_id': book.book_id,
+            'publication_year': book.publication_year,
+            'status': book.status,
+            'added_by': book.added_by.full_name,
+            'library_name': book.library.name if book.library else None  # Kitobning kutubhona nomi (agar mavjud bo'lsa)
+        }
+        approved_book_data.append(book_info)
+    for book in rejected_books:
+        rejected_book_info = {
+            'title': book.title,
+            'author': book.author,
+            'quantity': book.quantity,
+            'book_id': book.book_id,
+            'publication_year': book.publication_year,
+            'status': book.status,
+            'added_by': book.added_by.full_name,
+            'library_name': book.library.name if book.library else None  # Kitobning kutubhona nomi (agar mavjud bo'lsa)
+        }
+        rejected_book_data.append(rejected_book_info)
+    # JSON ma'lumotlarni tayyorlash
+    data = {
+        'approved_books': approved_book_data,  # Tasdiqlangan kitoblarni JSON formatida
+        'rejected_books': rejected_book_data,  # Rad etilgan kitoblarni JSON formatida
+        'latest_books': latest_books_data,  # Ohirgi kiritilgan kitoblar royhati kitoblarni JSON formatida
+    }
+    # JSON javobini qaytarish
+    return JsonResponse(data)
+
+
+def change_book_status(request, book_id):
+    if request.method == 'POST':
+        try:
+            book = Book.objects.get(book_id=book_id)
+            book.status = 'accepted'  # Yangi status
+            book.save()
+            return JsonResponse({'success': True})  # JSON javobni qaytarish muvaffaqiyatli o'zgartirishni bildiradi
+        except Book.DoesNotExist:
+            return JsonResponse(
+                {'success': False, 'error': 'Kitob topilmadi'})  # Agar kitob topilmagan bo'lsa xatolik bildiriladi
+
+    # Agar POST so'rovi emas bo'lsa yoki kitob topilmagan bo'lsa
+    return JsonResponse({'success': False, 'error': 'Noto\'g\'ri so\'rov tashlanadi'})
 
 
 @login_required
-def add_book(request):
+def add_book_view(request):
     """Yangi kitob qo'shish sahifasi."""
     if not check_user_role(request.user, ['admin', 'librarian']):
         return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
+    return render(request, 'app/library/pages/add_book.html')
+
+
+@login_required
+def save_book(request):
+    if not check_user_role(request.user, ['admin', 'librarian']):
+        return HttpResponseForbidden("Sizga kitob kiritishga ruhsat yo'q.")
     if request.method == 'POST':
-        form = BookForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('add_book')  # Yangi kitob saqlanganidan so'ng o'ziga qaytaradi
+        title = request.POST.get('title')
+        author = request.POST.get('author')
+        isbn = request.POST.get('isbn')
+        image = request.FILES.get('image')
+        publication_year = request.POST.get('publication_year')
+        quantity = request.POST.get('quantity')
+        status = request.POST.get('status')
+        user_library = request.user.library.library
+
+        book = Book(
+            title=title,
+            author=author,
+            isbn=isbn,
+            image=image,
+            publication_year=publication_year,
+            quantity=quantity,
+            status=status,
+            library=user_library,
+            added_by=request.user
+        )
+        book.save()
+
+        return JsonResponse({'message': 'Ma\'lumotlar muvaffaqiyatli saqlandi.'}, status=200)
     else:
-        form = BookForm()
-    return render(request, 'app/library/pages/add_book.html', {'form': form})
+        return JsonResponse({'error': 'Faqat POST so\'rov qabul qilinadi.'}, status=405)
 
 
 @login_required
@@ -197,4 +297,3 @@ def statistics_book(request):
         'issued_books_count': issued_books_count,
     }
     return render(request, 'app/library/pages/statistics.html', context)
-
