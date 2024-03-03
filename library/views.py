@@ -1,7 +1,12 @@
+import json
+from datetime import timedelta
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponseForbidden, JsonResponse
-from django.utils import timezone
+from django.utils import timezone, formats
+from django.views.decorators.csrf import csrf_exempt
+
 from account.models import CustomUser
 from .forms import OnlineBookForm, BookLoanForm
 from .models import Book, BookLoan, OnlineBook, BookOrder
@@ -52,8 +57,11 @@ def book_list(request):
 
 
 def book_list_json(request):
+    # Oxirgi 1 soat ichida kiritilgan kitoblarni olish
+    last_hour = timezone.now() - timedelta(hours=1)
     """Kitoblar va ularning kutubhonalari ro'yxati."""
-    latest_books = Book.objects.filter(created__gte=timezone.now() - timezone.timedelta(hours=3))
+    # Oxirgi 1 soat ichida kiritilgan barcha kitoblarni olish
+    latest_books = Book.objects.filter(created_at__gte=last_hour)
     approved_books = Book.objects.filter(status='accepted')  # Tasdiqlangan kitoblarni olish
     rejected_books = Book.objects.filter(status='rejected')  # Rad etilgan kitoblarni olish
 
@@ -62,17 +70,18 @@ def book_list_json(request):
     rejected_book_data = []
     latest_books_data = []
     for book in latest_books:
-        book_info = {
+        latest_book_info = {
             'title': book.title,
             'author': book.author,
             'quantity': book.quantity,
             'book_id': book.book_id,
             'publication_year': book.publication_year,
+            'created_at': formats.date_format(book.created_at, "Y-m-d | H:i"),
             'status': book.status,
             'added_by': book.added_by.full_name,
             'library_name': book.library.name if book.library else None  # Kitobning kutubhona nomi (agar mavjud bo'lsa)
         }
-        latest_books_data.append(book_info)
+        latest_books_data.append(latest_book_info)
     for book in approved_books:
         book_info = {
             'title': book.title,
@@ -107,6 +116,42 @@ def book_list_json(request):
     return JsonResponse(data)
 
 
+@csrf_exempt
+def edit_book(request, book_id):
+    if request.method == 'PUT':
+        try:
+            # Kitobni bazadan izlash
+            book = Book.objects.get(id=book_id)
+
+            # JSON ma'lumotlarni qabul qilish
+            data = json.loads(request.body)
+
+            # Ma'lumotlarni yangilash
+            book.title = data.get('title', book.title)
+            book.author = data.get('author', book.author)
+            book.quantity = data.get('quantity', book.quantity)
+            book.publication_year = data.get('publication_year', book.publication_year)
+            book.status = data.get('status', book.status)
+            book.library = data.get('library', book.library)
+
+            # Ma'lumotlarni saqlash
+            book.save()
+
+            # Yangilangan ma'lumotlarni JSON formatida qaytarish
+            return JsonResponse({'message': 'Book updated successfully', 'data': {
+                'title': book.title,
+                'author': book.author,
+                'quantity': book.quantity,
+                'publication_year': book.publication_year,
+                'status': book.status,
+                'library': book.library
+            }})
+        except Book.DoesNotExist:
+            return JsonResponse({'error': 'Book not found'}, status=404)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+    else:
+        return JsonResponse({'error': 'Only PUT method is allowed'}, status=405)
 def change_book_status(request, book_id):
     if request.method == 'POST':
         try:

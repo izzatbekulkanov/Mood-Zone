@@ -60,7 +60,7 @@
                                     <div class="table-left-bordered table-responsive mt-3">
                                         <div id="datatable_wrapper"
                                              class="dataTables_wrapper dt-bootstrap5 no-footer">
-                                            <div class="table-responsive my-3">
+                                            <div class="table-responsive my-3" id="library-loader">
                                                 <table class="table mb-0 dataTable no-footer" id="datatable"
                                                        data-toggle="data-table"
                                                        aria-describedby="datatable_info">
@@ -101,19 +101,13 @@
                                                             aria-controls="datatable"
                                                             rowspan="1" colspan="1"
                                                             aria-label="Status: activate to sort column ascending">
-                                                            Yili
+                                                            Kiritilgan sanasi
                                                         </th>
                                                         <th scope="col" class="sorting" tabindex="0"
                                                             aria-controls="datatable"
                                                             rowspan="1" colspan="1"
                                                             aria-label="Action: activate to sort column ascending">
                                                             Status
-                                                        </th>
-                                                        <th scope="col" class="sorting" tabindex="0"
-                                                            aria-controls="datatable"
-                                                            rowspan="1" colspan="1"
-                                                            aria-label="Action: activate to sort column ascending">
-                                                            Other
                                                         </th>
                                                     </tr>
                                                     </thead>
@@ -232,12 +226,8 @@
     <!--/ Content -->
 {% endblock body %}
 {% block script %}
-    
-
     <!-- Add library Script -->
-    
     <script src="{% static 'assets/js/App/library/add_book.js ' %}"></script>
-
     <!-- Library Bundle Script -->
     <script src="{% static 'assets/js/core/libs.min.js ' %}"></script>
     <!-- Flatpickr Script -->

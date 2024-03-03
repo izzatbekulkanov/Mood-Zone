@@ -310,9 +310,106 @@
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
          aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog" >
+        <div class="modal-dialog">
             <div class="modal-content" id="confirmModal">
-            
+
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Input</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form id="bookForm">
+                                <div class="form-group">
+                                    <label class="form-label"
+                                           for="exampleInputDisabled1">Kutubhonachi</label>
+                                    <input type="text" class="form-control" id="exampleInputDisabled1"
+                                           disabled value="{{ request.user.full_name }}">
+                                </div>
+                                <div class="card-body">
+                                    {% csrf_token %}
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                               for="BookName">Kitob nomi:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="BookName"
+                                                   name="title" placeholder="Kitob nomini kiriting"
+                                                   required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                               for="author">Kitob muallifi:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="author"
+                                                   name="author" placeholder="Kitob muallifini kiriting"
+                                                   required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                               for="isbn">Kitob ISBN raqami:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="isbn"
+                                                   name="isbn" placeholder="Kitob ISBN raqami" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                               for="image">Kitob rasmi (Mavjud bo'lsa):</label>
+                                        <div class="col-sm-9">
+                                            <input type="file" class="form-control" id="image"
+                                                   name="image" placeholder="Kitob rasmi">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0">Kitob
+                                            chiqarilgan yil</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-select mb-3 shadow-none"
+                                                    id="publication_year" name="publication_year"
+                                                    required>
+                                                <option selected disabled>Kitob chiqarilgan yil</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                               for="quantity">Kitob soni:</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="quantity"
+                                                   name="quantity" value="1" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox"
+                                                   value="accepted" id="remebercheck2" name="status">
+                                            <label class="form-check-label" for="remebercheck2">Tasdiqlash</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary"
+                                                onclick="submitForm()">Saqlash
+                                        </button>
+                                        <button type="button" class="btn btn-danger"
+                                                onclick="closeModal()">Chiqish
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -321,8 +418,7 @@
 {% endblock body %}
 {% block script %}
 
-    <!-- Axios kutubxonani CDN orqali qo'shish -->
-    <script src="{% static 'assets/js/axios.min.js ' %}"></script>
+
     <!-- Library Scriptlari  -->
     <script src="{% static 'assets/js/App/library/library_app.js ' %}"></script>
 

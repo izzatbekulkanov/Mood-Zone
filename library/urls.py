@@ -13,7 +13,7 @@ from .views import (library_dashboard,
                     give_book,
                     save_book,
                     book_list_json,
-                    change_book_status,
+                    change_book_status, edit_book,
                     )
 
 urlpatterns = [
@@ -61,4 +61,7 @@ urlpatterns = [
 
     # Kitob holatini o'zgartirish
     path('change_book_status/<int:book_id>/', change_book_status, name='change_book_status'),
+
+    # Kitob holatini o'zgartirish
+    path('edit_book/<int:book_id>/', edit_book, name='edit_book'),
 ]
