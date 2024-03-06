@@ -24,7 +24,7 @@ def login_view(request):
             print("muvaffaqiyatsiz")
             messages.error(request, 'Invalid email or password.')
 
-    return render(request, 'register/sign-in.html')  # Change 'your_app' to your app name
+    return render(request, 'register/sign-in1.html')  # Change 'your_app' to your app name
 
 
 @login_required

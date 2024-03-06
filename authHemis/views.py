@@ -1,9 +1,10 @@
 from django.contrib import messages
-from django.contrib.auth import logout, get_user_model
-from django.shortcuts import render, redirect
+from django.contrib.auth import logout, get_user_model, login
+from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from account.models import CustomUser
 from .client import oAuth2Client
 from core.settings import (
     CLIENT_SECRET,
@@ -13,6 +14,7 @@ from core.settings import (
     TOKEN_URL,
     AUTHORIZE_URL,
 )
+from datetime import datetime
 
 
 class OAuthAuthorizationView(APIView):
@@ -26,6 +28,8 @@ class OAuthAuthorizationView(APIView):
             resource_owner_url=RESOURCE_OWNER_URL
         )
         authorization_url = client.get_authorization_url()
+
+        # return redirect(authorization_url)
         return Response(
             {
                 'authorization_url': authorization_url
@@ -67,6 +71,15 @@ class OAuthCallbackView(APIView):
             # Foydalanuvchi ma'lumotlarini olish
             email = user_details.get('email', None)
             employee_id_number = user_details.get('employee_id_number', None)
+            old_date_str = user_details.get('birth_date', '')
+            if old_date_str:
+                # Convert the old date string to datetime object
+                old_date = datetime.strptime(old_date_str, '%d-%m-%Y')
+
+                # Convert datetime object to new string format 'YYYY-MM-DD'
+                new_date_str = old_date.strftime('%Y-%m-%d')
+            else:
+                new_date_str = None
 
             # E-mail manzilini tekshirish va saqlash
             if email:
@@ -76,28 +89,41 @@ class OAuthCallbackView(APIView):
                         'full_name': user_details.get('name', ''),
                         'first_name': user_details.get('firstname', ''),
                         'second_name': user_details.get('surname', ''),
+                        'username': user_details.get('login', ''),
                         'third_name': user_details.get('patronymic', ''),
+                        'birth_date': new_date_str,
+                        'phone_number': user_details.get('phone', ''),
+                        'image': user_details.get('picture', ''),
                         # Boshqa ma'lumotlar
                     }
                 )
+                oauth_login(request, email)
             elif employee_id_number:
                 # E-mail manzili mavjud emas, employee_id_number dan email yaratish
                 email = f"{employee_id_number}@namspi.uz"
                 user, created = CustomUser.objects.get_or_create(
                     email=email,
                     defaults={
+                        'employee_id_number': user_details.get('employee_id_number', ''),
                         'full_name': user_details.get('name', ''),
                         'first_name': user_details.get('firstname', ''),
                         'second_name': user_details.get('surname', ''),
                         'username': user_details.get('login', ''),
                         'third_name': user_details.get('patronymic', ''),
-                        'birth_date': user_details.get('birth_date', ''),
+                        'birth_date': new_date_str,
                         'phone_number': user_details.get('phone', ''),
                         'image': user_details.get('picture', ''),
                         # Boshqa ma'lumotlar
                     }
                 )
+                oauth_login(request, email)
+
+            # Foydalanuvchini avtorizatsiya qilish
+            user.backend = 'django.contrib.auth.backends.ModelBackend'  # Foydalanuvchi uchun kerakli backendni aniqlash
+            login(request, user)
+
             return Response(full_info, status=status.HTTP_200_OK)
+            # return redirect('index')
         else:
             return Response(
                 {
@@ -107,7 +133,13 @@ class OAuthCallbackView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
+def oauth_login(request, email):
+    # Foydalanuvchi obyektini olish
+    user = get_object_or_404(CustomUser, email=email)
 
+    # Foydalanuvchini avtorizatsiya qilish
+    user.backend = 'django.contrib.auth.backends.ModelBackend'  # Foydalanuvchi uchun kerakli backendni aniqlash
+    login(request, user)
 def logout_view(request):
     logout(request)
     messages.success(request, 'Successfully logged out.')

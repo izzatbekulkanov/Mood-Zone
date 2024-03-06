@@ -9,108 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af7fa295-f941-4fdc-8e74-d3f2d3768204" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/authHemis/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authHemis/logging.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authHemis/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authHemis/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/users/create_student.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/oauth_authorize.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/oauth_callback.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/register/sign-in1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/migrations/0002_alter_customuser_username.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/migrations/0003_alter_customuser_username.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/migrations/0004_delete_defaultuserimage_alter_customuser_image_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/users/create_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authHemis/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authHemis/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authHemis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authHemis/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/libs/moment/moment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/migrations/0002_book_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/migrations/0003_book_added_by_book_isbn_alter_book_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309054399.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309063717.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309107021.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309156801.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309201253.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309215497.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309248207.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309262307.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309265954.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309271325.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309345811.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309350800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309353070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309379635.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309426763.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309429833.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309432311.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309438896.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309499038.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309529050.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309538754.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309559533.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309604767.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309624611.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309632842.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309633583.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309645200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309663673.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309670092.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309672945.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309703454.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309726765.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309730094.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309730936.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309757582.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309770906.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309774489.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309786167.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309790427.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309833448.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309851022.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309853860.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309873193.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309896947.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309933374.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/barcode_books/309971958.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/profile_pictures/default_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/profile_pictures/photo_2024-01-20_23-48-26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setting/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/core/libs.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/core/libs.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/App/library/add_book.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/library/add_book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/App/library/library_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/library/library_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/vendor/uppy/uppy.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/uppy/uppy.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/library/layout/aside.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/layout/aside.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/library/layout/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/layout/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/library/pages/book_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/pages/book_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/users/students.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/users/students.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/hope-ui/html/assets/vendor/uppy/uppy.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hope-ui/html/assets/vendor/uppy/uppy.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/university/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/university/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/university/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/university/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register/sign-in.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register/sign-in.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +176,7 @@
       <workItem from="1709620677836" duration="9244000" />
       <workItem from="1709653885975" duration="2575000" />
       <workItem from="1709656487866" duration="1779000" />
-      <workItem from="1709659372729" duration="14774000" />
+      <workItem from="1709659372729" duration="26062000" />
     </task>
     <servers />
   </component>

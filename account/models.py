@@ -182,6 +182,9 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username  # yoki return self.email yoki return self.full_name
 
+    def get_session_auth_hash(self):
+        return "some_hash"  # Sizning xohlagan hash algoritmingizni ishlatishingiz mumkin
+
     USERNAME_FIELD = 'email'  # Users login in with their email
     REQUIRED_FIELDS = ['username']  # username required field
 
