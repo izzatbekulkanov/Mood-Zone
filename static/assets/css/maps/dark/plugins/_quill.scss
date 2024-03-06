@@ -1,0 +1,16 @@
+//quill
+.ql-container.ql-snow{
+    border-color: $border-color;
+}
+
+.ql-toolbar.ql-snow{
+    border-color: $border-color;    
+}
+
+.ql-snow .ql-picker{
+    color: $body-color;
+}
+
+.ql-snow .ql-stroke{
+    stroke: $body-color;
+}

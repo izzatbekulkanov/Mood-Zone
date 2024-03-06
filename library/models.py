@@ -50,11 +50,16 @@ class Book(models.Model):
     status = models.CharField(max_length=20, choices=[('accepted', 'Tasdiqlangan'), ('rejected', 'Tasdiqlanmagan')], default='rejected', help_text="Kitob holati")
     added_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='added_books', help_text="Kitobni qo'shgan foydalanuvchi")
     isbn = models.CharField(max_length=20, blank=True, null=True, help_text="Kitobning ISBN raqami")
+    file = models.FileField(upload_to='book_files/', validators=[validate_file_extension], help_text="Kitob fayli (faqat Word va PDF)")
+
     def __str__(self):
         return self.title
 
     def save(self, *args, **kwargs):
         # Agar barcode_book bo'sh bo'lsa QR kodni generatsiya qilib saqlash
+        if not self.barcode_book:
+            image_filename = f"{self.book_id}.png"
+            self.barcode_book.save(image_filename, File(BytesIO(generate_barcode_book(self.book_id))), save=False)
         if not self.barcode_book:
             image_filename = f"{self.book_id}.png"
             self.barcode_book.save(image_filename, File(BytesIO(generate_barcode_book(self.book_id))), save=False)

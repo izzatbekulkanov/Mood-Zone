@@ -1,12 +1,10 @@
 import json
 from datetime import timedelta
-
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponseForbidden, JsonResponse
 from django.utils import timezone, formats
 from django.views.decorators.csrf import csrf_exempt
-
 from account.models import CustomUser
 from .forms import OnlineBookForm, BookLoanForm
 from .models import Book, BookLoan, OnlineBook, BookOrder
@@ -14,6 +12,7 @@ from .models import Book, BookLoan, OnlineBook, BookOrder
 
 def check_user_role(user, allowed_roles):
     return user.is_authenticated and user.user_role in allowed_roles
+
 
 
 def library_dashboard(request):
@@ -75,6 +74,7 @@ def book_list_json(request):
             'author': book.author,
             'quantity': book.quantity,
             'book_id': book.book_id,
+            'isbn': book.isbn,
             'publication_year': book.publication_year,
             'created_at': formats.date_format(book.created_at, "Y-m-d | H:i"),
             'status': book.status,
@@ -88,6 +88,7 @@ def book_list_json(request):
             'author': book.author,
             'quantity': book.quantity,
             'book_id': book.book_id,
+            'isbn': book.isbn,
             'publication_year': book.publication_year,
             'status': book.status,
             'added_by': book.added_by.full_name,
@@ -100,6 +101,7 @@ def book_list_json(request):
             'author': book.author,
             'quantity': book.quantity,
             'book_id': book.book_id,
+            'isbn': book.isbn,
             'publication_year': book.publication_year,
             'status': book.status,
             'added_by': book.added_by.full_name,
@@ -118,40 +120,42 @@ def book_list_json(request):
 
 @csrf_exempt
 def edit_book(request, book_id):
-    if request.method == 'PUT':
+    if request.method == 'POST':
         try:
-            # Kitobni bazadan izlash
-            book = Book.objects.get(id=book_id)
+            # Kitob obyektini topish
+            book = Book.objects.get(book_id=book_id)
 
-            # JSON ma'lumotlarni qabul qilish
+            # JSON ma'lumotlarni olish
             data = json.loads(request.body)
 
-            # Ma'lumotlarni yangilash
+            # Kitob ma'lumotlarini o'zgartirish
             book.title = data.get('title', book.title)
             book.author = data.get('author', book.author)
-            book.quantity = data.get('quantity', book.quantity)
+            book.isbn = data.get('isbn', book.isbn)
+            book.image = data.get('image', book.image)
             book.publication_year = data.get('publication_year', book.publication_year)
+            book.quantity = data.get('quantity', book.quantity)
             book.status = data.get('status', book.status)
-            book.library = data.get('library', book.library)
 
-            # Ma'lumotlarni saqlash
+            # Kitobni saqlash
             book.save()
 
             # Yangilangan ma'lumotlarni JSON formatida qaytarish
             return JsonResponse({'message': 'Book updated successfully', 'data': {
                 'title': book.title,
                 'author': book.author,
-                'quantity': book.quantity,
+                'isbn': book.isbn,
+                'image': book.image,
                 'publication_year': book.publication_year,
+                'quantity': book.quantity,
                 'status': book.status,
-                'library': book.library
             }})
         except Book.DoesNotExist:
             return JsonResponse({'error': 'Book not found'}, status=404)
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=500)
     else:
-        return JsonResponse({'error': 'Only PUT method is allowed'}, status=405)
+        return JsonResponse({'error': 'Only POST method is allowed'}, status=405)
 def change_book_status(request, book_id):
     if request.method == 'POST':
         try:

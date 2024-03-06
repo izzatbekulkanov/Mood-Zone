@@ -1,10 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="All Places" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af7fa295-f941-4fdc-8e74-d3f2d3768204" name="Changes" comment="" />
+    <list default="true" id="af7fa295-f941-4fdc-8e74-d3f2d3768204" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/authHemis/client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authHemis/logging.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authHemis/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authHemis/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/users/create_student.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/oauth_authorize.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/oauth_callback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/0002_alter_customuser_username.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/0003_alter_customuser_username.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/0004_delete_defaultuserimage_alter_customuser_image_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/users/create_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/libs/moment/moment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/migrations/0002_book_status.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/migrations/0003_book_added_by_book_isbn_alter_book_status.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309054399.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309063717.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309107021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309156801.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309201253.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309215497.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309248207.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309262307.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309265954.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309271325.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309345811.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309350800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309353070.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309379635.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309426763.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309429833.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309432311.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309438896.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309499038.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309529050.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309538754.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309559533.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309604767.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309624611.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309632842.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309633583.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309645200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309663673.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309670092.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309672945.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309703454.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309726765.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309730094.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309730936.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309757582.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309770906.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309774489.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309786167.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309790427.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309833448.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309851022.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309853860.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309873193.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309896947.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309933374.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/barcode_books/309971958.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/profile_pictures/default_user.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/profile_pictures/photo_2024-01-20_23-48-26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setting/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/css/core/libs.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/core/libs.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/App/library/add_book.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/library/add_book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/App/library/library_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/library/library_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/vendor/uppy/uppy.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/vendor/uppy/uppy.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/library/layout/aside.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/layout/aside.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/library/layout/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/layout/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/library/pages/book_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/pages/book_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/users/students.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/users/students.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/hope-ui/html/assets/vendor/uppy/uppy.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hope-ui/html/assets/vendor/uppy/uppy.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,40 +125,54 @@
       <list>
         <option value="JSX File" />
         <option value="TypeScript File" />
-        <option value="HTML File" />
-        <option value="Python Script" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2cy5MpTqlqYhcEEuZpemONQc5Em" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
     "Django Server.education.executor": "Run",
     "Django tests.Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
     "ignore_missing_gitignore": "true",
-    "last_opened_file_path": "C:/Users/Admin/Documents/GitHub/NamDPI/static/assets/vendor",
+    "last_opened_file_path": "C:/Users/Admin/Documents/GitHub/NamDPI/manage.py",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -60,6 +181,9 @@
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\static\assets\vendor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\GitHub\NamDPI" />
+      <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\account" />
+      <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\users" />
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\static\assets\js\App\library" />
     </key>
   </component>
@@ -119,7 +243,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
+        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
       </set>
     </attachedChunks>
   </component>
@@ -135,23 +259,20 @@
       <workItem from="1709071099857" duration="10352000" />
       <workItem from="1709081662076" duration="12324000" />
       <workItem from="1709141436772" duration="14388000" />
-      <workItem from="1709159471900" duration="108477000" />
+      <workItem from="1709159471900" duration="109008000" />
+      <workItem from="1709476925708" duration="2000" />
+      <workItem from="1709480958909" duration="12243000" />
+      <workItem from="1709495387947" duration="1674000" />
+      <workItem from="1709498107771" duration="15646000" />
+      <workItem from="1709620677836" duration="9244000" />
+      <workItem from="1709653885975" duration="2575000" />
+      <workItem from="1709656487866" duration="1779000" />
+      <workItem from="1709659372729" duration="14774000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/library/models.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NamDPI$Test__library_tests_LibraryModelsTestCase_test_onlinebook_creation.coverage" NAME="Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation Coverage Results" MODIFIED="1709241825758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

@@ -92,48 +92,45 @@ function submitForm() {
             formData.set("status", "rejected");
         }
 
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/library/save_book", true);
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    console.log(xhr.responseText);
-                    // Formani tozalash
-                    bookForm.reset();
-                    // Modal oynani ochish
-                    Swal.fire({
-                        title: '<strong>Kitob muvaffaqiyatli saqlandi</strong>',
-                        icon: 'success',
-                        html: 'Yangi kitob kiritasizmi',
-                        backdrop: `rgba(60,60,60,0.8)`,
-                        showCloseButton: true,
-                        showCancelButton: true,
-                        confirmButtonText: '<i class="fa fa-thumbs-up"></i>Yangi kitob kitish!',
-                        confirmButtonAriaLabel: 'Thumbs up, great!',
-                        cancelButtonText: '<i class="fa fa-thumbs-down"></i> Cancel',
-                        cancelButtonAriaLabel: 'Thumbs down, cancel!',
-                        preConfirm: function () {
-                            // Modalni ochadigan funksiya
-                            $('#exampleModal').modal('show');
-                        },
-                        willClose: function () {
-                            // Modalni yopadigan funksiya
-                            $('#exampleModal').modal('hide');
-                            // Ma'lumotlarni qayta yuklash
-                            fetchData(); // Ma'lumotlarni qayta yuklash
-                        },
-                    });
-
-                    // Modalni yopish
-                    closeModal();
-                } else {
-                    console.error("Xatolik sodir bo'ldi!");
-                }
+        axios.post('/library/save_book', formData, {
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'multipart/form-data'
             }
-        };
+        })
+        .then(function (response) {
+            // Formani tozalash
+            bookForm.reset();
+            // Modal oynani ochish
+            Swal.fire({
+                title: '<strong>Kitob muvaffaqiyatli saqlandi</strong>',
+                icon: 'success',
+                html: 'Yangi kitob kiritasizmi',
+                backdrop: `rgba(60,60,60,0.8)`,
+                showCloseButton: true,
+                showCancelButton: true,
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i>Yangi kitob kitish!',
+                confirmButtonAriaLabel: 'Thumbs up, great!',
+                cancelButtonText: '<i class="fa fa-thumbs-down"></i> Cancel',
+                cancelButtonAriaLabel: 'Thumbs down, cancel!',
+                preConfirm: function () {
+                    // Modalni ochadigan funksiya
+                    $('#exampleModal').modal('show');
+                },
+                willClose: function () {
+                    // Modalni yopadigan funksiya
+                    $('#exampleModal').modal('hide');
+                    // Ma'lumotlarni qayta yuklash
+                    fetchData(); // Ma'lumotlarni qayta yuklash
+                },
+            });
 
-        xhr.send(formData);
+            // Modalni yopish
+            closeModal();
+        })
+        .catch(function (error) {
+            console.error("Xatolik sodir bo'ldi!", error);
+        });
     }
 
     function closeModal() {

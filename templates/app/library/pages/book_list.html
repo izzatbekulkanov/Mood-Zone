@@ -12,19 +12,13 @@
     <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
     <!-- Customizer Css -->
     <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
-    <!-- RTL Css -->
-    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/social-app.min.css ' %}"/>
-    <style>
-        .cursor-pointer {
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css ' %}"/>
 {% endblock style %}
 {% block body %}
     <!-- Content -->
@@ -33,6 +27,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4>Kitoblar</h4>
+                    <div id='successMessage'>
+                      
+                    </div>
+                    
+
                     <div class="friend-list-tab mt-2">
                         <ul class="nav nav-pills" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -209,103 +208,6 @@
 
     <div class="modal fade" id="exampleModalDefault" tabindex="-1" aria-labelledby="exampleModalLabel"
          aria-hidden="true"></div>
-    <!--/ Kitobni tahrirlash Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between">
-                            <div class="header-title">
-                                <h4 class="card-title">Input</h4>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <form id="bookForm">
-                                <div class="form-group">
-                                    <label class="form-label"
-                                           for="exampleInputDisabled1">Kutubhonachi</label>
-                                    <input type="text" class="form-control" id="exampleInputDisabled1"
-                                           disabled value="{{ request.user.full_name }}">
-                                </div>
-                                <div class="card-body">
-                                    {% csrf_token %}
-                                    <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="BookName">Kitob nomi:</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="BookName"
-                                                   name="title" placeholder="Kitob nomini kiriting"
-                                                   required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="author">Kitob muallifi:</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="author"
-                                                   name="author" placeholder="Kitob muallifini kiriting"
-                                                   required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="isbn">Kitob ISBN raqami:</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="isbn"
-                                                   name="isbn" placeholder="Kitob ISBN raqami" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="image">Kitob rasmi (Mavjud bo'lsa):</label>
-                                        <div class="col-sm-9">
-                                            <input type="file" class="form-control" id="image"
-                                                   name="image" placeholder="Kitob rasmi">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0">Kitob
-                                            chiqarilgan yil</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-select mb-3 shadow-none"
-                                                    id="publication_year" name="publication_year"
-                                                    required>
-                                                <option selected disabled>Kitob chiqarilgan yil</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="quantity">Kitob soni:</label>
-                                        <div class="col-sm-9">
-                                            <input type="number" class="form-control" id="quantity"
-                                                   name="quantity" value="1" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox"
-                                                   value="accepted" id="remebercheck2" name="status">
-                                            <label class="form-check-label" for="remebercheck2">Tasdiqlash</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="button" class="btn btn-primary"
-                                                onclick="submitForm()">Saqlash
-                                        </button>
-                                        <button type="button" class="btn btn-danger"
-                                                onclick="closeModal()">Chiqish
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!--/ Kitobni Tasdiqlash Modal -->
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -330,79 +232,82 @@
                         <div class="card-body">
                             <form id="bookForm">
                                 <div class="form-group">
-                                    <label class="form-label"
-                                           for="exampleInputDisabled1">Kutubhonachi</label>
-                                    <input type="text" class="form-control" id="exampleInputDisabled1"
-                                           disabled value="{{ request.user.full_name }}">
+                                    <label class="form-label" for="exampleInputDisabled1">Kutubhonachi</label>
+                                    <input type="text" class="form-control" id="exampleInputDisabled1" disabled
+                                           value="{{ request.user.full_name }}">
                                 </div>
                                 <div class="card-body">
-                                    {% csrf_token %}
+                                    <!-- Kitob nomi -->
                                     <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="BookName">Kitob nomi:</label>
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="BookName">Kitob
+                                            nomi:</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="BookName"
-                                                   name="title" placeholder="Kitob nomini kiriting"
-                                                   required>
+                                            <input type="text" class="form-control" id="BookName" name="title"
+                                                   placeholder="Kitob nomini kiriting" required>
                                         </div>
                                     </div>
+                                    <!-- Kitob muallifi -->
                                     <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="author">Kitob muallifi:</label>
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="author">Kitob
+                                            muallifi:</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="author"
-                                                   name="author" placeholder="Kitob muallifini kiriting"
-                                                   required>
+                                            <input type="text" class="form-control" id="author" name="author"
+                                                   placeholder="Kitob muallifini kiriting" required>
                                         </div>
                                     </div>
+                                    <!-- Kitob ISBN raqami -->
                                     <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="isbn">Kitob ISBN raqami:</label>
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="isbn">Kitob
+                                            ISBN raqami:</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="isbn"
-                                                   name="isbn" placeholder="Kitob ISBN raqami" required>
+                                            <input type="text" class="form-control" id="isbn" name="isbn"
+                                                   placeholder="Kitob ISBN raqami" required>
                                         </div>
                                     </div>
+                                    <!-- Kitob rasmi -->
                                     <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="image">Kitob rasmi (Mavjud bo'lsa):</label>
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="image">Kitob
+                                            rasmi (Mavjud bo'lsa):</label>
                                         <div class="col-sm-9">
-                                            <input type="file" class="form-control" id="image"
-                                                   name="image" placeholder="Kitob rasmi">
+                                            <input type="file" class="form-control" id="image" name="image"
+                                                   placeholder="Kitob rasmi">
                                         </div>
                                     </div>
+                                    <!-- Kitob chiqarilgan yili -->
                                     <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0">Kitob
-                                            chiqarilgan yil</label>
+                                        <label class="control-label col-sm-3 align-self-center mb-0">Kitob chiqarilgan
+                                            yil</label>
                                         <div class="col-sm-9">
-                                            <select class="form-select mb-3 shadow-none"
-                                                    id="publication_year" name="publication_year"
-                                                    required>
+                                            <select class="form-select mb-3 shadow-none" id="publication_year"
+                                                    name="publication_year" required>
                                                 <option selected disabled>Kitob chiqarilgan yil</option>
                                             </select>
                                         </div>
                                     </div>
+                                    <!-- Kitob soni -->
                                     <div class="form-group row">
-                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                               for="quantity">Kitob soni:</label>
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="quantity">Kitob
+                                            soni:</label>
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" id="quantity"
-                                                   name="quantity" value="1" required>
+                                            <input type="number" class="form-control" id="quantity" name="quantity"
+                                                   value="1" required>
                                         </div>
                                     </div>
+                                    <!-- Tasdiqlash checkbox -->
                                     <div class="form-group">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox"
-                                                   value="accepted" id="remebercheck2" name="status">
+                                            <input class="form-check-input" type="checkbox" value="accepted"
+                                                   id="remebercheck2" name="status">
                                             <label class="form-check-label" for="remebercheck2">Tasdiqlash</label>
                                         </div>
                                     </div>
+                                    <!-- Kitob ID -->
+                                    <input type="hidden" id="bookId" value="1" name="bookId">
+                                    <!-- Saqlash va chiqish tugmalar -->
                                     <div class="form-group">
-                                        <button type="button" class="btn btn-primary"
-                                                onclick="submitForm()">Saqlash
+                                        <button type="button" class="btn btn-primary" onclick="submitForm()">Saqlash
                                         </button>
-                                        <button type="button" class="btn btn-danger"
-                                                onclick="closeModal()">Chiqish
+                                        <button type="button" class="btn btn-danger" onclick="closeModal()">Chiqish
                                         </button>
                                     </div>
                                 </div>
@@ -425,6 +330,9 @@
     <!-- Library Bundle Script -->
     <script src="{% static 'assets/js/core/libs.min.js ' %}"></script>
     <!-- Plugin Scripts -->
+    <!-- Sweet-alert Script -->
+    <script src="{% static 'assets/vendor/sweetalert2/dist/sweetalert2.min.js' %}" async></script>
+    <script src="{% static 'assets/js/plugins/sweet-alert.js' %}" defer></script>
     <!-- Slider-tab Script -->
     <script src="{% static 'assets/js/plugins/slider-tabs.js ' %}"></script>
     <!-- fslightbox Script -->

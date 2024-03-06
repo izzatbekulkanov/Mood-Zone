@@ -63,5 +63,5 @@ urlpatterns = [
     path('change_book_status/<int:book_id>/', change_book_status, name='change_book_status'),
 
     # Kitob holatini o'zgartirish
-    path('edit_book/<int:book_id>/', edit_book, name='edit_book'),
+    path('edit_book/<int:book_id>/', edit_book, name='edit_book')
 ]

@@ -1,0 +1,291 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block style %}
+    <!-- Library / Plugin Css Build -->
+    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
+    <!-- Hope Ui Design System Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+    <!-- Dark Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+    <!-- Customizer Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+    <!-- RTL Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+          rel="stylesheet">
+{% endblock style %}
+
+
+{% block body %}
+    <!-- Content -->
+    <div class="content-inner container-fluid pb-0" id="page_layout">
+        <div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Yangi talaba qo'shish</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {#                            Search student#}
+                            <form>
+                                <div class="form-group">
+                                    <div class="profile-img-edit position-relative">
+                                        <img src="{% static 'assets/images/avatars/01.png' %}" alt="profile-pic"
+                                             class="theme-color-default-img profile-pic rounded avatar-100"
+                                             loading="lazy">
+                                        <img src="{% static 'assets/images/avatars/avtar_1.png' %}" alt="profile-pic"
+                                             class="theme-color-purple-img profile-pic rounded avatar-100"
+                                             loading="lazy">
+                                        <img src="{% static 'assets/images/avatars/avtar_2.png' %}" alt="profile-pic"
+                                             class="theme-color-blue-img profile-pic rounded avatar-100"
+                                             loading="lazy">
+                                        <img src="{% static 'assets/images/avatars/avtar_4.png' %}" alt="profile-pic"
+                                             class="theme-color-green-img profile-pic rounded avatar-100"
+                                             loading="lazy">
+                                        <img src="{% static 'assets/images/avatars/avtar_5.png' %}" alt="profile-pic"
+                                             class="theme-color-yellow-img profile-pic rounded avatar-100"
+                                             loading="lazy">
+                                        <img src="{% static 'assets/images/avatars/avtar_3.png' %}" alt="profile-pic"
+                                             class="theme-color-pink-img profile-pic rounded avatar-100"
+                                             loading="lazy">
+                                    </div>
+                                    <div class="img-extension mt-3">
+                                        <div class="d-inline-block align-items-center">
+                                            <span>Only</span>
+                                            <a href="javascript:void(0);">.jpg</a>
+                                            <a href="javascript:void(0);">.png</a>
+                                            <a href="javascript:void(0);">.jpeg</a>
+                                            <span>allowed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="passport">Passport seriyasi va raqami:</label>
+                                    <input type="text" class="form-control" id="passport" placeholder="Passport number">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="student_id">Student id:</label>
+                                    <input type="text" class="form-control" id="student_id" placeholder="Student id">
+                                </div>
+                                <button type="button" class="btn btn-primary rounded-pill" onclick="fetchData()">
+                                    Qidirish
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Talaba ma'lumotlari</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="new-user-info">
+                                <form>
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="first_name">Ismi:</label>
+                                            <input type="text" class="form-control" id="first_name"
+                                                   placeholder="Ismi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="second_name">Familiasi:</label>
+                                            <input type="text" class="form-control" id="second_name"
+                                                   placeholder="Familiasi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="third_name">Otasining ismi:</label>
+                                            <input type="text" class="form-control" id="third_name"
+                                                   placeholder="Otasining ismi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="university">Universitet:</label>
+                                            <input type="text" class="form-control" id="university"
+                                                   placeholder="Universitet">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="student_id_number:">Student raqami:</label>
+                                            <input type="text" class="form-control" id="student_id_number:
+"
+                                                   placeholder="Talaba raqami">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="gender">Jinsi:</label>
+                                            <input type="text" class="form-control" id="gender"
+                                                   placeholder="Jinsi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="country">Mamlakat:</label>
+                                            <input type="text" class="form-control" id="country"
+                                                   placeholder="Mamlakat">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="province">Viloyati:</label>
+                                            <input type="text" class="form-control" id="province" placeholder="Viloyat">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="district">Tuman:</label>
+                                            <input type="text" class="form-control" id="district" placeholder="Tuman">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="citizenship">Fuqaroligi:</label>
+                                            <input type="text" class="form-control" id="citizenship"
+                                                   placeholder="Fuqaroligi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="studentStatus">Talaba statusi:</label>
+                                            <input type="text" class="form-control" id="studentStatus"
+                                                   placeholder="Talaba statusi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="educationForm:">Ta'lim turi:</label>
+                                            <input type="text" class="form-control" id="educationForm:
+"
+                                                   placeholder="Ta'lim turi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="educationType">Ta'lim toyifasi:</label>
+                                            <input type="text" class="form-control" id="educationType"
+                                                   placeholder="Ta'lim toyifasi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="paymentForm">To'lov turi:</label>
+                                            <input type="text" class="form-control" id="paymentForm"
+                                                   placeholder="To'lov turi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="socialCategory">Ijtimoiy turi:</label>
+                                            <input type="text" class="form-control" id="socialCategory"
+                                                   placeholder="Ijtimoiy turi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="accommodation">Qayerda yashashi:</label>
+                                            <input type="text" class="form-control" id="accommodation"
+                                                   placeholder="Qayerda yashashi">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="department">Fakultet:</label>
+                                            <input type="text" class="form-control" id="department"
+                                                   placeholder="Fakultet">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="group">Guruh:</label>
+                                            <input type="text" class="form-control" id="group" placeholder="Guruh">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="level">Bosqich:</label>
+                                            <input type="text" class="form-control" id="level"
+                                                   placeholder="Bosqich">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="semester">Semestr:</label>
+                                            <input type="text" class="form-control" id="semester"
+                                                   placeholder="Semestr">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="educationYear:">O'quv yili:</label>
+                                            <input type="text" class="form-control" id="educationYear:
+"
+                                                   placeholder="O'quv yili">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="year_of_enter">O'qishga kirgan yili:</label>
+                                            <input type="text" class="form-control" id="year_of_enter"
+                                                   placeholder="O'qishga kirgan yili">
+                                        </div>
+                               
+                                    </div>
+                                    <hr>
+                                    <h5 class="mb-3">Maxfiylik</h5>
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="uname">User Name:</label>
+                                            <input type="text" class="form-control" id="uname"
+                                                   placeholder="User Name">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="pass">Password:</label>
+                                            <input type="password" class="form-control" id="pass"
+                                                   placeholder="Password">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="form-label" for="rpass">Repeat Password:</label>
+                                            <input type="password" class="form-control" id="rpass"
+                                                   placeholder="Repeat Password ">
+                                        </div>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="form-label"><input class="form-check-input me-2"
+                                                                         type="checkbox" value="" id="flexchexked">Enable
+                                            Two-Factor-Authentication</label>
+                                    </div>
+                                    <button type="Button" class="btn btn-primary">Yangi foydalanuvchi saqlash</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/ Content -->
+{% endblock body %}
+{% block script %}
+    <script src="{% static 'assets/js/App/users/create_user.js' %}"></script>
+
+    <!-- build:js assets/vendor/js/core.js -->
+    <!-- Library Bundle Script -->
+    <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+    <!-- Plugin Scripts -->
+
+
+
+
+    <!-- Slider-tab Script -->
+    <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Lodash Utility -->
+    <script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+    <!-- Utilities Functions -->
+    <script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+    <!-- Settings Script -->
+    <script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+    <!-- Settings Init Script -->
+    <script src="{% static 'assets/js/setting-init.js' %}"></script>
+    <!-- External Library Bundle Script -->
+    <script src="{% static 'assets/js/core/external.min.js' %}"></script>
+    <!-- Widgetchart Script -->
+    <script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+    <!-- Dashboard Script -->
+    <script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+    <!-- Hopeui Script -->
+    <script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+{% endblock script %}
