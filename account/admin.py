@@ -6,50 +6,68 @@ from .models import CustomUser, StudentType, StudentStatus, Citizenship, Distric
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
-    list_display = (
-        'email', 'full_name', 'last_login' , 'username', 'age', 'phone_number', 'image', 'year_of_enter', 'employee_id_number',
-        'gender', 'department', 'employeeStatus', 'employeeType', 'birth_date', 'is_student',
-        'university', 'specialty', 'group', 'country', 'province', 'district', 'citizenship',
-        'educationForm', 'educationType', 'studentType', 'studentStatus', 'curriculum',
-        'passport_serial', 'passport_issue_date', 'hash', 'is_staff', 'is_active', 'user_role', 'date_joined'
+    list_display = ['username', 'email', 'full_name', 'user_role', 'is_active']
+    list_filter = ['user_role', 'is_active']
+    search_fields = ['username', 'email', 'full_name']
+    fieldsets = (
+        (None, {'fields': ('username', 'email', 'password')}),
+        ('Personal info', {'fields': ('full_name', 'user_role', 'image', 'phone_number', 'birth_date')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+
     )
-    list_filter = ('is_staff', 'is_active', 'user_role', 'gender', 'department', 'employeeStatus', 'employeeType', 'is_student', 'country', 'province', 'district', 'citizenship', 'educationForm', 'educationType', 'studentType', 'studentStatus')
-    search_fields = ('email', 'full_name', 'username')
-    ordering = ('email',)
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'email', 'password1', 'password2', 'full_name', 'user_role', 'image', 'phone_number',
+                       'birth_date', 'is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions',
+                       'created_at', 'updated_at')}
+         ),
+    )
+    ordering = ['-created_at']
+
 
 admin.site.register(CustomUser, CustomUserAdmin)
+
 
 @admin.register(Gender)
 class GenderAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
 
+
 @admin.register(EmployeeStatus)
 class EmployeeStatusAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
+
 
 @admin.register(EmployeeType)
 class EmployeeTypeAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
 
+
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
+
 
 @admin.register(Province)
 class ProvinceAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
 
+
 @admin.register(District)
 class DistrictAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
+
 
 @admin.register(Citizenship)
 class CitizenshipAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
 
+
 @admin.register(StudentType)
 class StudentTypeAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
+
 
 @admin.register(StudentStatus)
 class StudentStatusAdmin(admin.ModelAdmin):

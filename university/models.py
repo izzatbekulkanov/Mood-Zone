@@ -13,10 +13,35 @@ class University(models.Model):
 
 
 class Department(models.Model):
+    # structureType turining variantlari
+    BOSHQA = '10'
+    MAHALLIY = '11'
+    KAFEDRA = '12'
+    BOLIM = '13'
+    BOSHQARMA = '14'
+    MARKAZ = '15'
+    REKTORAT = '16'
+
+    STRUCTURE_TYPE_CHOICES = [
+        (BOSHQA, 'Boshqa'),
+        (MAHALLIY, 'Mahalliy'),
+        (KAFEDRA, 'Kafedra'),
+        (BOLIM, 'Bo‘lim'),
+        (BOSHQARMA, 'Boshqarma'),
+        (MARKAZ, 'Markaz'),
+        (REKTORAT, 'Rektorat'),
+    ]
+
+
     name = models.CharField(max_length=255, verbose_name="Fakultet nomi")
     code = models.CharField(max_length=20, verbose_name="Fakultet kodi")
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, verbose_name="Boshqa fakultet")
+    parent = models.CharField(max_length=20, null=True, blank=True, verbose_name="Boshqa fakultet")
     active = models.BooleanField(default=True, verbose_name="Faol")
+    structure_type = models.CharField(
+        max_length=2,
+        choices=STRUCTURE_TYPE_CHOICES,
+        verbose_name='Bo‘lim turi'
+    )
 
     def __str__(self):
         return self.name

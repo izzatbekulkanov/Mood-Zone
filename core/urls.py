@@ -10,6 +10,7 @@ urlpatterns = [
     path('library/', include('library.urls')),
     path('post/', include('post.urls')),
     path('admin/', include('authHemis.urls')),
+    path('university/', include('university.urls')),
 ]
 
 if settings.DEBUG:

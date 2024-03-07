@@ -2,9 +2,8 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
-from django.shortcuts import redirect, HttpResponse
-
+from django.shortcuts import render
+from django.shortcuts import redirect
 
 def login_view(request):
     user = request.user
@@ -19,13 +18,9 @@ def login_view(request):
             messages.success(request, 'Successfully logged in.')
             return redirect('index')  # Change 'index' to your desired redirect path
         else:
-            print(username)
-            print(password)
             print("muvaffaqiyatsiz")
             messages.error(request, 'Invalid email or password.')
-
-    return render(request, 'register/sign-in1.html')  # Change 'your_app' to your app name
-
+    return render(request, 'register/login.html')  # Change 'your_app' to your app name
 
 @login_required
 def add_student(request):

@@ -142,10 +142,10 @@ AUTHORIZE_URL = 'https://hemis.namspi.uz/oauth/authorize'
 TOKEN_URL = 'https://hemis.namspi.uz/oauth/access-token'
 RESOURCE_OWNER_URL = 'https://hemis.namspi.uz/oauth/api/user?fields=id,uuid,type,name,login,picture,email,university_id,phone'
 
-LOGIN_URL = 'account:login'
-LOGOUT_URL = 'account:login'
-LOGIN_REDIRECT_URL = 'dashboard:index'
-LOGOUT_REDIRECT_URL = 'account:login'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'
 
 USER_LIST_JSON_DIR = os.path.join(BASE_DIR, 'static')
 

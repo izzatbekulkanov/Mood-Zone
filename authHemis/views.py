@@ -101,6 +101,10 @@ class OAuthCallbackView(APIView):
             elif employee_id_number:
                 # E-mail manzili mavjud emas, employee_id_number dan email yaratish
                 email = f"{employee_id_number}@namspi.uz"
+                user_type = user_details.get('type', '')
+                if user_type == 'employee':
+                    user_type = '1'  # Hodim
+
                 user, created = CustomUser.objects.get_or_create(
                     email=email,
                     defaults={
@@ -113,6 +117,7 @@ class OAuthCallbackView(APIView):
                         'birth_date': new_date_str,
                         'phone_number': user_details.get('phone', ''),
                         'image': user_details.get('picture', ''),
+                        'user_type': user_type,  # Foydalanuvchi tipini kiritish
                         # Boshqa ma'lumotlar
                     }
                 )
@@ -122,8 +127,8 @@ class OAuthCallbackView(APIView):
             user.backend = 'django.contrib.auth.backends.ModelBackend'  # Foydalanuvchi uchun kerakli backendni aniqlash
             login(request, user)
 
-            return Response(full_info, status=status.HTTP_200_OK)
-            # return redirect('index')
+            # return Response(full_info, status=status.HTTP_200_OK)
+            return redirect('index')
         else:
             return Response(
                 {

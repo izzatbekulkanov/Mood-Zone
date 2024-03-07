@@ -1,9 +1,8 @@
 
+
 <!doctype html>
 <html lang="en" dir="ltr">
-    
-<!-- Mirrored from templates.iqonic.design/hope-ui/pro/html/dashboard/table/table-data.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Feb 2024 16:05:02 GMT -->
-<head>
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title data-setting="app_name" data-rightJoin=" Pro | Responsive Bootstrap 5 Admin Dashboard Template">Hope UI Pro | Responsive Bootstrap 5 Admin Dashboard Template</title>
@@ -17,31 +16,31 @@
         <!-- Config Options -->
         <meta name="setting_options" content='{&quot;saveLocal&quot;:&quot;sessionStorage&quot;,&quot;storeKey&quot;:&quot;huisetting-html&quot;,&quot;setting&quot;:{&quot;app_name&quot;:{&quot;value&quot;:&quot;Hope UI&quot;},&quot;theme_scheme_direction&quot;:{&quot;value&quot;:&quot;ltr&quot;},&quot;theme_scheme&quot;:{&quot;value&quot;:&quot;light&quot;},&quot;theme_style_appearance&quot;:{&quot;value&quot;:[&quot;theme-default&quot;]},&quot;theme_color&quot;:{&quot;colors&quot;:{&quot;--{{prefix}}primary&quot;:&quot;#3a57e8&quot;,&quot;--{{prefix}}info&quot;:&quot;#08B1BA&quot;},&quot;value&quot;:&quot;theme-color-default&quot;},&quot;theme_transition&quot;:{&quot;value&quot;:&quot;theme-with-animation&quot;},&quot;theme_font_size&quot;:{&quot;value&quot;:&quot;theme-fs-md&quot;},&quot;page_layout&quot;:{&quot;value&quot;:&quot;container-fluid&quot;},&quot;header_navbar&quot;:{&quot;value&quot;:&quot;default&quot;},&quot;header_banner&quot;:{&quot;value&quot;:&quot;default&quot;},&quot;sidebar_color&quot;:{&quot;value&quot;:&quot;sidebar-white&quot;},&quot;card_color&quot;:{&quot;value&quot;:&quot;card-default&quot;},&quot;sidebar_type&quot;:{&quot;value&quot;:[]},&quot;sidebar_menu_style&quot;:{&quot;value&quot;:&quot;left-bordered&quot;},&quot;footer&quot;:{&quot;value&quot;:&quot;default&quot;},&quot;body_font_family&quot;:{&quot;value&quot;:null},&quot;heading_font_family&quot;:{&quot;value&quot;:null}}}'>
         <!-- Favicon -->
-        <link rel="shortcut icon" href="https://templates.iqonic.design/hope-ui/pro/html/assets/images/favicon.ico" >
+        <link rel="shortcut icon" href="../../assets/images/favicon.ico" >
         <!-- Library / Plugin Css Build -->
         <link rel="stylesheet" href="../../assets/css/core/libs.min.css" >
         <!-- Hope Ui Design System Css -->
-        <link rel="stylesheet" href="../../assets/css/hope-ui.min1fc6.css?v=4.0.0" >
-        <link rel="stylesheet" href="../../assets/css/pro.min1fc6.css?v=4.0.0" >
+        <link rel="stylesheet" href="../../assets/css/hope-ui.min.css?v=4.0.0" >
+        <link rel="stylesheet" href="../../assets/css/pro.min.css?v=4.0.0" >
         <!-- Custom Css -->
-        <link rel="stylesheet" href="../../assets/css/custom.min1fc6.css?v=4.0.0" >
+        <link rel="stylesheet" href="../../assets/css/custom.min.css?v=4.0.0" >
         <!-- Dark Css -->
-        <link rel="stylesheet" href="../../assets/css/dark.min1fc6.css?v=4.0.0" >
+        <link rel="stylesheet" href="../../assets/css/dark.min.css?v=4.0.0" >
         <!-- Customizer Css -->
-    <link rel="stylesheet" href="../../assets/css/customizer.min1fc6.css?v=4.0.0" >
+        <link rel="stylesheet" href="../../assets/css/customizer.min.css?v=4.0.0" >
         <!-- RTL Css -->
-        <link rel="stylesheet" href="../../assets/css/rtl.min1fc6.css?v=4.0.0" >
+        <link rel="stylesheet" href="../../assets/css/rtl.min.css?v=4.0.0" >
         <!-- Google Font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com/">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body class="  ">
         <!-- loader Start -->
         <div id="loading">
         <div class="loader simple-loader">
             <div class="loader-body">
-                <img src="https://templates.iqonic.design/hope-ui/pro/html/assets/images/loader.webp" alt="loader" class="light-loader img-fluid w-25" width="200" height="200">
+                <img src="../../assets/images/loader.webp" alt="loader" class="light-loader img-fluid w-25" width="200" height="200">
             </div>
         </div>
         </div>
@@ -49,7 +48,7 @@
         <aside class="sidebar sidebar-base " id="first-tour" data-toggle="main-sidebar"
             data-sidebar="responsive">
             <div class="sidebar-header d-flex align-items-center justify-content-start">
-                <a href="../index.html" class="navbar-brand">
+                <a href="../../dashboard/index.html" class="navbar-brand">
                     
                     <!--Logo start-->
                     <div class="logo-main">
@@ -96,7 +95,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page"
-                                href="../index.html">
+                                href="../../dashboard/index.html">
                                 <i class="icon" data-bs-toggle="tooltip" title="Dashboard" data-bs-placement="right">
                                     <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.4"
@@ -112,7 +111,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page"
-                                href="../alternate-dashboard.html">
+                                href="../../dashboard/alternate-dashboard.html">
                                 <i class="icon" data-bs-toggle="tooltip" title="Alternate Dashboard" data-bs-placement="right">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none">
                                         <path opacity="0.4"
@@ -159,7 +158,7 @@
                             <ul class="sub-nav collapse" id="horizontal-menu" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../index-horizontal.html">
+                                        href="../../dashboard/index-horizontal.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +174,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../index-dual-horizontal.html">
+                                        href="../../dashboard/index-dual-horizontal.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -191,7 +190,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../index-dual-compact.html">
+                                        href="../../dashboard/index-dual-compact.html">
                                         <i class="icon svg-icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -207,7 +206,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../index-boxed.html">
+                                        href="../../dashboard/index-boxed.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -223,7 +222,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../index-boxed-fancy.html">
+                                        href="../../dashboard/index-boxed-fancy.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -280,7 +279,7 @@
                             <ul class="sub-nav collapse" id="e-commerce" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/index.html">
+                                        href="../../e-commerce/index.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" height="20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -296,7 +295,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/vendor-dashboard.html">
+                                        href="../../e-commerce/vendor-dashboard.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" height="20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -347,7 +346,7 @@
                                     <ul class="sub-nav collapse" id="shop-main" data-bs-parent="#e-commerce">
                                         <li class="nav-item">
                                             <a class="nav-link " aria-current="page"
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/shop-main.html">
+                                                href="../../e-commerce/shop-main.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -363,7 +362,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/shop-left-filter.html">
+                                                href="../../e-commerce/shop-left-filter.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -379,7 +378,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/shop-right-filter.html">
+                                                href="../../e-commerce/shop-right-filter.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -395,7 +394,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link product-grid" aria-current="page"
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/products.html?type=product-grid">
+                                                href="../../e-commerce/products.html?type=product-grid">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -411,7 +410,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link product-list" aria-current="page"
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/products.html?type=product-list">
+                                                href="../../e-commerce/products.html?type=product-list">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -427,7 +426,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/categories-list.html">
+                                                href="../../e-commerce/categories-list.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -470,7 +469,7 @@
                                     <ul class="sub-nav collapse" id="products" data-bs-parent="#e-commerce">
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/product-detail.html">
+                                                href="../../e-commerce/product-detail.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -486,7 +485,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/product-detail-3d.html">
+                                                href="../../e-commerce/product-detail-3d.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -502,7 +501,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/product-detail-360.html">
+                                                href="../../e-commerce/product-detail-360.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -520,7 +519,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " aria-current="page"
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/order-process.html">
+                                        href="../../e-commerce/order-process.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" height="20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -542,7 +541,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " aria-current="page"
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/invoice.html">
+                                        href="../../e-commerce/invoice.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" height="20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -561,7 +560,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/wishlist.html">
+                                        href="../../e-commerce/wishlist.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" height="20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -583,7 +582,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/user-profile.html">
+                                        href="../../e-commerce/user-profile.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" height="20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -602,7 +601,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/user-list.html">
+                                        href="../../e-commerce/user-list.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" height="20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -657,7 +656,7 @@
                             <ul class="sub-nav collapse" id="social" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/social-app/index.html">
+                                        href="../../social-app/index.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -676,7 +675,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " aria-current="page"
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/social-app/newsfeed.html">
+                                        href="../../social-app/newsfeed.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -729,7 +728,7 @@
                                     <ul class="sub-nav collapse" id="friends" data-bs-parent="#social">
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/friend-list.html">
+                                                href="../../social-app/friend-list.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -745,7 +744,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/friend-request.html">
+                                                href="../../social-app/friend-request.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -761,7 +760,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/friend-profile.html">
+                                                href="../../social-app/friend-profile.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -804,7 +803,7 @@
                                     <ul class="sub-nav collapse" id="profile" data-bs-parent="#social">
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/profile-badges.html">
+                                                href="../../social-app/profile-badges.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -820,7 +819,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/profile-images.html">
+                                                href="../../social-app/profile-images.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -836,7 +835,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/profile-video.html">
+                                                href="../../social-app/profile-video.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -852,7 +851,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/birthday.html">
+                                                href="../../social-app/birthday.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -868,7 +867,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/notification.html">
+                                                href="../../social-app/notification.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -884,7 +883,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/account-setting.html">
+                                                href="../../social-app/account-setting.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -927,7 +926,7 @@
                                     <ul class="sub-nav collapse" id="event" data-bs-parent="#social">
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/event-list.html">
+                                                href="../../social-app/event-list.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -943,7 +942,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/event-detail.html">
+                                                href="../../social-app/event-detail.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -999,7 +998,7 @@
                                     <ul class="sub-nav collapse" id="group" data-bs-parent="#social">
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/group.html">
+                                                href="../../social-app/group.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1015,7 +1014,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/social-app/group-detail.html">
+                                                href="../../social-app/group-detail.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1033,7 +1032,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/social-app/social-profile.html">
+                                        href="../../social-app/social-profile.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1080,7 +1079,7 @@
                             <ul class="sub-nav collapse" id="blog" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/blog/index.html">
+                                        href="../../blog/index.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1123,7 +1122,7 @@
                                     <ul class="sub-nav collapse" id="blog1" data-bs-parent="#blog">
                                         <li class="nav-item">
                                             <a class="nav-link " aria-current="page"
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/blog/blog-main.html">
+                                                href="../../blog/blog-main.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1139,7 +1138,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " aria-current="page"
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/blog/blog-detail.html">
+                                                href="../../blog/blog-detail.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1155,7 +1154,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " aria-current="page"
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/blog/blog-grid.html">
+                                                href="../../blog/blog-grid.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1171,7 +1170,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " aria-current="page"
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/blog/blog-list.html">
+                                                href="../../blog/blog-list.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1187,7 +1186,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link "
-                                                href="https://templates.iqonic.design/hope-ui/pro/html/blog/blog-trending.html">
+                                                href="../../blog/blog-trending.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1205,7 +1204,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/blog/blog-comments.html">
+                                        href="../../blog/blog-comments.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1227,7 +1226,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " aria-current="page"
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/blog/blog-category.html">
+                                        href="../../blog/blog-category.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1276,7 +1275,7 @@
                             <ul class="sub-nav collapse" id="appointment" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/appointment/index.html">
+                                        href="../../appointment/index.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1295,7 +1294,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/appointment/book-appointment.html">
+                                        href="../../appointment/book-appointment.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1320,7 +1319,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/appointment/doctor-visit.html">
+                                        href="../../appointment/doctor-visit.html">
                                         <i class="icon">
                                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1367,7 +1366,7 @@
                             <ul class="sub-nav collapse" id="file-manager" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/file-manager/index.html">
+                                        href="../../file-manager/index.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1386,7 +1385,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/file-manager/image-folder.html">
+                                        href="../../file-manager/image-folder.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1407,7 +1406,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/file-manager/video-folder.html">
+                                        href="../../file-manager/video-folder.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1425,7 +1424,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/file-manager/document-folder.html">
+                                        href="../../file-manager/document-folder.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1447,7 +1446,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " aria-current="page"
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/file-manager/all-files.html">
+                                        href="../../file-manager/all-files.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1469,7 +1468,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " aria-current="page"
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/file-manager/trash.html">
+                                        href="../../file-manager/trash.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1489,7 +1488,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page"
-                                href="https://templates.iqonic.design/hope-ui/pro/html/chat/index.html" target="_blank">
+                                href="../../chat/index.html" target="_blank">
                                 <i class="icon" data-bs-toggle="tooltip" title="Chat" data-bs-placement="right">
                                     <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -1529,7 +1528,7 @@
                             </a>
                             <ul class="sub-nav collapse" id="mail" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="https://templates.iqonic.design/hope-ui/pro/html/mail/index.html">
+                                    <a class="nav-link " href="../../mail/index.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1547,7 +1546,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="https://templates.iqonic.design/hope-ui/pro/html/mail/email-compose.html">
+                                        href="../../mail/email-compose.html">
                                         <i class="icon">
                                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1603,7 +1602,7 @@
                             <ul class="sub-nav collapse" id="sidebar-special" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../special-pages/billing.html">
+                                        href="../../dashboard/special-pages/billing.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1619,7 +1618,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../special-pages/calender.html">
+                                        href="../../dashboard/special-pages/calender.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1635,7 +1634,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../special-pages/kanban.html">
+                                        href="../../dashboard/special-pages/kanban.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1650,7 +1649,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../special-pages/pricing.html">
+                                        href="../../dashboard/special-pages/pricing.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1666,7 +1665,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../special-pages/timeline.html">
+                                        href="../../dashboard/special-pages/timeline.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -1730,7 +1729,7 @@
                                     </a>
                                     <ul class="sub-nav collapse" id="sidebar-auth1" data-bs-parent="#sidebar-auth">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth/sign-in.html">
+                                            <a class="nav-link" href="../../dashboard/auth/sign-in.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1745,7 +1744,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth/sign-up.html">
+                                            <a class="nav-link" href="../../dashboard/auth/sign-up.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1760,7 +1759,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth/confirm-mail.html">
+                                            <a class="nav-link" href="../../dashboard/auth/confirm-mail.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1775,7 +1774,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth/lock-screen.html">
+                                            <a class="nav-link" href="../../dashboard/auth/lock-screen.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1790,7 +1789,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth/recoverpw.html">
+                                            <a class="nav-link" href="../../dashboard/auth/recoverpw.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1832,7 +1831,7 @@
                                     </a>
                                     <ul class="sub-nav collapse" id="sidebar-auth2" data-bs-parent="#sidebar-auth">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth-pro/sign-in.html">
+                                            <a class="nav-link" href="../../dashboard/auth-pro/sign-in.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1847,7 +1846,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth-pro/sign-up.html">
+                                            <a class="nav-link" href="../../dashboard/auth-pro/sign-up.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1862,7 +1861,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth-pro/email.html">
+                                            <a class="nav-link" href="../../dashboard/auth-pro/email.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1877,7 +1876,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth-pro/lock-screen.html">
+                                            <a class="nav-link" href="../../dashboard/auth-pro/lock-screen.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1892,7 +1891,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth-pro/reset-password.html">
+                                            <a class="nav-link" href="../../dashboard/auth-pro/reset-password.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1907,7 +1906,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth-pro/two-factor.html">
+                                            <a class="nav-link" href="../../dashboard/auth-pro/two-factor.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -1922,7 +1921,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../auth-pro/account-deactivate.html">
+                                            <a class="nav-link" href="../../dashboard/auth-pro/account-deactivate.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -2020,7 +2019,7 @@
                                     </a>
                                     <ul class="sub-nav collapse" id="sidebar-auth4" data-bs-parent="#sidebar-auth">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../simple-auth-pro/sign-in.html">
+                                            <a class="nav-link" href="../../dashboard/simple-auth-pro/sign-in.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -2035,7 +2034,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../simple-auth-pro/sign-up.html">
+                                            <a class="nav-link" href="../../dashboard/simple-auth-pro/sign-up.html">
                                                 <i class="icon">
                                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -2089,7 +2088,7 @@
                             <ul class="sub-nav collapse" id="sidebar-user" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../app/user-profile.html">
+                                        href="../../dashboard/app/user-profile.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2105,7 +2104,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../app/user-add.html">
+                                        href="../../dashboard/app/user-add.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2121,7 +2120,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../app/user-list.html">
+                                        href="../../dashboard/app/user-list.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2161,7 +2160,7 @@
                             <ul class="sub-nav collapse" id="utilities-error" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../errors/error404.html">
+                                        href="../../dashboard/errors/error404.html">
                                         <i class="icon" data-bs-toggle="tooltip" title="Error 404" data-bs-placement="right">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2175,7 +2174,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../errors/error500.html">
+                                        href="../../dashboard/errors/error500.html">
                                         <i class="icon" data-bs-toggle="tooltip" title="Error 500" data-bs-placement="right">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2189,7 +2188,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../errors/maintenance.html">
+                                        href="../../dashboard/errors/maintenance.html">
                                         <i class="icon" data-bs-toggle="tooltip" title="Maintenance" data-bs-placement="right">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2227,7 +2226,7 @@
                             <ul class="sub-nav collapse" id="sidebar-plugins" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/apexcharts.html">
+                                        href="../../dashboard/plugins/apexcharts.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2243,7 +2242,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/button-hover.html">
+                                        href="../../dashboard/plugins/button-hover.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2259,7 +2258,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/tree-view.html">
+                                        href="../../dashboard/plugins/tree-view.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2275,7 +2274,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/choise-js.html">
+                                        href="../../dashboard/plugins/choise-js.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2291,7 +2290,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/flatpickr.html">
+                                        href="../../dashboard/plugins/flatpickr.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2307,7 +2306,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/fslightbox.html">
+                                        href="../../dashboard/plugins/fslightbox.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2323,7 +2322,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/gallery-hover.html">
+                                        href="../../dashboard/plugins/gallery-hover.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2339,7 +2338,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/image-croper.html">
+                                        href="../../dashboard/plugins/image-croper.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2355,7 +2354,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/loader.html">
+                                        href="../../dashboard/plugins/loader.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2371,7 +2370,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/rating.html">
+                                        href="../../dashboard/plugins/rating.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2387,7 +2386,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/select2.html">
+                                        href="../../dashboard/plugins/select2.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2403,7 +2402,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/sweet-alert.html">
+                                        href="../../dashboard/plugins/sweet-alert.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2419,7 +2418,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/quill-editor.html">
+                                        href="../../dashboard/plugins/quill-editor.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2435,7 +2434,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../plugins/uppy.html">
+                                        href="../../dashboard/plugins/uppy.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2452,7 +2451,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link "
-                                href="../blank-page.html">
+                                href="../../dashboard/blank-page.html">
                                 <i class="icon" data-bs-toggle="tooltip" title="Blank Page" data-bs-placement="right">
                                     <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -2468,7 +2467,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../admin.html">
+                            <a class="nav-link " href="../../dashboard/admin.html">
                                 <i class="icon" data-bs-toggle="tooltip" title="Admin & Permission" data-bs-placement="right">
                                     <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -2492,7 +2491,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://templates.iqonic.design/hope-ui/pro/html/">
+                            <a class="nav-link" href="../../">
                                 <i class="icon" data-bs-toggle="tooltip" title="Components" data-bs-placement="right">
                                     <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.4"
@@ -2512,7 +2511,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link "
-                                href="../plugins/ui-color.html">
+                                href="../../dashboard/plugins/ui-color.html">
                                 <i class="icon" data-bs-toggle="tooltip" title="Colors" data-bs-placement="right">
                                     <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.4"
@@ -2550,7 +2549,7 @@
                             <ul class="sub-nav collapse" id="sidebar-widget" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../widget/widgetbasic.html">
+                                        href="../../dashboard/widget/widgetbasic.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2566,7 +2565,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../widget/widgetchart.html">
+                                        href="../../dashboard/widget/widgetchart.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2582,7 +2581,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../widget/widgetcard.html">
+                                        href="../../dashboard/widget/widgetcard.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2620,7 +2619,7 @@
                             <ul class="sub-nav collapse" id="sidebar-maps" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../maps/google.html">
+                                        href="../../dashboard/maps/google.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2636,7 +2635,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../maps/vector.html">
+                                        href="../../dashboard/maps/vector.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2676,7 +2675,7 @@
                             <ul class="sub-nav collapse" id="sidebar-form" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../form/form-element.html">
+                                        href="../../dashboard/form/form-element.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2692,7 +2691,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../form/form-wizard.html">
+                                        href="../../dashboard/form/form-wizard.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2708,7 +2707,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../form/form-validation.html">
+                                        href="../../dashboard/form/form-validation.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2747,7 +2746,7 @@
                             <ul class="sub-nav collapse" id="sidebar-table" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="bootstrap-table.html">
+                                        href="../../dashboard/table/bootstrap-table.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2763,7 +2762,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active"
-                                        href="table-data.html">
+                                        href="../../dashboard/table/table-data.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2779,7 +2778,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="border-table.html">
+                                        href="../../dashboard/table/border-table.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2795,7 +2794,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="fancy-table.html">
+                                        href="../../dashboard/table/fancy-table.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2811,7 +2810,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="fixed-table.html">
+                                        href="../../dashboard/table/fixed-table.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2850,7 +2849,7 @@
                             <ul class="sub-nav collapse" id="sidebar-icons" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../icons/solid.html">
+                                        href="../../dashboard/icons/solid.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2866,7 +2865,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../icons/outline.html">
+                                        href="../../dashboard/icons/outline.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2882,7 +2881,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link "
-                                        href="../icons/dual-tone.html">
+                                        href="../../dashboard/icons/dual-tone.html">
                                         <i class="icon">
                                             <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -2908,7 +2907,7 @@
             <!--Nav Start-->
                 <nav class="nav navbar navbar-expand-xl navbar-light iq-navbar header-hover-menu left-border">
                    <div class="container-fluid navbar-inner">
-                      <a href="../index.html" class="navbar-brand">
+                      <a href="../../dashboard/index.html" class="navbar-brand">
                          
                          <!--Logo start-->
                          <div class="logo-main">
@@ -2958,10 +2957,10 @@
                                      </a>
                                      <ul class="iq-header-sub-menu list-unstyled collapse" id="homeData">
                                         <li class="nav-item"><a class="nav-link "
-                                              href="../index.html">Dashboard</a></li>
+                                              href="../../dashboard/index.html">Dashboard</a></li>
                                         <li class="nav-item"><a
                                               class="nav-link "
-                                              href="../alternate-dashboard.html">Alternate Dashboard</a></li>
+                                              href="../../dashboard/alternate-dashboard.html">Alternate Dashboard</a></li>
                                         <li class="nav-item">
                                            <a class="nav-link menu-arrow" data-bs-toggle="collapse" href="#menuStyles" role="button"
                                               aria-expanded="false" aria-controls="menuStyles">
@@ -2978,40 +2977,40 @@
                                               id="menuStyles">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../index-horizontal.html">Horizontal Dashboard</a></li>
+                                                    href="../../dashboard/index-horizontal.html">Horizontal Dashboard</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../index-dual-horizontal.html">Dual Horizontal Dashboard</a>
+                                                    href="../../dashboard/index-dual-horizontal.html">Dual Horizontal Dashboard</a>
                                               </li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../index-dual-compact.html">Dual Compact</a></li>
+                                                    href="../../dashboard/index-dual-compact.html">Dual Compact</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../index-boxed.html">Boxed Horizontal</a></li>
+                                                    href="../../dashboard/index-boxed.html">Boxed Horizontal</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../index-boxed-fancy.html">Boxed Fancy</a></li>
+                                                    href="../../dashboard/index-boxed-fancy.html">Boxed Fancy</a></li>
                                            </ul>
                                         </li>
                                         <li class="nav-item"><a
                                               class="nav-link "
-                                              href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/index.html">E-Commerce</a></li>
+                                              href="../../e-commerce/index.html">E-Commerce</a></li>
                                         <li class="nav-item"><a class="nav-link "
-                                              href="https://templates.iqonic.design/hope-ui/pro/html/social-app/index.html">Social App</a></li>
+                                              href="../../social-app/index.html">Social App</a></li>
                                         <li class="nav-item"><a
                                               class="nav-link "
-                                              href="https://templates.iqonic.design/hope-ui/pro/html/blog/index.html">Blog</a></li>
+                                              href="../../blog/index.html">Blog</a></li>
                                         <li class="nav-item"><a
                                               class="nav-link "
-                                              href="https://templates.iqonic.design/hope-ui/pro/html/appointment/index.html">Appointment</a></li>
+                                              href="../../appointment/index.html">Appointment</a></li>
                                         <li class="nav-item"><a
                                               class="nav-link "
-                                              href="https://templates.iqonic.design/hope-ui/pro/html/file-manager/index.html">File Manager</a></li>
+                                              href="../../file-manager/index.html">File Manager</a></li>
                                         <li class="nav-item"><a class="nav-link "
-                                              href="https://templates.iqonic.design/hope-ui/pro/html/chat/index.html" target="_blank">Chat</a></li>
+                                              href="../../chat/index.html" target="_blank">Chat</a></li>
                                         <li class="nav-item"><a class="nav-link "
-                                              href="https://templates.iqonic.design/hope-ui/pro/html/mail/index.html">Mail</a></li>
+                                              href="../../mail/index.html">Mail</a></li>
                                      </ul>
                                   </li>
                                   <li class="nav-item">
@@ -3045,19 +3044,19 @@
                                               id="specialPages">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../special-pages/billing.html">Billing</a></li>
+                                                    href="../../dashboard/special-pages/billing.html">Billing</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../special-pages/calender.html">Calender</a></li>
+                                                    href="../../dashboard/special-pages/calender.html">Calender</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../special-pages/kanban.html">Kanban</a></li>
+                                                    href="../../dashboard/special-pages/kanban.html">Kanban</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../special-pages/pricing.html">Pricing</a></li>
+                                                    href="../../dashboard/special-pages/pricing.html">Pricing</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../special-pages/timeline.html">Timeline</a></li>
+                                                    href="../../dashboard/special-pages/timeline.html">Timeline</a></li>
                                            </ul>
                                         </li>
                                         <li class="nav-item">
@@ -3090,18 +3089,18 @@
                                                     id="defaultAuth">
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth/sign-in.html">Sign In</a></li>
+                                                          href="../../dashboard/auth/sign-in.html">Sign In</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth/sign-up.html">Sign Up</a></li>
+                                                          href="../../dashboard/auth/sign-up.html">Sign Up</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth/confirm-mail.html">Email Verified</a></li>
+                                                          href="../../dashboard/auth/confirm-mail.html">Email Verified</a></li>
                                                     <li class="nav-item"><a class="nav-link "
-                                                          href="../auth/recoverpw.html">Reset Password</a></li>
+                                                          href="../../dashboard/auth/recoverpw.html">Reset Password</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth/lock-screen.html">Lock Screen</a></li>
+                                                          href="../../dashboard/auth/lock-screen.html">Lock Screen</a></li>
                                                  </ul>
                                               </li>
                                               <li class="nav-item">
@@ -3120,25 +3119,25 @@
                                                     id="animatedAuth">
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth-pro/sign-in.html">Sign In</a></li>
+                                                          href="../../dashboard/auth-pro/sign-in.html">Sign In</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth-pro/sign-up.html">Sign Up</a></li>
+                                                          href="../../dashboard/auth-pro/sign-up.html">Sign Up</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth-pro/email.html">Email</a></li>
+                                                          href="../../dashboard/auth-pro/email.html">Email</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth-pro/lock-screen.html">Lock screen</a></li>
+                                                          href="../../dashboard/auth-pro/lock-screen.html">Lock screen</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth-pro/reset-password.html">Reset password</a></li>
+                                                          href="../../dashboard/auth-pro/reset-password.html">Reset password</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth-pro/two-factor.html">Two factor</a></li>
+                                                          href="../../dashboard/auth-pro/two-factor.html">Two factor</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../auth-pro/account-deactivate.html">Account
+                                                          href="../../dashboard/auth-pro/account-deactivate.html">Account
                                                           deactivate</a></li>
                                                  </ul>
                                               </li>
@@ -3180,10 +3179,10 @@
                                                     id="simpleAuth">
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../simple-auth-pro/sign-in.html">Sign In</a></li>
+                                                          href="../../dashboard/simple-auth-pro/sign-in.html">Sign In</a></li>
                                                     <li class="nav-item"><a
                                                           class="nav-link "
-                                                          href="../simple-auth-pro/sign-up.html">Sign Up</a></li>
+                                                          href="../../dashboard/simple-auth-pro/sign-up.html">Sign Up</a></li>
                                                  </ul>
                                               </li>
                                            </ul>
@@ -3204,13 +3203,13 @@
                                               id="userApps">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../app/user-profile.html">User Profile</a></li>
+                                                    href="../../dashboard/app/user-profile.html">User Profile</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../app/user-add.html">User Add</a></li>
+                                                    href="../../dashboard/app/user-add.html">User Add</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../app/user-list.html">User List</a></li>
+                                                    href="../../dashboard/app/user-list.html">User List</a></li>
                                            </ul>
                                         </li>
                                         <li class="nav-item">
@@ -3229,13 +3228,13 @@
                                               id="utilities">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../errors/maintenance.html">Maintenance</a></li>
+                                                    href="../../dashboard/errors/maintenance.html">Maintenance</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../errors/error404.html">404</a></li>
+                                                    href="../../dashboard/errors/error404.html">404</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../errors/error500.html">505</a></li>
+                                                    href="../../dashboard/errors/error500.html">505</a></li>
                                            </ul>
                                         </li>
                                         <li class="nav-item">
@@ -3254,42 +3253,42 @@
                                               id="extraPlugins">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/button-hover.html">Button Hover</a></li>
+                                                    href="../../dashboard/plugins/button-hover.html">Button Hover</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/choise-js.html">Choise JS</a></li>
+                                                    href="../../dashboard/plugins/choise-js.html">Choise JS</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/fslightbox.html">FSlightbox</a></li>
+                                                    href="../../dashboard/plugins/fslightbox.html">FSlightbox</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/select2.html">Select2</a></li>
+                                                    href="../../dashboard/plugins/select2.html">Select2</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/sweet-alert.html">Sweetalert</a></li>
+                                                    href="../../dashboard/plugins/sweet-alert.html">Sweetalert</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/flatpickr.html">flatpickr</a></li>
+                                                    href="../../dashboard/plugins/flatpickr.html">flatpickr</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/apexcharts.html">Apexcharts</a></li>
+                                                    href="../../dashboard/plugins/apexcharts.html">Apexcharts</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/gallery-hover.html">Gallery Hover</a></li>
+                                                    href="../../dashboard/plugins/gallery-hover.html">Gallery Hover</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/image-croper.html">Image Croper</a></li>
+                                                    href="../../dashboard/plugins/image-croper.html">Image Croper</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/loader.html">Loader</a></li>
+                                                    href="../../dashboard/plugins/loader.html">Loader</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/rating.html">Rating</a></li>
+                                                    href="../../dashboard/plugins/rating.html">Rating</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../plugins/quill-editor.html">Quill</a></li>
+                                                    href="../../dashboard/plugins/quill-editor.html">Quill</a></li>
                                               <li class="nav-item"><a class="nav-link "
-                                                    href="../plugins/uppy.html">Uppy</a></li>
+                                                    href="../../dashboard/plugins/uppy.html">Uppy</a></li>
                                            </ul>
                                         </li>
                                      </ul>
@@ -3310,10 +3309,10 @@
                                      </a>
                                      <ul class="iq-header-sub-menu list-unstyled collapse" id="elementsData">
                                         <li class="nav-item">
-                                           <a class="nav-link" href="https://templates.iqonic.design/hope-ui/pro/html/">Components</a>
+                                           <a class="nav-link" href="../../">Components</a>
                                         </li>
                                         <li class="nav-item">
-                                           <a class="nav-link" href="../plugins/ui-color.html">UI Color</a>
+                                           <a class="nav-link" href="../../dashboard/plugins/ui-color.html">UI Color</a>
                                         </li>
                                         <li class="nav-item">
                                            <a class="nav-link menu-arrow" data-bs-toggle="collapse" href="#widgetsPage" role="button"
@@ -3331,13 +3330,13 @@
                                               id="widgetsPage">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../widget/widgetbasic.html">Widget Basic</a></li>
+                                                    href="../../dashboard/widget/widgetbasic.html">Widget Basic</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../widget/widgetchart.html">Widget Chart</a></li>
+                                                    href="../../dashboard/widget/widgetchart.html">Widget Chart</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../widget/widgetcard.html">Widget Card</a></li>
+                                                    href="../../dashboard/widget/widgetcard.html">Widget Card</a></li>
                                            </ul>
                                         </li>
                                         <li class="nav-item">
@@ -3356,10 +3355,10 @@
                                               id="mapPages">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../maps/google.html">Google</a></li>
+                                                    href="../../dashboard/maps/google.html">Google</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../maps/vector.html">Vector</a></li>
+                                                    href="../../dashboard/maps/vector.html">Vector</a></li>
                                            </ul>
                                         </li>
                                         <li class="nav-item">
@@ -3378,13 +3377,13 @@
                                               id="formsPages">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../form/form-element.html">Element</a></li>
+                                                    href="../../dashboard/form/form-element.html">Element</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../form/form-wizard.html">Wizard</a></li>
+                                                    href="../../dashboard/form/form-wizard.html">Wizard</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../form/form-validation.html">Validation</a></li>
+                                                    href="../../dashboard/form/form-validation.html">Validation</a></li>
                                            </ul>
                                         </li>
                                         <li class="nav-item">
@@ -3403,19 +3402,19 @@
                                               id="tablesPages">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="bootstrap-table.html">Bootstrap Table</a></li>
+                                                    href="../../dashboard/table/bootstrap-table.html">Bootstrap Table</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link active"
-                                                    href="table-data.html">Data Table</a></li>
+                                                    href="../../dashboard/table/table-data.html">Data Table</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="border-table.html">Bordered Table</a></li>
+                                                    href="../../dashboard/table/border-table.html">Bordered Table</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="fancy-table.html">Fancy Table</a></li>
+                                                    href="../../dashboard/table/fancy-table.html">Fancy Table</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="fixed-table.html">Fixed Table</a></li>
+                                                    href="../../dashboard/table/fixed-table.html">Fixed Table</a></li>
                                            </ul>
                                         </li>
                                         <li class="nav-item">
@@ -3434,13 +3433,13 @@
                                               id="iconsPages">
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../icons/solid.html">Solid</a></li>
+                                                    href="../../dashboard/icons/solid.html">Solid</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../icons/outline.html">Outlined</a></li>
+                                                    href="../../dashboard/icons/outline.html">Outlined</a></li>
                                               <li class="nav-item"><a
                                                     class="nav-link "
-                                                    href="../icons/dual-tone.html">Dual Tone</a></li>
+                                                    href="../../dashboard/icons/dual-tone.html">Dual Tone</a></li>
                                            </ul>
                                         </li>
                                      </ul>
@@ -3743,7 +3742,7 @@
                                      </div>
                                      <div class="card-footer p-0 text-center">
                                         <div class="d-grid">
-                                           <a href="https://templates.iqonic.design/hope-ui/pro/html/e-commerce/order-process.html" class="btn btn-primary">View All</a>
+                                           <a href="../../e-commerce/order-process.html" class="btn btn-primary">View All</a>
                                         </div>
                                      </div>
                                   </div>
@@ -3768,16 +3767,16 @@
                                </a>
                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                   <li>
-                                     <a class="dropdown-item" href="../app/user-profile.html">Profile</a>
+                                     <a class="dropdown-item" href="../../dashboard/app/user-profile.html">Profile</a>
                                   </li>
                                   <li>
-                                     <a class="dropdown-item" href="../app/user-privacy-setting.html">Privacy Setting</a>
+                                     <a class="dropdown-item" href="../../dashboard/app/user-privacy-setting.html">Privacy Setting</a>
                                   </li>
                                   <li>
                                      <hr class="dropdown-divider">
                                   </li>
                                   <li>
-                                     <a class="dropdown-item" href="../auth/sign-in.html">Logout</a>
+                                     <a class="dropdown-item" href="../../dashboard/auth/sign-in.html">Logout</a>
                                   </li>
                                </ul>
                             </li>
@@ -3825,7 +3824,7 @@
                                             <p>Experience a simple yet powerful way to build Dashboards with HOPE UI.</p>
                                         </div>
                                         <div>
-                                            <a href="#" class="btn btn-link btn-soft-light">
+                                            <a href="" class="btn btn-link btn-soft-light">
                                                 <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11.8251 15.2171H12.1748C14.0987 15.2171 15.731 13.985 16.3054 12.2764C16.3887 12.0276 16.1979 11.7713 15.9334 11.7713H14.8562C14.5133 11.7713 14.2362 11.4977 14.2362 11.16C14.2362 10.8213 14.5133 10.5467 14.8562 10.5467H15.9005C16.2463 10.5467 16.5263 10.2703 16.5263 9.92875C16.5263 9.58722 16.2463 9.31075 15.9005 9.31075H14.8562C14.5133 9.31075 14.2362 9.03619 14.2362 8.69849C14.2362 8.35984 14.5133 8.08528 14.8562 8.08528H15.9005C16.2463 8.08528 16.5263 7.8088 16.5263 7.46728C16.5263 7.12575 16.2463 6.84928 15.9005 6.84928H14.8562C14.5133 6.84928 14.2362 6.57472 14.2362 6.23606C14.2362 5.89837 14.5133 5.62381 14.8562 5.62381H15.9886C16.2483 5.62381 16.4343 5.3789 16.3645 5.13113C15.8501 3.32401 14.1694 2 12.1748 2H11.8251C9.42172 2 7.47363 3.92287 7.47363 6.29729V10.9198C7.47363 13.2933 9.42172 15.2171 11.8251 15.2171Z" fill="currentColor"></path>
                                                     <path opacity="0.4" d="M19.5313 9.82568C18.9966 9.82568 18.5626 10.2533 18.5626 10.7823C18.5626 14.3554 15.6186 17.2627 12.0005 17.2627C8.38136 17.2627 5.43743 14.3554 5.43743 10.7823C5.43743 10.2533 5.00345 9.82568 4.46872 9.82568C3.93398 9.82568 3.5 10.2533 3.5 10.7823C3.5 15.0873 6.79945 18.6413 11.0318 19.1186V21.0434C11.0318 21.5715 11.4648 22.0001 12.0005 22.0001C12.5352 22.0001 12.9692 21.5715 12.9692 21.0434V19.1186C17.2006 18.6413 20.5 15.0873 20.5 10.7823C20.5 10.2533 20.066 9.82568 19.5313 9.82568Z" fill="currentColor"></path>
@@ -5859,8 +5858,8 @@
             <footer class="footer">
                 <div class="footer-body">
                     <ul class="left-panel list-inline mb-0 p-0">
-                        <li class="list-inline-item"><a href="../extra/privacy-policy.html">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="../extra/terms-of-service.html">Terms of Use</a></li>
+                        <li class="list-inline-item"><a href="../../dashboard/extra/privacy-policy.html">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="../../dashboard/extra/terms-of-service.html">Terms of Use</a></li>
                     </ul>
                     <div class="right-panel">
                         ©<script>2022</script> <span data-setting="app_name">Hope UI</span>, Made with
@@ -5874,7 +5873,7 @@
             </footer>
             <!-- Footer Section End -->
         </main>
-        <a class="btn btn-secondary btn-dashboard" href="https://templates.iqonic.design/hope-ui/pro/html/landing-pages/index.html">
+        <a class="btn btn-secondary btn-dashboard" href="../../landing-pages/index.html">
             Landing Pages
         </a>
         <!-- Live Customizer start -->
@@ -6765,16 +6764,16 @@
                     <div class="d-flex justify-content-center">
                         <ul class="list-group list-group-horizontal list-group-flush">
                         <li class="list-group-item border-0 pb-0">
-                            <a href="#"><img src="https://templates.iqonic.design/hope-ui/pro/html/assets/images/brands/fb.svg" alt="fb" loading="lazy"></a>
+                            <a href="#"><img src="../../assets/images/brands/fb.svg" alt="fb" loading="lazy"></a>
                         </li>
                         <li class="list-group-item border-0 pb-0">
-                            <a href="#"><img src="https://templates.iqonic.design/hope-ui/pro/html/assets/images/brands/gm.svg" alt="gm" loading="lazy"></a>
+                            <a href="#"><img src="../../assets/images/brands/gm.svg" alt="gm" loading="lazy"></a>
                         </li>
                         <li class="list-group-item border-0 pb-0">
-                            <a href="#"><img src="https://templates.iqonic.design/hope-ui/pro/html/assets/images/brands/im.svg" alt="im" loading="lazy"></a>
+                            <a href="#"><img src="../../assets/images/brands/im.svg" alt="im" loading="lazy"></a>
                         </li>
                         <li class="list-group-item border-0 pb-0">
-                            <a href="#"><img src="https://templates.iqonic.design/hope-ui/pro/html/assets/images/brands/li.svg" alt="li" loading="lazy"></a>
+                            <a href="#"><img src="../../assets/images/brands/li.svg" alt="li" loading="lazy"></a>
                         </li>
                         </ul>
                     </div>
@@ -6832,16 +6831,16 @@
                     <div class="d-flex justify-content-center">
                         <ul class="list-group list-group-horizontal list-group-flush">
                             <li class="list-group-item border-0 pb-0">
-                                <a href="#"><img src="https://templates.iqonic.design/hope-ui/pro/html/assets/images/brands/fb.svg" alt="fb" loading="lazy"></a>
+                                <a href="#"><img src="../../assets/images/brands/fb.svg" alt="fb" loading="lazy"></a>
                             </li>
                             <li class="list-group-item border-0 pb-0">
-                                <a href="#"><img src="https://templates.iqonic.design/hope-ui/pro/html/assets/images/brands/gm.svg" alt="gm" loading="lazy"></a>
+                                <a href="#"><img src="../../assets/images/brands/gm.svg" alt="gm" loading="lazy"></a>
                             </li>
                             <li class="list-group-item border-0 pb-0">
-                                <a href="#"><img src="https://templates.iqonic.design/hope-ui/pro/html/assets/images/brands/im.svg" alt="im" loading="lazy"></a>
+                                <a href="#"><img src="../../assets/images/brands/im.svg" alt="im" loading="lazy"></a>
                             </li>
                             <li class="list-group-item border-0 pb-0">
-                                <a href="#"><img src="https://templates.iqonic.design/hope-ui/pro/html/assets/images/brands/li.svg" alt="li" loading="lazy"></a>
+                                <a href="#"><img src="../../assets/images/brands/li.svg" alt="li" loading="lazy"></a>
                             </li>
                         </ul>
                     </div>
@@ -6884,14 +6883,12 @@
         <!-- External Library Bundle Script -->
         <script src="../../assets/js/core/external.min.js"></script>
         <!-- Widgetchart Script -->
-        <script src="../../assets/js/charts/widgetcharts1fc6.js?v=4.0.0" defer></script>
+        <script src="../../assets/js/charts/widgetcharts.js?v=4.0.0" defer></script>
         <!-- Dashboard Script -->
-        <script src="../../assets/js/charts/dashboard1fc6.js?v=4.0.0" defer></script>
-        <script src="../../assets/js/charts/alternate-dashboard1fc6.js?v=4.0.0" defer></script>
+        <script src="../../assets/js/charts/dashboard.js?v=4.0.0" defer></script>
+        <script src="../../assets/js/charts/alternate-dashboard.js?v=4.0.0" defer></script>
         <!-- Hopeui Script -->
-        <script src="../../assets/js/hope-ui1fc6.js?v=4.0.0" defer></script>
-        <script src="../../assets/js/hope-uipro1fc6.js?v=4.0.0" defer></script>
-        <script src="../../assets/js/sidebar1fc6.js?v=4.0.0" defer></script>    </body>
-
-<!-- Mirrored from templates.iqonic.design/hope-ui/pro/html/dashboard/table/table-data.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Feb 2024 16:05:03 GMT -->
+        <script src="../../assets/js/hope-ui.js?v=4.0.0" defer></script>
+        <script src="../../assets/js/hope-uipro.js?v=4.0.0" defer></script>
+        <script src="../../assets/js/sidebar.js?v=4.0.0" defer></script>    </body>
 </html>
