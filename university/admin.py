@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import University, Department, Specialty, Group, EducationLang, Semester, Level, EducationForm, \
+from .models import University, Department, Specialty, GroupUniver, EducationLang, Semester, Level, EducationForm, \
     EducationType, Curriculum, SubjectDetail, TrainingType, Subject
 
 # University
 @admin.register(University)
 class UniversityAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name')
+    list_display = ('name', 'code')
 
 # Department
 @admin.register(Department)
@@ -18,7 +18,7 @@ class SpecialtyAdmin(admin.ModelAdmin):
     list_display = ('name', 'code')
 
 # Group
-@admin.register(Group)
+@admin.register(GroupUniver)
 class GroupAdmin(admin.ModelAdmin):
     list_display = ('name', 'educationLang')
 

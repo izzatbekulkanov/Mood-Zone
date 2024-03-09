@@ -1,10 +1,13 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block style %}
+    <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
     <!-- Flatpickr css -->
     <link rel="stylesheet" href="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendor/sheperd/dist/css/sheperd.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/vendor/swiperSlider/swiper-bundle.min.css' %}">
+
     <!-- Hope Ui Design System Css -->
     <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
@@ -16,595 +19,630 @@
     <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
     <!-- RTL Css -->
     <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
-          rel="stylesheet">
 {% endblock style %}
 
 {% block body %}
-<!-- Content -->
-        <div class="content-inner container-fluid pb-0" id="page_layout">
-            <div class="d-flex justify-content-between align-items-center flex-wrap mb-4 gap-3">
-                <div class="d-flex flex-column">
-                    <h3>{{ request.user.full_name }}</h3>
-                    <p class="text-primary mb-0">Financial Dashboard</p>
-                </div>
-                <div class="d-flex justify-content-between align-items-center rounded flex-wrap gap-3">
+    <!-- Content -->
+    <div class="container-fluid content-inner pb-0" id="page_layout">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-4 gap-3">
+            <div class="d-flex flex-column">
+                <h3>Namangan davlat pedagogika instituti</h3>
+                <p class="text-primary mb-0">Asosiy sahifa</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center rounded flex-wrap gap-3">
+                <div class="d-flex justify-content-between align-items-center p-3 gap-4 rounded pb-0">
+                    <div class="form-group mb-0">
+                        <input type="text" name="start" class="form-control range_flatpicker flatpickr-input active"
+                               placeholder="24 Jan 2022 " readonly="readonly">
+                    </div>
                     <div class="form-check form-switch mb-0 iq-status-switch">
                         <input class="form-check-input iq-status" type="checkbox" id="iq-switch" checked="">
                         <label class="form-check-label iq-reset-status" for="iq-switch">
                             Online
                         </label>
                     </div>
-                    <div class="form-group mb-0">
-                        <select class="select2-basic-single js-states form-control" name="state" style="width: 100%;">
-                            <option>Past 30 Days</option>
-                            <option>Past 60 Days</option>
-                            <option>Past 90 Days</option>
-                            <option>Past 1 year</option>
-                            <option>Past 2 year</option>
-                        </select>
+                    <div id="weather-info">
+                        <h5>Uzbekistan</h5>
+                        <h6 class="mb-0">Namangan</h6>
                     </div>
-                    <div class="form-group mb-0">
-                        <input type="text" name="start" class="form-control range_flatpicker flatpickr-input active"
-                               placeholder="24 Jan 2022 to 23 Feb 2022" readonly="readonly">
+                    <div class="iq-product-weather d-flex gap-2">
+                        <div id="weather-icon" class="d-flex flex-column align-items-center">
+                            <!-- Bu yerda havo holatining ikonasi chiqadi -->
+                        </div>
+                        <h6 id="temperature" class="mt-1 mb-0">Ob havo harorati</h6>
                     </div>
-                    <button type="button" class="btn btn-primary">Analytics</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card card-block card-stretch card-height">
-                        <div class="card-body">
-                            <div class="d-flex align-items-start justify-content-between mb-2">
-                                <p class="mb-0 text-dark">Gross Volume</p>
-                                <a class="badge rounded-pill bg-soft-primary" href="javascript:void(0);">
-                                    View
-                                </a>
-                            </div>
-                            <div class="mb-3">
-                                <h2 class="counter">$199,556</h2>
-                                <small>Last updated 1 hour ago.</small>
-                            </div>
-                            <div>
-                                <div id="grossVolume"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-block card-stretch card-height">
-                                <div class="card-body">
-                                    <div class="mb-2 d-flex justify-content-between align-items-center">
-                                        <span class="text-dark ">USD Balance</span>
-                                        <a class="badge rounded-pill bg-soft-primary" href="javascript:void(0);">
-                                            Request Payout
-                                        </a>
-                                    </div>
-                                    <h2 class="counter">$2590</h2>
-                                    <small>Available to pay out.</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="card card-block card-stretch card-height">
-                                <div class="card-body">
-                                    <div class="mb-2 d-flex justify-content-between align-items-center">
-                                        <span class="text-dark">No Of Payments</span>
-                                        <a class="badge rounded-pill bg-soft-primary" href="javascript:void(0);">
-                                            View
-                                        </a>
-                                    </div>
-                                    <h2 class="counter">367</h2>
-                                    <small>Transactions this month</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6 mb-5 mb-md-0">
-                                    <div class="mb-5">
-                                        <div class="mb-2 d-flex justify-content-between align-items-center">
-                                            <span class="text-dark">Last Transaction</span>
-                                            <a class="badge rounded-pill bg-soft-primary" href="javascript:void(0);">
-                                                View Report
-                                            </a>
-                                        </div>
-                                        <div class="mb-2">
-                                            <h2 class="counter">$58,556</h2>
-                                            <small>This Month</small>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="d-flex align-items-center gap-3 mb-3">
-                                            <div class="bg-soft-primary avatar-60 rounded">
-                                                <svg class="icon-35" width="35" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path opacity="0.4"
-                                                          d="M17.554 7.29614C20.005 7.29614 22 9.35594 22 11.8876V16.9199C22 19.4453 20.01 21.5 17.564 21.5L6.448 21.5C3.996 21.5 2 19.4412 2 16.9096V11.8773C2 9.35181 3.991 7.29614 6.438 7.29614H7.378L17.554 7.29614Z"
-                                                          fill="currentColor"></path>
-                                                    <path d="M12.5464 16.0374L15.4554 13.0695C15.7554 12.7627 15.7554 12.2691 15.4534 11.9634C15.1514 11.6587 14.6644 11.6597 14.3644 11.9654L12.7714 13.5905L12.7714 3.2821C12.7714 2.85042 12.4264 2.5 12.0004 2.5C11.5754 2.5 11.2314 2.85042 11.2314 3.2821L11.2314 13.5905L9.63742 11.9654C9.33742 11.6597 8.85043 11.6587 8.54843 11.9634C8.39743 12.1168 8.32142 12.3168 8.32142 12.518C8.32142 12.717 8.39743 12.9171 8.54643 13.0695L11.4554 16.0374C11.6004 16.1847 11.7964 16.268 12.0004 16.268C12.2054 16.268 12.4014 16.1847 12.5464 16.0374Z"
-                                                          fill="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <div style="width: 100%;">
-                                                <div class="d-flex justify-content-between  ">
-                                                    <h6>Received</h6>
-                                                    <h6 class="text-body">$5,674</h6>
-                                                </div>
-                                                <div class="progress bg-soft-primary shadow-none w-100" style="height: 6px">
-                                                    <div class="progress-bar bg-primary" data-toggle="progress-bar"
-                                                         role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                                                         aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-3">
-                                            <div class="bg-soft-primary avatar-60 rounded">
-                                                <svg class="icon-35" width="35" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M21.9964 8.37513H17.7618C15.7911 8.37859 14.1947 9.93514 14.1911 11.8566C14.1884 13.7823 15.7867 15.3458 17.7618 15.3484H22V15.6543C22 19.0136 19.9636 21 16.5173 21H7.48356C4.03644 21 2 19.0136 2 15.6543V8.33786C2 4.97862 4.03644 3 7.48356 3H16.5138C19.96 3 21.9964 4.97862 21.9964 8.33786V8.37513ZM6.73956 8.36733H12.3796H12.3831H12.3902C12.8124 8.36559 13.1538 8.03019 13.152 7.61765C13.1502 7.20598 12.8053 6.87318 12.3831 6.87491H6.73956C6.32 6.87664 5.97956 7.20858 5.97778 7.61852C5.976 8.03019 6.31733 8.36559 6.73956 8.36733Z"
-                                                          fill="currentColor"></path>
-                                                    <path opacity="0.4"
-                                                          d="M16.0374 12.2966C16.2465 13.2478 17.0805 13.917 18.0326 13.8996H21.2825C21.6787 13.8996 22 13.5715 22 13.166V10.6344C21.9991 10.2297 21.6787 9.90077 21.2825 9.8999H17.9561C16.8731 9.90338 15.9983 10.8024 16 11.9102C16 12.0398 16.0128 12.1695 16.0374 12.2966Z"
-                                                          fill="currentColor"></path>
-                                                    <circle cx="18" cy="11.8999" r="1" fill="currentColor"></circle>
-                                                </svg>
-                                            </div>
-                                            <div style="width: 100%;">
-                                                <div class="d-flex justify-content-between  ">
-                                                    <h6>Transferred</h6>
-                                                    <h6 class="text-body">$1,624</h6>
-                                                </div>
-                                                <div class="progress bg-soft-info shadow-none w-100" style="height: 6px">
-                                                    <div class="progress-bar bg-info" data-toggle="progress-bar"
-                                                         role="progressbar" aria-valuenow="33" aria-valuemin="0"
-                                                         aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="iq-scroller-effect">
-                                        <div class="d-flex justify-content-between align-items-center mb-3">
-                                            <span class="text-dark">Send Money To</span>
-                                            <a href="table/border-table.html" class="badge rounded-pill bg-soft-primary">
-                                                All Contacts
-                                            </a>
-                                        </div>
-                                        <div class="d-flex align-items-center iq-slider mb-5 gap-2">
-                                            <div>
-                                                <img class="rounded-circle bg-soft-primary img-fluid avatar-40 mb-2"
-                                                     src="{% static 'assets/images/table/1.png' %}" alt="profile" loading="lazy"/>
-                                            </div>
-                                            <div>
-                                                <img class="rounded-circle bg-soft-primary img-fluid avatar-40 mb-2"
-                                                     src="{% static 'assets/images/table/2.png' %}" alt="profile" loading="lazy"/>
-                                            </div>
-                                            <div>
-                                                <img class="rounded-circle bg-soft-primary img-fluid avatar-40 mb-2"
-                                                     src="{% static 'assets/images/table/3.png' %}" alt="profile" loading="lazy"/>
-                                            </div>
-                                            <div>
-                                                <img class="rounded-circle bg-soft-primary img-fluid avatar-40 mb-2"
-                                                     src="{% static 'assets/images/table/4.png' %}" alt="profile" loading="lazy"/>
-                                            </div>
-                                            <div>
-                                                <img class="rounded-circle bg-soft-primary img-fluid avatar-40 mb-2"
-                                                     src="{% static 'assets/images/table/5.png' %}" alt="profile" loading="lazy"/>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group">
-                                                <select class="select2-basic-single js-states form-control form-group"
-                                                        name="Account" style="width: 100%;">
-                                                    <option selected>Select Your Account</option>
-                                                    <option value="1">5521000120354</option>
-                                                    <option value="2">5521000125145</option>
-                                                    <option value="3">5521000129665</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <select class="select2-basic-single-tag js-states form-control"
-                                                        name="Amount" style="width: 100%;">
-                                                    <option selected>Enter Amount in USD</option>
-                                                    <option value="1">100</option>
-                                                    <option value="2">200</option>
-                                                    <option value="5">500</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary w-100 mt-2">Send Money</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card card-block card-stretch card-height">
-                        <div class="card-header">
-                            <div class=" d-flex justify-content-between  flex-wrap">
-                                <h4 class="card-title">Net Volumes From Sales</h4>
-                                <div class="dropdown">
-                                    <a href="#" class="text-gray dropdown-toggle" id="dropdownMenuButton22"
-                                       data-bs-toggle="dropdown" aria-expanded="false">
-                                        This year
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton22">
-                                        <li><a class="dropdown-item" href="#">Year</a></li>
-                                        <li><a class="dropdown-item" href="#">Month</a></li>
-                                        <li><a class="dropdown-item" href="#">Week</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div id="dashboard-line-chart"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card card-block card-stretch card-height">
-                        <nav class="tab-bottom-bordered">
-                            <div class="mb-0 nav nav-tabs justify-content-around" id="nav-tab1" role="tablist">
-                                <button class="nav-link py-3 active" id="nav-home-11-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-home-11" type="button" role="tab" aria-controls="nav-home-11"
-                                        aria-selected="true">Payments
-                                </button>
-                                <button class="nav-link py-3" id="nav-profile-11-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-profile-11" type="button" role="tab"
-                                        aria-controls="nav-profile-11" aria-selected="false">Settlements
-                                </button>
-                                <button class="nav-link py-3" id="nav-contact-11-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-contact-11" type="button" role="tab"
-                                        aria-controls="nav-contact-11" aria-selected="false">Refunds
-                                </button>
-                            </div>
-                        </nav>
-                        <div class="tab-content iq-tab-fade-up" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home-11" role="tabpanel"
-                                 aria-labelledby="nav-home-11-tab">
-                                <div class="table-responsive">
-                                    <table id="transaction-table" class="table mb-0 table-striped" role="grid">
-                                        <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$1,833</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_vxnnjigakm
-                                            </td>
-                                            <td class="text-dark">1 Hour Ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success ">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$1,204</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_uwsxaiuhhs
-                                            </td>
-                                            <td class="text-dark">23 Days Ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,833</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_taxrcfzhny
-                                            </td>
-                                            <td class="text-dark">1 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,235</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_pknfotsmhl
-                                            </td>
-                                            <td class="text-dark">1 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,442</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_xqgczqbgto
-                                            </td>
-                                            <td class="text-dark">3 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$1,924</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_eoasrkizdw
-                                            </td>
-                                            <td class="text-dark">4 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-profile-11" role="tabpanel"
-                                 aria-labelledby="nav-profile-11-tab">
-                                <div class="table-responsive">
-                                    <table id="transaction-table-1" class="table mb-0 table-striped" role="grid">
-                                        <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,298</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_ufsoishqbw
-                                            </td>
-                                            <td class="text-dark">7 Days Ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success ">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,032</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_fescijfgbb
-                                            </td>
-                                            <td class="text-dark">23 Days</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$1,514</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_eihghndltk
-                                            </td>
-                                            <td class="text-dark">1 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$1,425</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_bvihnfpdfq
-                                            </td>
-                                            <td class="text-dark">2 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,838</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_afrtmvdyjp
-                                            </td>
-                                            <td class="text-dark">2 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,613</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_jterqcvjxz
-                                            </td>
-                                            <td class="text-dark">5 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Processed</span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-contact-11" role="tabpanel"
-                                 aria-labelledby="nav-contact-11-tab">
-                                <div class="table-responsive">
-                                    <table id="transaction-table-2" class="table mb-0 table-striped" role="grid">
-                                        <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,866</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_odqethdqye
-                                            </td>
-                                            <td class="text-dark">3 Days Ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-info ">Process</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$1,637</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_nmngvsosnh
-                                            </td>
-                                            <td class="text-dark">22 Days Ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Refunded</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,922</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_uikgtphcpo
-                                            </td>
-                                            <td class="text-dark">1 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Refunded</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,563</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_cieqrdyqkp
-                                            </td>
-                                            <td class="text-dark">2 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-info">Process</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,334</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_wmdvzpfavx
-                                            </td>
-                                            <td class="text-dark">3 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-success">Refunded</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="mb-0">$2,632</h6>
-                                                </div>
-                                            </td>
-                                            <td class="text-primary">
-                                                hui_jplpprjzbr
-                                            </td>
-                                            <td class="text-dark">5 month ago</td>
-                                            <td class="text-end">
-                                                <span class="badge rounded-pill bg-danger">Failed</span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer text-end">
-                            <a href="javascript:void(0);">
-                    <span class="me-2">
-                        View all Settlements
-                    </span>
-                                <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8.5 5L15.5 12L8.5 19" stroke="currentColor" stroke-width="1.5"
-                                          stroke-linecap="round" stroke-linejoin="round"></path>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
+                                     width="44" id="Graduation-Cap--Streamline-Core">
+                                    <path id="Subtract" fill="#8fbffa" fill-rule="evenodd"
+                                          d="m3.19983 6.03098 3.60135 1.56037c0.12682 0.05495 0.27073 0.05495 0.39756 0l3.60006 -1.55982 0.0006 2.87508c0 0.0886 -0.0235 0.17561 -0.0682 0.25212l-0.4318 -0.25203c0.4318 0.25203 0.4316 0.25231 0.4315 0.2526l-0.0004 0.0006 -0.0007 0.00129 -0.0018 0.00298 -0.0046 0.00751 -0.0131 0.02098c-0.0106 0.01655 -0.025 0.03811 -0.0433 0.06396 -0.0366 0.05167 -0.089 0.12063 -0.1592 0.20094 -0.1403 0.16061 -0.3518 0.36716 -0.64833 0.57114 -0.5982 0.4116 -1.5217 0.7982 -2.85986 0.7982 -1.33817 0 -2.26048 -0.3867 -2.85753 -0.7985 -0.29592 -0.2042 -0.50677 -0.41092 -0.64658 -0.5717 -0.0699 -0.08039 -0.12217 -0.14943 -0.1586 -0.20118 -0.01822 -0.02588 -0.0325 -0.04748 -0.04307 -0.06406l-0.01311 -0.02103 -0.00453 -0.00754 -0.00176 -0.00299 -0.00076 -0.0013 -0.00035 -0.0006c-0.00017 -0.00028 -0.00033 -0.00057 0.43226 -0.2513l-0.43259 0.25073c-0.04399 -0.07589 -0.06724 -0.16201 -0.06741 -0.24973l-0.00575 -2.87672Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Subtract_2" fill="#2859c5" fill-rule="evenodd"
+                                          d="m3.19995 6.03101 3.60129 1.56035c0.12683 0.05495 0.27074 0.05495 0.39756 0l3.6001 -1.55983 0.0003 1.36216 -3.10344 1.34464c-0.44389 0.19232 -0.94758 0.19232 -1.39147 0L3.20291 7.39458l-0.00296 -1.36357Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Union" fill="#8fbffa" fill-rule="evenodd"
+                                          d="M7.19878 1.04121c-0.12682 -0.054947 -0.27074 -0.054947 -0.39756 0L0.301219 3.8575C0.118352 3.93673 0 4.11699 0 4.31628c0 0.1993 0.118352 0.37956 0.301219 0.45879L6.80122 7.59136c0.12682 0.05495 0.27074 0.05495 0.39756 0l6.50002 -2.81629c0.1828 -0.07923 0.3012 -0.25949 0.3012 -0.45879 0 -0.19929 -0.1184 -0.37955 -0.3012 -0.45878L7.19878 1.04121Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Subtract_3" fill="#2859c5" fill-rule="evenodd"
+                                          d="m2.32031 5.64989 -1.25 -0.54159v4.89151c0.18917 -0.09081 0.40115 -0.14169 0.62502 -0.14169 0.22385 0 0.43582 0.05087 0.62498 0.14168l0 -4.34991Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Union_2" fill="#8fbffa" fill-rule="evenodd"
+                                          d="M1.69533 9.85812c-0.798572 0 -1.44594 0.64738 -1.44594 1.44598 0 0.7985 0.647368 1.4459 1.44594 1.4459 0.79857 0 1.44594 -0.6474 1.44594 -1.4459 0 -0.7986 -0.64737 -1.44598 -1.44594 -1.44598Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
                                 </svg>
-                            </a>
+                            </div>
+
+                            <h5 class="mb-3">Universitet</h5>
+                            <div class="d-flex justify-content-center ms-2">
+                                <a href="{% url 'university_dashboard' %}" class="btn btn-primary">Kirish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
+                                     width="44" id="Definition-Search-Book--Streamline-Core">
+                                    <path id="Union" fill="#2859c5" fill-rule="evenodd"
+                                          d="M8 9.75024c0 -0.96649 0.7835 -1.75 1.75 -1.75s1.75 0.78351 1.75 1.75c0 0.96646 -0.7835 1.74996 -1.75 1.74996S8 10.7167 8 9.75024Zm1.75 -3.25c-1.79493 0 -3.25 1.45508 -3.25 3.25 0 1.79496 1.45507 3.24996 3.25 3.24996 0.6257 0 1.2102 -0.1768 1.7061 -0.4832l1.2631 1.2631c0.2929 0.2929 0.7678 0.2929 1.0607 0 0.2929 -0.2929 0.2929 -0.7678 0 -1.0607l-1.2632 -1.2631c0.3065 -0.4959 0.4833 -1.0803 0.4833 -1.70606 0 -1.79492 -1.4551 -3.25 -3.25 -3.25Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Subtract" fill="#8fbffa" fill-rule="evenodd"
+                                          d="M0.5 0.000244141c-0.276142 0 -0.5 0.223857859 -0.5 0.499999859V10.5003c0 0.2761 0.223858 0.5 0.5 0.5h4.92589C5.31137 10.6034 5.25 10.184 5.25 9.75024c0 -1.14125 0.42484 -2.18327 1.125 -2.97655l0 -5.948233C5.891 0.368722 5.24621 0.000244141 4.5 0.000244141h-4ZM7.625 0.827849l0 4.954741c0.63289 -0.33968 1.35644 -0.53235 2.125 -0.53235 1.9658 0 3.6371 1.26046 4.25 3.01726V0.500244c0 -0.276142 -0.2239 -0.499999859 -0.5 -0.499999859H9.75c-0.88104 0 -1.59752 0.356074859 -2.125 0.827604859Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                </svg>
+                            </div>
+
+                            <h5 class="mb-3">Kutubhona</h5>
+                            <div class="d-flex justify-content-center ms-2">
+                                <a href="{% url 'library_dashboard' %}" class="btn btn-primary">Kirish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
+                                     width="44" id="Web--Streamline-Core">
+                                    <desc>Web Streamline Icon: https://streamlinehq.com</desc>
+                                    <g id="Web--Streamline-Core">
+                                        <path id="Union" fill="#8fbffa" fill-rule="evenodd"
+                                              d="M7 0C3.13401 0 0 3.13401 0 7c0 3.866 3.13401 7 7 7 3.866 0 7 -3.134 7 -7 0 -3.86599 -3.134 -7 -7 -7Z"
+                                              clip-rule="evenodd" stroke-width="1"></path>
+                                        <path id="Intersect" fill="#2859c5" fill-rule="evenodd"
+                                              d="M8.95114 0.275532C8.43847 0.12704 7.90157 0.0355829 7.34776 0.00848818 8.55379 1.91446 9.3003 4.09817 9.51704 6.375H4.48293c0.21674 -2.27683 0.96325 -4.46054 2.16927 -6.3665103C6.09839 0.0355871 5.5615 0.127044 5.04883 0.27554 4.0391 2.14922 3.41606 4.22625 3.22773 6.375H0.0275217C0.00930339 6.5809 0 6.78936 0 7s0.00930342 0.4191 0.0275217 0.625H3.22773c0.18833 2.14874 0.81137 4.2258 1.82109 6.0995 0.51267 0.1485 1.04957 0.2399 1.60338 0.267 -1.20603 -1.906 -1.95253 -4.08967 -2.16927 -6.3665h5.03411c-0.21674 2.27683 -0.96325 4.4605 -2.16927 6.3665 0.55381 -0.0271 1.09071 -0.1185 1.60337 -0.267 1.00973 -1.8737 1.63276 -3.95075 1.82106 -6.0995h3.2003C13.9907 7.4191 14 7.21064 14 7s-0.0093 -0.4191 -0.0275 -0.625h-3.2003c-0.1883 -2.14875 -0.81133 -4.22579 -1.82106 -6.099468Z"
+                                              clip-rule="evenodd" stroke-width="1"></path>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <h5 class="mb-3">Sayt ma'lumotlari</h5>
+                            <div class="d-flex justify-content-center ms-2">
+                                <a href="$" class="btn btn-primary">Kirish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
+                                     width="44" id="Class-Lesson--Streamline-Core">
+                                    <path id="Subtract" fill="#8fbffa" fill-rule="evenodd"
+                                          d="M7.64964 9.5H12c0.8284 0 1.5 -0.67157 1.5 -1.5V2c0 -0.82843 -0.6716 -1.5 -1.5 -1.5H6.23608c0.47504 0.53076 0.7639 1.23165 0.7639 2 0 0.25897 -0.03282 0.51029 -0.09452 0.75h1.96952C10.1867 3.25 11.25 4.31332 11.25 5.625S10.1867 8 8.87498 8H7.8163l-0.16666 1.5Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Union" fill="#2859c5" fill-rule="evenodd"
+                                          d="M5.75 2.5c0 0.9665 -0.7835 1.75 -1.75 1.75S2.25 3.4665 2.25 2.5 3.0335 0.75 4 0.75s1.75 0.7835 1.75 1.75ZM0.5 8C0.5 6.067 2.067 4.5 4 4.5h4.875C9.49632 4.5 10 5.00368 10 5.625S9.49632 6.75 8.875 6.75H6.69752l-0.70058 6.3052c-0.02813 0.2532 -0.24217 0.4448 -0.49694 0.4448H3c-0.24679 0 -0.45666 -0.1801 -0.49419 -0.424l-0.43477 -2.826H1c-0.276142 0 -0.5 -0.2239 -0.5 -0.5V8Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                </svg>
+                            </div>
+
+                            <h5 class="mb-3">Qabul</h5>
+                            <div class="d-flex justify-content-center ms-2">
+                                <a href="$" class="btn btn-primary">Kirish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="44"
+                                     width="44" id="Chat-Bubble-Square-Write--Streamline-Sharp">
+                                    <path id="Union" fill="#8fbffa" fill-rule="evenodd"
+                                          d="m21.145 19.849 0 -16.048 -1.441 0V2H1.855v21.054l5.129 -3.205h14.16Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Union_2" fill="#2859c5" fill-rule="evenodd"
+                                          d="m23.207 4.496 -3.64 -3.64L11 9.421v3.64h3.64l8.567 -8.566Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                </svg>
+                            </div>
+
+                            <h5 class="mb-3">Imtihon</h5>
+                            <div class="d-flex justify-content-center ms-2">
+                                <a href="$" class="btn btn-primary">Kirish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="header-title">
+                            <h4 class="card-title">Foydalanuvchi ma'lumotlari</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="twit-feed">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="{{ request.user.image }}" alt="User-Profile"
+                                     class="theme-color-default-img  img-fluid avatar-60 me-3" loading="lazy">
+                                <div class="media-support-info">
+                                    <h6 class="mb-0">{{ request.user.full_name }}</h6>
+                                    <p class="mb-0">{{ request.user.user_role }}
+                                        <span class="text-primary">
+                                        <svg width="15" viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                  d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path>
+                                        </svg>
+                                    </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="media-support-body">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"
+                                     id="Office-Worker--Streamline-Core" width="48">
+                                    <path id="Union" fill="#8FBFFA" fill-rule="evenodd"
+                                          d="M5.5 2a2 2 0 1 1 -4 0 2 2 0 0 1 4 0Zm0.045 7.97V10H5.5l-0.445 3.562a0.5 0.5 0 0 1 -0.496 0.438H2.44a0.5 0.5 0 0 1 -0.496 -0.438L1.5 10h-1a0.5 0.5 0 0 1 -0.5 -0.5v-1a3.5 3.5 0 0 1 6.9 -0.832A2.632 2.632 0 0 0 5.545 9.97Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Union_2" fill="#2859C5" fill-rule="evenodd"
+                                          d="M9.677 7.937a0.25 0.25 0 0 1 0.25 -0.25h0.913a0.25 0.25 0 0 1 0.25 0.25v0.651H9.677v-0.65Zm-1.5 0.651v-0.65c0 -0.967 0.784 -1.75 1.75 -1.75h0.913c0.966 0 1.75 0.783 1.75 1.75v0.65c0.763 0 1.381 0.62 1.381 1.383v2.647c0 0.763 -0.619 1.382 -1.382 1.382H8.177a1.382 1.382 0 0 1 -1.382 -1.382V9.97c0 -0.763 0.619 -1.382 1.382 -1.382Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                </svg>
+                            </div>
+
+                            <h5 class="mb-3">Rollar</h5>
+                            <div class="d-flex justify-content-center ms-2">
+                                <a href="$" class="btn btn-primary">Kirish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="44"
+                                     width="44" id="Vertical-Slider-2--Streamline-Sharp">
+                                    <path id="Union" fill="#8fbffa" fill-rule="evenodd"
+                                          d="M3 1v22h2L5 1H3Zm8 22 0 -22h2l0 22h-2Zm8 0V1h2v22h-2Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Union_2" fill="#2859c5" fill-rule="evenodd"
+                                          d="M23 4a3 3 0 1 1 -6 0 3 3 0 0 1 6 0Zm-8 8a3 3 0 1 1 -6 0 3 3 0 0 1 6 0ZM4 23a3 3 0 1 0 0 -6 3 3 0 0 0 0 6Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                </svg>
+                            </div>
+
+                            <h5 class="mb-3">Boshqa</h5>
+                            <div class="d-flex justify-content-center ms-2">
+                                <a href="$" class="btn btn-primary">Kirish</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-<!--/ Content -->
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="flex-wrap card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4>NAMDPI STRATEGIYASI</h4>
+                            <p class="mb-0">
+                                <svg class="me-2" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="#17904b"
+                                          d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z"></path>
+                                </svg>
+                                50%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex profile-media align-items-top">
+                            <div class="mt-1 profile-dots-pills border-warning"></div>
+                            <div class="ms-4">
+                                <h6 class="mb-1 ">Yuksalish<span class="text-primary"></span></h6>
+                                <span class="mb-0">2026-yil</span>
+                            </div>
+                        </div>
+                        <div class="d-flex profile-media align-items-top">
+                            <div class="mt-1 profile-dots-pills border-warning"></div>
+                            <div class="ms-4">
+                                <h6 class="mb-1 ">Taraqqiyot<span class="text-primary"></span></h6>
+                                <span class="mb-0">2025-yil</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex profile-media align-items-top">
+                            <div class="mt-1 profile-dots-pills border-success"></div>
+                            <div class="ms-4">
+                                <h6 class="mb-1 ">Rivojlanish<span class="text-primary"></span></h6>
+                                <span class="mb-0">2024-yil</span>
+                            </div>
+                        </div>
+                        <div class="mb-1 d-flex profile-media align-items-top">
+                            <div class="mt-1 profile-dots-pills border-success"></div>
+                            <div class="ms-4">
+                                <h6 class="mb-1 ">Tiklanish<span class="text-primary"></span></h6>
+                                <span class="mb-0">2023-yil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card ">
+                    <div class="card-header">
+                        <h4 class="mb-0">NamDPI manzili</h4>
+                    </div>
+                    <div class="card-body">
+                        <div style="width: 100%; overflow: hidden; height: 280px;">
+                            <iframe loading="lazy"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.976125310438!2d71.69888197555697!3d40.98200362104309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb4c0f3da09121%3A0x96efaff1734c248c!2sNamangan%20State%20University!5e0!3m2!1sen!2s!4v1709920645377!5m2!1sen!2s"
+                                    style="border:0; margin-top: -150px; height: 500px; width: 100%;">
+                            </iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <h4 class="mb-0">Ijtimoiy tarmoqlar</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row  ">
+                        <div class="col">
+                            <div class="card bg-body shadow-none mb-xl-0 ">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
+                                            <img src="{% static 'assets/images/media/01.png' %}" alt="01"
+                                                 class="img-fluid avatar-30 object-contain">
+                                        </button>
+                                        <div>
+                                            <small>Instagram</small>
+                                            <h4 class="mb-0">@Namdpiinstagram</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-body shadow-none mb-xl-0">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
+                                            <img src="{% static 'assets/images/media/05.png' %}" alt="01"
+                                                 class="img-fluid avatar-30 object-contain">
+                                        </button>
+                                        <div>
+                                            <small>Telegram</small>
+                                            <h4 class="mb-0">@namdpitelegram</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-body shadow-none mb-md-0">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
+                                            <img src="{% static 'assets/images/media/03.png' %}" alt="01"
+                                                 class="img-fluid avatar-30 object-contain">
+                                        </button>
+                                        <div>
+                                            <small>You tube</small>
+                                            <h4 class="mb-0">@Namdpiyoutube</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-body shadow-none mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
+                                            <img src="{% static 'assets/images/media/04.png' %}" alt="01"
+                                                 class="img-fluid avatar-30 object-contain">
+                                        </button>
+                                        <div>
+                                            <small>Facebook</small>
+                                            <h4 class="mb-0">@namdpifacebook</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-body shadow-none mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
+                                            <img src="{% static 'assets/images/media/06.png' %}" alt="01"
+                                                 class="img-fluid avatar-30 object-contain">
+                                        </button>
+                                        <div>
+                                            <small>Twitter X</small>
+                                            <h4 class="mb-0">@TwitterXnamdpi</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-body card-thumbnail">
+                    <div class="bg-primary rounded my-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-evenly align-items-center text-white">
+                                <svg class="iq-blog-special" width="50" viewBox="0 0 71 59" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                          d="M19.508 33.7143C23.1374 33.7143 26.0107 34.8972 28.1278 37.2632C30.3962 39.4812 31.5304 42.4386 31.5304 46.1353C31.5304 50.1278 30.1693 53.307 27.4473 55.6729C24.8765 57.891 21.3227 59 16.7859 59C11.4931 59 7.3344 57.0038 4.3099 53.0113C1.43664 49.0188 0 43.3258 0 35.9323C0 29.2782 1.51225 23.1416 4.53674 17.5226C7.56124 11.7556 12.098 5.98872 18.147 0.221802C18.2982 0.0739339 18.525 0 18.8275 0C19.2812 0 19.6592 0.221802 19.9617 0.665405C20.2641 1.10902 20.2641 1.47869 19.9617 1.77443C12.5517 9.16791 8.84665 17.8922 8.84665 27.9474C8.84665 32.0877 9.60277 35.119 11.115 37.0414C12.476 34.8233 15.2737 33.7143 19.508 33.7143ZM58.9776 33.7143C62.607 33.7143 65.4803 34.8972 67.5975 37.2632C69.8658 39.4812 71 42.4386 71 46.1353C71 50.1278 69.639 53.307 66.9169 55.6729C64.3461 57.891 60.7923 59 56.2556 59C50.9627 59 46.804 57.0038 43.7796 53.0113C40.9063 49.0188 39.4696 43.3258 39.4696 35.9323C39.4696 29.2782 40.9819 23.1416 44.0064 17.5226C47.0309 11.7556 51.5676 5.98872 57.6166 0.221802C57.7678 0.0739339 57.9947 0 58.2971 0C58.7508 0 59.1289 0.221802 59.4313 0.665405C59.7338 1.10902 59.7338 1.47869 59.4313 1.77443C52.0213 9.16791 48.3163 17.8922 48.3163 27.9474C48.3163 32.0877 49.0724 35.119 50.5847 37.0414C51.9457 34.8233 54.7433 33.7143 58.9776 33.7143Z"
+                                          fill="currentcolor"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="text-white text-center mb-0">
+                                        <span>
+                                            “Yoshlar va biznesni qo‘llab-quvvatlash yili"
+                                        </span>
+                                        <br>
+                                    </h4>
+                                    <h6 class="text-white text-center mt-3">2024-yil nomi</h6>
+                                </div>
+                                <svg class="iq-blog-special" width="50" viewBox="0 0 77 64" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                          d="M55.8434 27.4286C51.9073 27.4286 48.7913 26.1454 46.4952 23.5789C44.0351 21.1729 42.8051 17.9649 42.8051 13.9549C42.8051 9.62406 44.2811 6.17543 47.2332 3.60902C50.0213 1.203 53.8754 -5.60778e-06 58.7955 -6.03791e-06C64.5357 -6.53973e-06 69.0458 2.1654 72.3259 6.49622C75.442 10.8271 77 17.0025 77 25.0226C77 32.2406 75.36 38.8972 72.0799 44.9925C68.7998 51.2481 63.8797 57.5038 57.3195 63.7594C57.1555 63.9198 56.9095 64 56.5815 64C56.0895 64 55.6794 63.7594 55.3514 63.2782C55.0234 62.797 55.0234 62.396 55.3514 62.0752C63.3876 54.0551 67.4058 44.5915 67.4057 33.6842C67.4057 29.193 66.5857 25.9048 64.9457 23.8195C63.4696 26.2256 60.4356 27.4286 55.8434 27.4286ZM13.0383 27.4286C9.10224 27.4286 5.98615 26.1454 3.69009 23.5789C1.23003 21.1729 3.60488e-06 17.9649 3.25431e-06 13.9549C2.8757e-06 9.62406 1.47604 6.17543 4.42811 3.60902C7.21619 1.20301 11.0703 -1.86564e-06 15.9904 -2.29577e-06C21.7306 -2.79759e-06 26.2407 2.1654 29.5208 6.49623C32.6368 10.8271 34.1949 17.0025 34.1949 25.0226C34.1949 32.2406 32.5548 38.8972 29.2748 44.9925C25.9947 51.2481 21.0745 57.5038 14.5144 63.7594C14.3504 63.9198 14.1044 64 13.7764 64C13.2844 64 12.8743 63.7594 12.5463 63.2782C12.2183 62.797 12.2183 62.396 12.5463 62.0752C20.5825 54.0551 24.6006 44.5915 24.6006 33.6842C24.6006 29.193 23.7806 25.9048 22.1406 23.8195C20.6645 26.2256 17.6305 27.4286 13.0383 27.4286Z"
+                                          fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <div class="me-4 d-flex align-items-center gap-2">
+                            <a href="#">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M2 12.015C2 6.74712 6.21 2 12.02 2C17.7 2 22 6.65699 22 11.985C22 18.1642 16.96 22 12 22C10.36 22 8.54 21.5593 7.08 20.698C6.57 20.3876 6.14 20.1572 5.59 20.3375L3.57 20.9384C3.06 21.0986 2.6 20.698 2.75 20.1572L3.42 17.9139C3.53 17.6034 3.51 17.2729 3.35 17.0125C2.49 15.4301 2 13.6975 2 12.015ZM10.7 12.015C10.7 12.7261 11.27 13.2969 11.98 13.307C12.69 13.307 13.26 12.7261 13.26 12.025C13.26 11.314 12.69 10.7431 11.98 10.7431C11.28 10.7331 10.7 11.314 10.7 12.015ZM15.31 12.025C15.31 12.7261 15.88 13.307 16.59 13.307C17.3 13.307 17.87 12.7261 17.87 12.025C17.87 11.314 17.3 10.7431 16.59 10.7431C15.88 10.7431 15.31 11.314 15.31 12.025ZM7.37 13.307C6.67 13.307 6.09 12.7261 6.09 12.025C6.09 11.314 6.66 10.7431 7.37 10.7431C8.08 10.7431 8.65 11.314 8.65 12.025C8.65 12.7261 8.08 13.2969 7.37 13.307Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <span class="fs-6 ">Comment</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <a href="#">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M15.85 2.50065C16.481 2.50065 17.111 2.58965 17.71 2.79065C21.401 3.99065 22.731 8.04065 21.62 11.5806C20.99 13.3896 19.96 15.0406 18.611 16.3896C16.68 18.2596 14.561 19.9196 12.28 21.3496L12.03 21.5006L11.77 21.3396C9.48102 19.9196 7.35002 18.2596 5.40102 16.3796C4.06102 15.0306 3.03002 13.3896 2.39002 11.5806C1.26002 8.04065 2.59002 3.99065 6.32102 2.76965C6.61102 2.66965 6.91002 2.59965 7.21002 2.56065H7.33002C7.61102 2.51965 7.89002 2.50065 8.17002 2.50065H8.28002C8.91002 2.51965 9.52002 2.62965 10.111 2.83065H10.17C10.21 2.84965 10.24 2.87065 10.26 2.88965C10.481 2.96065 10.69 3.04065 10.89 3.15065L11.27 3.32065C11.3618 3.36962 11.4649 3.44445 11.554 3.50912C11.6104 3.55009 11.6612 3.58699 11.7 3.61065C11.7163 3.62028 11.7329 3.62996 11.7496 3.63972C11.8354 3.68977 11.9247 3.74191 12 3.79965C13.111 2.95065 14.46 2.49065 15.85 2.50065ZM18.51 9.70065C18.92 9.68965 19.27 9.36065 19.3 8.93965V8.82065C19.33 7.41965 18.481 6.15065 17.19 5.66065C16.78 5.51965 16.33 5.74065 16.18 6.16065C16.04 6.58065 16.26 7.04065 16.68 7.18965C17.321 7.42965 17.75 8.06065 17.75 8.75965V8.79065C17.731 9.01965 17.8 9.24065 17.94 9.41065C18.08 9.58065 18.29 9.67965 18.51 9.70065Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <span class="fs-6 ">Like</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body card-thumbnail">
+                    <div class="bg-success rounded my-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-evenly align-items-center text-white">
+                                <svg class="iq-blog-special" width="50" viewBox="0 0 71 59" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                          d="M19.508 33.7143C23.1374 33.7143 26.0107 34.8972 28.1278 37.2632C30.3962 39.4812 31.5304 42.4386 31.5304 46.1353C31.5304 50.1278 30.1693 53.307 27.4473 55.6729C24.8765 57.891 21.3227 59 16.7859 59C11.4931 59 7.3344 57.0038 4.3099 53.0113C1.43664 49.0188 0 43.3258 0 35.9323C0 29.2782 1.51225 23.1416 4.53674 17.5226C7.56124 11.7556 12.098 5.98872 18.147 0.221802C18.2982 0.0739339 18.525 0 18.8275 0C19.2812 0 19.6592 0.221802 19.9617 0.665405C20.2641 1.10902 20.2641 1.47869 19.9617 1.77443C12.5517 9.16791 8.84665 17.8922 8.84665 27.9474C8.84665 32.0877 9.60277 35.119 11.115 37.0414C12.476 34.8233 15.2737 33.7143 19.508 33.7143ZM58.9776 33.7143C62.607 33.7143 65.4803 34.8972 67.5975 37.2632C69.8658 39.4812 71 42.4386 71 46.1353C71 50.1278 69.639 53.307 66.9169 55.6729C64.3461 57.891 60.7923 59 56.2556 59C50.9627 59 46.804 57.0038 43.7796 53.0113C40.9063 49.0188 39.4696 43.3258 39.4696 35.9323C39.4696 29.2782 40.9819 23.1416 44.0064 17.5226C47.0309 11.7556 51.5676 5.98872 57.6166 0.221802C57.7678 0.0739339 57.9947 0 58.2971 0C58.7508 0 59.1289 0.221802 59.4313 0.665405C59.7338 1.10902 59.7338 1.47869 59.4313 1.77443C52.0213 9.16791 48.3163 17.8922 48.3163 27.9474C48.3163 32.0877 49.0724 35.119 50.5847 37.0414C51.9457 34.8233 54.7433 33.7143 58.9776 33.7143Z"
+                                          fill="currentcolor"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="text-white text-center mb-0">
+                                        <span>
+                                            “Yoshlar va biznesni qo‘llab-quvvatlash yili"
+                                        </span>
+                                        <br>
+                                    </h4>
+                                    <h6 class="text-white text-center mt-3">2024-yil nomi</h6>
+                                </div>
+                                <svg class="iq-blog-special" width="50" viewBox="0 0 77 64" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                          d="M55.8434 27.4286C51.9073 27.4286 48.7913 26.1454 46.4952 23.5789C44.0351 21.1729 42.8051 17.9649 42.8051 13.9549C42.8051 9.62406 44.2811 6.17543 47.2332 3.60902C50.0213 1.203 53.8754 -5.60778e-06 58.7955 -6.03791e-06C64.5357 -6.53973e-06 69.0458 2.1654 72.3259 6.49622C75.442 10.8271 77 17.0025 77 25.0226C77 32.2406 75.36 38.8972 72.0799 44.9925C68.7998 51.2481 63.8797 57.5038 57.3195 63.7594C57.1555 63.9198 56.9095 64 56.5815 64C56.0895 64 55.6794 63.7594 55.3514 63.2782C55.0234 62.797 55.0234 62.396 55.3514 62.0752C63.3876 54.0551 67.4058 44.5915 67.4057 33.6842C67.4057 29.193 66.5857 25.9048 64.9457 23.8195C63.4696 26.2256 60.4356 27.4286 55.8434 27.4286ZM13.0383 27.4286C9.10224 27.4286 5.98615 26.1454 3.69009 23.5789C1.23003 21.1729 3.60488e-06 17.9649 3.25431e-06 13.9549C2.8757e-06 9.62406 1.47604 6.17543 4.42811 3.60902C7.21619 1.20301 11.0703 -1.86564e-06 15.9904 -2.29577e-06C21.7306 -2.79759e-06 26.2407 2.1654 29.5208 6.49623C32.6368 10.8271 34.1949 17.0025 34.1949 25.0226C34.1949 32.2406 32.5548 38.8972 29.2748 44.9925C25.9947 51.2481 21.0745 57.5038 14.5144 63.7594C14.3504 63.9198 14.1044 64 13.7764 64C13.2844 64 12.8743 63.7594 12.5463 63.2782C12.2183 62.797 12.2183 62.396 12.5463 62.0752C20.5825 54.0551 24.6006 44.5915 24.6006 33.6842C24.6006 29.193 23.7806 25.9048 22.1406 23.8195C20.6645 26.2256 17.6305 27.4286 13.0383 27.4286Z"
+                                          fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <div class="me-4 d-flex align-items-center gap-2">
+                            <a href="#">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M2 12.015C2 6.74712 6.21 2 12.02 2C17.7 2 22 6.65699 22 11.985C22 18.1642 16.96 22 12 22C10.36 22 8.54 21.5593 7.08 20.698C6.57 20.3876 6.14 20.1572 5.59 20.3375L3.57 20.9384C3.06 21.0986 2.6 20.698 2.75 20.1572L3.42 17.9139C3.53 17.6034 3.51 17.2729 3.35 17.0125C2.49 15.4301 2 13.6975 2 12.015ZM10.7 12.015C10.7 12.7261 11.27 13.2969 11.98 13.307C12.69 13.307 13.26 12.7261 13.26 12.025C13.26 11.314 12.69 10.7431 11.98 10.7431C11.28 10.7331 10.7 11.314 10.7 12.015ZM15.31 12.025C15.31 12.7261 15.88 13.307 16.59 13.307C17.3 13.307 17.87 12.7261 17.87 12.025C17.87 11.314 17.3 10.7431 16.59 10.7431C15.88 10.7431 15.31 11.314 15.31 12.025ZM7.37 13.307C6.67 13.307 6.09 12.7261 6.09 12.025C6.09 11.314 6.66 10.7431 7.37 10.7431C8.08 10.7431 8.65 11.314 8.65 12.025C8.65 12.7261 8.08 13.2969 7.37 13.307Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <span class="fs-6 ">Comment</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <a href="#">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M15.85 2.50065C16.481 2.50065 17.111 2.58965 17.71 2.79065C21.401 3.99065 22.731 8.04065 21.62 11.5806C20.99 13.3896 19.96 15.0406 18.611 16.3896C16.68 18.2596 14.561 19.9196 12.28 21.3496L12.03 21.5006L11.77 21.3396C9.48102 19.9196 7.35002 18.2596 5.40102 16.3796C4.06102 15.0306 3.03002 13.3896 2.39002 11.5806C1.26002 8.04065 2.59002 3.99065 6.32102 2.76965C6.61102 2.66965 6.91002 2.59965 7.21002 2.56065H7.33002C7.61102 2.51965 7.89002 2.50065 8.17002 2.50065H8.28002C8.91002 2.51965 9.52002 2.62965 10.111 2.83065H10.17C10.21 2.84965 10.24 2.87065 10.26 2.88965C10.481 2.96065 10.69 3.04065 10.89 3.15065L11.27 3.32065C11.3618 3.36962 11.4649 3.44445 11.554 3.50912C11.6104 3.55009 11.6612 3.58699 11.7 3.61065C11.7163 3.62028 11.7329 3.62996 11.7496 3.63972C11.8354 3.68977 11.9247 3.74191 12 3.79965C13.111 2.95065 14.46 2.49065 15.85 2.50065ZM18.51 9.70065C18.92 9.68965 19.27 9.36065 19.3 8.93965V8.82065C19.33 7.41965 18.481 6.15065 17.19 5.66065C16.78 5.51965 16.33 5.74065 16.18 6.16065C16.04 6.58065 16.26 7.04065 16.68 7.18965C17.321 7.42965 17.75 8.06065 17.75 8.75965V8.79065C17.731 9.01965 17.8 9.24065 17.94 9.41065C18.08 9.58065 18.29 9.67965 18.51 9.70065Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <span class="fs-6 ">Like</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body card-thumbnail">
+                    <div class="bg-info rounded my-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-evenly align-items-center text-white">
+                                <svg class="iq-blog-special" width="50" viewBox="0 0 71 59" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                          d="M19.508 33.7143C23.1374 33.7143 26.0107 34.8972 28.1278 37.2632C30.3962 39.4812 31.5304 42.4386 31.5304 46.1353C31.5304 50.1278 30.1693 53.307 27.4473 55.6729C24.8765 57.891 21.3227 59 16.7859 59C11.4931 59 7.3344 57.0038 4.3099 53.0113C1.43664 49.0188 0 43.3258 0 35.9323C0 29.2782 1.51225 23.1416 4.53674 17.5226C7.56124 11.7556 12.098 5.98872 18.147 0.221802C18.2982 0.0739339 18.525 0 18.8275 0C19.2812 0 19.6592 0.221802 19.9617 0.665405C20.2641 1.10902 20.2641 1.47869 19.9617 1.77443C12.5517 9.16791 8.84665 17.8922 8.84665 27.9474C8.84665 32.0877 9.60277 35.119 11.115 37.0414C12.476 34.8233 15.2737 33.7143 19.508 33.7143ZM58.9776 33.7143C62.607 33.7143 65.4803 34.8972 67.5975 37.2632C69.8658 39.4812 71 42.4386 71 46.1353C71 50.1278 69.639 53.307 66.9169 55.6729C64.3461 57.891 60.7923 59 56.2556 59C50.9627 59 46.804 57.0038 43.7796 53.0113C40.9063 49.0188 39.4696 43.3258 39.4696 35.9323C39.4696 29.2782 40.9819 23.1416 44.0064 17.5226C47.0309 11.7556 51.5676 5.98872 57.6166 0.221802C57.7678 0.0739339 57.9947 0 58.2971 0C58.7508 0 59.1289 0.221802 59.4313 0.665405C59.7338 1.10902 59.7338 1.47869 59.4313 1.77443C52.0213 9.16791 48.3163 17.8922 48.3163 27.9474C48.3163 32.0877 49.0724 35.119 50.5847 37.0414C51.9457 34.8233 54.7433 33.7143 58.9776 33.7143Z"
+                                          fill="currentcolor"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="text-white text-center mb-0">
+                                        <span>
+                                            “Kongratbay Sharipov"
+                                        </span>
+                                        <br>
+                                    </h4>
+                                    <h6 class="text-white text-center mt-3">Oliy ta'lim va'ziri</h6>
+                                </div>
+                                <svg class="iq-blog-special" width="50" viewBox="0 0 77 64" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                          d="M55.8434 27.4286C51.9073 27.4286 48.7913 26.1454 46.4952 23.5789C44.0351 21.1729 42.8051 17.9649 42.8051 13.9549C42.8051 9.62406 44.2811 6.17543 47.2332 3.60902C50.0213 1.203 53.8754 -5.60778e-06 58.7955 -6.03791e-06C64.5357 -6.53973e-06 69.0458 2.1654 72.3259 6.49622C75.442 10.8271 77 17.0025 77 25.0226C77 32.2406 75.36 38.8972 72.0799 44.9925C68.7998 51.2481 63.8797 57.5038 57.3195 63.7594C57.1555 63.9198 56.9095 64 56.5815 64C56.0895 64 55.6794 63.7594 55.3514 63.2782C55.0234 62.797 55.0234 62.396 55.3514 62.0752C63.3876 54.0551 67.4058 44.5915 67.4057 33.6842C67.4057 29.193 66.5857 25.9048 64.9457 23.8195C63.4696 26.2256 60.4356 27.4286 55.8434 27.4286ZM13.0383 27.4286C9.10224 27.4286 5.98615 26.1454 3.69009 23.5789C1.23003 21.1729 3.60488e-06 17.9649 3.25431e-06 13.9549C2.8757e-06 9.62406 1.47604 6.17543 4.42811 3.60902C7.21619 1.20301 11.0703 -1.86564e-06 15.9904 -2.29577e-06C21.7306 -2.79759e-06 26.2407 2.1654 29.5208 6.49623C32.6368 10.8271 34.1949 17.0025 34.1949 25.0226C34.1949 32.2406 32.5548 38.8972 29.2748 44.9925C25.9947 51.2481 21.0745 57.5038 14.5144 63.7594C14.3504 63.9198 14.1044 64 13.7764 64C13.2844 64 12.8743 63.7594 12.5463 63.2782C12.2183 62.797 12.2183 62.396 12.5463 62.0752C20.5825 54.0551 24.6006 44.5915 24.6006 33.6842C24.6006 29.193 23.7806 25.9048 22.1406 23.8195C20.6645 26.2256 17.6305 27.4286 13.0383 27.4286Z"
+                                          fill="currentcolor"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <div class="me-4 d-flex align-items-center gap-2">
+                            <a href="#">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M2 12.015C2 6.74712 6.21 2 12.02 2C17.7 2 22 6.65699 22 11.985C22 18.1642 16.96 22 12 22C10.36 22 8.54 21.5593 7.08 20.698C6.57 20.3876 6.14 20.1572 5.59 20.3375L3.57 20.9384C3.06 21.0986 2.6 20.698 2.75 20.1572L3.42 17.9139C3.53 17.6034 3.51 17.2729 3.35 17.0125C2.49 15.4301 2 13.6975 2 12.015ZM10.7 12.015C10.7 12.7261 11.27 13.2969 11.98 13.307C12.69 13.307 13.26 12.7261 13.26 12.025C13.26 11.314 12.69 10.7431 11.98 10.7431C11.28 10.7331 10.7 11.314 10.7 12.015ZM15.31 12.025C15.31 12.7261 15.88 13.307 16.59 13.307C17.3 13.307 17.87 12.7261 17.87 12.025C17.87 11.314 17.3 10.7431 16.59 10.7431C15.88 10.7431 15.31 11.314 15.31 12.025ZM7.37 13.307C6.67 13.307 6.09 12.7261 6.09 12.025C6.09 11.314 6.66 10.7431 7.37 10.7431C8.08 10.7431 8.65 11.314 8.65 12.025C8.65 12.7261 8.08 13.2969 7.37 13.307Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <span class="fs-6 ">Comment</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <a href="#">
+                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M15.85 2.50065C16.481 2.50065 17.111 2.58965 17.71 2.79065C21.401 3.99065 22.731 8.04065 21.62 11.5806C20.99 13.3896 19.96 15.0406 18.611 16.3896C16.68 18.2596 14.561 19.9196 12.28 21.3496L12.03 21.5006L11.77 21.3396C9.48102 19.9196 7.35002 18.2596 5.40102 16.3796C4.06102 15.0306 3.03002 13.3896 2.39002 11.5806C1.26002 8.04065 2.59002 3.99065 6.32102 2.76965C6.61102 2.66965 6.91002 2.59965 7.21002 2.56065H7.33002C7.61102 2.51965 7.89002 2.50065 8.17002 2.50065H8.28002C8.91002 2.51965 9.52002 2.62965 10.111 2.83065H10.17C10.21 2.84965 10.24 2.87065 10.26 2.88965C10.481 2.96065 10.69 3.04065 10.89 3.15065L11.27 3.32065C11.3618 3.36962 11.4649 3.44445 11.554 3.50912C11.6104 3.55009 11.6612 3.58699 11.7 3.61065C11.7163 3.62028 11.7329 3.62996 11.7496 3.63972C11.8354 3.68977 11.9247 3.74191 12 3.79965C13.111 2.95065 14.46 2.49065 15.85 2.50065ZM18.51 9.70065C18.92 9.68965 19.27 9.36065 19.3 8.93965V8.82065C19.33 7.41965 18.481 6.15065 17.19 5.66065C16.78 5.51965 16.33 5.74065 16.18 6.16065C16.04 6.58065 16.26 7.04065 16.68 7.18965C17.321 7.42965 17.75 8.06065 17.75 8.75965V8.79065C17.731 9.01965 17.8 9.24065 17.94 9.41065C18.08 9.58065 18.29 9.67965 18.51 9.70065Z"
+                                          fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <span class="fs-6 ">Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Content -->
 {% endblock body %}
 {% block script %}
-<!-- Library Bundle Script -->
-<script src="{% static 'assets/js/core/libs.min.js' %}"></script>
-<!-- Plugin Scripts -->
-<!-- Tour plugin Start -->
-<script src="{% static 'assets/vendor/sheperd/dist/js/sheperd.min.js' %}"></script>
-<script src="{% static 'assets/js/plugins/tour.js' %}" defer></script>
-
-
-<!-- Flatpickr Script -->
-<script src="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.js' %}"></script>
-<script src="{% static 'assets/js/plugins/flatpickr.js' %}" defer></script>
-<!-- Slider-tab Script -->
-<script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
-<!-- Select2 Script -->
-<script src="{% static 'assets/js/plugins/select2.js' %}" defer></script>
-<!-- Lodash Utility -->
-<script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
-<!-- Utilities Functions -->
-<script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
-<!-- Settings Script -->
-<script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
-<!-- Settings Init Script -->
-<script src="{% static 'assets/js/setting-init.js' %}"></script>
-<!-- External Library Bundle Script -->
-<script src="{% static 'assets/js/core/external.min.js' %}"></script>
-<!-- Widgetchart Script -->
-<script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
-<!-- Dashboard Script -->
-<script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
-<script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
-<!-- Hopeui Script -->
-<script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
-<script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
-<script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "weather",
+                method: "GET",
+                success: function (data) {
+                    // Ob havo ma'lumotlarini HTML elementlariga joylash
+                    $("#temperature").text("" + data.temperature + "°C");
+                    // Ikonani joylash uchun SVG kodini qo'shib, misol uchun:
+                    $("#weather-icon").html('<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="35" viewBox="0 0 14 14" id="Sun-Cloud--Streamline-Core"><desc>Sun Cloud Streamline Icon: https://streamlinehq.com</desc><g id="Sun-Cloud--Streamline-Core"><path id="Ellipse 636" fill="#2859C5" d="M8.004 2.998a2.998 2.998 0 1 0 5.996 0 2.998 2.998 0 1 0 -5.996 0" stroke-width="1"></path><path id="Vector" fill="#8FBFFA" d="M4.5 5a4.5 4.5 0 0 0 0 9h6a2.5 2.5 0 0 0 0 -5 2.45 2.45 0 0 0 -1.17 0.3 0.24 0.24 0 0 1 -0.23 0 0.25 0.25 0 0 1 -0.14 -0.19A4.45 4.45 0 0 0 4.5 5Z" stroke-width="1"></path></g></svg>');
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    </script>
+    <!-- Library Bundle Script -->
+    <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+    <!-- Plugin Scripts -->
+    <!-- Flatpickr Script -->
+    <script src="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/flatpickr.js' %}" defer></script>
+    <!-- Slider-tab Script -->
+    <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiperSlider/swiper-bundle.min.js' %}s"></script>
+    <!-- Select2 Script -->
+    <script src="{% static 'assets/js/plugins/select2.js' %}" defer></script>
+    <!-- Lodash Utility -->
+    <script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+    <!-- Utilities Functions -->
+    <script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+    <!-- Settings Script -->
+    <script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+    <!-- Settings Init Script -->
+    <script src="{% static 'assets/js/dashboard-setting.js' %}"></script>
+    <!-- External Library Bundle Script -->
+    <script src="{% static 'assets/js/core/external.min.js' %}"></script>
+    <!-- Widgetchart Script -->
+    <script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+    <!-- Dashboard Script -->
+    <script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+    <!-- Hopeui Script -->
+    <script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/blog.js' %}" defer=""></script>
 
 {% endblock script %}

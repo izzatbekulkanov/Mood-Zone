@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 from django.utils import timezone
 
-from university.models import University, Specialty, Group, Department, EducationType, EducationForm, Curriculum
+from university.models import University, Specialty, GroupUniver, Department, EducationType, EducationForm, Curriculum
 
 
 class CustomUserManager(BaseUserManager):
@@ -155,7 +155,7 @@ class CustomUser(AbstractUser):
     is_student = models.BooleanField(default=False, verbose_name="Talaba")
     university = models.ForeignKey(University, on_delete=models.CASCADE, verbose_name="Universitet", null=True, blank=True)
     specialty = models.ForeignKey(Specialty, on_delete=models.CASCADE, verbose_name="Mutaxassislik", null=True, blank=True)
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, verbose_name="Guruh", null=True, blank=True)
+    group = models.ForeignKey(GroupUniver, on_delete=models.CASCADE, verbose_name="Guruh", null=True, blank=True)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, verbose_name="Davlat", null=True, blank=True)
     province = models.ForeignKey(Province, on_delete=models.CASCADE, verbose_name="Viloyat", null=True, blank=True)
     district = models.ForeignKey(District, on_delete=models.CASCADE, verbose_name="Tuman", null=True, blank=True)

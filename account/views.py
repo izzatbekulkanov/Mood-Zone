@@ -22,26 +22,3 @@ def login_view(request):
             messages.error(request, 'Invalid email or password.')
     return render(request, 'register/login.html')  # Change 'your_app' to your app name
 
-@login_required
-def add_student(request):
-    return render(request, 'app/users/create_student.html')
-
-
-def students_list_view(request):
-    return render(request, 'app/users/students.html')
-
-
-def employees_list_view(request):
-    return render(request, 'app/users/employees.html')
-
-
-def student_statistics(request):
-    return render(request, 'app/users/student_statistics.html')
-
-
-def employee_statistics(request):
-    return render(request, 'app/users/employee_statistics.html')
-
-
-def university_dashboard(request):
-    return render(request, 'app/university/layout/index.html')

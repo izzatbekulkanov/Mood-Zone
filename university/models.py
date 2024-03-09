@@ -7,6 +7,9 @@ import string
 class University(models.Model):
     code = models.CharField(max_length=20, verbose_name="Universitet kodi")
     name = models.CharField(max_length=255, verbose_name="Universitet nomi")
+    api_url = models.URLField(verbose_name="API URL", null=True, blank=True)
+    student_url = models.URLField(verbose_name="Student URL", null=True, blank=True)
+    employee_url = models.URLField(verbose_name="Xodimlar URL", null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -15,7 +18,7 @@ class University(models.Model):
 class Department(models.Model):
     # structureType turining variantlari
     BOSHQA = '10'
-    MAHALLIY = '11'
+    FAKULTET = '11'
     KAFEDRA = '12'
     BOLIM = '13'
     BOSHQARMA = '14'
@@ -24,7 +27,7 @@ class Department(models.Model):
 
     STRUCTURE_TYPE_CHOICES = [
         (BOSHQA, 'Boshqa'),
-        (MAHALLIY, 'Mahalliy'),
+        (FAKULTET, 'Fakultet'),
         (KAFEDRA, 'Kafedra'),
         (BOLIM, 'Bo‘lim'),
         (BOSHQARMA, 'Boshqarma'),
@@ -44,23 +47,22 @@ class Department(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.get_structure_type_display()}"
 
 
 class Specialty(models.Model):
     name = models.CharField(max_length=255, verbose_name="Yo'nalish nomi")
     code = models.CharField(max_length=20, verbose_name="Yo'nalish kodi")
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    educationType = models.ForeignKey('EducationType', on_delete=models.CASCADE, verbose_name="Ta'lim turi")
+
+
 
     def __str__(self):
         return self.name
 
 
-class Group(models.Model):
-    name = models.CharField(max_length=255, verbose_name="Guruh nomi")
-    educationLang = models.ForeignKey('EducationLang', on_delete=models.CASCADE, verbose_name="Ta'lim tili")
 
-    def __str__(self):
-        return self.name
 
 
 class EducationLang(models.Model):
@@ -104,12 +106,27 @@ class EducationType(models.Model):
 
 
 class Curriculum(models.Model):
+    code = models.CharField(max_length=20, verbose_name="O'quv reja kodi" , null=True, blank=True)
     specialty = models.ForeignKey('Specialty', on_delete=models.CASCADE, verbose_name="Yo'nalish")
     educationType = models.ForeignKey('EducationType', on_delete=models.CASCADE, verbose_name="Ta'lim turi")
     educationForm = models.ForeignKey('EducationForm', on_delete=models.CASCADE, verbose_name="Ta'lim shakli")
     name = models.CharField(max_length=255, verbose_name="Dastur nomi")
-    semester_count = models.IntegerField(verbose_name="Semestrlar soni")
-    education_period = models.IntegerField(verbose_name="Ta'lim davomi")
+    semester_count = models.IntegerField(verbose_name="Semestrlar soni", null=True, blank=True)
+    education_period = models.IntegerField(verbose_name="Ta'lim davomi (Yilda)", null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class GroupUniver(models.Model):
+    name = models.CharField(max_length=255, verbose_name="Guruh nomi")
+    educationLang = models.ForeignKey('EducationLang', on_delete=models.CASCADE, verbose_name="Ta'lim tili")
+    code = models.CharField(max_length=20, verbose_name="Guruh kodi")
+    department = models.ForeignKey('Department', on_delete=models.CASCADE, verbose_name="Fakultet")
+    specialty = models.ForeignKey('Specialty', on_delete=models.CASCADE, verbose_name="Mutaxassislik")
+    curriculum = models.ForeignKey('Curriculum', on_delete=models.CASCADE, verbose_name="O'quv rejasi", blank=True, null=True)
+
+
 
     def __str__(self):
         return self.name
@@ -137,12 +154,12 @@ class Subject(models.Model):
     department = models.ForeignKey('Department', on_delete=models.CASCADE, verbose_name="Bo'lim")
     subjectDetails = models.ManyToManyField('SubjectDetail', verbose_name="Fan tafsilotlari")
     total_acload = models.IntegerField(verbose_name="Umumiy akademik yuk")
-    credit = models.IntegerField(verbose_name="Kredit")
-    resource_count = models.IntegerField(verbose_name="Resurslar soni")
-    in_group = models.IntegerField(verbose_name="Guruhda")
-    at_semester = models.BooleanField(default=True, verbose_name="Semestrda")
+    credit = models.IntegerField(verbose_name="Kredit",  null=True, blank=True )
+    resource_count = models.IntegerField(verbose_name="Resurslar soni", null=True, blank=True)
+    in_group = models.IntegerField(verbose_name="Guruhda", null=True, blank=True)
+    at_semester = models.BooleanField(default=True, verbose_name="Semestrda", null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan vaqti")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Yangilangan vaqti")
 
     def __str__(self):
-        return f"{self.subject.name} - {self.semester.name}"
+        return f"{self.subject} - {self.semester.name}"

@@ -1,0 +1,128 @@
+{% extends 'app/university/layout/main.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
+    <!-- Hope Ui Design System Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+    <!-- Dark Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+    <!-- Customizer Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+    <!-- RTL Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+          rel="stylesheet">
+{% endblock style %}
+{% block body %}
+    <!-- Content -->
+    <div class="content-inner pb-0 container-fluid" id="page_layout">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-block card-stretch card-height">
+                    <div class="card-body profile-page p-0">
+                        <div class="profile-header-image">
+                            <div class="position-relative">
+                                <img src="../social-app/assets/images/friend-list/01.png" alt="profile-bg"
+                                     class="rounded img-fluid w-100" loading="lazy">
+                            </div>
+                            <div class="profile-info p-4">
+                                <div class="user-detail">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start">
+                                        <div class="profile-detail d-flex gap-4">
+                                            <div class="profile-img">
+                                                <img src="../social-app/assets/images/avatar/01.png" alt="profile-img"
+                                                     class="avatar-130 img-fluid rounded-pill border" loading="lazy">
+                                            </div>
+                                            <div class="user-data-block">
+                                                <h4>
+                                                    <a href="javascript:void(0)">Anna Sthesia</a>
+                                                </h4>
+                                                <h6>@designer</h6>
+                                                <p>Lorem Ipsum is simply dummy text of the</p>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Following</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-block card-stretch card-height">
+                    <div class="card-body profile-page p-0">
+                        <div class="profile-header-image">
+                            <div class="position-relative">
+                                <img src="../social-app/assets/images/friend-list/08.png" alt="profile-bg"
+                                     class="rounded img-fluid w-100" loading="lazy">
+                            </div>
+                            <div class="profile-info p-4">
+                                <div class="user-detail">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start">
+                                        <div class="profile-detail d-flex gap-4">
+                                            <div class="profile-img">
+                                                <img src="../social-app/assets/images/avatar/06.png" alt="profile-img"
+                                                     class="avatar-130 img-fluid rounded-pill border" loading="lazy">
+                                            </div>
+                                            <div class="user-data-block">
+                                                <h4>
+                                                    <a href="javascript:void(0)">Aaron Ottix</a>
+                                                </h4>
+                                                <h6>@designer</h6>
+                                                <p>Lorem Ipsum is simply dummy text of the</p>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Following</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Content -->
+{% endblock body %}
+{% block script %}
+    <!-- Axios  Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="{% static 'assets/js/App/university/department.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- SwetAlert  Script -->
+    <script src="{% static 'assets/js/plugins/sweet-alert2.js' %}"></script>
+    <script>
+
+    </script>
+    <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+    <!-- Plugin Scripts -->
+    <!-- Slider-tab Script -->
+    <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+    <!-- Lodash Utility -->
+    <script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+    <!-- Utilities Functions -->
+    <script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+    <!-- Settings Script -->
+    <script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+    <!-- Settings Init Script -->
+    <script src="{% static 'assets/js/setting-init.js' %}"></script>
+    <!-- External Library Bundle Script -->
+    <script src="{% static 'assets/js/core/external.min.js' %}"></script>
+    <!-- Widgetchart Script -->
+    <script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+    <!-- Dashboard Script -->
+    <script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+    <!-- Hopeui Script -->
+    <script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+{% endblock script %}

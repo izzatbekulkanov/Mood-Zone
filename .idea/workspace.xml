@@ -9,36 +9,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af7fa295-f941-4fdc-8e74-d3f2d3768204" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/assets/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/sweetalert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/login/img/bg-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/login/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/login/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/login/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/login/js/popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/login/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/app/university/pages/department.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/register/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/dashboard-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/lord-icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/sweet-alert2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/remix-icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/university/pages/boss_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/university/pages/create_student.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/university/pages/student_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/university/pages/university-data.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/university/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/university/university_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/velzon_icon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authHemis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authHemis/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/images/hemis.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/images/oneid.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/images/oneid.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/images/university.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/iqonic-script/setting.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/iqonic-script/setting.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/velzon_icon.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/university/department.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/css/e-commerce.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/e-commerce.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/university/layout/aside.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/university/layout/aside.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/university/layout/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/university/layout/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/university/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/university/layout/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/university/layout/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/university/layout/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/university/layout/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/university/layout/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/hope-ui/html/dashboard/table/table-data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hope-ui/html/dashboard/table/table-data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/university/pages/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/university/pages/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/users/create_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/users/create_student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/hope-ui/html/dashboard/index-dual-horizontal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hope-ui/html/dashboard/index-dual-horizontal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/hope-ui/html/dashboard/index-horizontal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hope-ui/html/dashboard/index-horizontal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/download.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/landing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/setting.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register/sign-in.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register/sign-in1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/oauth_authorize.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/oauth_callback.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/migrations/0002_department_structure_type.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/migrations/0003_alter_department_parent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/university/university_data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/university/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/university/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/university/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/views.py" afterDir="false" />
@@ -55,11 +74,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSX File" />
+        <option value="CSS File" />
         <option value="TypeScript File" />
         <option value="Python Script" />
-        <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -96,7 +115,7 @@
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
     "ignore_missing_gitignore": "true",
-    "last_opened_file_path": "C:/Users/Admin/Documents/GitHub/NamDPI/static/assets/login/img",
+    "last_opened_file_path": "C:/Users/Admin/Documents/GitHub/NamDPI/templates/app/university/pages",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -109,6 +128,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\templates\app\university\pages" />
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\static\assets\login\img" />
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\static\assets\login\js" />
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\static\assets\vendor" />
@@ -200,12 +220,58 @@
       <workItem from="1709620677836" duration="9244000" />
       <workItem from="1709653885975" duration="2575000" />
       <workItem from="1709656487866" duration="1779000" />
-      <workItem from="1709659372729" duration="63220000" />
+      <workItem from="1709659372729" duration="149039000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/university/models.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/university/models.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/university/models.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/university/models.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/university/models.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/university/models.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/university/models.py</url>
+          <line>107</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/university/models.py</url>
+          <line>120</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NamDPI$Test__library_tests_LibraryModelsTestCase_test_onlinebook_creation.coverage" NAME="Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation Coverage Results" MODIFIED="1709241825758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
