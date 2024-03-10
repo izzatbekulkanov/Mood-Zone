@@ -1,10 +1,13 @@
-
 {% extends 'app/library/layout/main.html' %}
 {% load static %}
 
 {% block style %}
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css ' %}">
+    <!-- Sweetlaert2 css -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/sweetalert2/dist/sweetalert2.min.css' %}">
+    <!-- SwiperSlider css -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/swiperSlider/swiper-bundle.min.css' %}">
     <!-- Hope Ui Design System Css -->
     <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
@@ -21,18 +24,394 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'assets/css/social-app.min.css ' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/e-commerce.min.css' %}">
 {% endblock style %}
 
 {% block body %}
     <!-- Content -->
-    <div class="container-fluid content-inner pb-0" id="page_layout">
+    <div class="content-inner pb-0 container-fluid" id="page_layout">
         <div class="row">
+            <ul class="text-center iq-product-tracker mb-0 py-4" id="progressbar">
+                <li class="active iq-tracker-position-0" id="iq-tracker-position-1">User</li>
+                <li class="iq-tracker-position-0" id="iq-tracker-position-2">Book</li>
+                <li class="iq-tracker-position-0" id="iq-tracker-position-3">Lean</li>
+            </ul>
+            <div id="cart" class="iq-product-tracker-card show b-0">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card border shadow-none">
+                            <div class="card-header border-bottom py-4 px-0 mx-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-0">Foydalanuvchi ma'lumotlari</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="mb-2">Kitobhon rasmi</h6>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="position-relative">
+                                        <img src="{% static 'assets/images/user/06.png' %}" alt="user-profile"
+                                             class="img-fluid edit-img border border-white border-4 rounded-circle"
+                                             loading="lazy">
 
+                                    </div>
+                                </div>
+                                <p class="text-center">Allowed file type : png, jpg, jpeg</p>
+                                <form class="mt-4">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="firs_tname">Ismi</label>
+                                                <input type="text" class="form-control" id="firs_tname"
+                                                       placeholder="Kitobhon ismi" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="last_name">Familiasi</label>
+                                                <input type="text" class="form-control" id="last_name"
+                                                       placeholder="Kitobhon familiasi" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="department">Fakultet</label>
+                                                <input type="text" class="form-control" id="department"
+                                                       placeholder="Fakultet nomi" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="Specialty">Yo'nalishi</label>
+                                                <input type="text" class="form-control" id="Specialty"
+                                                       placeholder="Yo'nalish nomi">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="group">Akademik guruh</label>
+                                                <input type="text" class="form-control" id="group"
+                                                       placeholder="Akademik guruhi">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="user_role">Toyifasi</label>
+                                                <input type="text" class="form-control" id="user_role"
+                                                       placeholder="Toyifasi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0">Qidiruv paneli</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="border-bottom">
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6 class="mb-0">ID raqami</h6>
+                                        <h6 class="mb-0">(123456789987)</h6>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Foydalanuvchi ID raqami"
+                                               aria-label="Coupon Code" aria-describedby="CouponCode">
+                                        <button class="btn btn-primary" type="button" id="CouponCode">Qidirish</button>
+                                    </div>
+                                </div>
+                                <div class="border-bottom mt-4">
+                                    <hr>
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6>Discount</h6>
+                                        <h6 class="text-success">-$38.00</h6>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6>Shipping</h6>
+                                        <h6 class="text-success">FREE</h6>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6 class="mb-0">Order Total</h6>
+                                        <h5 class="text-primary mb-0">$168.00</h5>
+                                    </div>
+                                    <div class="alert border-primary rounded border border-1 mb-4">
+                                        <div class="d-flex justify-content-between align-items-center ">
+                                            <h6 class="text-primary mb-0">Namangan davlat pedagogika instituti</h6>
+                                            <h6 class="text-primary mb-0"><b>$38.00</b></h6>
+                                        </div>
+                                    </div>
+                                    <div class="alert border-primary rounded border border-1 mb-4">
+                                        <div class="d-flex justify-content-between align-items-center ">
+                                            <h6 class="text-primary mb-0">Kitob beruvchi</h6>
+                                            <h6 class="text-primary mb-0">Kutubhonachi</h6>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex">
+                                        <a id="place-order" href="#payment" class="btn btn-primary d-block mt-3 w-100">Kitob
+                                            tanlash</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="checkout" class="iq-product-tracker-card b-0">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0">Kitob ma'lumotlari</h4>
+                            </div>
+                            <div class="card-body">
+                                <form autocomplete="off">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="fName">Kitob nomi</label>
+                                                <input type="text" class="form-control" id="fName" placeholder=""
+                                                       autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="LName">Last Name</label>
+                                                <input type="text" class="form-control" id="LName" placeholder=""
+                                                       autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="Cno">Contact Number</label>
+                                                <input type="email" class="form-control" id="Cno" placeholder=""
+                                                       autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="email">Email ID</label>
+                                                <input type="text" class="form-control" id="email" placeholder=""
+                                                       autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="HName">House no./ Flat no.</label>
+                                                <input type="password" class="form-control" id="HName" placeholder=""
+                                                       autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="Lmark">Landmark</label>
+                                                <input type="text" class="form-control" id="Lmark" placeholder=""
+                                                       autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0">Qidiruv paneli</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="border-bottom">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <h6 class="mb-0">Kitob raqami</h6>
+                                        <h6 class="mb-0">(123123123)</h6>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Kitob id raqami"
+                                               aria-label="Coupon Code" aria-describedby="CouponCode001">
+                                        <button class="btn btn-primary" type="button" id="book_id">Qidirish</button>
+                                    </div>
+                                </div>
+                                <div class="border-bottom mt-4">
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6 class="mb-0">Discount</h6>
+                                        <h6 class="mb-0 text-success">-$38.00</h6>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6 class="mb-0">Shipping</h6>
+                                        <h6 class="mb-0 text-primary">FREE</h6>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6 class="mb-0">Order Total</h6>
+                                        <h6 class="mb-0 text-primary">$168.00</h6>
+                                    </div>
+
+                                    <div class="alert border-primary rounded border border-1 mb-4">
+                                        <div class="d-flex justify-content-between align-items-center ">
+                                            <h6 class="mb-0 text-primary">Kutubhona</h6>
+                                            <h6 class="mb-0 text-primary">Adress</h6>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between flex-wrap">
+                                        <a id="backbutton" href="#checkout"
+                                           class="btn btn-soft-primary d-block back justify-content-between">Back</a>
+                                        <a id="deliver-address" href="#payment" class="btn btn-primary d-block">Place
+                                            Order</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="payment" class="iq-product-tracker-card b-0">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0">Kitob berish</h4>
+                            </div>
+                            <div class="card-body row ">
+                                <div class="col-12">
+                                    <div class="card ">
+                                        <div class="card-header bg-soft-secondary user-details-bg-color px-3 py-2">
+                                            <h6 class="text-muted mb-0">Kitob beruvchi</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between flex-wrap">
+                                                <div class="d-flex flex-column">
+                                                    <h6 class="mb-2 d-flex align-items-center gap-2">Elon Musk
+                                                        <span class="badge bg-primary">Home</span>
+                                                    </h6>
+                                                    <p class="mb-2">265, Hill View, Rochester Avenue. Kentucky -
+                                                        40062</p>
+                                                    <h6>Contact: <span class="text-muted">(303) 555-0105</span></h6>
+                                                </div>
+                                                <div class="small mt-2 mt-xl-0 mt-lg-0 mt-md-0">
+                                                    <a href="#">Edit</a>
+                                                    <span>|</span>
+                                                    <a href="#">Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card ">
+                                        <div class="card-header bg-soft-secondary user-details-bg-color px-3 py-2">
+                                            <h6 class="text-muted mb-0">Kitob beruvchi</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between flex-wrap">
+                                                <div class="d-flex flex-column">
+                                                    <h6 class="mb-2 d-flex align-items-center gap-2">Kitob oluvchi
+                                                        <span class="badge bg-primary">Home</span>
+                                                    </h6>
+                                                    <p class="mb-2">265, Hill View, Rochester Avenue. Kentucky -
+                                                        40062</p>
+                                                    <h6>Contact: <span class="text-muted">(303) 555-0105</span></h6>
+                                                </div>
+                                                <div class="small mt-2 mt-xl-0 mt-lg-0 mt-md-0">
+                                                    <a href="#">Edit</a>
+                                                    <span>|</span>
+                                                    <a href="#">Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card ">
+                                        <div class="card-header bg-soft-secondary user-details-bg-color px-3 py-2">
+                                            <h6 class="text-muted mb-0">Kitob beruvchi</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between flex-wrap">
+                                                <div class="d-flex flex-column">
+                                                    <h6 class="mb-2 d-flex align-items-center gap-2">Kitob
+                                                        <span class="badge bg-primary">Home</span>
+                                                    </h6>
+                                                    <p class="mb-2">265, Hill View, Rochester Avenue. Kentucky -
+                                                        40062</p>
+                                                    <h6>Contact: <span class="text-muted">(303) 555-0105</span></h6>
+                                                </div>
+                                                <div class="small mt-2 mt-xl-0 mt-lg-0 mt-md-0">
+                                                    <a href="#">Edit</a>
+                                                    <span>|</span>
+                                                    <a href="#">Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="mb-0">Asosiy panel</h4>
+                            </div>
+                            <div class="tab-pane fade active show" id="card" role="tabpanel" aria-labelledby="card-tab">
+                                <h4 class="mb-4">Kitob malumotlari</h4>
+                                <div class="border rounded">
+                                    <div class="card shadow-none mb-0">
+                                        <div class="card-header border-bottom d-flex flex-wrap justify-content-between py-4 px-0 mx-4">
+                                            <h5 class="mb-0">Your Default Payment Preference </h5>
+                                            <a href="#">Update preference</a>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <h6>Name: </h6>
+                                                    <h6 class="mt-2">Elon Musk</h6>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <h6>Payment Method:</h6>
+                                                    <p class="mt-2 mb-0">Bank Of America Debit Card ending in 0654</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="mt-4">
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6 class="mb-0">Jami kitob</h6>
+                                        <h6 class="mb-0 text-primary">55</h6>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6 class="mb-0">Mavjud kitob</h6>
+                                        <h6 class="mb-0 text-success">20</h6>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h6 class="mb-0">Band kitob</h6>
+                                        <h6 class="mb-0 text-primary">35</h6>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <h6 class="mb-0">Amount Payable</h6>
+                                    <h6 class="mb-0 text-primary">$168.00</h6>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary w-100" >Kitob biriktirish </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
-    <!--/ Content -->
+    </div>    <!--/ Content -->
 {% endblock body %}
 
 {% block script %}
@@ -41,6 +420,11 @@
     <!-- Plugin Scripts -->
     <!-- Slider-tab Script -->
     <script src="{% static 'assets/js/plugins/slider-tabs.js ' %}"></script>
+    <!-- Sweet-alert Script -->
+    <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js" async=""></script>
+    <script src="../assets/js/plugins/sweet-alert.js" defer=""></script>
+    <!-- SwiperSlider Script -->
+    <script src="../assets/vendor/swiperSlider/swiper-bundle.min.js"></script>
     <!-- Lodash Utility -->
     <script src="{% static 'assets/vendor/lodash/lodash.min.js ' %}"></script>
     <!-- Utilities Functions -->
@@ -61,5 +445,5 @@
     <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
     <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
     <script src="{% static 'assets/js/sticky-sidebar.js ' %}"></script>
-    <script src="{% static 'assets/js/social.js ' %}"></script>
+    <script src="{% static 'assets/js/ecommerce.js ' %}"></script>
 {% endblock script %}

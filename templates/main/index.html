@@ -200,8 +200,15 @@
                     <div class="card-body">
                         <div class="twit-feed">
                             <div class="d-flex align-items-center mb-4">
-                                <img src="{{ request.user.image }}" alt="User-Profile"
-                                     class="theme-color-default-img  img-fluid avatar-60 me-3" loading="lazy">
+                                
+                                {% if request.user.image %}
+                                    <img src="{{ request.user.image }}" alt="User-Profile"
+                                         class="theme-color-default-img  img-fluid avatar-60 me-3" loading="lazy">
+                                {% else %}
+                                    <img src="{% static 'assets/images/avatars/01.png' %}" alt="User-Profile"
+                                         class="theme-color-default-img  img-fluid avatar-60 me-3" loading="lazy">
+                                {% endif %}
+
                                 <div class="media-support-info">
                                     <h6 class="mb-0">{{ request.user.full_name }}</h6>
                                     <p class="mb-0">{{ request.user.user_role }}
@@ -262,6 +269,57 @@
                             </div>
 
                             <h5 class="mb-3">Boshqa</h5>
+                            <div class="d-flex justify-content-center ms-2">
+                                <a href="$" class="btn btn-primary">Kirish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
+                                     width="44" id="Ai-Generate-Portrait-Image-Spark--Streamline-Core">
+                                    <path id="Subtract" fill="#8FBFFA" fill-rule="evenodd"
+                                          d="M0.5 0.443A1.5 1.5 0 0 1 1.56 0.004h8a1.5 1.5 0 0 1 1.5 1.5v4.152c-1.09 -0.434 -2.524 0.063 -2.835 1.485l-0.023 0.104a1.426 1.426 0 0 1 -1.147 1.093c-1.406 0.245 -1.947 1.582 -1.621 2.666H1.56a1.5 1.5 0 0 1 -1.5 -1.5v-8c0 -0.398 0.158 -0.78 0.44 -1.06Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Union" fill="#2859C5" fill-rule="evenodd"
+                                          d="M7.335 3.25a1.774 1.774 0 1 1 -3.548 0 1.774 1.774 0 0 1 3.548 0ZM5.56 5.904A2.956 2.956 0 0 0 2.605 8.86c0 0.163 0.132 0.296 0.295 0.296h2.818c0.285 -0.405 0.73 -0.713 1.337 -0.819a1.427 1.427 0 0 0 1.093 -0.909A2.955 2.955 0 0 0 5.56 5.905Zm3.885 1.503c0.19 -0.868 1.427 -0.874 1.625 -0.007l0.01 0.044 0.02 0.086a2.693 2.693 0 0 0 2.16 2.037c0.904 0.157 0.904 1.457 0 1.614a2.692 2.692 0 0 0 -2.164 2.054l-0.026 0.113c-0.198 0.867 -1.435 0.861 -1.625 -0.007l-0.02 -0.097a2.676 2.676 0 0 0 -2.157 -2.064c-0.903 -0.158 -0.903 -1.454 0 -1.611a2.676 2.676 0 0 0 2.154 -2.054l0.015 -0.071 0.008 -0.037Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                </svg>
+                            </div>
+
+                            <h5 class="mb-3">KPI</h5>
+                            <div class="d-flex justify-content-center ms-2">
+                                <a href="$" class="btn btn-primary">Kirish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
+                                     width="44" id="Browser-Wifi--Streamline-Core">
+                                    <path id="Union" fill="#2859C5"
+                                          d="M1.73317 0.0923462C0.793227 0.0923462 0.03125 0.854323 0.03125 1.79427v1.90385H13.9062V1.79427c0 -0.939947 -0.7619 -1.7019238 -1.7019 -1.7019238H1.73317Z"
+                                          stroke-width="1"></path>
+                                    <path id="Subtract" fill="#8FBFFA" fill-rule="evenodd"
+                                          d="M0.03125 3.69812H13.9062v8.56728c0 0.94 -0.7619 1.702 -1.7019 1.702H1.73317c-0.939943 0 -1.70192 -0.762 -1.70192 -1.702V3.69812Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                    <path id="Union_2" fill="#2859C5" fill-rule="evenodd"
+                                          d="M9.5609 8.23611c-1.40955 -1.40954 -3.71233 -1.40954 -5.12188 0 -0.29289 0.2929 -0.76777 0.2929 -1.06066 0 -0.29289 -0.29289 -0.29289 -0.76776 0 -1.06066 1.99533 -1.99533 5.24787 -1.99533 7.24324 0 0.2929 0.2929 0.2929 0.76777 0 1.06066 -0.2929 0.2929 -0.76781 0.2929 -1.0607 0ZM8.09388 9.85522c-0.58171 -0.5817 -1.60614 -0.5817 -2.18785 0 -0.29289 0.29288 -0.76776 0.29288 -1.06066 0 -0.29289 -0.29289 -0.29289 -0.76776 0 -1.06066 1.16749 -1.16749 3.14168 -1.16749 4.30917 0 0.29289 0.2929 0.29289 0.76777 0 1.06066 -0.2929 0.29288 -0.76777 0.29288 -1.06066 0ZM6.99995 11.9475c0.41422 0 0.75 -0.3358 0.75 -0.75s-0.33578 -0.75 -0.75 -0.75c-0.41421 0 -0.75 0.3358 -0.75 0.75s0.33579 0.75 0.75 0.75Z"
+                                          clip-rule="evenodd" stroke-width="1"></path>
+                                </svg>
+                            </div>
+
+                            <h5 class="mb-3">Online darslar</h5>
                             <div class="d-flex justify-content-center ms-2">
                                 <a href="$" class="btn btn-primary">Kirish</a>
                             </div>

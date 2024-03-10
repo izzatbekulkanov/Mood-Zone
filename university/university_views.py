@@ -7,6 +7,61 @@ from university.serializers import UniversitySerializer, SpecialtySerializer, Cu
     GroupUniverSerializer
 
 
+def update_or_create(model, filter_kwargs, defaults=None):
+    obj, created = model.objects.get_or_create(**filter_kwargs, defaults=defaults)
+    if not created and defaults:
+        for key, value in defaults.items():
+            setattr(obj, key, value)
+        obj.save()
+    return obj, created
+
+
+def update_or_create_department(data):
+    department_id = data.get('id')
+    name = data.get('name')
+    code = data.get('code')
+    parent = data.get('parent', None)
+    active = data.get('active', False)
+    structure_type = data.get('structureType', {}).get('code')
+
+    department, created = Department.objects.update_or_create(
+        codeID=department_id,
+        defaults={
+            'name': name,
+            'code': code,
+            'parent': parent,
+            'active': active,
+            'structure_type': structure_type
+        }
+    )
+
+    # if not created:
+    #     print(f"Department '{name}' updated successfully.")
+    # else:
+    #     print(f"Department '{name}' created successfully.")
+
+
+def save_departments_from_api(request):
+    url = 'https://student.namspi.uz/rest/v1/data/department-list?page=20&limit=200'
+    headers = {
+        'accept': 'application/json',
+        'Authorization': 'Bearer cbdfefbb283db3a219a7e7dcefd620b4'
+    }
+
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        data = response.json()
+        items = data.get('data', {}).get('items', [])
+
+        for item in items:
+            update_or_create_department(item)
+
+        return HttpResponse("Successfully fetched and saved data from the API.")
+    else:
+        print("Failed to fetch data from the API.")
+        return HttpResponse("Failed to fetch data from the API.", status=response.status_code)
+
+
 def save_university_from_api(request):
     url = 'https://student.namspi.uz/rest/v1/public/university-list?page=20&limit=200'
     headers = {
@@ -57,14 +112,6 @@ def save_specialty_from_api(request):
         'Authorization': 'Bearer cbdfefbb283db3a219a7e7dcefd620b4'
     }
 
-    def update_or_create(model, filter_kwargs, defaults=None):
-        obj, created = model.objects.get_or_create(**filter_kwargs, defaults=defaults)
-        if not created and defaults:
-            for key, value in defaults.items():
-                setattr(obj, key, value)
-            obj.save()
-        return obj, created
-
     try:
 
         response = requests.get(url, headers=headers)
@@ -92,8 +139,9 @@ def save_specialty_from_api(request):
 
             # Speciality obyektini yaratish va saqlash
             Specialty.objects.update_or_create(
-                code=item.get('code'),
+                codeID=item.get('id'),
                 defaults={
+                    'code': item.get('code'),
                     'name': item.get('name'),
                     'department': department,
                     'educationType': education_type
@@ -128,8 +176,8 @@ def save_curriculum_from_api(request):
 
         # 'Curriculum' obyektlarini saqlash
         for item in data.get('data', {}).get('items', []):
-            specialty_code = item.get('specialty', {}).get('code')
-            specialty, _ = Specialty.objects.get_or_create(code=specialty_code)
+            specialty_id = item.get('specialty', {}).get('id')
+            specialty, _ = Specialty.objects.get_or_create(codeID=specialty_id)
 
             education_type_code = item.get('educationType', {}).get('code')
             education_type, _ = EducationType.objects.get_or_create(code=education_type_code)
@@ -146,7 +194,7 @@ def save_curriculum_from_api(request):
                 'education_period': item.get('education_period'),
             }
             Curriculum.objects.update_or_create(
-                code=item.get('id'),
+                codeID=item.get('id'),
                 defaults=defaults
             )
 
@@ -156,56 +204,37 @@ def save_curriculum_from_api(request):
 
 
 def save_group_from_api(request):
-    url = 'https://student.namspi.uz/rest/v1/data/group-list?page=1&limit=200'
+    url = 'https://student.namspi.uz/rest/v1/data/group-list?page=4&limit=200'
     headers = {
         'accept': 'application/json',
         'Authorization': 'Bearer cbdfefbb283db3a219a7e7dcefd620b4'
     }
 
-    def update_or_create(model, filter_kwargs, defaults=None):
-        obj, created = model.objects.get_or_create(**filter_kwargs, defaults=defaults)
-        if not created and defaults:
-            for key, value in defaults.items():
-                setattr(obj, key, value)
-            obj.save()
-        return obj, created
-
     try:
-
         response = requests.get(url, headers=headers)
-        response.raise_for_status()  # Agar status kod 200 bo'lmasa, xato qaytaradi
+        response.raise_for_status()
         data = response.json()
-        for item in data.get('data', {}).get('items', []):
-            education_lang_name = item.get('educationLang', {}).get('name')
-            education_lang_code = item.get('educationLang', {}).get('code')
-            defaults = {'code': education_lang_code}
-            obj, created = update_or_create(
-                EducationLang,
-                filter_kwargs={'name': education_lang_name},
-                defaults=defaults
-            )
 
-        # API-dan olingan ma'lumotlarni Speciality modeliga saqlash
         for item in data.get('data', {}).get('items', []):
             # Ta'lim turi ni aniqlash
             education_lang_code = item.get('educationLang', {}).get('code')
             education_lang, _ = EducationLang.objects.get_or_create(code=education_lang_code)
 
-            # Fakultet aniqlash
-            department_code = item.get('department', {}).get('code')
-            department, _ = Department.objects.get_or_create(code=department_code)
+            # Fakultetni aniqlash
+            department_code = item.get('department', {}).get('id')
+            department, _ = Department.objects.get_or_create(codeID=department_code)
 
             # Yo'nalishni aniqlash
-            specialty_code = item.get('specialty', {}).get('code')
-            specialty, _ = Specialty.objects.get_or_create(code=specialty_code)
+            specialty_id = item.get('specialty', {}).get('id')
+            specialty, _ = Specialty.objects.get_or_create(codeID=specialty_id)
 
-            # Ta'lim turi ni aniqlash
-            # curriculum_code = item.get('_curriculum')
-            # curriculum, _ = Curriculum.objects.get_or_create(code=curriculum_code)
+            # Ta'lim rejani aniqlash
+            # curriculum_id = item.get('_curriculum')
+            # curriculum, _ = Curriculum.objects.get_or_create(codeID=curriculum_id)
 
-            # Speciality obyektini yaratish va saqlash
+            # Guruh obyektini yaratish va saqlash
             GroupUniver.objects.update_or_create(
-                code=item.get('id'),
+                codeID=item.get('id'),
                 defaults={
                     'name': item.get('name'),
                     'educationLang': education_lang,
@@ -247,3 +276,46 @@ def get_universities_data(request):
             'groups_count': groups_count
             }  # Ma'lumotlar va son
     return JsonResponse(data, safe=False)  # JSON formatida javob
+
+
+def get_departments(request):
+    def data_collector(data_list, departments):
+        for department in departments:
+            data_list.append({
+                'name': department.name,
+                'code': department.code,
+                'structure_type': department.get_structure_type_display(),
+                'parent': department.parent if department.parent else '-',
+                'is_active': department.active
+            })
+
+    fakultet = Department.objects.filter(structure_type=Department.FAKULTET)
+    bolim = Department.objects.filter(structure_type=Department.BOLIM)
+    kafedra = Department.objects.filter(structure_type=Department.KAFEDRA)
+    boshqarma = Department.objects.filter(structure_type=Department.BOSHQARMA)
+    markaz = Department.objects.filter(structure_type=Department.MARKAZ)
+    rektorat = Department.objects.filter(structure_type=Department.REKTORAT)
+
+    fakultet_data = []
+    bolim_data = []
+    kafedra_data = []
+    boshqarma_data = []
+    markaz_data = []
+    rektorat_data = []
+
+    data_collector(fakultet_data, fakultet)
+    data_collector(bolim_data, bolim)
+    data_collector(kafedra_data, kafedra)
+    data_collector(boshqarma_data, boshqarma)
+    data_collector(markaz_data, markaz)
+    data_collector(rektorat_data, rektorat)
+
+    response_data = {
+        'fakultet': fakultet_data,
+        'bolim': bolim_data,
+        'kafedra': kafedra_data,
+        'boshqarma': boshqarma_data,
+        'markaz': markaz_data,
+        'rektorat': rektorat_data,
+    }
+    return JsonResponse(response_data)

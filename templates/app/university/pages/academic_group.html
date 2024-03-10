@@ -1,0 +1,122 @@
+{% extends 'app/university/layout/main.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
+    <!-- Hope Ui Design System Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+    <!-- Dark Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+    <!-- Customizer Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+    <!-- RTL Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+          rel="stylesheet">
+{% endblock style %}
+{% block body %}
+    <!-- Content -->
+    <div class="content-inner container-fluid pb-0" id="page_layout">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Akademik Guruhlar</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-3">Images in Bootstrap are made responsive with <code>.img-fluid</code>. <code>max-width:
+                            100%;</code> and
+                            <code>height: auto;</code> are applied to the image so that it scales with the parent
+                            element.
+                        </p>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped" data-toggle="data-table">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                                </tr>
+                                <tr>
+                                    <td>Garrett Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>2011/07/25</td>
+                                    <td>$170,750</td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Content -->
+{% endblock body %}
+{% block script %}
+    <!-- Axios  Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="{% static 'assets/js/App/university/department.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- SwetAlert  Script -->
+    <script src="{% static 'assets/js/plugins/sweet-alert2.js' %}"></script>
+    <script>
+
+    </script>
+    <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+    <!-- Plugin Scripts -->
+    <!-- Slider-tab Script -->
+    <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+    <!-- Lodash Utility -->
+    <script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+    <!-- Utilities Functions -->
+    <script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+    <!-- Settings Script -->
+    <script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+    <!-- Settings Init Script -->
+    <script src="{% static 'assets/js/setting-init.js' %}"></script>
+    <!-- External Library Bundle Script -->
+    <script src="{% static 'assets/js/core/external.min.js' %}"></script>
+    <!-- Widgetchart Script -->
+    <script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+    <!-- Dashboard Script -->
+    <script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+    <!-- Hopeui Script -->
+    <script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+{% endblock script %}

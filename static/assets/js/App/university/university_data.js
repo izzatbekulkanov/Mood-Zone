@@ -355,9 +355,9 @@ function getUniversities() {
             displayCount('univercount', response.count);
             displayUniversities('specialty-table', response.specialty);
             displayCount('specialtycount', response.specialty_count);
-            displayUniversities('curriculum-table', response.curriculums);
+            displayCurriculum('curriculum-table', response.curriculums);
             displayCount('curriculumcount', response.curriculums_count);
-            displayUniversities('group-table', response.groups);
+            displayGroups('group-table', response.groups);
             displayCount('groupcount', response.groups_count);
         },
         error: function (xhr, errmsg, err) {
@@ -429,6 +429,36 @@ function displayUniversities(id, universities) {
     universities.forEach(function (university) {
         var truncatedName = truncateText(university.name, 50);
         var truncatedCode = truncateText(university.code, 50);
+        var row = '<tr>' +
+            '<td>' + truncatedName + '</td>' +
+            '<td>' + truncatedCode + '</td>' +
+            '</tr>';
+        tableBody.append(row);
+    });
+}
+
+function displayGroups(id, universities) {
+    var tableBody = $(`#${id}`);
+    tableBody.empty(); // Eski malumotlarni tozalash
+
+    universities.forEach(function (university) {
+        var truncatedName = truncateText(university.name, 50);
+        var truncatedCode = truncateText(university.codeID, 50);
+        var row = '<tr>' +
+            '<td>' + truncatedName + '</td>' +
+            '<td>' + truncatedCode + '</td>' +
+            '</tr>';
+        tableBody.append(row);
+    });
+}
+
+function displayCurriculum(id, universities) {
+    var tableBody = $(`#${id}`);
+    tableBody.empty(); // Eski malumotlarni tozalash
+
+    universities.forEach(function (university) {
+        var truncatedName = truncateText(university.name, 50);
+        var truncatedCode = truncateText(university.codeID, 50);
         var row = '<tr>' +
             '<td>' + truncatedName + '</td>' +
             '<td>' + truncatedCode + '</td>' +

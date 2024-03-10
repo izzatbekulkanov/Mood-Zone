@@ -1,10 +1,11 @@
 from django.urls import path
 
 from .university_views import save_university_from_api, get_universities_data, save_specialty_from_api, \
-    save_curriculum_from_api, save_group_from_api
+    save_curriculum_from_api, save_group_from_api, save_departments_from_api, get_departments
+from .users_views import save_student_from_api, create_student_from_api, get_student_info
 from .views import (
-    university_dashboard, departments, save_departments_from_api, get_departments, create_student, university_data,
-    student_list, boss_list, )
+    university_dashboard, departments, create_student, university_data,
+    student_list, boss_list, academic_group, )
 
 other_urlpatterns = [
     path('', university_dashboard, name='university_dashboard'),
@@ -15,7 +16,15 @@ other_urlpatterns = [
     path('university_data', university_data, name='university_data'),
     path('student_list', student_list, name='student_list'),
     path('boss_list', boss_list, name='boss_list'),
+    path('academic_group', academic_group, name='academic_group'),
 ]
+
+university_users_url_patterns = [
+    path('save_student_from_api', save_student_from_api, name='save_student_from_api'),
+    path('create_student_from_api', create_student_from_api, name='create_student_from_api'),
+    path('get_student_info', get_student_info, name='get_student_info')
+]
+
 university_url_patterns = [
 
     path('save_university_from_api', save_university_from_api, name='save_university_from_api-university'),
@@ -26,4 +35,4 @@ university_url_patterns = [
 
 ]
 
-urlpatterns = other_urlpatterns + university_url_patterns
+urlpatterns = other_urlpatterns + university_url_patterns + university_users_url_patterns

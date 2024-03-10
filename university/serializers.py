@@ -15,9 +15,9 @@ class SpecialtySerializer(serializers.ModelSerializer):
 class CurriculumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curriculum
-        fields = ['name', 'code']
+        fields = ['name', 'codeID']
 
 class GroupUniverSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curriculum
-        fields = ['name', 'code']
+        fields = ['name', 'codeID']

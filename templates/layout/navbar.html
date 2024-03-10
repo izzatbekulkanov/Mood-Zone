@@ -97,17 +97,14 @@
                                 </svg>
                             </div>
                         </div>
-                        <!--logo End--> <h4 class="logo-title" data-setting="app_name">Hope UI</h4>
+                        <!--logo End--> <h4 class="logo-title" >NamDPI</h4>
                     </div>
                     <button class="btn-close float-end"></button>
                 </div>
                 <ul class="iq-nav-menu list-unstyled">
-                    <li class="nav-item"><a class="nav-link active" href="{% url 'index' %}"> Asosiy sahifa </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link " href="#"> Universitet
-                        Horizontal </a></li>
-                    <li class="nav-item"><a class="nav-link " href="index-dual-compact.html"><span class="item-name">Hodimlar</span></a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'index' %}"> Asosiy sahifa </a></li>
+                    <li class="nav-item"><a class="nav-link " href="#"> Universitet</a></li>
+                    <li class="nav-item"><a class="nav-link " href="index-dual-compact.html"><span class="item-name">Hodimlar</span></a></li>
                     <li class="nav-item"><a class="nav-link " href="index-boxed.html"> Tuzilma </a></li>
                     <li class="nav-item"><a class="nav-link " href="index-boxed-fancy.html"> Talabalar</a></li>
                 </ul>
@@ -393,7 +390,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="auth/sign-in.html">Logout</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                         </ul>
                     </li>
                 {% endif %}

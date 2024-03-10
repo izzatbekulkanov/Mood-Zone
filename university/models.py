@@ -35,7 +35,7 @@ class Department(models.Model):
         (REKTORAT, 'Rektorat'),
     ]
 
-
+    codeID = models.CharField(max_length=255, verbose_name="Fakultet ID")
     name = models.CharField(max_length=255, verbose_name="Fakultet nomi")
     code = models.CharField(max_length=20, verbose_name="Fakultet kodi")
     parent = models.CharField(max_length=20, null=True, blank=True, verbose_name="Boshqa fakultet")
@@ -51,23 +51,13 @@ class Department(models.Model):
 
 
 class Specialty(models.Model):
+    codeID = models.CharField(max_length=255, verbose_name="Yo'nalish nomi")
     name = models.CharField(max_length=255, verbose_name="Yo'nalish nomi")
-    code = models.CharField(max_length=20, verbose_name="Yo'nalish kodi")
+    code = models.CharField(max_length=50, verbose_name="Yo'nalish kodi")
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     educationType = models.ForeignKey('EducationType', on_delete=models.CASCADE, verbose_name="Ta'lim turi")
 
 
-
-    def __str__(self):
-        return self.name
-
-
-
-
-
-class EducationLang(models.Model):
-    code = models.CharField(max_length=20, verbose_name="Ta'lim tili kodi")
-    name = models.CharField(max_length=255, verbose_name="Ta'lim tili nomi")
 
     def __str__(self):
         return self.name
@@ -89,6 +79,14 @@ class Level(models.Model):
         return self.name
 
 
+class EducationLang(models.Model):
+    code = models.CharField(max_length=20, verbose_name="Ta'lim tili kodi")
+    name = models.CharField(max_length=255, verbose_name="Ta'lim tili nomi")
+
+    def __str__(self):
+        return self.name
+
+
 class EducationForm(models.Model):
     code = models.CharField(max_length=20, verbose_name="Ta'lim shakli kodi")
     name = models.CharField(max_length=255, verbose_name="Ta'lim shakli nomi")
@@ -104,9 +102,16 @@ class EducationType(models.Model):
     def __str__(self):
         return self.name
 
+class EducationYear(models.Model):
+    code = models.CharField(max_length=20, verbose_name="O'quv yili kodi")
+    name = models.CharField(max_length=255, verbose_name="O'quv yili nomi")
+
+    def __str__(self):
+        return self.name
+
 
 class Curriculum(models.Model):
-    code = models.CharField(max_length=20, verbose_name="O'quv reja kodi" , null=True, blank=True)
+    codeID = models.CharField(max_length=20, verbose_name="O'quv reja ID" , null=True, blank=True)
     specialty = models.ForeignKey('Specialty', on_delete=models.CASCADE, verbose_name="Yo'nalish")
     educationType = models.ForeignKey('EducationType', on_delete=models.CASCADE, verbose_name="Ta'lim turi")
     educationForm = models.ForeignKey('EducationForm', on_delete=models.CASCADE, verbose_name="Ta'lim shakli")
@@ -119,9 +124,10 @@ class Curriculum(models.Model):
 
 
 class GroupUniver(models.Model):
+    codeID = models.CharField(max_length=255, verbose_name="Guruh nomi")
     name = models.CharField(max_length=255, verbose_name="Guruh nomi")
     educationLang = models.ForeignKey('EducationLang', on_delete=models.CASCADE, verbose_name="Ta'lim tili")
-    code = models.CharField(max_length=20, verbose_name="Guruh kodi")
+    code = models.CharField(max_length=20, verbose_name="Guruh kodi", blank=True, null=True)
     department = models.ForeignKey('Department', on_delete=models.CASCADE, verbose_name="Fakultet")
     specialty = models.ForeignKey('Specialty', on_delete=models.CASCADE, verbose_name="Mutaxassislik")
     curriculum = models.ForeignKey('Curriculum', on_delete=models.CASCADE, verbose_name="O'quv rejasi", blank=True, null=True)

@@ -37,50 +37,93 @@
                         </div>
                         <div class="card-body">
                             {#                            Search student#}
-                            <form>
+
+                            <form class="  " id="studentInfoForm">{% csrf_token %}
                                 <div class="form-group">
-                                    <div class="profile-img-edit position-relative">
-                                        <img src="{% static 'assets/images/avatars/01.png' %}" alt="profile-pic"
-                                             class="theme-color-default-img profile-pic rounded avatar-100"
-                                             loading="lazy">
-                                        <img src="{% static 'assets/images/avatars/avtar_1.png' %}" alt="profile-pic"
-                                             class="theme-color-purple-img profile-pic rounded avatar-100"
-                                             loading="lazy">
-                                        <img src="{% static 'assets/images/avatars/avtar_2.png' %}" alt="profile-pic"
-                                             class="theme-color-blue-img profile-pic rounded avatar-100"
-                                             loading="lazy">
-                                        <img src="{% static 'assets/images/avatars/avtar_4.png' %}" alt="profile-pic"
-                                             class="theme-color-green-img profile-pic rounded avatar-100"
-                                             loading="lazy">
-                                        <img src="{% static 'assets/images/avatars/avtar_5.png' %}" alt="profile-pic"
-                                             class="theme-color-yellow-img profile-pic rounded avatar-100"
-                                             loading="lazy">
-                                        <img src="{% static 'assets/images/avatars/avtar_3.png' %}" alt="profile-pic"
-                                             class="theme-color-pink-img profile-pic rounded avatar-100"
-                                             loading="lazy">
-                                    </div>
-                                    <div class="img-extension mt-3">
-                                        <div class="d-inline-block align-items-center">
-                                            <span>Only</span>
-                                            <a href="javascript:void(0);">.jpg</a>
-                                            <a href="javascript:void(0);">.png</a>
-                                            <a href="javascript:void(0);">.jpeg</a>
-                                            <span>allowed</span>
+                                    <div class="user-images position-relative overflow-hidden">
+                                        <a data-fslightbox="gallery" id="bigImage" href="#">
+                                            <img src="{% static 'assets/images/avatars/01.png' %}" id="user_image"
+                                                 class="img-fluid rounded theme-color-default-img profile-pic rounded avatar-100"
+                                                 alt="Responsive image" loading="lazy">
+                                        </a>
+                                        <div class="image-hover-data">
+                                            <div class="product-elements-icon">
+                                                <ul class="d-flex align-items-center gap-3 m-0 p-0 list-inline">
+                                                </ul>
+                                            </div>
                                         </div>
+                                        <a href="#"
+                                           class="image-edit-btn btn bg-white btn-sm btn-icon position-absolute"
+                                           data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                                           data-bs-original-title="Edit or Remove">
+                                        <span class="btn-inner">
+                                            <svg width="15" class="icon-16" viewBox="0 0 24 24" fill="currentcolor"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4"
+                                                      d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                      fill="currentColor"></path>
+                                                <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                      fill="currentColor"></path>
+                                                <path opacity="0.4"
+                                                      d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                      fill="currentColor"></path>
+                                            </svg>
+                                        </span>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="passport">Passport seriyasi va raqami:</label>
-                                    <input type="text" class="form-control" id="passport" placeholder="Passport number">
+                                    <label class="form-label" for="passport_number">Pasport raqam:</label>
+                                    <div class="form-group input-group search-input mb-0 w-100">
+                                        <input type="text" class="form-control " id="passport_number"
+                                               placeholder="Pasport raqam..">
+                                        <span class="input-group-text">
+                                            <button class="input-group-text" type="button">
+                                                <svg class="icon-20" width="20"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11.7669" cy="11.7666" r="8.98856" stroke="currentColor"
+                                                    stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round"></circle>
+                                            <path d="M18.0186 18.4851L21.5426 22" stroke="currentColor"
+                                                  stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"></path>
+                                        </svg>
+                                            </button>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="student_id">Student id:</label>
-                                    <input type="text" class="form-control" id="student_id" placeholder="Student id">
+                                    <label class="form-label" for="student_id_num">Student id:</label>
+                                    <div class="form-group input-group search-input mb-0 w-100">
+                                        <input type="text" class="form-control " id="student_id_num"
+                                               placeholder="Talabaning ID raqami.." name="student_id_n">
+                                        <span class="input-group-text">
+                                            <button class="input-group-text" type="submit">
+                                                <svg class="icon-20" width="20"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11.7669" cy="11.7666" r="8.98856" stroke="currentColor"
+                                                    stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round"></circle>
+                                            <path d="M18.0186 18.4851L21.5426 22" stroke="currentColor"
+                                                  stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"></path>
+                                        </svg>
+                                            </button>
+                                        </span>
+                                    </div>
                                 </div>
-                                <button type="button" class="btn btn-primary rounded-pill" onclick="fetchData()">
-                                    Qidirish
-                                </button>
+                                <div id="save_button_div">
+                                    <button class="btn btn-primary w-100 mt-3 p-3 " id="save_student_data_base"
+                                            type="button"> Saqlash
+                                    </button>
+                                </div>
                             </form>
+                            {#                            Search student#}
+
                         </div>
                     </div>
                 </div>
@@ -98,140 +141,111 @@
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="first_name">Ismi:</label>
                                             <input type="text" class="form-control" id="first_name"
-                                                   placeholder="Ismi">
+                                                   placeholder="Ismi" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="second_name">Familiasi:</label>
                                             <input type="text" class="form-control" id="second_name"
-                                                   placeholder="Familiasi">
+                                                   placeholder="Familiasi" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="third_name">Otasining ismi:</label>
                                             <input type="text" class="form-control" id="third_name"
-                                                   placeholder="Otasining ismi">
+                                                   placeholder="Otasining ismi" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="university">Universitet:</label>
                                             <input type="text" class="form-control" id="university"
-                                                   placeholder="Universitet">
+                                                   placeholder="Universitet" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label class="form-label" for="student_id_number:">Student raqami:</label>
-                                            <input type="text" class="form-control" id="student_id_number:
-"
-                                                   placeholder="Talaba raqami">
+                                            <label class="form-label" for="student_id_raqami">Student raqami:</label>
+                                            <input type="text" name="student_id_num" class="form-control"
+                                                   id="student_id_raqami" placeholder="Talaba raqami" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label class="form-label" for="gender">Jinsi:</label>
-                                            <input type="text" class="form-control" id="gender"
-                                                   placeholder="Jinsi">
+                                            <label class="form-label" for="genderinfo">Jinsi:</label>
+                                            <input type="text" class="form-control" id="genderinfo"
+                                                   placeholder="Jinsi" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="country">Mamlakat:</label>
                                             <input type="text" class="form-control" id="country"
-                                                   placeholder="Mamlakat">
+                                                   placeholder="Mamlakat" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="province">Viloyati:</label>
-                                            <input type="text" class="form-control" id="province" placeholder="Viloyat">
+                                            <input type="text" class="form-control" id="province" placeholder="Viloyat"
+                                                   disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="district">Tuman:</label>
-                                            <input type="text" class="form-control" id="district" placeholder="Tuman">
+                                            <input type="text" class="form-control" id="district" placeholder="Tuman"
+                                                   disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="citizenship">Fuqaroligi:</label>
                                             <input type="text" class="form-control" id="citizenship"
-                                                   placeholder="Fuqaroligi">
+                                                   placeholder="Fuqaroligi" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="studentStatus">Talaba statusi:</label>
                                             <input type="text" class="form-control" id="studentStatus"
-                                                   placeholder="Talaba statusi">
+                                                   placeholder="Talaba statusi" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label class="form-label" for="educationForm:">Ta'lim turi:</label>
-                                            <input type="text" class="form-control" id="educationForm:
-"
-                                                   placeholder="Ta'lim turi">
+                                            <label class="form-label" for="educationForm">Ta'lim turi:</label>
+                                            <input type="text" class="form-control" id="educationForm"
+                                                   placeholder="Ta'lim turi" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label class="form-label" for="educationType">Ta'lim toyifasi:</label>
-                                            <input type="text" class="form-control" id="educationType"
-                                                   placeholder="Ta'lim toyifasi">
+                                            <label class="form-label" for="educationTypeInfo">Ta'lim toyifasi:</label>
+                                            <input type="text" class="form-control" id="educationTypeInfo"
+                                                   placeholder="Ta'lim toyifasi" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="paymentForm">To'lov turi:</label>
                                             <input type="text" class="form-control" id="paymentForm"
-                                                   placeholder="To'lov turi">
+                                                   placeholder="To'lov turi" disabled>
                                         </div>
-                                        <div class="form-group col-md-4">
-                                            <label class="form-label" for="socialCategory">Ijtimoiy turi:</label>
-                                            <input type="text" class="form-control" id="socialCategory"
-                                                   placeholder="Ijtimoiy turi">
-                                        </div>
+
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="accommodation">Qayerda yashashi:</label>
                                             <input type="text" class="form-control" id="accommodation"
-                                                   placeholder="Qayerda yashashi">
+                                                   placeholder="Qayerda yashashi" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="department">Fakultet:</label>
                                             <input type="text" class="form-control" id="department"
-                                                   placeholder="Fakultet">
+                                                   placeholder="Fakultet" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="group">Guruh:</label>
-                                            <input type="text" class="form-control" id="group" placeholder="Guruh">
+                                            <input type="text" class="form-control" id="group" placeholder="Guruh"
+                                                   disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="level">Bosqich:</label>
                                             <input type="text" class="form-control" id="level"
-                                                   placeholder="Bosqich">
+                                                   placeholder="Bosqich" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="semester">Semestr:</label>
                                             <input type="text" class="form-control" id="semester"
-                                                   placeholder="Semestr">
+                                                   placeholder="Semestr" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label class="form-label" for="educationYear:">O'quv yili:</label>
-                                            <input type="text" class="form-control" id="educationYear:
-"
-                                                   placeholder="O'quv yili">
+                                            <label class="form-label" for="educationYearInfo">O'quv yili:</label>
+                                            <input type="text" class="form-control" id="educationYearInfo"
+                                                   placeholder="O'quv yili" disabled>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label class="form-label" for="year_of_enter">O'qishga kirgan yili:</label>
                                             <input type="text" class="form-control" id="year_of_enter"
-                                                   placeholder="O'qishga kirgan yili">
+                                                   placeholder="O'qishga kirgan yili" disabled>
                                         </div>
-                               
                                     </div>
                                     <hr>
-                                    <h5 class="mb-3">Maxfiylik</h5>
-                                    <div class="row">
-                                        <div class="form-group col-md-4">
-                                            <label class="form-label" for="uname">User Name:</label>
-                                            <input type="text" class="form-control" id="uname"
-                                                   placeholder="User Name">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label class="form-label" for="pass">Password:</label>
-                                            <input type="password" class="form-control" id="pass"
-                                                   placeholder="Password">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label class="form-label" for="rpass">Repeat Password:</label>
-                                            <input type="password" class="form-control" id="rpass"
-                                                   placeholder="Repeat Password ">
-                                        </div>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label class="form-label"><input class="form-check-input me-2"
-                                                                         type="checkbox" value="" id="flexchexked">Enable
-                                            Two-Factor-Authentication</label>
-                                    </div>
-                                    <button type="Button" class="btn btn-primary">Yangi foydalanuvchi saqlash</button>
                                 </form>
                             </div>
                         </div>
@@ -244,31 +258,20 @@
     <!--/ Content -->
 {% endblock body %}
 {% block script %}
-    <script src="{% static 'assets/js/App/users/create_user.js' %}"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'assets/js/plugins/sweet-alert.js' %}" defer></script>
+    <script src="{% static 'assets/js/plugins/sweet-alert2.js' %}" defer></script>
+    {#MY SCRIPTS#}
+    <script src="{% static 'assets/js/App/university/create_user.js' %}" defer></script>
+    
     <!-- build:js assets/vendor/js/core.js -->
+    <script src="{% static 'assets/js/plugins/fslightbox.js' %}" defer></script>
     <!-- Library Bundle Script -->
     <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
     <!-- Plugin Scripts -->
-
-
-
-
     <!-- Slider-tab Script -->
     <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Lodash Utility -->
     <script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
     <!-- Utilities Functions -->

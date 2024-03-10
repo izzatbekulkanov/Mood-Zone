@@ -20,7 +20,7 @@ class SpecialtyAdmin(admin.ModelAdmin):
 # Group
 @admin.register(GroupUniver)
 class GroupAdmin(admin.ModelAdmin):
-    list_display = ('name', 'educationLang')
+    list_display = ('name', 'codeID' , 'educationLang')
 
 # EducationLang
 @admin.register(EducationLang)
