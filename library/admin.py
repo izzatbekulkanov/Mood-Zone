@@ -13,7 +13,7 @@ class LibraryAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'quantity', 'book_id', 'publication_year', 'status', 'added_by_full_name',
+    list_display = ['title', 'author', 'quantity', 'available_quantity' , 'book_id', 'publication_year', 'status', 'added_by_full_name',
                     'library', 'barcode_display']
     list_editable = ['status', 'library']
     list_filter = ['author', 'publication_year', 'created_at', 'updated_at', 'library']
@@ -22,7 +22,7 @@ class BookAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             'fields': (
-                'title', 'author', 'quantity', 'book_id', 'image', 'publication_year', 'library', 'status', 'added_by',
+                'title', 'author', 'quantity', 'available_quantity', 'book_id', 'image', 'publication_year', 'library', 'status', 'added_by',
                 'isbn')
         }),
         ("Vaqt ma'lumotlari", {

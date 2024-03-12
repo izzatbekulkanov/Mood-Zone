@@ -1,4 +1,6 @@
 from django.urls import path
+
+from .bookLeanViews import get_user_by_student_id, get_book_by_student_id, book_loan_library
 from .views import (library_dashboard,
                     book_list,
                     add_book_view,
@@ -17,6 +19,10 @@ from .views import (library_dashboard,
                     )
 
 urlpatterns = [
+    path('get_user_by_student_id', get_user_by_student_id, name='get_user_by_student_id'),
+    path('get_book_by_student_id', get_book_by_student_id, name='get_book_by_student_id'),
+    path('book_loan_library', book_loan_library, name='book_loan_library'),
+
     # Kutubxona bosh sahifasi
     path('', library_dashboard, name='library_dashboard'),
 

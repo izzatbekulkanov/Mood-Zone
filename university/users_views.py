@@ -436,6 +436,7 @@ def create_student_from_api(request):
                         'gender': gender,
                         'birth_date': birth_date,
                         'student_id_number': item.get('student_id_number'),
+                        'full_id': item.get('student_id_number'),
                         'image': image_url,
                         # 'imageFile': File(open(img_temp.name, 'rb')),
                         'country': country,

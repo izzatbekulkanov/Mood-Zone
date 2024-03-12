@@ -7,13 +7,14 @@ from .models import CustomUser, StudentType, StudentStatus, Citizenship, Distric
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
-    list_display = ['username', 'email', 'full_name', 'user_role', 'is_active']
+    list_display = ['username', 'email', 'full_name', 'user_role', 'is_active', 'full_id']
     list_filter = ['user_role', 'is_active']
     search_fields = ['username', 'email', 'full_name' 'first_name', 'last_name', 'user_role', 'is_staff']
     fieldsets = (
-        (None, {'fields': ('username', 'email', 'password' , 'password_save')}),
-        ('Personal info', {'fields': ('full_name', 'user_role', 'image', 'imageFile','phone_number', 'birth_date')}),
+        (None, {'fields': ('username', 'email', 'password', 'password_save')}),
+        ('Personal info', {'fields': ('first_name', 'second_name', 'third_name', 'gender',  'full_name', 'user_role', 'image', 'imageFile','phone_number', 'birth_date')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('secret', {'fields': ('full_id', 'hash', 'token')}),
 
     )
 

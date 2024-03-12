@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
     <!-- Flatpickr css -->
     <link rel="stylesheet" href="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.css' %}">
+    <!-- NoUI Slider css -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/noUiSilder/style/nouislider.min.css' %}">
 
     <link rel="stylesheet" href="{% static 'assets/vendor/swiperSlider/swiper-bundle.min.css' %}">
 
@@ -19,467 +21,220 @@
     <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
     <!-- RTL Css -->
     <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800|Poppins&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cards {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .cards h1 {
+            font-size: 40px;
+            margin: 0 0 30px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .services {
+            display: flex;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 4px;
+            transition: all .3s ease;
+        }
+
+        .content .fab {
+            font-size: 70px;
+            margin: 16px 0;
+        }
+
+        .content > * {
+            flex: 1 1 100%;
+        }
+
+        .content:hover {
+            color: white;
+        }
+
+        .content:hover a {
+            border-color: white;
+            background: white;
+        }
+
+        .content-1:hover {
+            border-color: #4267B2;
+            background: #4267B2;
+        }
+
+        .content-1:hover a {
+            color: #4267B2;
+        }
+
+        .content-2:hover {
+            border-color: #075e54;
+            background: #075e54;
+        }
+
+        .content-2:hover a {
+            color: #075e54;
+        }
+
+        .content-3:hover {
+            border-color: #ff0000;
+            background: #ff0000;
+        }
+
+        .content-3:hover a {
+            color: #ff0000;
+        }
+
+        .content h2 {
+            font-size: 30px;
+            margin: 16px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .content p {
+            font-size: 17px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .content a {
+            margin: 22px 0;
+            background: black;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 1px solid black;
+            padding: 15px 0;
+            border-radius: 25px;
+            transition: .3s ease;
+        }
+
+        .content a:hover {
+            border-radius: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .services {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        
+        .cardmenu {
+            margin: 20px auto;
+            width: 250px;
+            height: 250px;
+            border-radius: 40px;
+            box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .cardmenu .cardmenu_image {
+            width: inherit;
+            height: inherit;
+            border-radius: 40px;
+        }
+
+        .cardmenu .cardmenu_image img {
+            width: inherit;
+            height: inherit;
+            border-radius: 40px;
+            object-fit: cover;
+        }
+
+        .cardmenu .cardmenu_title {
+            text-align: center;
+            border-radius: 0px 0px 40px 40px;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            margin-top: -80px;
+            height: 40px;
+        }
+
+        .cardmenu:hover {
+            transform: scale(0.9, 0.9);
+            box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+            -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+        }
+
+        .cardmenu-title-white {
+            color: white;
+        }
+        
+
+
+        .cardmenu {
+            margin: 20px auto;
+            width: 200px;
+            height: 200px;
+            border-radius: 40px;
+            background-image: url('');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+            transition: 0.4s;
+        }
+
+    </style>
 {% endblock style %}
 
 {% block body %}
     <!-- Content -->
     <div class="container-fluid content-inner pb-0" id="page_layout">
-        <div class="d-flex justify-content-between align-items-center flex-wrap mb-4 gap-3">
-            <div class="d-flex flex-column">
-                <h3>Namangan davlat pedagogika instituti</h3>
-                <p class="text-primary mb-0">Asosiy sahifa</p>
-            </div>
-            <div class="d-flex justify-content-between align-items-center rounded flex-wrap gap-3">
-                <div class="d-flex justify-content-between align-items-center p-3 gap-4 rounded pb-0">
-                    <div class="form-group mb-0">
-                        <input type="text" name="start" class="form-control range_flatpicker flatpickr-input active"
-                               placeholder="24 Jan 2022 " readonly="readonly">
-                    </div>
-                    <div class="form-check form-switch mb-0 iq-status-switch">
-                        <input class="form-check-input iq-status" type="checkbox" id="iq-switch" checked="">
-                        <label class="form-check-label iq-reset-status" for="iq-switch">
-                            Online
-                        </label>
-                    </div>
-                    <div id="weather-info">
-                        <h5>Uzbekistan</h5>
-                        <h6 class="mb-0">Namangan</h6>
-                    </div>
-                    <div class="iq-product-weather d-flex gap-2">
-                        <div id="weather-icon" class="d-flex flex-column align-items-center">
-                            <!-- Bu yerda havo holatining ikonasi chiqadi -->
-                        </div>
-                        <h6 id="temperature" class="mt-1 mb-0">Ob havo harorati</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
-                                     width="44" id="Graduation-Cap--Streamline-Core">
-                                    <path id="Subtract" fill="#8fbffa" fill-rule="evenodd"
-                                          d="m3.19983 6.03098 3.60135 1.56037c0.12682 0.05495 0.27073 0.05495 0.39756 0l3.60006 -1.55982 0.0006 2.87508c0 0.0886 -0.0235 0.17561 -0.0682 0.25212l-0.4318 -0.25203c0.4318 0.25203 0.4316 0.25231 0.4315 0.2526l-0.0004 0.0006 -0.0007 0.00129 -0.0018 0.00298 -0.0046 0.00751 -0.0131 0.02098c-0.0106 0.01655 -0.025 0.03811 -0.0433 0.06396 -0.0366 0.05167 -0.089 0.12063 -0.1592 0.20094 -0.1403 0.16061 -0.3518 0.36716 -0.64833 0.57114 -0.5982 0.4116 -1.5217 0.7982 -2.85986 0.7982 -1.33817 0 -2.26048 -0.3867 -2.85753 -0.7985 -0.29592 -0.2042 -0.50677 -0.41092 -0.64658 -0.5717 -0.0699 -0.08039 -0.12217 -0.14943 -0.1586 -0.20118 -0.01822 -0.02588 -0.0325 -0.04748 -0.04307 -0.06406l-0.01311 -0.02103 -0.00453 -0.00754 -0.00176 -0.00299 -0.00076 -0.0013 -0.00035 -0.0006c-0.00017 -0.00028 -0.00033 -0.00057 0.43226 -0.2513l-0.43259 0.25073c-0.04399 -0.07589 -0.06724 -0.16201 -0.06741 -0.24973l-0.00575 -2.87672Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Subtract_2" fill="#2859c5" fill-rule="evenodd"
-                                          d="m3.19995 6.03101 3.60129 1.56035c0.12683 0.05495 0.27074 0.05495 0.39756 0l3.6001 -1.55983 0.0003 1.36216 -3.10344 1.34464c-0.44389 0.19232 -0.94758 0.19232 -1.39147 0L3.20291 7.39458l-0.00296 -1.36357Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Union" fill="#8fbffa" fill-rule="evenodd"
-                                          d="M7.19878 1.04121c-0.12682 -0.054947 -0.27074 -0.054947 -0.39756 0L0.301219 3.8575C0.118352 3.93673 0 4.11699 0 4.31628c0 0.1993 0.118352 0.37956 0.301219 0.45879L6.80122 7.59136c0.12682 0.05495 0.27074 0.05495 0.39756 0l6.50002 -2.81629c0.1828 -0.07923 0.3012 -0.25949 0.3012 -0.45879 0 -0.19929 -0.1184 -0.37955 -0.3012 -0.45878L7.19878 1.04121Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Subtract_3" fill="#2859c5" fill-rule="evenodd"
-                                          d="m2.32031 5.64989 -1.25 -0.54159v4.89151c0.18917 -0.09081 0.40115 -0.14169 0.62502 -0.14169 0.22385 0 0.43582 0.05087 0.62498 0.14168l0 -4.34991Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Union_2" fill="#8fbffa" fill-rule="evenodd"
-                                          d="M1.69533 9.85812c-0.798572 0 -1.44594 0.64738 -1.44594 1.44598 0 0.7985 0.647368 1.4459 1.44594 1.4459 0.79857 0 1.44594 -0.6474 1.44594 -1.4459 0 -0.7986 -0.64737 -1.44598 -1.44594 -1.44598Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                </svg>
-                            </div>
-
-                            <h5 class="mb-3">Universitet</h5>
-                            <div class="d-flex justify-content-center ms-2">
-                                <a href="{% url 'university_dashboard' %}" class="btn btn-primary">Kirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
-                                     width="44" id="Definition-Search-Book--Streamline-Core">
-                                    <path id="Union" fill="#2859c5" fill-rule="evenodd"
-                                          d="M8 9.75024c0 -0.96649 0.7835 -1.75 1.75 -1.75s1.75 0.78351 1.75 1.75c0 0.96646 -0.7835 1.74996 -1.75 1.74996S8 10.7167 8 9.75024Zm1.75 -3.25c-1.79493 0 -3.25 1.45508 -3.25 3.25 0 1.79496 1.45507 3.24996 3.25 3.24996 0.6257 0 1.2102 -0.1768 1.7061 -0.4832l1.2631 1.2631c0.2929 0.2929 0.7678 0.2929 1.0607 0 0.2929 -0.2929 0.2929 -0.7678 0 -1.0607l-1.2632 -1.2631c0.3065 -0.4959 0.4833 -1.0803 0.4833 -1.70606 0 -1.79492 -1.4551 -3.25 -3.25 -3.25Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Subtract" fill="#8fbffa" fill-rule="evenodd"
-                                          d="M0.5 0.000244141c-0.276142 0 -0.5 0.223857859 -0.5 0.499999859V10.5003c0 0.2761 0.223858 0.5 0.5 0.5h4.92589C5.31137 10.6034 5.25 10.184 5.25 9.75024c0 -1.14125 0.42484 -2.18327 1.125 -2.97655l0 -5.948233C5.891 0.368722 5.24621 0.000244141 4.5 0.000244141h-4ZM7.625 0.827849l0 4.954741c0.63289 -0.33968 1.35644 -0.53235 2.125 -0.53235 1.9658 0 3.6371 1.26046 4.25 3.01726V0.500244c0 -0.276142 -0.2239 -0.499999859 -0.5 -0.499999859H9.75c-0.88104 0 -1.59752 0.356074859 -2.125 0.827604859Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                </svg>
-                            </div>
-
-                            <h5 class="mb-3">Kutubhona</h5>
-                            <div class="d-flex justify-content-center ms-2">
-                                <a href="{% url 'library_dashboard' %}" class="btn btn-primary">Kirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
-                                     width="44" id="Web--Streamline-Core">
-                                    <desc>Web Streamline Icon: https://streamlinehq.com</desc>
-                                    <g id="Web--Streamline-Core">
-                                        <path id="Union" fill="#8fbffa" fill-rule="evenodd"
-                                              d="M7 0C3.13401 0 0 3.13401 0 7c0 3.866 3.13401 7 7 7 3.866 0 7 -3.134 7 -7 0 -3.86599 -3.134 -7 -7 -7Z"
-                                              clip-rule="evenodd" stroke-width="1"></path>
-                                        <path id="Intersect" fill="#2859c5" fill-rule="evenodd"
-                                              d="M8.95114 0.275532C8.43847 0.12704 7.90157 0.0355829 7.34776 0.00848818 8.55379 1.91446 9.3003 4.09817 9.51704 6.375H4.48293c0.21674 -2.27683 0.96325 -4.46054 2.16927 -6.3665103C6.09839 0.0355871 5.5615 0.127044 5.04883 0.27554 4.0391 2.14922 3.41606 4.22625 3.22773 6.375H0.0275217C0.00930339 6.5809 0 6.78936 0 7s0.00930342 0.4191 0.0275217 0.625H3.22773c0.18833 2.14874 0.81137 4.2258 1.82109 6.0995 0.51267 0.1485 1.04957 0.2399 1.60338 0.267 -1.20603 -1.906 -1.95253 -4.08967 -2.16927 -6.3665h5.03411c-0.21674 2.27683 -0.96325 4.4605 -2.16927 6.3665 0.55381 -0.0271 1.09071 -0.1185 1.60337 -0.267 1.00973 -1.8737 1.63276 -3.95075 1.82106 -6.0995h3.2003C13.9907 7.4191 14 7.21064 14 7s-0.0093 -0.4191 -0.0275 -0.625h-3.2003c-0.1883 -2.14875 -0.81133 -4.22579 -1.82106 -6.099468Z"
-                                              clip-rule="evenodd" stroke-width="1"></path>
-                                    </g>
-                                </svg>
-                            </div>
-
-                            <h5 class="mb-3">Sayt ma'lumotlari</h5>
-                            <div class="d-flex justify-content-center ms-2">
-                                <a href="$" class="btn btn-primary">Kirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
-                                     width="44" id="Class-Lesson--Streamline-Core">
-                                    <path id="Subtract" fill="#8fbffa" fill-rule="evenodd"
-                                          d="M7.64964 9.5H12c0.8284 0 1.5 -0.67157 1.5 -1.5V2c0 -0.82843 -0.6716 -1.5 -1.5 -1.5H6.23608c0.47504 0.53076 0.7639 1.23165 0.7639 2 0 0.25897 -0.03282 0.51029 -0.09452 0.75h1.96952C10.1867 3.25 11.25 4.31332 11.25 5.625S10.1867 8 8.87498 8H7.8163l-0.16666 1.5Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Union" fill="#2859c5" fill-rule="evenodd"
-                                          d="M5.75 2.5c0 0.9665 -0.7835 1.75 -1.75 1.75S2.25 3.4665 2.25 2.5 3.0335 0.75 4 0.75s1.75 0.7835 1.75 1.75ZM0.5 8C0.5 6.067 2.067 4.5 4 4.5h4.875C9.49632 4.5 10 5.00368 10 5.625S9.49632 6.75 8.875 6.75H6.69752l-0.70058 6.3052c-0.02813 0.2532 -0.24217 0.4448 -0.49694 0.4448H3c-0.24679 0 -0.45666 -0.1801 -0.49419 -0.424l-0.43477 -2.826H1c-0.276142 0 -0.5 -0.2239 -0.5 -0.5V8Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                </svg>
-                            </div>
-
-                            <h5 class="mb-3">Qabul</h5>
-                            <div class="d-flex justify-content-center ms-2">
-                                <a href="$" class="btn btn-primary">Kirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="44"
-                                     width="44" id="Chat-Bubble-Square-Write--Streamline-Sharp">
-                                    <path id="Union" fill="#8fbffa" fill-rule="evenodd"
-                                          d="m21.145 19.849 0 -16.048 -1.441 0V2H1.855v21.054l5.129 -3.205h14.16Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Union_2" fill="#2859c5" fill-rule="evenodd"
-                                          d="m23.207 4.496 -3.64 -3.64L11 9.421v3.64h3.64l8.567 -8.566Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                </svg>
-                            </div>
-
-                            <h5 class="mb-3">Imtihon</h5>
-                            <div class="d-flex justify-content-center ms-2">
-                                <a href="$" class="btn btn-primary">Kirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="header-title">
-                            <h4 class="card-title">Foydalanuvchi ma'lumotlari</h4>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="twit-feed">
-                            <div class="d-flex align-items-center mb-4">
-                                
-                                {% if request.user.image %}
-                                    <img src="{{ request.user.image }}" alt="User-Profile"
-                                         class="theme-color-default-img  img-fluid avatar-60 me-3" loading="lazy">
-                                {% else %}
-                                    <img src="{% static 'assets/images/avatars/01.png' %}" alt="User-Profile"
-                                         class="theme-color-default-img  img-fluid avatar-60 me-3" loading="lazy">
-                                {% endif %}
-
-                                <div class="media-support-info">
-                                    <h6 class="mb-0">{{ request.user.full_name }}</h6>
-                                    <p class="mb-0">{{ request.user.user_role }}
-                                        <span class="text-primary">
-                                        <svg width="15" viewBox="0 0 24 24">
-                                            <path fill="currentColor"
-                                                  d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path>
-                                        </svg>
-                                    </span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-support-body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"
-                                     id="Office-Worker--Streamline-Core" width="48">
-                                    <path id="Union" fill="#8FBFFA" fill-rule="evenodd"
-                                          d="M5.5 2a2 2 0 1 1 -4 0 2 2 0 0 1 4 0Zm0.045 7.97V10H5.5l-0.445 3.562a0.5 0.5 0 0 1 -0.496 0.438H2.44a0.5 0.5 0 0 1 -0.496 -0.438L1.5 10h-1a0.5 0.5 0 0 1 -0.5 -0.5v-1a3.5 3.5 0 0 1 6.9 -0.832A2.632 2.632 0 0 0 5.545 9.97Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Union_2" fill="#2859C5" fill-rule="evenodd"
-                                          d="M9.677 7.937a0.25 0.25 0 0 1 0.25 -0.25h0.913a0.25 0.25 0 0 1 0.25 0.25v0.651H9.677v-0.65Zm-1.5 0.651v-0.65c0 -0.967 0.784 -1.75 1.75 -1.75h0.913c0.966 0 1.75 0.783 1.75 1.75v0.65c0.763 0 1.381 0.62 1.381 1.383v2.647c0 0.763 -0.619 1.382 -1.382 1.382H8.177a1.382 1.382 0 0 1 -1.382 -1.382V9.97c0 -0.763 0.619 -1.382 1.382 -1.382Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                </svg>
-                            </div>
-
-                            <h5 class="mb-3">Rollar</h5>
-                            <div class="d-flex justify-content-center ms-2">
-                                <a href="$" class="btn btn-primary">Kirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="44"
-                                     width="44" id="Vertical-Slider-2--Streamline-Sharp">
-                                    <path id="Union" fill="#8fbffa" fill-rule="evenodd"
-                                          d="M3 1v22h2L5 1H3Zm8 22 0 -22h2l0 22h-2Zm8 0V1h2v22h-2Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Union_2" fill="#2859c5" fill-rule="evenodd"
-                                          d="M23 4a3 3 0 1 1 -6 0 3 3 0 0 1 6 0Zm-8 8a3 3 0 1 1 -6 0 3 3 0 0 1 6 0ZM4 23a3 3 0 1 0 0 -6 3 3 0 0 0 0 6Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                </svg>
-                            </div>
-
-                            <h5 class="mb-3">Boshqa</h5>
-                            <div class="d-flex justify-content-center ms-2">
-                                <a href="$" class="btn btn-primary">Kirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
-                                     width="44" id="Ai-Generate-Portrait-Image-Spark--Streamline-Core">
-                                    <path id="Subtract" fill="#8FBFFA" fill-rule="evenodd"
-                                          d="M0.5 0.443A1.5 1.5 0 0 1 1.56 0.004h8a1.5 1.5 0 0 1 1.5 1.5v4.152c-1.09 -0.434 -2.524 0.063 -2.835 1.485l-0.023 0.104a1.426 1.426 0 0 1 -1.147 1.093c-1.406 0.245 -1.947 1.582 -1.621 2.666H1.56a1.5 1.5 0 0 1 -1.5 -1.5v-8c0 -0.398 0.158 -0.78 0.44 -1.06Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Union" fill="#2859C5" fill-rule="evenodd"
-                                          d="M7.335 3.25a1.774 1.774 0 1 1 -3.548 0 1.774 1.774 0 0 1 3.548 0ZM5.56 5.904A2.956 2.956 0 0 0 2.605 8.86c0 0.163 0.132 0.296 0.295 0.296h2.818c0.285 -0.405 0.73 -0.713 1.337 -0.819a1.427 1.427 0 0 0 1.093 -0.909A2.955 2.955 0 0 0 5.56 5.905Zm3.885 1.503c0.19 -0.868 1.427 -0.874 1.625 -0.007l0.01 0.044 0.02 0.086a2.693 2.693 0 0 0 2.16 2.037c0.904 0.157 0.904 1.457 0 1.614a2.692 2.692 0 0 0 -2.164 2.054l-0.026 0.113c-0.198 0.867 -1.435 0.861 -1.625 -0.007l-0.02 -0.097a2.676 2.676 0 0 0 -2.157 -2.064c-0.903 -0.158 -0.903 -1.454 0 -1.611a2.676 2.676 0 0 0 2.154 -2.054l0.015 -0.071 0.008 -0.037Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                </svg>
-                            </div>
-
-                            <h5 class="mb-3">KPI</h5>
-                            <div class="d-flex justify-content-center ms-2">
-                                <a href="$" class="btn btn-primary">Kirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="m-auto d-inline-block p-4 bg-soft-primary rounded-pill mb-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="44"
-                                     width="44" id="Browser-Wifi--Streamline-Core">
-                                    <path id="Union" fill="#2859C5"
-                                          d="M1.73317 0.0923462C0.793227 0.0923462 0.03125 0.854323 0.03125 1.79427v1.90385H13.9062V1.79427c0 -0.939947 -0.7619 -1.7019238 -1.7019 -1.7019238H1.73317Z"
-                                          stroke-width="1"></path>
-                                    <path id="Subtract" fill="#8FBFFA" fill-rule="evenodd"
-                                          d="M0.03125 3.69812H13.9062v8.56728c0 0.94 -0.7619 1.702 -1.7019 1.702H1.73317c-0.939943 0 -1.70192 -0.762 -1.70192 -1.702V3.69812Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                    <path id="Union_2" fill="#2859C5" fill-rule="evenodd"
-                                          d="M9.5609 8.23611c-1.40955 -1.40954 -3.71233 -1.40954 -5.12188 0 -0.29289 0.2929 -0.76777 0.2929 -1.06066 0 -0.29289 -0.29289 -0.29289 -0.76776 0 -1.06066 1.99533 -1.99533 5.24787 -1.99533 7.24324 0 0.2929 0.2929 0.2929 0.76777 0 1.06066 -0.2929 0.2929 -0.76781 0.2929 -1.0607 0ZM8.09388 9.85522c-0.58171 -0.5817 -1.60614 -0.5817 -2.18785 0 -0.29289 0.29288 -0.76776 0.29288 -1.06066 0 -0.29289 -0.29289 -0.29289 -0.76776 0 -1.06066 1.16749 -1.16749 3.14168 -1.16749 4.30917 0 0.29289 0.2929 0.29289 0.76777 0 1.06066 -0.2929 0.29288 -0.76777 0.29288 -1.06066 0ZM6.99995 11.9475c0.41422 0 0.75 -0.3358 0.75 -0.75s-0.33578 -0.75 -0.75 -0.75c-0.41421 0 -0.75 0.3358 -0.75 0.75s0.33579 0.75 0.75 0.75Z"
-                                          clip-rule="evenodd" stroke-width="1"></path>
-                                </svg>
-                            </div>
-
-                            <h5 class="mb-3">Online darslar</h5>
-                            <div class="d-flex justify-content-center ms-2">
-                                <a href="$" class="btn btn-primary">Kirish</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="flex-wrap card-header d-flex justify-content-between">
-                        <div class="header-title">
-                            <h4>NAMDPI STRATEGIYASI</h4>
-                            <p class="mb-0">
-                                <svg class="me-2" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="#17904b"
-                                          d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z"></path>
-                                </svg>
-                                50%
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex profile-media align-items-top">
-                            <div class="mt-1 profile-dots-pills border-warning"></div>
-                            <div class="ms-4">
-                                <h6 class="mb-1 ">Yuksalish<span class="text-primary"></span></h6>
-                                <span class="mb-0">2026-yil</span>
-                            </div>
-                        </div>
-                        <div class="d-flex profile-media align-items-top">
-                            <div class="mt-1 profile-dots-pills border-warning"></div>
-                            <div class="ms-4">
-                                <h6 class="mb-1 ">Taraqqiyot<span class="text-primary"></span></h6>
-                                <span class="mb-0">2025-yil</span>
-                            </div>
-                        </div>
-
-                        <div class="d-flex profile-media align-items-top">
-                            <div class="mt-1 profile-dots-pills border-success"></div>
-                            <div class="ms-4">
-                                <h6 class="mb-1 ">Rivojlanish<span class="text-primary"></span></h6>
-                                <span class="mb-0">2024-yil</span>
-                            </div>
-                        </div>
-                        <div class="mb-1 d-flex profile-media align-items-top">
-                            <div class="mt-1 profile-dots-pills border-success"></div>
-                            <div class="ms-4">
-                                <h6 class="mb-1 ">Tiklanish<span class="text-primary"></span></h6>
-                                <span class="mb-0">2023-yil</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="card ">
-                    <div class="card-header">
-                        <h4 class="mb-0">NamDPI manzili</h4>
-                    </div>
-                    <div class="card-body">
-                        <div style="width: 100%; overflow: hidden; height: 280px;">
-                            <iframe loading="lazy"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.976125310438!2d71.69888197555697!3d40.98200362104309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb4c0f3da09121%3A0x96efaff1734c248c!2sNamangan%20State%20University!5e0!3m2!1sen!2s!4v1709920645377!5m2!1sen!2s"
-                                    style="border:0; margin-top: -150px; height: 500px; width: 100%;">
-                            </iframe>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
+        <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">
-                    <div class="d-flex justify-content-between align-items-center flex-wrap">
-                        <h4 class="mb-0">Ijtimoiy tarmoqlar</h4>
-                    </div>
-                </div>
                 <div class="card-body">
-                    <div class="row  ">
-                        <div class="col">
-                            <div class="card bg-body shadow-none mb-xl-0 ">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center gap-3 flex-wrap">
-                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
-                                            <img src="{% static 'assets/images/media/01.png' %}" alt="01"
-                                                 class="img-fluid avatar-30 object-contain">
-                                        </button>
-                                        <div>
-                                            <small>Instagram</small>
-                                            <h4 class="mb-0">@Namdpiinstagram</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="d-flex flex-column">
+                            <h3>Namangan davlat pedagogika instituti</h3>
+                            <p class="text-primary mb-0">Asosiy sahifa</p>
                         </div>
-                        <div class="col">
-                            <div class="card bg-body shadow-none mb-xl-0">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center gap-3 flex-wrap">
-                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
-                                            <img src="{% static 'assets/images/media/05.png' %}" alt="01"
-                                                 class="img-fluid avatar-30 object-contain">
-                                        </button>
-                                        <div>
-                                            <small>Telegram</small>
-                                            <h4 class="mb-0">@namdpitelegram</h4>
-                                        </div>
-                                    </div>
+                        <div class="d-flex justify-content-between align-items-center rounded flex-wrap gap-3">
+                            <div class="d-flex justify-content-between align-items-center p-3 gap-4 rounded pb-0">
+                                <div id="data_time_online">
+
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card bg-body shadow-none mb-md-0">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center gap-3 flex-wrap">
-                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
-                                            <img src="{% static 'assets/images/media/03.png' %}" alt="01"
-                                                 class="img-fluid avatar-30 object-contain">
-                                        </button>
-                                        <div>
-                                            <small>You tube</small>
-                                            <h4 class="mb-0">@Namdpiyoutube</h4>
-                                        </div>
-                                    </div>
+                                <div class="form-check form-switch mb-0 iq-status-switch">
+                                    <input class="form-check-input iq-status" type="checkbox" id="iq-switch" checked="">
+                                    <label class="form-check-label iq-reset-status" for="iq-switch">
+                                        Online
+                                    </label>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card bg-body shadow-none mb-0">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center gap-3 flex-wrap">
-                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
-                                            <img src="{% static 'assets/images/media/04.png' %}" alt="01"
-                                                 class="img-fluid avatar-30 object-contain">
-                                        </button>
-                                        <div>
-                                            <small>Facebook</small>
-                                            <h4 class="mb-0">@namdpifacebook</h4>
-                                        </div>
-                                    </div>
+                                <div id="weather-info">
+                                    <h5>Uzbekistan</h5>
+                                    <h6 class="mb-0">Namangan</h6>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card bg-body shadow-none mb-0">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center gap-3 flex-wrap">
-                                        <button type="button" class="btn btn-sm bg-white rounded-circle p-2">
-                                            <img src="{% static 'assets/images/media/06.png' %}" alt="01"
-                                                 class="img-fluid avatar-30 object-contain">
-                                        </button>
-                                        <div>
-                                            <small>Twitter X</small>
-                                            <h4 class="mb-0">@TwitterXnamdpi</h4>
-                                        </div>
-                                    </div>
-                                </div>
+                                {#                                <div class="iq-product-weather d-flex gap-2">#}
+                                {#                                    <div id="weather-icon" class="d-flex flex-column align-items-center">#}
+                                {#                                        <!-- Bu yerda havo holatining ikonasi chiqadi -->#}
+                                {#                                    </div>#}
+                                {#                                    <h6 id="temperature" class="mt-1 mb-0">Ob havo harorati</h6>#}
+                                {#                                </div>#}
                             </div>
                         </div>
                     </div>
@@ -487,196 +242,849 @@
             </div>
         </div>
         <div class="row">
-            <div class="card">
-                <div class="card-body card-thumbnail">
-                    <div class="bg-primary rounded my-4">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-evenly align-items-center text-white">
-                                <svg class="iq-blog-special" width="50" viewBox="0 0 71 59" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.2"
-                                          d="M19.508 33.7143C23.1374 33.7143 26.0107 34.8972 28.1278 37.2632C30.3962 39.4812 31.5304 42.4386 31.5304 46.1353C31.5304 50.1278 30.1693 53.307 27.4473 55.6729C24.8765 57.891 21.3227 59 16.7859 59C11.4931 59 7.3344 57.0038 4.3099 53.0113C1.43664 49.0188 0 43.3258 0 35.9323C0 29.2782 1.51225 23.1416 4.53674 17.5226C7.56124 11.7556 12.098 5.98872 18.147 0.221802C18.2982 0.0739339 18.525 0 18.8275 0C19.2812 0 19.6592 0.221802 19.9617 0.665405C20.2641 1.10902 20.2641 1.47869 19.9617 1.77443C12.5517 9.16791 8.84665 17.8922 8.84665 27.9474C8.84665 32.0877 9.60277 35.119 11.115 37.0414C12.476 34.8233 15.2737 33.7143 19.508 33.7143ZM58.9776 33.7143C62.607 33.7143 65.4803 34.8972 67.5975 37.2632C69.8658 39.4812 71 42.4386 71 46.1353C71 50.1278 69.639 53.307 66.9169 55.6729C64.3461 57.891 60.7923 59 56.2556 59C50.9627 59 46.804 57.0038 43.7796 53.0113C40.9063 49.0188 39.4696 43.3258 39.4696 35.9323C39.4696 29.2782 40.9819 23.1416 44.0064 17.5226C47.0309 11.7556 51.5676 5.98872 57.6166 0.221802C57.7678 0.0739339 57.9947 0 58.2971 0C58.7508 0 59.1289 0.221802 59.4313 0.665405C59.7338 1.10902 59.7338 1.47869 59.4313 1.77443C52.0213 9.16791 48.3163 17.8922 48.3163 27.9474C48.3163 32.0877 49.0724 35.119 50.5847 37.0414C51.9457 34.8233 54.7433 33.7143 58.9776 33.7143Z"
-                                          fill="currentcolor"></path>
-                                </svg>
-                                <div>
-                                    <h4 class="text-white text-center mb-0">
-                                        <span>
-                                            “Yoshlar va biznesni qo‘llab-quvvatlash yili"
-                                        </span>
-                                        <br>
-                                    </h4>
-                                    <h6 class="text-white text-center mt-3">2024-yil nomi</h6>
+            <div class="bd-example">
+                <nav class="tab-bottom-bordered mb-3">
+                    <div class="mb-0 nav nav-tabs" id="nav-tab1" role="tablist">
+                        <button class="nav-link active" id="nav-home-11-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home-11" type="button" role="tab" aria-controls="nav-home-11"
+                                aria-selected="true">Shahsiy sahifa
+                        </button>
+                        <button class="nav-link" id="nav-menu-11-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-menu-11" type="button" role="tab" aria-controls="nav-menu-11"
+                                aria-selected="false" tabindex="-1">MENU
+                        </button>
+                        <button class="nav-link" id="nav-univer-11-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-univer-11" type="button" role="tab" aria-controls="nav-univer-11"
+                                aria-selected="false" tabindex="-1">Oliyhog
+                        </button>
+                        <button class="nav-link" id="nav-library-11-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-library-11" type="button" role="tab" aria-controls="nav-library-11"
+                                aria-selected="false" tabindex="-1">Kutubhona
+                        </button>
+                        <button class="nav-link" id="nav-exam-11-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-exam-11" type="button" role="tab" aria-controls="nav-exam-11"
+                                aria-selected="false" tabindex="-1">Imtihon
+                        </button>
+                        <button class="nav-link" id="nav-edu-11-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-edu-11" type="button" role="tab" aria-controls="nav-edu-11"
+                                aria-selected="false" tabindex="-1">Online darslar
+                        </button>
+                        <button class="nav-link" id="nav-kpi-11-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-kpi-11" type="button" role="tab" aria-controls="nav-kpi-11"
+                                aria-selected="false" tabindex="-1">KPI
+                        </button>
+
+                        <button class="nav-link" id="nav-social-11-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-social-11" type="button" role="tab" aria-controls="nav-social-11"
+                                aria-selected="false" tabindex="-1">Ijtimoiy tarmoqlar
+                        </button>
+                    </div>
+                </nav>
+                <div class="tab-content iq-tab-fade-up" id="nav-tabContent">
+                    <div class="tab-pane fade active show" id="nav-home-11" role="tabpanel"
+                         aria-labelledby="nav-home-11-tab">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="nav flex-column nav-pills nav-iconly gap-3" role="tablist">
+                                                    <a class="nav-link active show" href="#v-pills-basicinfo-tab"
+                                                       data-bs-toggle="pill" data-bs-target="#v-pills-basicinfo-tab"
+                                                       role="button" aria-selected="false" tabindex="-1">Shahsiy
+                                                        ma'lumotlar</a>
+                                                    <a class="nav-link" href="#v-pills-family-tab" data-bs-toggle="pill"
+                                                       data-bs-target="#v-pills-family" role="button"
+                                                       aria-selected="false" tabindex="-1">Havfsizlik</a>
+                                                    <a class="nav-link" href="#v-pills-work-tab" data-bs-toggle="pill"
+                                                       data-bs-target="#v-pills-work-tab" role="button"
+                                                       aria-selected="false" tabindex="-1">Oliy ta'lim</a>
+                                                    <a class="nav-link" href="#v-pills-lived-tab" data-bs-toggle="pill"
+                                                       data-bs-target="#v-pills-lived-tab" role="button"
+                                                       aria-selected="true" tabindex="-1">Kutubhonaga</a>
+                                                    <a class="nav-link" href="#v-pills-details-tab"
+                                                       data-bs-toggle="pill" data-bs-target="#v-pills-details-tab"
+                                                       role="button" aria-selected="false" tabindex="-1">KPI</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="tab-content iq-tab-fade-up">
+                                                    <div class="tab-pane fade active show" id="v-pills-basicinfo-tab"
+                                                         role="tabpanel" aria-labelledby="v-pills-basicinfo-tab">
+                                                        <div class="mb-3">
+                                                            <div class="border-bottom pb-3 mb-3">
+                                                                <div class="row justify-content-arround">
+                                                                    <div class="col"><h3 class="mb-0">Shahsiy
+                                                                        ma'lumotlar </h3></div>
+
+
+                                                                </div>
+                                                                <div class="card mt-3">
+                                                                    <div class="card-header">
+                                                                        <div class="header-title">
+                                                                            <h4 class="card-title">Foydalanuvchi
+                                                                                rasmi</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <div class="text-center">
+                                                                            <div>
+                                                                                <img src="{% if request.user.image %}
+
+
+                                                                                    
+                                                                                    
+                                                                                    {{ request.user.image }}{% else %}{% static 'assets/images/avatars/01.png' %} {% endif %}"
+                                                                                     alt="profile-img"
+                                                                                     class="rounded-pill avatar-130 img-fluid"
+                                                                                     loading="lazy">
+                                                                            </div>
+                                                                            <div class="mt-3">
+                                                                                <div class="col"><h3>Tizimdagi
+                                                                                    roli: {{ request.user.user_role }}</h3>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <h6>Ism</h6>
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <p class="mb-0">{{ request.user.first_name }}</p>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <h6>Familia</h6>
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <p class="mb-0">{{ request.user.second_name }}</p>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <h6>Otasining ismi</h6>
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <p class="mb-0">{{ request.user.third_name }}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <div class="border-bottom pb-3 mb-3">
+                                                                <h4 class="mb-0">Ijtimoiy tarmoq</h4>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <ul class="suggestions-lists m-0 p-0">
+                                                                        <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 fill="none" viewBox="0 0 14 14"
+                                                                                 height="30"
+                                                                                 width="30"
+                                                                                 id="Telegram--Streamline-Core">
+
+                                                                                <path id="Subtract" fill="#8fbffa"
+                                                                                      fill-rule="evenodd"
+                                                                                      d="M7 0.25C3.27208 0.25 0.25 3.27208 0.25 7c0 3.7279 3.02208 6.75 6.75 6.75 3.7279 0 6.75 -3.0221 6.75 -6.75C13.75 3.27208 10.7279 0.25 7 0.25Z"
+                                                                                      clip-rule="evenodd"
+                                                                                      stroke-width="1"></path>
+                                                                                <path id="Subtract_2" fill="#2859c5"
+                                                                                      fill-rule="evenodd"
+                                                                                      d="M10.2969 3.13171 9.25183 11.0643 7.30336 9.50304 5.61828 11.1069l-0.00004 -2.72603 2.22797 -1.72226c0.21848 -0.16888 0.25868 -0.4829 0.08979 -0.70138 -0.16888 -0.21848 -0.4829 -0.25868 -0.70138 -0.08979L4.54938 7.94317l-2.41773 -0.87612 8.16525 -3.93534Z"
+                                                                                      clip-rule="evenodd"
+                                                                                      stroke-width="1"></path>
+                                                                            </svg>
+                                                                            <div class="d-flex justify-content-between w-100">
+                                                                                <div>
+                                                                                    <h6>Telegram</h6>
+                                                                                    <input type="text"
+                                                                                           id="disabledTextInput"
+                                                                                           class="form-control"
+                                                                                           placeholder="Telegram"
+                                                                                           disabled>
+
+                                                                                </div>
+                                                                                <a class="d-flex align-items-start gap-2 mb-4"
+                                                                                   href="javascript:void(0);">
+                                                                                    <svg class="icon-22" width="22"
+                                                                                         viewBox="0 0 24 24" fill="none"
+                                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path opacity="0.4"
+                                                                                              d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                                                              fill="currentColor"></path>
+                                                                                        <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                                                              fill="currentColor"></path>
+                                                                                        <path opacity="0.4"
+                                                                                              d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                                                              fill="currentColor"></path>
+                                                                                    </svg>
+                                                                                    Edit
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 fill="none" viewBox="0 0 14 14"
+                                                                                 height="30"
+                                                                                 width="30"
+                                                                                 id="Instagram--Streamline-Core">
+                                                                                <path id="Rectangle 2" fill="#8fbffa"
+                                                                                      d="M0.14 3.08C0.14 1.4563 1.4563 0.14 3.08 0.14H10.9201C12.5437 0.14 13.86 1.4563 13.86 3.08V10.92C13.86 12.5437 12.5437 13.86 10.9201 13.86H3.08C1.4563 13.86 0.14 12.5437 0.14 10.92V3.08Z"
+                                                                                      stroke-width="1"></path>
+                                                                                <path id="Union" fill="#2859c5"
+                                                                                      d="M11.6355 3.0374C11.6355 3.4318 11.3158 3.7516 10.9214 3.7516C10.527 3.7516 10.2072 3.4318 10.2072 3.0374C10.2072 2.643 10.527 2.3233 10.9214 2.3233C11.3158 2.3233 11.6355 2.643 11.6355 3.0374Z"
+                                                                                      stroke-width="1"></path>
+                                                                                <path id="Union_2" fill="#2859c5"
+                                                                                      fill-rule="evenodd"
+                                                                                      d="M10.9194 3.9311C11.387 3.9311 11.7662 3.5519 11.7662 3.0842C11.7662 2.6165 11.3871 2.2374 10.9194 2.2374C10.4517 2.2374 10.0726 2.6165 10.0726 3.0842C10.0726 3.5519 10.4517 3.9311 10.9194 3.9311ZM3.5223 6.9999C3.5223 5.0792 5.0794 3.5221 7.0001 3.5221S10.4779 5.0792 10.4779 6.9999S8.9208 10.4777 7.0001 10.4777S3.5223 8.9206 3.5223 6.9999Z"
+                                                                                      clip-rule="evenodd"
+                                                                                      stroke-width="1"></path>
+                                                                            </svg>
+                                                                            <div class="d-flex justify-content-between w-100">
+                                                                                <div>
+                                                                                    <h6>Instagram</h6>
+                                                                                    <input type="text"
+                                                                                           id="disabledTextInput"
+                                                                                           class="form-control"
+                                                                                           placeholder="Instagram"
+                                                                                           disabled>
+                                                                                </div>
+                                                                                <a class="d-flex align-items-start gap-2"
+                                                                                   href="javascript:void(0);">
+                                                                                    <svg class="icon-22" width="22"
+                                                                                         viewBox="0 0 24 24" fill="none"
+                                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path opacity="0.4"
+                                                                                              d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                                                              fill="currentColor"></path>
+                                                                                        <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                                                              fill="currentColor"></path>
+                                                                                        <path opacity="0.4"
+                                                                                              d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                                                              fill="currentColor"></path>
+                                                                                    </svg>
+                                                                                    Edit
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="d-flex align-items-center justify-content-between gap-3">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 fill="none" viewBox="0 0 14 14"
+                                                                                 height="30"
+                                                                                 width="30"
+                                                                                 id="Facebook-1--Streamline-Core">
+
+
+                                                                                <path id="Vector" fill="#8fbffa"
+                                                                                      d="M0 1.07692V12.9231c0 0.2856 0.113461 0.5595 0.315423 0.7615 0.201963 0.2019 0.475882 0.3154 0.761497 0.3154H12.9231c0.2856 0 0.5595 -0.1135 0.7615 -0.3154 0.2019 -0.202 0.3154 -0.4759 0.3154 -0.7615V1.07692c0 -0.285615 -0.1135 -0.559534 -0.3154 -0.761497C13.4826 0.113461 13.2087 0 12.9231 0H1.07692C0.791305 0 0.517386 0.113461 0.315423 0.315423 0.113461 0.517386 0 0.791305 0 1.07692Z"
+                                                                                      stroke-width="1"></path>
+                                                                                <path id="Vector_2" fill="#2859c5"
+                                                                                      d="M9.69233 8.89539V14H7.28002V8.89539h-0.68923c-0.08717 0.00143 -0.17375 -0.0145 -0.2547 -0.04688 -0.08095 -0.03237 -0.15465 -0.08053 -0.21679 -0.14168 -0.06215 -0.06114 -0.1115 -0.13404 -0.14519 -0.21445 -0.03368 -0.08042 -0.05103 -0.16673 -0.05101 -0.25391v-0.82923c-0.00002 -0.08718 0.01733 -0.1735 0.05101 -0.25391 0.03369 -0.08041 0.08304 -0.15331 0.14519 -0.21446 0.06214 -0.06114 0.13584 -0.1093 0.21679 -0.14167 0.08095 -0.03238 0.16753 -0.04831 0.2547 -0.04688h0.68923v-1.26c-0.0439 -0.35895 -0.00936 -0.72315 0.10124 -1.06744s0.29462 -0.66047 0.53934 -0.9267c0.24473 -0.26623 0.54433 -0.47616 0.87811 -0.6153 0.33378 -0.13913 0.69379 -0.20415 1.05516 -0.19056h1.23843c0.0877 0.00278 0.174 0.02282 0.254 0.05897 0.0799 0.03615 0.1519 0.08771 0.212 0.15172 0.06 0.06401 0.1068 0.13922 0.1377 0.22133 0.0309 0.08211 0.0454 0.16951 0.0425 0.25721v0.79692c0.0015 0.0864 -0.015 0.17216 -0.0484 0.25187 -0.0333 0.07971 -0.0829 0.15163 -0.1455 0.21121 -0.0582 0.06425 -0.1299 0.11491 -0.21 0.14841 -0.08 0.03349 -0.1664 0.049 -0.253 0.04543h-0.5277c-0.4093 0 -0.8185 0 -0.8185 0.90462v1.01231h0.7215c0.0863 0 0.1717 0.01699 0.2514 0.05 0.0797 0.03301 0.1522 0.0814 0.2132 0.1424s0.1093 0.13342 0.1424 0.21313c0.033 0.0797 0.05 0.16512 0.05 0.25139v0.82923c0 0.17423 -0.0692 0.34132 -0.1924 0.46451 -0.1232 0.1232 -0.2903 0.19241 -0.4646 0.19241h-0.76457Z"
+                                                                                      stroke-width="1"></path>
+                                                                            </svg>
+                                                                            <div class="d-flex justify-content-between w-100">
+                                                                                <div>
+                                                                                    <h6>Facebook</h6>
+                                                                                    <input type="text"
+                                                                                           id="disabledTextInput"
+                                                                                           class="form-control"
+                                                                                           placeholder="Facebook"
+                                                                                           disabled>
+                                                                                </div>
+                                                                                <a class="d-flex align-items-start gap-2"
+                                                                                   href="javascript:void(0);">
+                                                                                    <svg class="icon-22" width="22"
+                                                                                         viewBox="0 0 24 24" fill="none"
+                                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path opacity="0.4"
+                                                                                              d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                                                              fill="currentColor"></path>
+                                                                                        <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                                                              fill="currentColor"></path>
+                                                                                        <path opacity="0.4"
+                                                                                              d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                                                              fill="currentColor"></path>
+                                                                                    </svg>
+                                                                                    Edit
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-0">
+                                                            <div class="border-bottom pb-3 mb-3">
+                                                                <h4 class="mb-0">Passport ma'lumotlar</h4>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <h6>Tug'ilgan kun</h6>
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <p class="mb-0">{{ request.user.birth_date }}</p>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <h6>Tug'ilgan yil</h6>
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <p class="mb-0">{{ request.user.birth_date }}</p>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <h6>Jinsi</h6>
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <p class="mb-0">{{ request.user.gender }}</p>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-family" role="tabpanel">
+                                                        <div class="border-bottom mb-3 pb-3">
+                                                            <h3 class="mb-0">Havfsizlik ma'lumotlari</h3>
+
+                                                        </div>
+                                                        <form class="form-horizontal">
+                                                            <div class="form-group row">
+                                                                <label class="control-label col-sm-3 align-self-center mb-0"
+                                                                       for="email">Email:</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="email" class="form-control" id="email"
+                                                                           placeholder="Enter Your  email">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="control-label col-sm-3 align-self-center mb-0"
+                                                                       for="pwd1">Password:</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="password" class="form-control"
+                                                                           id="pwd1" placeholder="Enter Your password">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                           value="" id="remebercheck2">
+                                                                    <label class="form-check-label" for="remebercheck2">
+                                                                        Remember me
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-primary">Submit
+                                                                </button>
+                                                                <button type="submit" class="btn btn-danger">cancel
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-work-tab" role="tabpanel"
+                                                         aria-labelledby="v-pills-work-tab">
+                                                        <div class="border-bottom mb-3 pb-3">
+                                                            <h3 class="mb-0">Work</h3>
+                                                        </div>
+                                                        <ul class="suggestions-lists m-0 p-0">
+                                                            <li class="d-flex align-items-center gap-2 mb-4">
+                                                                <a href="javascript:void(0)" class="d-flex">
+                                                                    <svg class="icon-20" width="20" viewBox="0 0 24 24"
+                                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M12.0001 8.32739V15.6537"
+                                                                              stroke="currentColor" stroke-width="1.5"
+                                                                              stroke-linecap="round"
+                                                                              stroke-linejoin="round"></path>
+                                                                        <path d="M15.6668 11.9904H8.3335"
+                                                                              stroke="currentColor" stroke-width="1.5"
+                                                                              stroke-linecap="round"
+                                                                              stroke-linejoin="round"></path>
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                              d="M16.6857 2H7.31429C4.04762 2 2 4.31208 2 7.58516V16.4148C2 19.6879 4.0381 22 7.31429 22H16.6857C19.9619 22 22 19.6879 22 16.4148V7.58516C22 4.31208 19.9619 2 16.6857 2Z"
+                                                                              stroke="currentColor" stroke-width="1.5"
+                                                                              stroke-linecap="round"
+                                                                              stroke-linejoin="round"></path>
+                                                                    </svg>
+                                                                </a>
+                                                                <h6 class="mb-0 text-primary">Add Work Place</h6>
+                                                            </li>
+                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                                                                <img src="../social-app/assets/images/avatar/04.png"
+                                                                     alt="story-img" class="rounded-circle avatar-48"
+                                                                     loading="lazy">
+                                                                <div class="d-flex justify-content-between w-100">
+                                                                    <div>
+                                                                        <h6>Themeforest</h6>
+                                                                        <p class="mb-0">Web Designer</p>
+                                                                    </div>
+                                                                    <a class="d-flex align-items-start gap-2 mb-4"
+                                                                       href="javascript:void(0);">
+                                                                        <svg class="icon-22" width="22"
+                                                                             viewBox="0 0 24 24" fill="none"
+                                                                             xmlns="http://www.w3.org/2000/svg">
+                                                                            <path opacity="0.4"
+                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path opacity="0.4"
+                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                                                  fill="currentColor"></path>
+                                                                        </svg>
+                                                                        Edit
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                                                                <img src="../social-app/assets/images/avatar/05.png"
+                                                                     alt="story-img" class="rounded-circle avatar-48"
+                                                                     loading="lazy">
+                                                                <div class="d-flex justify-content-between w-100">
+                                                                    <div>
+                                                                        <h6>iqonicdesign</h6>
+                                                                        <p class="mb-0">Software Developer</p>
+                                                                    </div>
+                                                                    <a class="d-flex align-items-start gap-2"
+                                                                       href="javascript:void(0);">
+                                                                        <svg class="icon-22" width="22"
+                                                                             viewBox="0 0 24 24" fill="none"
+                                                                             xmlns="http://www.w3.org/2000/svg">
+                                                                            <path opacity="0.4"
+                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path opacity="0.4"
+                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                                                  fill="currentColor"></path>
+                                                                        </svg>
+                                                                        Edit
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                                                                <img src="../social-app/assets/images/avatar/06.png"
+                                                                     alt="story-img" class="rounded-circle avatar-48"
+                                                                     loading="lazy">
+                                                                <div class="d-flex justify-content-between w-100">
+                                                                    <div>
+                                                                        <h6>W3school</h6>
+                                                                        <p class="mb-0">Designer</p>
+                                                                    </div>
+                                                                    <a class="d-flex align-items-start gap-2"
+                                                                       href="javascript:void(0);">
+                                                                        <svg class="icon-22" width="22"
+                                                                             viewBox="0 0 24 24" fill="none"
+                                                                             xmlns="http://www.w3.org/2000/svg">
+                                                                            <path opacity="0.4"
+                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path opacity="0.4"
+                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                                                  fill="currentColor"></path>
+                                                                        </svg>
+                                                                        Edit
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="border-bottom mb-3 pb-3">
+                                                            <h4 class="mb-0">Professional Skills</h4>
+                                                        </div>
+                                                        <div class="d-flex align-items-center gap-2 mb-4">
+                                                            <a href="javascript:void(0)" class="d-flex">
+                                                                <svg class="icon-20" width="20" viewBox="0 0 24 24"
+                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M12.0001 8.32739V15.6537"
+                                                                          stroke="currentColor" stroke-width="1.5"
+                                                                          stroke-linecap="round"
+                                                                          stroke-linejoin="round"></path>
+                                                                    <path d="M15.6668 11.9904H8.3335"
+                                                                          stroke="currentColor" stroke-width="1.5"
+                                                                          stroke-linecap="round"
+                                                                          stroke-linejoin="round"></path>
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                          d="M16.6857 2H7.31429C4.04762 2 2 4.31208 2 7.58516V16.4148C2 19.6879 4.0381 22 7.31429 22H16.6857C19.9619 22 22 19.6879 22 16.4148V7.58516C22 4.31208 19.9619 2 16.6857 2Z"
+                                                                          stroke="currentColor" stroke-width="1.5"
+                                                                          stroke-linecap="round"
+                                                                          stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </a>
+                                                            <h6 class="mb-0 text-primary">Add Professional Skills</h6>
+                                                        </div>
+
+                                                        <div class="border-bottom mb-3 pb-3">
+                                                            <h4 class="mb-0">College</h4>
+                                                        </div>
+                                                        <ul class="suggestions-lists m-0 p-0">
+                                                            <li class="d-flex align-items-center gap-2 mb-4">
+                                                                <a href="javascript:void(0)" class="d-flex">
+                                                                    <svg class="icon-20" width="20" viewBox="0 0 24 24"
+                                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M12.0001 8.32739V15.6537"
+                                                                              stroke="currentColor" stroke-width="1.5"
+                                                                              stroke-linecap="round"
+                                                                              stroke-linejoin="round"></path>
+                                                                        <path d="M15.6668 11.9904H8.3335"
+                                                                              stroke="currentColor" stroke-width="1.5"
+                                                                              stroke-linecap="round"
+                                                                              stroke-linejoin="round"></path>
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                              d="M16.6857 2H7.31429C4.04762 2 2 4.31208 2 7.58516V16.4148C2 19.6879 4.0381 22 7.31429 22H16.6857C19.9619 22 22 19.6879 22 16.4148V7.58516C22 4.31208 19.9619 2 16.6857 2Z"
+                                                                              stroke="currentColor" stroke-width="1.5"
+                                                                              stroke-linecap="round"
+                                                                              stroke-linejoin="round"></path>
+                                                                    </svg>
+                                                                </a>
+                                                                <h6 class="mb-0 text-primary">Add College</h6>
+                                                            </li>
+                                                            <li class="d-flex align-items-center justify-content-between gap-3">
+                                                                <img src="../social-app/assets/images/avatar/07.png"
+                                                                     alt="story-img" class="rounded-circle avatar-48"
+                                                                     loading="lazy">
+                                                                <div class="d-flex justify-content-between w-100">
+                                                                    <div>
+                                                                        <h6>London School of Brick and Balls</h6>
+                                                                        <p class="mb-0">Greenwich, United Kingdom</p>
+                                                                    </div>
+                                                                    <a class="d-flex align-items-start gap-2"
+                                                                       href="javascript:void(0);">
+                                                                        <svg class="icon-22" width="22"
+                                                                             viewBox="0 0 24 24" fill="none"
+                                                                             xmlns="http://www.w3.org/2000/svg">
+                                                                            <path opacity="0.4"
+                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path opacity="0.4"
+                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                                                  fill="currentColor"></path>
+                                                                        </svg>
+                                                                        Edit
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-lived-tab" role="tabpanel"
+                                                         aria-labelledby="v-pills-lived-tab">
+                                                        <div class="border-bottom mb-3 pb-3">
+                                                            <h3 class="mb-0">Current City and Hometown</h3>
+                                                        </div>
+                                                        <ul class="suggestions-lists m-0 p-0">
+                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                                                                <img src="../social-app/assets/images/avatar/01.png"
+                                                                     alt="story-img" class="rounded-circle avatar-48"
+                                                                     loading="lazy">
+                                                                <div class="d-flex justify-content-between w-100">
+                                                                    <div>
+                                                                        <h6>Birmingham</h6>
+                                                                        <p class="mb-0">Liverpool</p>
+                                                                    </div>
+                                                                    <a class="d-flex align-items-start gap-2 mb-4"
+                                                                       href="javascript:void(0);">
+                                                                        <svg class="icon-22" width="22"
+                                                                             viewBox="0 0 24 24" fill="none"
+                                                                             xmlns="http://www.w3.org/2000/svg">
+                                                                            <path opacity="0.4"
+                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path opacity="0.4"
+                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                                                  fill="currentColor"></path>
+                                                                        </svg>
+                                                                        Edit
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                                                                <img src="../social-app/assets/images/avatar/02.png"
+                                                                     alt="story-img" class="rounded-circle avatar-48"
+                                                                     loading="lazy">
+                                                                <div class="d-flex justify-content-between w-100">
+                                                                    <div>
+                                                                        <h6>Manchester</h6>
+                                                                        <p class="mb-0">Newcastle</p>
+                                                                    </div>
+                                                                    <a class="d-flex align-items-start gap-2"
+                                                                       href="javascript:void(0);">
+                                                                        <svg class="icon-22" width="22"
+                                                                             viewBox="0 0 24 24" fill="none"
+                                                                             xmlns="http://www.w3.org/2000/svg">
+                                                                            <path opacity="0.4"
+                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
+                                                                                  fill="currentColor"></path>
+                                                                            <path opacity="0.4"
+                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
+                                                                                  fill="currentColor"></path>
+                                                                        </svg>
+                                                                        Edit
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="border-bottom mb-3 pb-3">
+                                                            <h4 class="mb-0">Other Places Lived</h4>
+                                                        </div>
+                                                        <div class="d-flex align-items-center gap-2 mb-4">
+                                                            <a href="javascript:void(0)" class="d-flex">
+                                                                <svg class="icon-20" width="20" viewBox="0 0 24 24"
+                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M12.0001 8.32739V15.6537"
+                                                                          stroke="currentColor" stroke-width="1.5"
+                                                                          stroke-linecap="round"
+                                                                          stroke-linejoin="round"></path>
+                                                                    <path d="M15.6668 11.9904H8.3335"
+                                                                          stroke="currentColor" stroke-width="1.5"
+                                                                          stroke-linecap="round"
+                                                                          stroke-linejoin="round"></path>
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                          d="M16.6857 2H7.31429C4.04762 2 2 4.31208 2 7.58516V16.4148C2 19.6879 4.0381 22 7.31429 22H16.6857C19.9619 22 22 19.6879 22 16.4148V7.58516C22 4.31208 19.9619 2 16.6857 2Z"
+                                                                          stroke="currentColor" stroke-width="1.5"
+                                                                          stroke-linecap="round"
+                                                                          stroke-linejoin="round"></path>
+                                                                </svg>
+                                                            </a>
+                                                            <h6 class="mb-0 text-primary">Add Place</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-details-tab" role="tabpanel"
+                                                         aria-labelledby="v-pills-details-tab">
+                                                        <div class="border-bottom mb-3 pb-3">
+                                                            <h3 class="mb-0">About You</h3>
+                                                        </div>
+                                                        <p class="mb-3">Hi, I’m Bni, I’m 26 and I work as a Web Designer
+                                                            for the iqonicdesign.</p>
+                                                        <div class="border-bottom mb-3 pb-3">
+                                                            <h4 class="mb-0">Other Name</h4>
+                                                        </div>
+                                                        <p class="mb-3">Bini Rock</p>
+                                                        <div class="border-bottom mb-3 pb-3">
+                                                            <h4 class="mb-0">Favorite Quotes</h4>
+                                                        </div>
+                                                        <p>Lorem Ipsum is simply dummy text of the printing and
+                                                            typesetting industry. Lorem Ipsum has been the industry's
+                                                            standard dummy text ever since the 1500s</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <svg class="iq-blog-special" width="50" viewBox="0 0 77 64" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.2"
-                                          d="M55.8434 27.4286C51.9073 27.4286 48.7913 26.1454 46.4952 23.5789C44.0351 21.1729 42.8051 17.9649 42.8051 13.9549C42.8051 9.62406 44.2811 6.17543 47.2332 3.60902C50.0213 1.203 53.8754 -5.60778e-06 58.7955 -6.03791e-06C64.5357 -6.53973e-06 69.0458 2.1654 72.3259 6.49622C75.442 10.8271 77 17.0025 77 25.0226C77 32.2406 75.36 38.8972 72.0799 44.9925C68.7998 51.2481 63.8797 57.5038 57.3195 63.7594C57.1555 63.9198 56.9095 64 56.5815 64C56.0895 64 55.6794 63.7594 55.3514 63.2782C55.0234 62.797 55.0234 62.396 55.3514 62.0752C63.3876 54.0551 67.4058 44.5915 67.4057 33.6842C67.4057 29.193 66.5857 25.9048 64.9457 23.8195C63.4696 26.2256 60.4356 27.4286 55.8434 27.4286ZM13.0383 27.4286C9.10224 27.4286 5.98615 26.1454 3.69009 23.5789C1.23003 21.1729 3.60488e-06 17.9649 3.25431e-06 13.9549C2.8757e-06 9.62406 1.47604 6.17543 4.42811 3.60902C7.21619 1.20301 11.0703 -1.86564e-06 15.9904 -2.29577e-06C21.7306 -2.79759e-06 26.2407 2.1654 29.5208 6.49623C32.6368 10.8271 34.1949 17.0025 34.1949 25.0226C34.1949 32.2406 32.5548 38.8972 29.2748 44.9925C25.9947 51.2481 21.0745 57.5038 14.5144 63.7594C14.3504 63.9198 14.1044 64 13.7764 64C13.2844 64 12.8743 63.7594 12.5463 63.2782C12.2183 62.797 12.2183 62.396 12.5463 62.0752C20.5825 54.0551 24.6006 44.5915 24.6006 33.6842C24.6006 29.193 23.7806 25.9048 22.1406 23.8195C20.6645 26.2256 17.6305 27.4286 13.0383 27.4286Z"
-                                          fill="currentcolor"></path>
-                                </svg>
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-end">
-                        <div class="me-4 d-flex align-items-center gap-2">
-                            <a href="#">
-                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                          d="M2 12.015C2 6.74712 6.21 2 12.02 2C17.7 2 22 6.65699 22 11.985C22 18.1642 16.96 22 12 22C10.36 22 8.54 21.5593 7.08 20.698C6.57 20.3876 6.14 20.1572 5.59 20.3375L3.57 20.9384C3.06 21.0986 2.6 20.698 2.75 20.1572L3.42 17.9139C3.53 17.6034 3.51 17.2729 3.35 17.0125C2.49 15.4301 2 13.6975 2 12.015ZM10.7 12.015C10.7 12.7261 11.27 13.2969 11.98 13.307C12.69 13.307 13.26 12.7261 13.26 12.025C13.26 11.314 12.69 10.7431 11.98 10.7431C11.28 10.7331 10.7 11.314 10.7 12.015ZM15.31 12.025C15.31 12.7261 15.88 13.307 16.59 13.307C17.3 13.307 17.87 12.7261 17.87 12.025C17.87 11.314 17.3 10.7431 16.59 10.7431C15.88 10.7431 15.31 11.314 15.31 12.025ZM7.37 13.307C6.67 13.307 6.09 12.7261 6.09 12.025C6.09 11.314 6.66 10.7431 7.37 10.7431C8.08 10.7431 8.65 11.314 8.65 12.025C8.65 12.7261 8.08 13.2969 7.37 13.307Z"
-                                          fill="currentColor"></path>
-                                </svg>
-                            </a>
-                            <span class="fs-6 ">Comment</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                            <a href="#">
-                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                          d="M15.85 2.50065C16.481 2.50065 17.111 2.58965 17.71 2.79065C21.401 3.99065 22.731 8.04065 21.62 11.5806C20.99 13.3896 19.96 15.0406 18.611 16.3896C16.68 18.2596 14.561 19.9196 12.28 21.3496L12.03 21.5006L11.77 21.3396C9.48102 19.9196 7.35002 18.2596 5.40102 16.3796C4.06102 15.0306 3.03002 13.3896 2.39002 11.5806C1.26002 8.04065 2.59002 3.99065 6.32102 2.76965C6.61102 2.66965 6.91002 2.59965 7.21002 2.56065H7.33002C7.61102 2.51965 7.89002 2.50065 8.17002 2.50065H8.28002C8.91002 2.51965 9.52002 2.62965 10.111 2.83065H10.17C10.21 2.84965 10.24 2.87065 10.26 2.88965C10.481 2.96065 10.69 3.04065 10.89 3.15065L11.27 3.32065C11.3618 3.36962 11.4649 3.44445 11.554 3.50912C11.6104 3.55009 11.6612 3.58699 11.7 3.61065C11.7163 3.62028 11.7329 3.62996 11.7496 3.63972C11.8354 3.68977 11.9247 3.74191 12 3.79965C13.111 2.95065 14.46 2.49065 15.85 2.50065ZM18.51 9.70065C18.92 9.68965 19.27 9.36065 19.3 8.93965V8.82065C19.33 7.41965 18.481 6.15065 17.19 5.66065C16.78 5.51965 16.33 5.74065 16.18 6.16065C16.04 6.58065 16.26 7.04065 16.68 7.18965C17.321 7.42965 17.75 8.06065 17.75 8.75965V8.79065C17.731 9.01965 17.8 9.24065 17.94 9.41065C18.08 9.58065 18.29 9.67965 18.51 9.70065Z"
-                                          fill="currentColor"></path>
-                                </svg>
-                            </a>
-                            <span class="fs-6 ">Like</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body card-thumbnail">
-                    <div class="bg-success rounded my-4">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-evenly align-items-center text-white">
-                                <svg class="iq-blog-special" width="50" viewBox="0 0 71 59" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.2"
-                                          d="M19.508 33.7143C23.1374 33.7143 26.0107 34.8972 28.1278 37.2632C30.3962 39.4812 31.5304 42.4386 31.5304 46.1353C31.5304 50.1278 30.1693 53.307 27.4473 55.6729C24.8765 57.891 21.3227 59 16.7859 59C11.4931 59 7.3344 57.0038 4.3099 53.0113C1.43664 49.0188 0 43.3258 0 35.9323C0 29.2782 1.51225 23.1416 4.53674 17.5226C7.56124 11.7556 12.098 5.98872 18.147 0.221802C18.2982 0.0739339 18.525 0 18.8275 0C19.2812 0 19.6592 0.221802 19.9617 0.665405C20.2641 1.10902 20.2641 1.47869 19.9617 1.77443C12.5517 9.16791 8.84665 17.8922 8.84665 27.9474C8.84665 32.0877 9.60277 35.119 11.115 37.0414C12.476 34.8233 15.2737 33.7143 19.508 33.7143ZM58.9776 33.7143C62.607 33.7143 65.4803 34.8972 67.5975 37.2632C69.8658 39.4812 71 42.4386 71 46.1353C71 50.1278 69.639 53.307 66.9169 55.6729C64.3461 57.891 60.7923 59 56.2556 59C50.9627 59 46.804 57.0038 43.7796 53.0113C40.9063 49.0188 39.4696 43.3258 39.4696 35.9323C39.4696 29.2782 40.9819 23.1416 44.0064 17.5226C47.0309 11.7556 51.5676 5.98872 57.6166 0.221802C57.7678 0.0739339 57.9947 0 58.2971 0C58.7508 0 59.1289 0.221802 59.4313 0.665405C59.7338 1.10902 59.7338 1.47869 59.4313 1.77443C52.0213 9.16791 48.3163 17.8922 48.3163 27.9474C48.3163 32.0877 49.0724 35.119 50.5847 37.0414C51.9457 34.8233 54.7433 33.7143 58.9776 33.7143Z"
-                                          fill="currentcolor"></path>
-                                </svg>
-                                <div>
-                                    <h4 class="text-white text-center mb-0">
-                                        <span>
-                                            “Yoshlar va biznesni qo‘llab-quvvatlash yili"
-                                        </span>
-                                        <br>
-                                    </h4>
-                                    <h6 class="text-white text-center mt-3">2024-yil nomi</h6>
+                    <div class="tab-pane fade" id="nav-menu-11" role="tabpanel" aria-labelledby="nav-menu-11-tab">
+                        <div class="row">
+                            <div class="cardmenu 1 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenu-title-white">
+                                    <p>Card Title</p>
                                 </div>
-                                <svg class="iq-blog-special" width="50" viewBox="0 0 77 64" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.2"
-                                          d="M55.8434 27.4286C51.9073 27.4286 48.7913 26.1454 46.4952 23.5789C44.0351 21.1729 42.8051 17.9649 42.8051 13.9549C42.8051 9.62406 44.2811 6.17543 47.2332 3.60902C50.0213 1.203 53.8754 -5.60778e-06 58.7955 -6.03791e-06C64.5357 -6.53973e-06 69.0458 2.1654 72.3259 6.49622C75.442 10.8271 77 17.0025 77 25.0226C77 32.2406 75.36 38.8972 72.0799 44.9925C68.7998 51.2481 63.8797 57.5038 57.3195 63.7594C57.1555 63.9198 56.9095 64 56.5815 64C56.0895 64 55.6794 63.7594 55.3514 63.2782C55.0234 62.797 55.0234 62.396 55.3514 62.0752C63.3876 54.0551 67.4058 44.5915 67.4057 33.6842C67.4057 29.193 66.5857 25.9048 64.9457 23.8195C63.4696 26.2256 60.4356 27.4286 55.8434 27.4286ZM13.0383 27.4286C9.10224 27.4286 5.98615 26.1454 3.69009 23.5789C1.23003 21.1729 3.60488e-06 17.9649 3.25431e-06 13.9549C2.8757e-06 9.62406 1.47604 6.17543 4.42811 3.60902C7.21619 1.20301 11.0703 -1.86564e-06 15.9904 -2.29577e-06C21.7306 -2.79759e-06 26.2407 2.1654 29.5208 6.49623C32.6368 10.8271 34.1949 17.0025 34.1949 25.0226C34.1949 32.2406 32.5548 38.8972 29.2748 44.9925C25.9947 51.2481 21.0745 57.5038 14.5144 63.7594C14.3504 63.9198 14.1044 64 13.7764 64C13.2844 64 12.8743 63.7594 12.5463 63.2782C12.2183 62.797 12.2183 62.396 12.5463 62.0752C20.5825 54.0551 24.6006 44.5915 24.6006 33.6842C24.6006 29.193 23.7806 25.9048 22.1406 23.8195C20.6645 26.2256 17.6305 27.4286 13.0383 27.4286Z"
-                                          fill="currentcolor"></path>
-                                </svg>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
+                            </div>
+                            <div class="cardmenu 2 col-3">
+                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
+                                <div class="cardmenu_title cardmenutitle-white">
+                                    <p>Card Title</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-end">
-                        <div class="me-4 d-flex align-items-center gap-2">
-                            <a href="#">
-                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                          d="M2 12.015C2 6.74712 6.21 2 12.02 2C17.7 2 22 6.65699 22 11.985C22 18.1642 16.96 22 12 22C10.36 22 8.54 21.5593 7.08 20.698C6.57 20.3876 6.14 20.1572 5.59 20.3375L3.57 20.9384C3.06 21.0986 2.6 20.698 2.75 20.1572L3.42 17.9139C3.53 17.6034 3.51 17.2729 3.35 17.0125C2.49 15.4301 2 13.6975 2 12.015ZM10.7 12.015C10.7 12.7261 11.27 13.2969 11.98 13.307C12.69 13.307 13.26 12.7261 13.26 12.025C13.26 11.314 12.69 10.7431 11.98 10.7431C11.28 10.7331 10.7 11.314 10.7 12.015ZM15.31 12.025C15.31 12.7261 15.88 13.307 16.59 13.307C17.3 13.307 17.87 12.7261 17.87 12.025C17.87 11.314 17.3 10.7431 16.59 10.7431C15.88 10.7431 15.31 11.314 15.31 12.025ZM7.37 13.307C6.67 13.307 6.09 12.7261 6.09 12.025C6.09 11.314 6.66 10.7431 7.37 10.7431C8.08 10.7431 8.65 11.314 8.65 12.025C8.65 12.7261 8.08 13.2969 7.37 13.307Z"
-                                          fill="currentColor"></path>
-                                </svg>
-                            </a>
-                            <span class="fs-6 ">Comment</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                            <a href="#">
-                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                          d="M15.85 2.50065C16.481 2.50065 17.111 2.58965 17.71 2.79065C21.401 3.99065 22.731 8.04065 21.62 11.5806C20.99 13.3896 19.96 15.0406 18.611 16.3896C16.68 18.2596 14.561 19.9196 12.28 21.3496L12.03 21.5006L11.77 21.3396C9.48102 19.9196 7.35002 18.2596 5.40102 16.3796C4.06102 15.0306 3.03002 13.3896 2.39002 11.5806C1.26002 8.04065 2.59002 3.99065 6.32102 2.76965C6.61102 2.66965 6.91002 2.59965 7.21002 2.56065H7.33002C7.61102 2.51965 7.89002 2.50065 8.17002 2.50065H8.28002C8.91002 2.51965 9.52002 2.62965 10.111 2.83065H10.17C10.21 2.84965 10.24 2.87065 10.26 2.88965C10.481 2.96065 10.69 3.04065 10.89 3.15065L11.27 3.32065C11.3618 3.36962 11.4649 3.44445 11.554 3.50912C11.6104 3.55009 11.6612 3.58699 11.7 3.61065C11.7163 3.62028 11.7329 3.62996 11.7496 3.63972C11.8354 3.68977 11.9247 3.74191 12 3.79965C13.111 2.95065 14.46 2.49065 15.85 2.50065ZM18.51 9.70065C18.92 9.68965 19.27 9.36065 19.3 8.93965V8.82065C19.33 7.41965 18.481 6.15065 17.19 5.66065C16.78 5.51965 16.33 5.74065 16.18 6.16065C16.04 6.58065 16.26 7.04065 16.68 7.18965C17.321 7.42965 17.75 8.06065 17.75 8.75965V8.79065C17.731 9.01965 17.8 9.24065 17.94 9.41065C18.08 9.58065 18.29 9.67965 18.51 9.70065Z"
-                                          fill="currentColor"></path>
-                                </svg>
-                            </a>
-                            <span class="fs-6 ">Like</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body card-thumbnail">
-                    <div class="bg-info rounded my-4">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-evenly align-items-center text-white">
-                                <svg class="iq-blog-special" width="50" viewBox="0 0 71 59" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.2"
-                                          d="M19.508 33.7143C23.1374 33.7143 26.0107 34.8972 28.1278 37.2632C30.3962 39.4812 31.5304 42.4386 31.5304 46.1353C31.5304 50.1278 30.1693 53.307 27.4473 55.6729C24.8765 57.891 21.3227 59 16.7859 59C11.4931 59 7.3344 57.0038 4.3099 53.0113C1.43664 49.0188 0 43.3258 0 35.9323C0 29.2782 1.51225 23.1416 4.53674 17.5226C7.56124 11.7556 12.098 5.98872 18.147 0.221802C18.2982 0.0739339 18.525 0 18.8275 0C19.2812 0 19.6592 0.221802 19.9617 0.665405C20.2641 1.10902 20.2641 1.47869 19.9617 1.77443C12.5517 9.16791 8.84665 17.8922 8.84665 27.9474C8.84665 32.0877 9.60277 35.119 11.115 37.0414C12.476 34.8233 15.2737 33.7143 19.508 33.7143ZM58.9776 33.7143C62.607 33.7143 65.4803 34.8972 67.5975 37.2632C69.8658 39.4812 71 42.4386 71 46.1353C71 50.1278 69.639 53.307 66.9169 55.6729C64.3461 57.891 60.7923 59 56.2556 59C50.9627 59 46.804 57.0038 43.7796 53.0113C40.9063 49.0188 39.4696 43.3258 39.4696 35.9323C39.4696 29.2782 40.9819 23.1416 44.0064 17.5226C47.0309 11.7556 51.5676 5.98872 57.6166 0.221802C57.7678 0.0739339 57.9947 0 58.2971 0C58.7508 0 59.1289 0.221802 59.4313 0.665405C59.7338 1.10902 59.7338 1.47869 59.4313 1.77443C52.0213 9.16791 48.3163 17.8922 48.3163 27.9474C48.3163 32.0877 49.0724 35.119 50.5847 37.0414C51.9457 34.8233 54.7433 33.7143 58.9776 33.7143Z"
-                                          fill="currentcolor"></path>
-                                </svg>
-                                <div>
-                                    <h4 class="text-white text-center mb-0">
-                                        <span>
-                                            “Kongratbay Sharipov"
-                                        </span>
-                                        <br>
-                                    </h4>
-                                    <h6 class="text-white text-center mt-3">Oliy ta'lim va'ziri</h6>
-                                </div>
-                                <svg class="iq-blog-special" width="50" viewBox="0 0 77 64" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.2"
-                                          d="M55.8434 27.4286C51.9073 27.4286 48.7913 26.1454 46.4952 23.5789C44.0351 21.1729 42.8051 17.9649 42.8051 13.9549C42.8051 9.62406 44.2811 6.17543 47.2332 3.60902C50.0213 1.203 53.8754 -5.60778e-06 58.7955 -6.03791e-06C64.5357 -6.53973e-06 69.0458 2.1654 72.3259 6.49622C75.442 10.8271 77 17.0025 77 25.0226C77 32.2406 75.36 38.8972 72.0799 44.9925C68.7998 51.2481 63.8797 57.5038 57.3195 63.7594C57.1555 63.9198 56.9095 64 56.5815 64C56.0895 64 55.6794 63.7594 55.3514 63.2782C55.0234 62.797 55.0234 62.396 55.3514 62.0752C63.3876 54.0551 67.4058 44.5915 67.4057 33.6842C67.4057 29.193 66.5857 25.9048 64.9457 23.8195C63.4696 26.2256 60.4356 27.4286 55.8434 27.4286ZM13.0383 27.4286C9.10224 27.4286 5.98615 26.1454 3.69009 23.5789C1.23003 21.1729 3.60488e-06 17.9649 3.25431e-06 13.9549C2.8757e-06 9.62406 1.47604 6.17543 4.42811 3.60902C7.21619 1.20301 11.0703 -1.86564e-06 15.9904 -2.29577e-06C21.7306 -2.79759e-06 26.2407 2.1654 29.5208 6.49623C32.6368 10.8271 34.1949 17.0025 34.1949 25.0226C34.1949 32.2406 32.5548 38.8972 29.2748 44.9925C25.9947 51.2481 21.0745 57.5038 14.5144 63.7594C14.3504 63.9198 14.1044 64 13.7764 64C13.2844 64 12.8743 63.7594 12.5463 63.2782C12.2183 62.797 12.2183 62.396 12.5463 62.0752C20.5825 54.0551 24.6006 44.5915 24.6006 33.6842C24.6006 29.193 23.7806 25.9048 22.1406 23.8195C20.6645 26.2256 17.6305 27.4286 13.0383 27.4286Z"
-                                          fill="currentcolor"></path>
-                                </svg>
+
+                    <div class="tab-pane fade" id="nav-univer-11" role="tabpanel" aria-labelledby="nav-univer-11-tab">
+                        <div>
+                            <div class="card">
+                                asdasd
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-end">
-                        <div class="me-4 d-flex align-items-center gap-2">
-                            <a href="#">
-                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                          d="M2 12.015C2 6.74712 6.21 2 12.02 2C17.7 2 22 6.65699 22 11.985C22 18.1642 16.96 22 12 22C10.36 22 8.54 21.5593 7.08 20.698C6.57 20.3876 6.14 20.1572 5.59 20.3375L3.57 20.9384C3.06 21.0986 2.6 20.698 2.75 20.1572L3.42 17.9139C3.53 17.6034 3.51 17.2729 3.35 17.0125C2.49 15.4301 2 13.6975 2 12.015ZM10.7 12.015C10.7 12.7261 11.27 13.2969 11.98 13.307C12.69 13.307 13.26 12.7261 13.26 12.025C13.26 11.314 12.69 10.7431 11.98 10.7431C11.28 10.7331 10.7 11.314 10.7 12.015ZM15.31 12.025C15.31 12.7261 15.88 13.307 16.59 13.307C17.3 13.307 17.87 12.7261 17.87 12.025C17.87 11.314 17.3 10.7431 16.59 10.7431C15.88 10.7431 15.31 11.314 15.31 12.025ZM7.37 13.307C6.67 13.307 6.09 12.7261 6.09 12.025C6.09 11.314 6.66 10.7431 7.37 10.7431C8.08 10.7431 8.65 11.314 8.65 12.025C8.65 12.7261 8.08 13.2969 7.37 13.307Z"
-                                          fill="currentColor"></path>
-                                </svg>
-                            </a>
-                            <span class="fs-6 ">Comment</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                            <a href="#">
-                                <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                          d="M15.85 2.50065C16.481 2.50065 17.111 2.58965 17.71 2.79065C21.401 3.99065 22.731 8.04065 21.62 11.5806C20.99 13.3896 19.96 15.0406 18.611 16.3896C16.68 18.2596 14.561 19.9196 12.28 21.3496L12.03 21.5006L11.77 21.3396C9.48102 19.9196 7.35002 18.2596 5.40102 16.3796C4.06102 15.0306 3.03002 13.3896 2.39002 11.5806C1.26002 8.04065 2.59002 3.99065 6.32102 2.76965C6.61102 2.66965 6.91002 2.59965 7.21002 2.56065H7.33002C7.61102 2.51965 7.89002 2.50065 8.17002 2.50065H8.28002C8.91002 2.51965 9.52002 2.62965 10.111 2.83065H10.17C10.21 2.84965 10.24 2.87065 10.26 2.88965C10.481 2.96065 10.69 3.04065 10.89 3.15065L11.27 3.32065C11.3618 3.36962 11.4649 3.44445 11.554 3.50912C11.6104 3.55009 11.6612 3.58699 11.7 3.61065C11.7163 3.62028 11.7329 3.62996 11.7496 3.63972C11.8354 3.68977 11.9247 3.74191 12 3.79965C13.111 2.95065 14.46 2.49065 15.85 2.50065ZM18.51 9.70065C18.92 9.68965 19.27 9.36065 19.3 8.93965V8.82065C19.33 7.41965 18.481 6.15065 17.19 5.66065C16.78 5.51965 16.33 5.74065 16.18 6.16065C16.04 6.58065 16.26 7.04065 16.68 7.18965C17.321 7.42965 17.75 8.06065 17.75 8.75965V8.79065C17.731 9.01965 17.8 9.24065 17.94 9.41065C18.08 9.58065 18.29 9.67965 18.51 9.70065Z"
-                                          fill="currentColor"></path>
-                                </svg>
-                            </a>
-                            <span class="fs-6 ">Like</span>
+                    <div class="tab-pane fade" id="nav-library-11" role="tabpanel" aria-labelledby="nav-library-11-tab">
+                        <p><strong>This is some placeholder content the Contact tab's associated
+                            content.</strong></p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-exam-11" role="tabpanel" aria-labelledby="nav-exam-11-tab">
+                        <p><strong>This is some placeholder content the Contact tab's associated
+                            content.</strong></p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-edu-11" role="tabpanel" aria-labelledby="nav-edu-11-tab">
+                        <p><strong>This is some placeholder content the Contact tab's associated
+                            content.</strong></p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-kpi-11" role="tabpanel" aria-labelledby="nav-kpi-11-tab">
+                        <p><strong>This is some placeholder content the Contact tab's associated
+                            content.</strong></p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact-11" role="tabpanel" aria-labelledby="nav-contact-11-tab">
+                        <p><strong>This is some placeholder content the Contact tab's associated
+                            content.</strong></p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-social-11" role="tabpanel" aria-labelledby="nav-social-11-tab">
+                        <div class="cards">
+                            <h1>
+                                Ijtimoiy tarmoqlar</h1>
+                            <div class="services row">
+                                <div class="content content-1 col-lg-4">
+                                    <div class="fab fa-facebook">
+                                    </div>
+                                    <h2>
+                                        Facebook</h2>
+                                    <p>
+                                        Facebook is a social networking site that easy to connect with family and
+                                        friends and created in 2004. </p>
+                                    <a href="#">Read More</a>
+                                </div>
+                                <div class="content content-2 col-lg-4">
+                                    <div class="fab fa-whatsapp">
+                                    </div>
+                                    <h2>
+                                        WhatsApp</h2>
+                                    <p>
+                                        WhatsApp is a messaging app that lets users text, chat, and share media,
+                                        including voice messages and video</p>
+                                    <a href="#">Read More</a>
+                                </div>
+                                <div class="content content-3 col-lg-4">
+                                    <div class="fab fa-youtube">
+                                    </div>
+                                    <h2>
+                                        Youtube</h2>
+                                    <p>
+                                        YouTube is a free video sharing site that easy to watch online and create and
+                                        upload your own videos.</p>
+                                    <a href="#">Read More</a>
+                                </div>
+                                <div class="content content-1 col-lg-4">
+                                    <div class="fab fa-facebook">
+                                    </div>
+                                    <h2>
+                                        Facebook</h2>
+                                    <p>
+                                        Facebook is a social networking site that easy to connect with family and
+                                        friends and created in 2004. </p>
+                                    <a href="#">Read More</a>
+                                </div>
+                                <div class="content content-2 col-lg-4">
+                                    <div class="fab fa-whatsapp">
+                                    </div>
+                                    <h2>
+                                        WhatsApp</h2>
+                                    <p>
+                                        WhatsApp is a messaging app that lets users text, chat, and share media,
+                                        including voice messages and video</p>
+                                    <a href="#">Read More</a>
+                                </div>
+                                <div class="content content-3 col-lg-4">
+                                    <div class="fab fa-youtube">
+                                    </div>
+                                    <h2>
+                                        Youtube</h2>
+                                    <p>
+                                        YouTube is a free video sharing site that easy to watch online and create and
+                                        upload your own videos.</p>
+                                    <a href="#">Read More</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <!--/ Content -->
 {% endblock body %}
 {% block script %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {#    watch#}
     <script>
-        $(document).ready(function () {
-            $.ajax({
-                url: "weather",
-                method: "GET",
-                success: function (data) {
-                    // Ob havo ma'lumotlarini HTML elementlariga joylash
-                    $("#temperature").text("" + data.temperature + "°C");
-                    // Ikonani joylash uchun SVG kodini qo'shib, misol uchun:
-                    $("#weather-icon").html('<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="35" viewBox="0 0 14 14" id="Sun-Cloud--Streamline-Core"><desc>Sun Cloud Streamline Icon: https://streamlinehq.com</desc><g id="Sun-Cloud--Streamline-Core"><path id="Ellipse 636" fill="#2859C5" d="M8.004 2.998a2.998 2.998 0 1 0 5.996 0 2.998 2.998 0 1 0 -5.996 0" stroke-width="1"></path><path id="Vector" fill="#8FBFFA" d="M4.5 5a4.5 4.5 0 0 0 0 9h6a2.5 2.5 0 0 0 0 -5 2.45 2.45 0 0 0 -1.17 0.3 0.24 0.24 0 0 1 -0.23 0 0.25 0.25 0 0 1 -0.14 -0.19A4.45 4.45 0 0 0 4.5 5Z" stroke-width="1"></path></g></svg>');
-                },
-                error: function (xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
-            });
-        });
+
     </script>
+    {#    weather#}
+    {#    <script>#}
+    {#        $(document).ready(function () {#}
+    {#            $.ajax({#}
+    {#                url: "weather",#}
+    {#                method: "GET",#}
+    {#                success: function (data) {#}
+    {#                    // Ob havo ma'lumotlarini HTML elementlariga joylash#}
+    {#                    $("#temperature").text("" + data.temperature + "°C");#}
+    {#                    // Ikonani joylash uchun SVG kodini qo'shib, misol uchun:#}
+    {#                    $("#weather-icon").html('<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="35" viewBox="0 0 14 14" id="Sun-Cloud--Streamline-Core"><desc>Sun Cloud Streamline Icon: https://streamlinehq.com</desc><g id="Sun-Cloud--Streamline-Core"><path id="Ellipse 636" fill="#2859C5" d="M8.004 2.998a2.998 2.998 0 1 0 5.996 0 2.998 2.998 0 1 0 -5.996 0" stroke-width="1"></path><path id="Vector" fill="#8FBFFA" d="M4.5 5a4.5 4.5 0 0 0 0 9h6a2.5 2.5 0 0 0 0 -5 2.45 2.45 0 0 0 -1.17 0.3 0.24 0.24 0 0 1 -0.23 0 0.25 0.25 0 0 1 -0.14 -0.19A4.45 4.45 0 0 0 4.5 5Z" stroke-width="1"></path></g></svg>');#}
+    {#                },#}
+    {#                error: function (xhr, status, error) {#}
+    {#                    console.error(xhr.responseText);#}
+    {#                }#}
+    {#            });#}
+    {#        });#}
+    {#    </script>#}
     <!-- Library Bundle Script -->
     <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
     <!-- Plugin Scripts -->
     <!-- Flatpickr Script -->
     <script src="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.js' %}"></script>
     <script src="{% static 'assets/js/plugins/flatpickr.js' %}" defer></script>
+    <!-- NoUI Slider Script -->
+    <script src="{% static 'assets/vendor/noUiSilder/script/nouislider.min.js' %}"></script>
     <!-- Slider-tab Script -->
     <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
     <script src="{% static 'assets/vendor/swiperSlider/swiper-bundle.min.js' %}s"></script>
@@ -702,5 +1110,298 @@
     <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
     <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
     <script src="{% static 'assets/js/blog.js' %}" defer=""></script>
+    <div class="flatpickr-calendar animate" tabindex="-1">
+        <div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg version="1.1"
+                                                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                                                 viewBox="0 0 17 17"><g></g><path
+                d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span>
+            <div class="flatpickr-month">
+                <div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month"
+                                                             tabindex="-1">
+                    <option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option>
+                    <option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option>
+                    <option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option>
+                    <option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option>
+                    <option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option>
+                    <option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option>
+                    <option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option>
+                    <option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option>
+                    <option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option>
+                    <option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option>
+                </select>
+                    <div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1"
+                                                        aria-label="Year" min="2024"><span class="arrowUp"></span><span
+                            class="arrowDown"></span></div>
+                </div>
+            </div>
+            <span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path
+                    d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span>
+        </div>
+        <div class="flatpickr-innerContainer">
+            <div class="flatpickr-rContainer">
+                <div class="flatpickr-weekdays">
+                    <div class="flatpickr-weekdaycontainer">
+      <span class="flatpickr-weekday">
+        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span
+                            class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span
+                            class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
+      </span>
+                    </div>
+                </div>
+                <div class="flatpickr-days" tabindex="-1">
+                    <div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled"
+                                                    aria-label="February 25, 2024">25</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 26, 2024">26</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 27, 2024">27</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 28, 2024">28</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 29, 2024">29</span><span class="flatpickr-day flatpickr-disabled"
+                                                                          aria-label="March 1, 2024">1</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 2, 2024">2</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 3, 2024">3</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 4, 2024">4</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 5, 2024">5</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 6, 2024">6</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 7, 2024">7</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 8, 2024">8</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 9, 2024">9</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 10, 2024">10</span><span
+                            class="flatpickr-day today" aria-label="March 11, 2024" aria-current="date"
+                            tabindex="-1">11</span><span class="flatpickr-day " aria-label="March 12, 2024"
+                                                         tabindex="-1">12</span><span class="flatpickr-day "
+                                                                                      aria-label="March 13, 2024"
+                                                                                      tabindex="-1">13</span><span
+                            class="flatpickr-day " aria-label="March 14, 2024" tabindex="-1">14</span><span
+                            class="flatpickr-day " aria-label="March 15, 2024" tabindex="-1">15</span><span
+                            class="flatpickr-day " aria-label="March 16, 2024" tabindex="-1">16</span><span
+                            class="flatpickr-day " aria-label="March 17, 2024" tabindex="-1">17</span><span
+                            class="flatpickr-day " aria-label="March 18, 2024" tabindex="-1">18</span><span
+                            class="flatpickr-day " aria-label="March 19, 2024" tabindex="-1">19</span><span
+                            class="flatpickr-day " aria-label="March 20, 2024" tabindex="-1">20</span><span
+                            class="flatpickr-day " aria-label="March 21, 2024" tabindex="-1">21</span><span
+                            class="flatpickr-day " aria-label="March 22, 2024" tabindex="-1">22</span><span
+                            class="flatpickr-day " aria-label="March 23, 2024" tabindex="-1">23</span><span
+                            class="flatpickr-day " aria-label="March 24, 2024" tabindex="-1">24</span><span
+                            class="flatpickr-day " aria-label="March 25, 2024" tabindex="-1">25</span><span
+                            class="flatpickr-day " aria-label="March 26, 2024" tabindex="-1">26</span><span
+                            class="flatpickr-day " aria-label="March 27, 2024" tabindex="-1">27</span><span
+                            class="flatpickr-day " aria-label="March 28, 2024" tabindex="-1">28</span><span
+                            class="flatpickr-day " aria-label="March 29, 2024" tabindex="-1">29</span><span
+                            class="flatpickr-day " aria-label="March 30, 2024" tabindex="-1">30</span><span
+                            class="flatpickr-day " aria-label="March 31, 2024" tabindex="-1">31</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 1, 2024" tabindex="-1">1</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 2, 2024" tabindex="-1">2</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 3, 2024" tabindex="-1">3</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 4, 2024" tabindex="-1">4</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 5, 2024" tabindex="-1">5</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 6, 2024" tabindex="-1">6</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flatpickr-calendar rangeMode animate" tabindex="-1">
+        <div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg version="1.1"
+                                                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                                                 viewBox="0 0 17 17"><g></g><path
+                d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span>
+            <div class="flatpickr-month">
+                <div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month"
+                                                             tabindex="-1">
+                    <option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option>
+                    <option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option>
+                    <option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option>
+                    <option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option>
+                    <option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option>
+                    <option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option>
+                    <option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option>
+                    <option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option>
+                    <option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option>
+                    <option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option>
+                </select>
+                    <div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1"
+                                                        aria-label="Year" min="2024"><span class="arrowUp"></span><span
+                            class="arrowDown"></span></div>
+                </div>
+            </div>
+            <span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path
+                    d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span>
+        </div>
+        <div class="flatpickr-innerContainer">
+            <div class="flatpickr-rContainer">
+                <div class="flatpickr-weekdays">
+                    <div class="flatpickr-weekdaycontainer">
+      <span class="flatpickr-weekday">
+        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span
+                            class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span
+                            class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
+      </span>
+                    </div>
+                </div>
+                <div class="flatpickr-days" tabindex="-1">
+                    <div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled"
+                                                    aria-label="February 25, 2024">25</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 26, 2024">26</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 27, 2024">27</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 28, 2024">28</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 29, 2024">29</span><span class="flatpickr-day flatpickr-disabled"
+                                                                          aria-label="March 1, 2024">1</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 2, 2024">2</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 3, 2024">3</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 4, 2024">4</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 5, 2024">5</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 6, 2024">6</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 7, 2024">7</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 8, 2024">8</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 9, 2024">9</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 10, 2024">10</span><span
+                            class="flatpickr-day today" aria-label="March 11, 2024" aria-current="date"
+                            tabindex="-1">11</span><span class="flatpickr-day " aria-label="March 12, 2024"
+                                                         tabindex="-1">12</span><span class="flatpickr-day "
+                                                                                      aria-label="March 13, 2024"
+                                                                                      tabindex="-1">13</span><span
+                            class="flatpickr-day " aria-label="March 14, 2024" tabindex="-1">14</span><span
+                            class="flatpickr-day " aria-label="March 15, 2024" tabindex="-1">15</span><span
+                            class="flatpickr-day " aria-label="March 16, 2024" tabindex="-1">16</span><span
+                            class="flatpickr-day " aria-label="March 17, 2024" tabindex="-1">17</span><span
+                            class="flatpickr-day " aria-label="March 18, 2024" tabindex="-1">18</span><span
+                            class="flatpickr-day " aria-label="March 19, 2024" tabindex="-1">19</span><span
+                            class="flatpickr-day " aria-label="March 20, 2024" tabindex="-1">20</span><span
+                            class="flatpickr-day " aria-label="March 21, 2024" tabindex="-1">21</span><span
+                            class="flatpickr-day " aria-label="March 22, 2024" tabindex="-1">22</span><span
+                            class="flatpickr-day " aria-label="March 23, 2024" tabindex="-1">23</span><span
+                            class="flatpickr-day " aria-label="March 24, 2024" tabindex="-1">24</span><span
+                            class="flatpickr-day " aria-label="March 25, 2024" tabindex="-1">25</span><span
+                            class="flatpickr-day " aria-label="March 26, 2024" tabindex="-1">26</span><span
+                            class="flatpickr-day " aria-label="March 27, 2024" tabindex="-1">27</span><span
+                            class="flatpickr-day " aria-label="March 28, 2024" tabindex="-1">28</span><span
+                            class="flatpickr-day " aria-label="March 29, 2024" tabindex="-1">29</span><span
+                            class="flatpickr-day " aria-label="March 30, 2024" tabindex="-1">30</span><span
+                            class="flatpickr-day " aria-label="March 31, 2024" tabindex="-1">31</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 1, 2024" tabindex="-1">1</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 2, 2024" tabindex="-1">2</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 3, 2024" tabindex="-1">3</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 4, 2024" tabindex="-1">4</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 5, 2024" tabindex="-1">5</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 6, 2024" tabindex="-1">6</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flatpickr-calendar animate" tabindex="-1">
+        <div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg version="1.1"
+                                                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                                                 viewBox="0 0 17 17"><g></g><path
+                d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span>
+            <div class="flatpickr-month">
+                <div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month"
+                                                             tabindex="-1">
+                    <option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option>
+                    <option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option>
+                    <option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option>
+                    <option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option>
+                    <option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option>
+                    <option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option>
+                    <option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option>
+                    <option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option>
+                    <option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option>
+                    <option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option>
+                </select>
+                    <div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1"
+                                                        aria-label="Year" min="2024"><span class="arrowUp"></span><span
+                            class="arrowDown"></span></div>
+                </div>
+            </div>
+            <span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path
+                    d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span>
+        </div>
+        <div class="flatpickr-innerContainer">
+            <div class="flatpickr-rContainer">
+                <div class="flatpickr-weekdays">
+                    <div class="flatpickr-weekdaycontainer">
+      <span class="flatpickr-weekday">
+        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span
+                            class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span
+                            class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
+      </span>
+                    </div>
+                </div>
+                <div class="flatpickr-days" tabindex="-1">
+                    <div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled"
+                                                    aria-label="February 25, 2024">25</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 26, 2024">26</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 27, 2024">27</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 28, 2024">28</span><span
+                            class="flatpickr-day prevMonthDay flatpickr-disabled"
+                            aria-label="February 29, 2024">29</span><span class="flatpickr-day flatpickr-disabled"
+                                                                          aria-label="March 1, 2024">1</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 2, 2024">2</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 3, 2024">3</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 4, 2024">4</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 5, 2024">5</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 6, 2024">6</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 7, 2024">7</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 8, 2024">8</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 9, 2024">9</span><span
+                            class="flatpickr-day flatpickr-disabled" aria-label="March 10, 2024">10</span><span
+                            class="flatpickr-day today" aria-label="March 11, 2024" aria-current="date"
+                            tabindex="-1">11</span><span class="flatpickr-day " aria-label="March 12, 2024"
+                                                         tabindex="-1">12</span><span class="flatpickr-day "
+                                                                                      aria-label="March 13, 2024"
+                                                                                      tabindex="-1">13</span><span
+                            class="flatpickr-day " aria-label="March 14, 2024" tabindex="-1">14</span><span
+                            class="flatpickr-day " aria-label="March 15, 2024" tabindex="-1">15</span><span
+                            class="flatpickr-day " aria-label="March 16, 2024" tabindex="-1">16</span><span
+                            class="flatpickr-day " aria-label="March 17, 2024" tabindex="-1">17</span><span
+                            class="flatpickr-day " aria-label="March 18, 2024" tabindex="-1">18</span><span
+                            class="flatpickr-day " aria-label="March 19, 2024" tabindex="-1">19</span><span
+                            class="flatpickr-day " aria-label="March 20, 2024" tabindex="-1">20</span><span
+                            class="flatpickr-day " aria-label="March 21, 2024" tabindex="-1">21</span><span
+                            class="flatpickr-day " aria-label="March 22, 2024" tabindex="-1">22</span><span
+                            class="flatpickr-day " aria-label="March 23, 2024" tabindex="-1">23</span><span
+                            class="flatpickr-day " aria-label="March 24, 2024" tabindex="-1">24</span><span
+                            class="flatpickr-day " aria-label="March 25, 2024" tabindex="-1">25</span><span
+                            class="flatpickr-day " aria-label="March 26, 2024" tabindex="-1">26</span><span
+                            class="flatpickr-day " aria-label="March 27, 2024" tabindex="-1">27</span><span
+                            class="flatpickr-day " aria-label="March 28, 2024" tabindex="-1">28</span><span
+                            class="flatpickr-day " aria-label="March 29, 2024" tabindex="-1">29</span><span
+                            class="flatpickr-day " aria-label="March 30, 2024" tabindex="-1">30</span><span
+                            class="flatpickr-day " aria-label="March 31, 2024" tabindex="-1">31</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 1, 2024" tabindex="-1">1</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 2, 2024" tabindex="-1">2</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 3, 2024" tabindex="-1">3</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 4, 2024" tabindex="-1">4</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 5, 2024" tabindex="-1">5</span><span
+                            class="flatpickr-day nextMonthDay" aria-label="April 6, 2024" tabindex="-1">6</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flatpickr-calendar hasTime noCalendar animate" tabindex="-1">
+        <div class="flatpickr-time" tabindex="-1">
+            <div class="numInputWrapper"><input class="numInput flatpickr-hour" type="number" aria-label="Hour"
+                                                tabindex="-1" step="1" min="1" max="12" maxlength="2"><span
+                    class="arrowUp"></span><span class="arrowDown"></span></div>
+            <span class="flatpickr-time-separator">:</span>
+            <div class="numInputWrapper"><input class="numInput flatpickr-minute" type="number" aria-label="Minute"
+                                                tabindex="-1" step="5" min="0" max="59" maxlength="2"><span
+                    class="arrowUp"></span><span class="arrowDown"></span></div>
+            <span class="flatpickr-am-pm" title="Click to toggle" tabindex="-1">PM</span></div>
+    </div>
 
 {% endblock script %}

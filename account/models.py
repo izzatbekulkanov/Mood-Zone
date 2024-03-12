@@ -161,14 +161,14 @@ class CustomUser(AbstractUser):
                                    blank=True)
     full_name = models.CharField(null=True, blank=True, max_length=255, verbose_name="To'liq ism")
     short_name = models.CharField(null=True, blank=True, max_length=255, verbose_name="Qisqa ism")
-    first_name = models.CharField(null=True, blank=True, max_length=255, verbose_name="Birinchi ism")
-    second_name = models.CharField(null=True, blank=True, max_length=255, verbose_name="Ikkinchi ism")
-    third_name = models.CharField(null=True, blank=True, max_length=255, verbose_name="Uchinchi ism")
+    first_name = models.CharField(null=True, blank=True, max_length=255, verbose_name="Ism")
+    second_name = models.CharField(null=True, blank=True, max_length=255, verbose_name="Familia")
+    third_name = models.CharField(null=True, blank=True, max_length=255, verbose_name="Otasining ismi")
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE, verbose_name="Jins", blank=True, null=True, )
     birth_date = models.DateField(null=True, blank=True, verbose_name="Tug'ilgan kun")
     student_id_number = models.IntegerField(blank=True, null=True, verbose_name="Talaba raqami")
     image = models.URLField(blank=True, null=True, max_length=255, verbose_name="Rasm")
-    imageFile = models.ImageField(upload_to='students/%Y/%m/%d', verbose_name="Talaba rasmi faylda", blank=True,
+    imageFile = models.ImageField(upload_to='students/%Y/%m/%d', verbose_name="Rasmi faylda", blank=True,
                                   null=True)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, verbose_name="Davlat", null=True, blank=True)
     province = models.ForeignKey(Province, on_delete=models.CASCADE, verbose_name="Viloyat", null=True, blank=True)
@@ -227,6 +227,9 @@ class CustomUser(AbstractUser):
     # Additional fields for the university
     passport_serial = models.CharField(max_length=20, null=True, blank=True)
     passport_issue_date = models.DateField(null=True, blank=True)
+
+    # Additional field
+    full_id = models.CharField(max_length=255, null=True, blank=True, verbose_name="To'liq ID")
 
     def get_remote_image(self):
         if self.image and not self.imageFile:

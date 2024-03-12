@@ -1,3 +1,4 @@
+from datetime import timedelta
 from io import BytesIO
 import random
 import string
@@ -82,12 +83,26 @@ class BookLoan(models.Model):
     STATUS_CHOICES = [
         ('pending', 'kutilmoqda'),
         ('returned', 'qaytarilgan'),
-        ('not_returned', 'qaytarilmadi'),  # Qo'shimcha holat
+        ('not_returned', 'qaytarilmadi'),
+        ('7_days', '7 kun'),
+        ('10_days', '10 kun'),
+        ('15_days', '15 kun'),
+        ('1_month', '1 oy'),
+        ('2_months', '2 oy'),
+        ('3_months', '3 oy'),
+        ('4_months', '4 oy'),
+        ('5_months', '5 oy'),
+        ('6_months', '6 oy'),
+        ('1_year', '1 yil'),
+        ('2_years', '2 yil'),
     ]
     """Kitob berish modeli."""
     book = models.ForeignKey('Book', on_delete=models.CASCADE, help_text="Kitob")
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, help_text="Foydalanuvchi")
     loan_date = models.DateTimeField(default=timezone.now, help_text="Kitob olingan vaqti")
+    return_date = models.DateTimeField(blank=True, null=True, help_text="Kitobni qaytarilishi kerak bo'lgan vaqti")
+
+    quantity = models.IntegerField(help_text="Kitob" , blank=True, null=True, verbose_name="Olingan kitob soni")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending', help_text="Kitob holati")
     library = models.ForeignKey('Library', on_delete=models.CASCADE, related_name='book_loans', null=True, blank=True,help_text="Kitob beriladigan kutubxona")
     created_at = models.DateTimeField(auto_now_add=True, help_text="Kitob berilgan vaqti")
@@ -97,13 +112,33 @@ class BookLoan(models.Model):
         return f"{self.book} - {self.user}"
 
     def check_return_status(self):
-        """Kitobni qaytarilganligini tekshirish."""
+        """Kitobni qaytarilganligini tekshirish va qaytarilish muddatini hisoblash."""
         if self.status != 'returned':
             loan_duration = timezone.now() - self.loan_date
             if loan_duration.days > 7:
                 self.status = 'not_returned'
                 self.save()
                 return True
+            elif self.status in ['7_days', '10_days', '15_days', '1_month', '2_months', '3_months', '4_months',
+                                 '5_months', '6_months', '1_year', '2_years']:
+                duration_map = {
+                    '7_days': 7,
+                    '10_days': 10,
+                    '15_days': 15,
+                    '1_month': 30,
+                    '2_months': 60,
+                    '3_months': 90,
+                    '4_months': 120,
+                    '5_months': 150,
+                    '6_months': 180,
+                    '1_year': 365,
+                    '2_years': 730,
+                }
+                max_loan_duration = timedelta(days=duration_map[self.status])
+                if loan_duration > max_loan_duration:
+                    self.status = 'not_returned'
+                    self.save()
+                    return True
         return False
 
 

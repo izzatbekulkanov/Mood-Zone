@@ -130,8 +130,8 @@ def save_specialty_from_api(request):
         # API-dan olingan ma'lumotlarni Speciality modeliga saqlash
         for item in data.get('data', {}).get('items', []):
             # Bo'limni aniqlash
-            department_code = item.get('department', {}).get('code')
-            department, _ = Department.objects.get_or_create(code=department_code)
+            department_id = item.get('department', {}).get('id')
+            department, _ = Department.objects.get_or_create(codeID=department_id)
 
             # Ta'lim turi ni aniqlash
             education_type_code = item.get('educationType', {}).get('code')
