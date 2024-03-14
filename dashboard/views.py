@@ -1,32 +1,26 @@
-from django.http import JsonResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-import requests
+
+
+
 
 # Create your views here.
 @login_required
 def index(request):
-    nameLocation  = 'namangan'
-    parameters = {'key': 'gjlovpwc309k5co71et88v63xsxqft89pskcamuu',
-                  'place_id': nameLocation}
 
-    url = "https://www.meteosource.com/api/v1/free/point"
+    return render(request, 'main/index.html', )
 
-    # data = requests.get(url, parameters).json()
+def statis(request):
+    return  render(request, 'pages/statics.html' )
 
-    return render(request, 'main/index.html')
+def privacy_view(request):
+    return  render(request, 'pages/privacy.html' )
 
-# @login_required
-# def weather(request):
-#     nameLocation = 'namangan'
-#     parameters = {'key': 'gjlovpwc309k5co71et88v63xsxqft89pskcamuu',
-#                   'place_id': nameLocation}
-#
-#     url = "https://www.meteosource.com/api/v1/free/point"
-#
-#     data = requests.get(url, parameters).json()
-#
-#     temperature = data['current']['temperature']
-#     response_data = {'temperature': temperature}
-#
-#     return JsonResponse(response_data)
+def interactive_services(request):
+    return  render(request, 'pages/interactive_services.html' )
+
+def edu_services(request):
+    return  render(request, 'pages/edu_services.html' )
+
+def role_view(request):
+    return  render(request, 'pages/roles.html' )

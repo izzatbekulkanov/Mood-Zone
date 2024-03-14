@@ -1,1407 +1,427 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block style %}
-    <!-- Library / Plugin Css Build -->
-    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
-    <!-- Flatpickr css -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.css' %}">
-    <!-- NoUI Slider css -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/noUiSilder/style/nouislider.min.css' %}">
-
-    <link rel="stylesheet" href="{% static 'assets/vendor/swiperSlider/swiper-bundle.min.css' %}">
-
-    <!-- Hope Ui Design System Css -->
-    <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
-    <!-- Custom Css -->
-    <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
-    <!-- Dark Css -->
-    <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
-    <!-- Customizer Css -->
-    <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
-    <!-- RTL Css -->
-    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800|Poppins&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .cards {
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 30px;
-        }
-
-        .cards h1 {
-            font-size: 40px;
-            margin: 0 0 30px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .services {
-            display: flex;
-            align-items: center;
-        }
-
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            flex: 1;
-            margin: 20px;
-            padding: 20px;
-            border: 2px solid black;
-            border-radius: 4px;
-            transition: all .3s ease;
-        }
-
-        .content .fab {
-            font-size: 70px;
-            margin: 16px 0;
-        }
-
-        .content > * {
-            flex: 1 1 100%;
-        }
-
-        .content:hover {
-            color: white;
-        }
-
-        .content:hover a {
-            border-color: white;
-            background: white;
-        }
-
-        .content-1:hover {
-            border-color: #4267B2;
-            background: #4267B2;
-        }
-
-        .content-1:hover a {
-            color: #4267B2;
-        }
-
-        .content-2:hover {
-            border-color: #075e54;
-            background: #075e54;
-        }
-
-        .content-2:hover a {
-            color: #075e54;
-        }
-
-        .content-3:hover {
-            border-color: #ff0000;
-            background: #ff0000;
-        }
-
-        .content-3:hover a {
-            color: #ff0000;
-        }
-
-        .content h2 {
-            font-size: 30px;
-            margin: 16px 0;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .content p {
-            font-size: 17px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .content a {
-            margin: 22px 0;
-            background: black;
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            border: 1px solid black;
-            padding: 15px 0;
-            border-radius: 25px;
-            transition: .3s ease;
-        }
-
-        .content a:hover {
-            border-radius: 4px;
-        }
-
-        @media (max-width: 900px) {
-            .services {
-                display: flex;
-                flex-direction: column;
-            }
-        }
-        
-        .cardmenu {
-            margin: 20px auto;
-            width: 250px;
-            height: 250px;
-            border-radius: 40px;
-            box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
-            cursor: pointer;
-            transition: 0.4s;
-        }
-
-        .cardmenu .cardmenu_image {
-            width: inherit;
-            height: inherit;
-            border-radius: 40px;
-        }
-
-        .cardmenu .cardmenu_image img {
-            width: inherit;
-            height: inherit;
-            border-radius: 40px;
-            object-fit: cover;
-        }
-
-        .cardmenu .cardmenu_title {
-            text-align: center;
-            border-radius: 0px 0px 40px 40px;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: 30px;
-            margin-top: -80px;
-            height: 40px;
-        }
-
-        .cardmenu:hover {
-            transform: scale(0.9, 0.9);
-            box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
-            -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
-        }
-
-        .cardmenu-title-white {
-            color: white;
-        }
-        
-
-
-        .cardmenu {
-            margin: 20px auto;
-            width: 200px;
-            height: 200px;
-            border-radius: 40px;
-            background-image: url('');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-repeat: no-repeat;
-            box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
-            transition: 0.4s;
-        }
-
-    </style>
+<link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
+<!-- Flatpickr css -->
+<link rel="stylesheet" href="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/vendor/sheperd/dist/css/sheperd.css' %}">
+<!-- Hope Ui Design System Css -->
+<link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+<!-- Custom Css -->
+<link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+<!-- Dark Css -->
+<link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+<!-- Customizer Css -->
+<link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+<!-- RTL Css -->
+<link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+<style>
+    .no-effect {
+    filter: none;
+    transition: none;
+    transform: none;
+    }
+</style>
 {% endblock style %}
-
 {% block body %}
-    <!-- Content -->
-    <div class="container-fluid content-inner pb-0" id="page_layout">
+<!-- Content -->
+<div class="content-inner pb-0 container" id="page_layout">
+    <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div class="d-flex flex-column">
-                            <h3>Namangan davlat pedagogika instituti</h3>
-                            <p class="text-primary mb-0">Asosiy sahifa</p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center rounded flex-wrap gap-3">
-                            <div class="d-flex justify-content-between align-items-center p-3 gap-4 rounded pb-0">
-                                <div id="data_time_online">
-
-                                </div>
-                                <div class="form-check form-switch mb-0 iq-status-switch">
-                                    <input class="form-check-input iq-status" type="checkbox" id="iq-switch" checked="">
-                                    <label class="form-check-label iq-reset-status" for="iq-switch">
-                                        Online
-                                    </label>
-                                </div>
-                                <div id="weather-info">
-                                    <h5>Uzbekistan</h5>
-                                    <h6 class="mb-0">Namangan</h6>
-                                </div>
-                                {#                                <div class="iq-product-weather d-flex gap-2">#}
-                                {#                                    <div id="weather-icon" class="d-flex flex-column align-items-center">#}
-                                {#                                        <!-- Bu yerda havo holatining ikonasi chiqadi -->#}
-                                {#                                    </div>#}
-                                {#                                    <h6 id="temperature" class="mt-1 mb-0">Ob havo harorati</h6>#}
-                                {#                                </div>#}
+                        <div class="check1">
+                            <div class="d-flex flex-wrap align-items-center mb-3 mb-sm-0">
+                                <h4 class="me-2 h4">#</h4>
+                                <span> - Xush kelibsiz !!!</span>
                             </div>
                         </div>
+                        <div class="check2">Ong tarafda</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="bd-example">
-                <nav class="tab-bottom-bordered mb-3">
-                    <div class="mb-0 nav nav-tabs" id="nav-tab1" role="tablist">
-                        <button class="nav-link active" id="nav-home-11-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-home-11" type="button" role="tab" aria-controls="nav-home-11"
-                                aria-selected="true">Shahsiy sahifa
-                        </button>
-                        <button class="nav-link" id="nav-menu-11-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-menu-11" type="button" role="tab" aria-controls="nav-menu-11"
-                                aria-selected="false" tabindex="-1">MENU
-                        </button>
-                        <button class="nav-link" id="nav-univer-11-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-univer-11" type="button" role="tab" aria-controls="nav-univer-11"
-                                aria-selected="false" tabindex="-1">Oliyhog
-                        </button>
-                        <button class="nav-link" id="nav-library-11-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-library-11" type="button" role="tab" aria-controls="nav-library-11"
-                                aria-selected="false" tabindex="-1">Kutubhona
-                        </button>
-                        <button class="nav-link" id="nav-exam-11-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-exam-11" type="button" role="tab" aria-controls="nav-exam-11"
-                                aria-selected="false" tabindex="-1">Imtihon
-                        </button>
-                        <button class="nav-link" id="nav-edu-11-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-edu-11" type="button" role="tab" aria-controls="nav-edu-11"
-                                aria-selected="false" tabindex="-1">Online darslar
-                        </button>
-                        <button class="nav-link" id="nav-kpi-11-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-kpi-11" type="button" role="tab" aria-controls="nav-kpi-11"
-                                aria-selected="false" tabindex="-1">KPI
-                        </button>
-
-                        <button class="nav-link" id="nav-social-11-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-social-11" type="button" role="tab" aria-controls="nav-social-11"
-                                aria-selected="false" tabindex="-1">Ijtimoiy tarmoqlar
-                        </button>
-                    </div>
-                </nav>
-                <div class="tab-content iq-tab-fade-up" id="nav-tabContent">
-                    <div class="tab-pane fade active show" id="nav-home-11" role="tabpanel"
-                         aria-labelledby="nav-home-11-tab">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-2">
-                                                <div class="nav flex-column nav-pills nav-iconly gap-3" role="tablist">
-                                                    <a class="nav-link active show" href="#v-pills-basicinfo-tab"
-                                                       data-bs-toggle="pill" data-bs-target="#v-pills-basicinfo-tab"
-                                                       role="button" aria-selected="false" tabindex="-1">Shahsiy
-                                                        ma'lumotlar</a>
-                                                    <a class="nav-link" href="#v-pills-family-tab" data-bs-toggle="pill"
-                                                       data-bs-target="#v-pills-family" role="button"
-                                                       aria-selected="false" tabindex="-1">Havfsizlik</a>
-                                                    <a class="nav-link" href="#v-pills-work-tab" data-bs-toggle="pill"
-                                                       data-bs-target="#v-pills-work-tab" role="button"
-                                                       aria-selected="false" tabindex="-1">Oliy ta'lim</a>
-                                                    <a class="nav-link" href="#v-pills-lived-tab" data-bs-toggle="pill"
-                                                       data-bs-target="#v-pills-lived-tab" role="button"
-                                                       aria-selected="true" tabindex="-1">Kutubhonaga</a>
-                                                    <a class="nav-link" href="#v-pills-details-tab"
-                                                       data-bs-toggle="pill" data-bs-target="#v-pills-details-tab"
-                                                       role="button" aria-selected="false" tabindex="-1">KPI</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <div class="tab-content iq-tab-fade-up">
-                                                    <div class="tab-pane fade active show" id="v-pills-basicinfo-tab"
-                                                         role="tabpanel" aria-labelledby="v-pills-basicinfo-tab">
-                                                        <div class="mb-3">
-                                                            <div class="border-bottom pb-3 mb-3">
-                                                                <div class="row justify-content-arround">
-                                                                    <div class="col"><h3 class="mb-0">Shahsiy
-                                                                        ma'lumotlar </h3></div>
-
-
-                                                                </div>
-                                                                <div class="card mt-3">
-                                                                    <div class="card-header">
-                                                                        <div class="header-title">
-                                                                            <h4 class="card-title">Foydalanuvchi
-                                                                                rasmi</h4>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="card-body">
-                                                                        <div class="text-center">
-                                                                            <div>
-                                                                                <img src="{% if request.user.image %}
-
-
-                                                                                    
-                                                                                    
-                                                                                    {{ request.user.image }}{% else %}{% static 'assets/images/avatars/01.png' %} {% endif %}"
-                                                                                     alt="profile-img"
-                                                                                     class="rounded-pill avatar-130 img-fluid"
-                                                                                     loading="lazy">
-                                                                            </div>
-                                                                            <div class="mt-3">
-                                                                                <div class="col"><h3>Tizimdagi
-                                                                                    roli: {{ request.user.user_role }}</h3>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-3">
-                                                                    <h6>Ism</h6>
-                                                                </div>
-                                                                <div class="col-9">
-                                                                    <p class="mb-0">{{ request.user.first_name }}</p>
-                                                                </div>
-                                                                <div class="col-3">
-                                                                    <h6>Familia</h6>
-                                                                </div>
-                                                                <div class="col-9">
-                                                                    <p class="mb-0">{{ request.user.second_name }}</p>
-                                                                </div>
-                                                                <div class="col-3">
-                                                                    <h6>Otasining ismi</h6>
-                                                                </div>
-                                                                <div class="col-9">
-                                                                    <p class="mb-0">{{ request.user.third_name }}</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <div class="border-bottom pb-3 mb-3">
-                                                                <h4 class="mb-0">Ijtimoiy tarmoq</h4>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <ul class="suggestions-lists m-0 p-0">
-                                                                        <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                 fill="none" viewBox="0 0 14 14"
-                                                                                 height="30"
-                                                                                 width="30"
-                                                                                 id="Telegram--Streamline-Core">
-
-                                                                                <path id="Subtract" fill="#8fbffa"
-                                                                                      fill-rule="evenodd"
-                                                                                      d="M7 0.25C3.27208 0.25 0.25 3.27208 0.25 7c0 3.7279 3.02208 6.75 6.75 6.75 3.7279 0 6.75 -3.0221 6.75 -6.75C13.75 3.27208 10.7279 0.25 7 0.25Z"
-                                                                                      clip-rule="evenodd"
-                                                                                      stroke-width="1"></path>
-                                                                                <path id="Subtract_2" fill="#2859c5"
-                                                                                      fill-rule="evenodd"
-                                                                                      d="M10.2969 3.13171 9.25183 11.0643 7.30336 9.50304 5.61828 11.1069l-0.00004 -2.72603 2.22797 -1.72226c0.21848 -0.16888 0.25868 -0.4829 0.08979 -0.70138 -0.16888 -0.21848 -0.4829 -0.25868 -0.70138 -0.08979L4.54938 7.94317l-2.41773 -0.87612 8.16525 -3.93534Z"
-                                                                                      clip-rule="evenodd"
-                                                                                      stroke-width="1"></path>
-                                                                            </svg>
-                                                                            <div class="d-flex justify-content-between w-100">
-                                                                                <div>
-                                                                                    <h6>Telegram</h6>
-                                                                                    <input type="text"
-                                                                                           id="disabledTextInput"
-                                                                                           class="form-control"
-                                                                                           placeholder="Telegram"
-                                                                                           disabled>
-
-                                                                                </div>
-                                                                                <a class="d-flex align-items-start gap-2 mb-4"
-                                                                                   href="javascript:void(0);">
-                                                                                    <svg class="icon-22" width="22"
-                                                                                         viewBox="0 0 24 24" fill="none"
-                                                                                         xmlns="http://www.w3.org/2000/svg">
-                                                                                        <path opacity="0.4"
-                                                                                              d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
-                                                                                              fill="currentColor"></path>
-                                                                                        <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
-                                                                                              fill="currentColor"></path>
-                                                                                        <path opacity="0.4"
-                                                                                              d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
-                                                                                              fill="currentColor"></path>
-                                                                                    </svg>
-                                                                                    Edit
-                                                                                </a>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                 fill="none" viewBox="0 0 14 14"
-                                                                                 height="30"
-                                                                                 width="30"
-                                                                                 id="Instagram--Streamline-Core">
-                                                                                <path id="Rectangle 2" fill="#8fbffa"
-                                                                                      d="M0.14 3.08C0.14 1.4563 1.4563 0.14 3.08 0.14H10.9201C12.5437 0.14 13.86 1.4563 13.86 3.08V10.92C13.86 12.5437 12.5437 13.86 10.9201 13.86H3.08C1.4563 13.86 0.14 12.5437 0.14 10.92V3.08Z"
-                                                                                      stroke-width="1"></path>
-                                                                                <path id="Union" fill="#2859c5"
-                                                                                      d="M11.6355 3.0374C11.6355 3.4318 11.3158 3.7516 10.9214 3.7516C10.527 3.7516 10.2072 3.4318 10.2072 3.0374C10.2072 2.643 10.527 2.3233 10.9214 2.3233C11.3158 2.3233 11.6355 2.643 11.6355 3.0374Z"
-                                                                                      stroke-width="1"></path>
-                                                                                <path id="Union_2" fill="#2859c5"
-                                                                                      fill-rule="evenodd"
-                                                                                      d="M10.9194 3.9311C11.387 3.9311 11.7662 3.5519 11.7662 3.0842C11.7662 2.6165 11.3871 2.2374 10.9194 2.2374C10.4517 2.2374 10.0726 2.6165 10.0726 3.0842C10.0726 3.5519 10.4517 3.9311 10.9194 3.9311ZM3.5223 6.9999C3.5223 5.0792 5.0794 3.5221 7.0001 3.5221S10.4779 5.0792 10.4779 6.9999S8.9208 10.4777 7.0001 10.4777S3.5223 8.9206 3.5223 6.9999Z"
-                                                                                      clip-rule="evenodd"
-                                                                                      stroke-width="1"></path>
-                                                                            </svg>
-                                                                            <div class="d-flex justify-content-between w-100">
-                                                                                <div>
-                                                                                    <h6>Instagram</h6>
-                                                                                    <input type="text"
-                                                                                           id="disabledTextInput"
-                                                                                           class="form-control"
-                                                                                           placeholder="Instagram"
-                                                                                           disabled>
-                                                                                </div>
-                                                                                <a class="d-flex align-items-start gap-2"
-                                                                                   href="javascript:void(0);">
-                                                                                    <svg class="icon-22" width="22"
-                                                                                         viewBox="0 0 24 24" fill="none"
-                                                                                         xmlns="http://www.w3.org/2000/svg">
-                                                                                        <path opacity="0.4"
-                                                                                              d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
-                                                                                              fill="currentColor"></path>
-                                                                                        <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
-                                                                                              fill="currentColor"></path>
-                                                                                        <path opacity="0.4"
-                                                                                              d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
-                                                                                              fill="currentColor"></path>
-                                                                                    </svg>
-                                                                                    Edit
-                                                                                </a>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li class="d-flex align-items-center justify-content-between gap-3">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                 fill="none" viewBox="0 0 14 14"
-                                                                                 height="30"
-                                                                                 width="30"
-                                                                                 id="Facebook-1--Streamline-Core">
-
-
-                                                                                <path id="Vector" fill="#8fbffa"
-                                                                                      d="M0 1.07692V12.9231c0 0.2856 0.113461 0.5595 0.315423 0.7615 0.201963 0.2019 0.475882 0.3154 0.761497 0.3154H12.9231c0.2856 0 0.5595 -0.1135 0.7615 -0.3154 0.2019 -0.202 0.3154 -0.4759 0.3154 -0.7615V1.07692c0 -0.285615 -0.1135 -0.559534 -0.3154 -0.761497C13.4826 0.113461 13.2087 0 12.9231 0H1.07692C0.791305 0 0.517386 0.113461 0.315423 0.315423 0.113461 0.517386 0 0.791305 0 1.07692Z"
-                                                                                      stroke-width="1"></path>
-                                                                                <path id="Vector_2" fill="#2859c5"
-                                                                                      d="M9.69233 8.89539V14H7.28002V8.89539h-0.68923c-0.08717 0.00143 -0.17375 -0.0145 -0.2547 -0.04688 -0.08095 -0.03237 -0.15465 -0.08053 -0.21679 -0.14168 -0.06215 -0.06114 -0.1115 -0.13404 -0.14519 -0.21445 -0.03368 -0.08042 -0.05103 -0.16673 -0.05101 -0.25391v-0.82923c-0.00002 -0.08718 0.01733 -0.1735 0.05101 -0.25391 0.03369 -0.08041 0.08304 -0.15331 0.14519 -0.21446 0.06214 -0.06114 0.13584 -0.1093 0.21679 -0.14167 0.08095 -0.03238 0.16753 -0.04831 0.2547 -0.04688h0.68923v-1.26c-0.0439 -0.35895 -0.00936 -0.72315 0.10124 -1.06744s0.29462 -0.66047 0.53934 -0.9267c0.24473 -0.26623 0.54433 -0.47616 0.87811 -0.6153 0.33378 -0.13913 0.69379 -0.20415 1.05516 -0.19056h1.23843c0.0877 0.00278 0.174 0.02282 0.254 0.05897 0.0799 0.03615 0.1519 0.08771 0.212 0.15172 0.06 0.06401 0.1068 0.13922 0.1377 0.22133 0.0309 0.08211 0.0454 0.16951 0.0425 0.25721v0.79692c0.0015 0.0864 -0.015 0.17216 -0.0484 0.25187 -0.0333 0.07971 -0.0829 0.15163 -0.1455 0.21121 -0.0582 0.06425 -0.1299 0.11491 -0.21 0.14841 -0.08 0.03349 -0.1664 0.049 -0.253 0.04543h-0.5277c-0.4093 0 -0.8185 0 -0.8185 0.90462v1.01231h0.7215c0.0863 0 0.1717 0.01699 0.2514 0.05 0.0797 0.03301 0.1522 0.0814 0.2132 0.1424s0.1093 0.13342 0.1424 0.21313c0.033 0.0797 0.05 0.16512 0.05 0.25139v0.82923c0 0.17423 -0.0692 0.34132 -0.1924 0.46451 -0.1232 0.1232 -0.2903 0.19241 -0.4646 0.19241h-0.76457Z"
-                                                                                      stroke-width="1"></path>
-                                                                            </svg>
-                                                                            <div class="d-flex justify-content-between w-100">
-                                                                                <div>
-                                                                                    <h6>Facebook</h6>
-                                                                                    <input type="text"
-                                                                                           id="disabledTextInput"
-                                                                                           class="form-control"
-                                                                                           placeholder="Facebook"
-                                                                                           disabled>
-                                                                                </div>
-                                                                                <a class="d-flex align-items-start gap-2"
-                                                                                   href="javascript:void(0);">
-                                                                                    <svg class="icon-22" width="22"
-                                                                                         viewBox="0 0 24 24" fill="none"
-                                                                                         xmlns="http://www.w3.org/2000/svg">
-                                                                                        <path opacity="0.4"
-                                                                                              d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
-                                                                                              fill="currentColor"></path>
-                                                                                        <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
-                                                                                              fill="currentColor"></path>
-                                                                                        <path opacity="0.4"
-                                                                                              d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
-                                                                                              fill="currentColor"></path>
-                                                                                    </svg>
-                                                                                    Edit
-                                                                                </a>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-0">
-                                                            <div class="border-bottom pb-3 mb-3">
-                                                                <h4 class="mb-0">Passport ma'lumotlar</h4>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-3">
-                                                                    <h6>Tug'ilgan kun</h6>
-                                                                </div>
-                                                                <div class="col-9">
-                                                                    <p class="mb-0">{{ request.user.birth_date }}</p>
-                                                                </div>
-                                                                <div class="col-3">
-                                                                    <h6>Tug'ilgan yil</h6>
-                                                                </div>
-                                                                <div class="col-9">
-                                                                    <p class="mb-0">{{ request.user.birth_date }}</p>
-                                                                </div>
-                                                                <div class="col-3">
-                                                                    <h6>Jinsi</h6>
-                                                                </div>
-                                                                <div class="col-9">
-                                                                    <p class="mb-0">{{ request.user.gender }}</p>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="v-pills-family" role="tabpanel">
-                                                        <div class="border-bottom mb-3 pb-3">
-                                                            <h3 class="mb-0">Havfsizlik ma'lumotlari</h3>
-
-                                                        </div>
-                                                        <form class="form-horizontal">
-                                                            <div class="form-group row">
-                                                                <label class="control-label col-sm-3 align-self-center mb-0"
-                                                                       for="email">Email:</label>
-                                                                <div class="col-sm-9">
-                                                                    <input type="email" class="form-control" id="email"
-                                                                           placeholder="Enter Your  email">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="control-label col-sm-3 align-self-center mb-0"
-                                                                       for="pwd1">Password:</label>
-                                                                <div class="col-sm-9">
-                                                                    <input type="password" class="form-control"
-                                                                           id="pwd1" placeholder="Enter Your password">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                           value="" id="remebercheck2">
-                                                                    <label class="form-check-label" for="remebercheck2">
-                                                                        Remember me
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <button type="submit" class="btn btn-primary">Submit
-                                                                </button>
-                                                                <button type="submit" class="btn btn-danger">cancel
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="v-pills-work-tab" role="tabpanel"
-                                                         aria-labelledby="v-pills-work-tab">
-                                                        <div class="border-bottom mb-3 pb-3">
-                                                            <h3 class="mb-0">Work</h3>
-                                                        </div>
-                                                        <ul class="suggestions-lists m-0 p-0">
-                                                            <li class="d-flex align-items-center gap-2 mb-4">
-                                                                <a href="javascript:void(0)" class="d-flex">
-                                                                    <svg class="icon-20" width="20" viewBox="0 0 24 24"
-                                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M12.0001 8.32739V15.6537"
-                                                                              stroke="currentColor" stroke-width="1.5"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"></path>
-                                                                        <path d="M15.6668 11.9904H8.3335"
-                                                                              stroke="currentColor" stroke-width="1.5"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"></path>
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                              d="M16.6857 2H7.31429C4.04762 2 2 4.31208 2 7.58516V16.4148C2 19.6879 4.0381 22 7.31429 22H16.6857C19.9619 22 22 19.6879 22 16.4148V7.58516C22 4.31208 19.9619 2 16.6857 2Z"
-                                                                              stroke="currentColor" stroke-width="1.5"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"></path>
-                                                                    </svg>
-                                                                </a>
-                                                                <h6 class="mb-0 text-primary">Add Work Place</h6>
-                                                            </li>
-                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                                                                <img src="../social-app/assets/images/avatar/04.png"
-                                                                     alt="story-img" class="rounded-circle avatar-48"
-                                                                     loading="lazy">
-                                                                <div class="d-flex justify-content-between w-100">
-                                                                    <div>
-                                                                        <h6>Themeforest</h6>
-                                                                        <p class="mb-0">Web Designer</p>
-                                                                    </div>
-                                                                    <a class="d-flex align-items-start gap-2 mb-4"
-                                                                       href="javascript:void(0);">
-                                                                        <svg class="icon-22" width="22"
-                                                                             viewBox="0 0 24 24" fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-                                                                            <path opacity="0.4"
-                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path opacity="0.4"
-                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
-                                                                                  fill="currentColor"></path>
-                                                                        </svg>
-                                                                        Edit
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                                                                <img src="../social-app/assets/images/avatar/05.png"
-                                                                     alt="story-img" class="rounded-circle avatar-48"
-                                                                     loading="lazy">
-                                                                <div class="d-flex justify-content-between w-100">
-                                                                    <div>
-                                                                        <h6>iqonicdesign</h6>
-                                                                        <p class="mb-0">Software Developer</p>
-                                                                    </div>
-                                                                    <a class="d-flex align-items-start gap-2"
-                                                                       href="javascript:void(0);">
-                                                                        <svg class="icon-22" width="22"
-                                                                             viewBox="0 0 24 24" fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-                                                                            <path opacity="0.4"
-                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path opacity="0.4"
-                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
-                                                                                  fill="currentColor"></path>
-                                                                        </svg>
-                                                                        Edit
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                                                                <img src="../social-app/assets/images/avatar/06.png"
-                                                                     alt="story-img" class="rounded-circle avatar-48"
-                                                                     loading="lazy">
-                                                                <div class="d-flex justify-content-between w-100">
-                                                                    <div>
-                                                                        <h6>W3school</h6>
-                                                                        <p class="mb-0">Designer</p>
-                                                                    </div>
-                                                                    <a class="d-flex align-items-start gap-2"
-                                                                       href="javascript:void(0);">
-                                                                        <svg class="icon-22" width="22"
-                                                                             viewBox="0 0 24 24" fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-                                                                            <path opacity="0.4"
-                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path opacity="0.4"
-                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
-                                                                                  fill="currentColor"></path>
-                                                                        </svg>
-                                                                        Edit
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="border-bottom mb-3 pb-3">
-                                                            <h4 class="mb-0">Professional Skills</h4>
-                                                        </div>
-                                                        <div class="d-flex align-items-center gap-2 mb-4">
-                                                            <a href="javascript:void(0)" class="d-flex">
-                                                                <svg class="icon-20" width="20" viewBox="0 0 24 24"
-                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12.0001 8.32739V15.6537"
-                                                                          stroke="currentColor" stroke-width="1.5"
-                                                                          stroke-linecap="round"
-                                                                          stroke-linejoin="round"></path>
-                                                                    <path d="M15.6668 11.9904H8.3335"
-                                                                          stroke="currentColor" stroke-width="1.5"
-                                                                          stroke-linecap="round"
-                                                                          stroke-linejoin="round"></path>
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                          d="M16.6857 2H7.31429C4.04762 2 2 4.31208 2 7.58516V16.4148C2 19.6879 4.0381 22 7.31429 22H16.6857C19.9619 22 22 19.6879 22 16.4148V7.58516C22 4.31208 19.9619 2 16.6857 2Z"
-                                                                          stroke="currentColor" stroke-width="1.5"
-                                                                          stroke-linecap="round"
-                                                                          stroke-linejoin="round"></path>
-                                                                </svg>
-                                                            </a>
-                                                            <h6 class="mb-0 text-primary">Add Professional Skills</h6>
-                                                        </div>
-
-                                                        <div class="border-bottom mb-3 pb-3">
-                                                            <h4 class="mb-0">College</h4>
-                                                        </div>
-                                                        <ul class="suggestions-lists m-0 p-0">
-                                                            <li class="d-flex align-items-center gap-2 mb-4">
-                                                                <a href="javascript:void(0)" class="d-flex">
-                                                                    <svg class="icon-20" width="20" viewBox="0 0 24 24"
-                                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M12.0001 8.32739V15.6537"
-                                                                              stroke="currentColor" stroke-width="1.5"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"></path>
-                                                                        <path d="M15.6668 11.9904H8.3335"
-                                                                              stroke="currentColor" stroke-width="1.5"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"></path>
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                              d="M16.6857 2H7.31429C4.04762 2 2 4.31208 2 7.58516V16.4148C2 19.6879 4.0381 22 7.31429 22H16.6857C19.9619 22 22 19.6879 22 16.4148V7.58516C22 4.31208 19.9619 2 16.6857 2Z"
-                                                                              stroke="currentColor" stroke-width="1.5"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"></path>
-                                                                    </svg>
-                                                                </a>
-                                                                <h6 class="mb-0 text-primary">Add College</h6>
-                                                            </li>
-                                                            <li class="d-flex align-items-center justify-content-between gap-3">
-                                                                <img src="../social-app/assets/images/avatar/07.png"
-                                                                     alt="story-img" class="rounded-circle avatar-48"
-                                                                     loading="lazy">
-                                                                <div class="d-flex justify-content-between w-100">
-                                                                    <div>
-                                                                        <h6>London School of Brick and Balls</h6>
-                                                                        <p class="mb-0">Greenwich, United Kingdom</p>
-                                                                    </div>
-                                                                    <a class="d-flex align-items-start gap-2"
-                                                                       href="javascript:void(0);">
-                                                                        <svg class="icon-22" width="22"
-                                                                             viewBox="0 0 24 24" fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-                                                                            <path opacity="0.4"
-                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path opacity="0.4"
-                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
-                                                                                  fill="currentColor"></path>
-                                                                        </svg>
-                                                                        Edit
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="v-pills-lived-tab" role="tabpanel"
-                                                         aria-labelledby="v-pills-lived-tab">
-                                                        <div class="border-bottom mb-3 pb-3">
-                                                            <h3 class="mb-0">Current City and Hometown</h3>
-                                                        </div>
-                                                        <ul class="suggestions-lists m-0 p-0">
-                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                                                                <img src="../social-app/assets/images/avatar/01.png"
-                                                                     alt="story-img" class="rounded-circle avatar-48"
-                                                                     loading="lazy">
-                                                                <div class="d-flex justify-content-between w-100">
-                                                                    <div>
-                                                                        <h6>Birmingham</h6>
-                                                                        <p class="mb-0">Liverpool</p>
-                                                                    </div>
-                                                                    <a class="d-flex align-items-start gap-2 mb-4"
-                                                                       href="javascript:void(0);">
-                                                                        <svg class="icon-22" width="22"
-                                                                             viewBox="0 0 24 24" fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-                                                                            <path opacity="0.4"
-                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path opacity="0.4"
-                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
-                                                                                  fill="currentColor"></path>
-                                                                        </svg>
-                                                                        Edit
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                            <li class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                                                                <img src="../social-app/assets/images/avatar/02.png"
-                                                                     alt="story-img" class="rounded-circle avatar-48"
-                                                                     loading="lazy">
-                                                                <div class="d-flex justify-content-between w-100">
-                                                                    <div>
-                                                                        <h6>Manchester</h6>
-                                                                        <p class="mb-0">Newcastle</p>
-                                                                    </div>
-                                                                    <a class="d-flex align-items-start gap-2"
-                                                                       href="javascript:void(0);">
-                                                                        <svg class="icon-22" width="22"
-                                                                             viewBox="0 0 24 24" fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-                                                                            <path opacity="0.4"
-                                                                                  d="M19.9927 18.9534H14.2984C13.7429 18.9534 13.291 19.4124 13.291 19.9767C13.291 20.5422 13.7429 21.0001 14.2984 21.0001H19.9927C20.5483 21.0001 21.0001 20.5422 21.0001 19.9767C21.0001 19.4124 20.5483 18.9534 19.9927 18.9534Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path d="M10.309 6.90385L15.7049 11.2639C15.835 11.3682 15.8573 11.5596 15.7557 11.6929L9.35874 20.0282C8.95662 20.5431 8.36402 20.8344 7.72908 20.8452L4.23696 20.8882C4.05071 20.8903 3.88775 20.7613 3.84542 20.5764L3.05175 17.1258C2.91419 16.4915 3.05175 15.8358 3.45388 15.3306L9.88256 6.95545C9.98627 6.82108 10.1778 6.79743 10.309 6.90385Z"
-                                                                                  fill="currentColor"></path>
-                                                                            <path opacity="0.4"
-                                                                                  d="M18.1208 8.66544L17.0806 9.96401C16.9758 10.0962 16.7874 10.1177 16.6573 10.0124C15.3927 8.98901 12.1545 6.36285 11.2561 5.63509C11.1249 5.52759 11.1069 5.33625 11.2127 5.20295L12.2159 3.95706C13.126 2.78534 14.7133 2.67784 15.9938 3.69906L17.4647 4.87078C18.0679 5.34377 18.47 5.96726 18.6076 6.62299C18.7663 7.3443 18.597 8.0527 18.1208 8.66544Z"
-                                                                                  fill="currentColor"></path>
-                                                                        </svg>
-                                                                        Edit
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="border-bottom mb-3 pb-3">
-                                                            <h4 class="mb-0">Other Places Lived</h4>
-                                                        </div>
-                                                        <div class="d-flex align-items-center gap-2 mb-4">
-                                                            <a href="javascript:void(0)" class="d-flex">
-                                                                <svg class="icon-20" width="20" viewBox="0 0 24 24"
-                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M12.0001 8.32739V15.6537"
-                                                                          stroke="currentColor" stroke-width="1.5"
-                                                                          stroke-linecap="round"
-                                                                          stroke-linejoin="round"></path>
-                                                                    <path d="M15.6668 11.9904H8.3335"
-                                                                          stroke="currentColor" stroke-width="1.5"
-                                                                          stroke-linecap="round"
-                                                                          stroke-linejoin="round"></path>
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                          d="M16.6857 2H7.31429C4.04762 2 2 4.31208 2 7.58516V16.4148C2 19.6879 4.0381 22 7.31429 22H16.6857C19.9619 22 22 19.6879 22 16.4148V7.58516C22 4.31208 19.9619 2 16.6857 2Z"
-                                                                          stroke="currentColor" stroke-width="1.5"
-                                                                          stroke-linecap="round"
-                                                                          stroke-linejoin="round"></path>
-                                                                </svg>
-                                                            </a>
-                                                            <h6 class="mb-0 text-primary">Add Place</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="v-pills-details-tab" role="tabpanel"
-                                                         aria-labelledby="v-pills-details-tab">
-                                                        <div class="border-bottom mb-3 pb-3">
-                                                            <h3 class="mb-0">About You</h3>
-                                                        </div>
-                                                        <p class="mb-3">Hi, I’m Bni, I’m 26 and I work as a Web Designer
-                                                            for the iqonicdesign.</p>
-                                                        <div class="border-bottom mb-3 pb-3">
-                                                            <h4 class="mb-0">Other Name</h4>
-                                                        </div>
-                                                        <p class="mb-3">Bini Rock</p>
-                                                        <div class="border-bottom mb-3 pb-3">
-                                                            <h4 class="mb-0">Favorite Quotes</h4>
-                                                        </div>
-                                                        <p>Lorem Ipsum is simply dummy text of the printing and
-                                                            typesetting industry. Lorem Ipsum has been the industry's
-                                                            standard dummy text ever since the 1500s</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+        <div class="h-100">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="header-title">
+                                <h4 class="card-title">Profile</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <div>
+                                    <img src="{% if request.user.imageFile %}
+                                        {{ request.user.imageFile.url }}
+                                        {% elif request.user.imageFile %}
+                                        {{ request.user.imageFile.url }}
+                                        {% elif request.user.image %}
+                                        {{ request.user.image }}
+                                        {% else %}
+                                        {% static 'assets/images/avatars/01.png' %}
+                                        {% endif %}"
+                                        alt="profile-img"
+                                        class="rounded-pill img-fluid no-effect"
+                                        loading="lazy"/>
+                                </div>
+                                <div class="mt-3">
+                                    <span style="display: contents; position: sticky; top: -20px; right: -20px ">
+                                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-32" width="32"
+                                            height="32" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.3764 20.0279L18.1628 8.66544C18.6403 8.0527 18.8101 7.3443 18.6509 6.62299C18.513 5.96726 18.1097 5.34377 17.5049 4.87078L16.0299 3.69906C14.7459 2.67784 13.1541 2.78534 12.2415 3.95706L11.2546 5.23735C11.1273 5.39752 11.1591 5.63401 11.3183 5.76301C11.3183 5.76301 13.812 7.76246 13.8651 7.80546C14.0349 7.96671 14.1622 8.1817 14.1941 8.43969C14.2471 8.94493 13.8969 9.41792 13.377 9.48242C13.1329 9.51467 12.8994 9.43942 12.7297 9.29967L10.1086 7.21422C9.98126 7.11855 9.79025 7.13898 9.68413 7.26797L3.45514 15.3303C3.0519 15.8355 2.91395 16.4912 3.0519 17.1255L3.84777 20.5761C3.89021 20.7589 4.04939 20.8879 4.24039 20.8879L7.74222 20.8449C8.37891 20.8341 8.97316 20.5439 9.3764 20.0279ZM14.2797 18.9533H19.9898C20.5469 18.9533 21 19.4123 21 19.9766C21 20.5421 20.5469 21 19.9898 21H14.2797C13.7226 21 13.2695 20.5421 13.2695 19.9766C13.2695 19.4123 13.7226 18.9533 14.2797 18.9533Z"
+                                                fill="currentColor">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <h3 class="d-inline-block">{{ request.user.full_name }}</h3>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="nav-menu-11" role="tabpanel" aria-labelledby="nav-menu-11-tab">
-                        <div class="row">
-                            <div class="cardmenu 1 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenu-title-white">
-                                    <p>Card Title</p>
-                                </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="header-title">
+                                <h4 class="card-title">Ijtimoiy taroqlar</h4>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline m-0 p-0">
+                                <li class="d-flex mb-4 align-items-center active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        height="24"
+                                        width="24" id="Telegram-Logo-2--Streamline-Logos">
+                                        <desc>Telegram Logo 2 Streamline Icon: https://streamlinehq.com</desc>
+                                        <path fill="currentColor" fill-rule="evenodd"
+                                            d="M12 23c6.075 0 11 -4.925 11 -11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11ZM4.644 11.44a0.255 0.255 0 0 0 -0.162 0.235c0 0.102 0.067 0.198 0.162 0.234l2.987 1.09 6.154 -3.177a0.154 0.154 0 0 1 0.19 0.05 0.154 0.154 0 0 1 -0.022 0.195l-4.142 3.715 4.641 3.737c0.067 0.048 0.157 0.06 0.234 0.032a0.254 0.254 0 0 0 0.156 -0.177L17.3 7.036a0.254 0.254 0 0 0 -0.078 -0.246 0.254 0.254 0 0 0 -0.254 -0.046L4.644 11.44Z"
+                                            clip-rule="evenodd" stroke-width="1"></path>
+                                    </svg>
+                                    <div class="ms-3">
+                                        <p class="mb-0">Telegram</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex mb-4 align-items-center">
+                                    <svg width="24" height="24" viewBox="0 0 30 30" fill="none">
+                                        <path d="M16.285 2.50105C17.1972 2.49755 18.1093 2.50672 19.0212 2.52855L19.2637 2.5373C19.5437 2.5473 19.82 2.5598 20.1537 2.5748C21.4837 2.6373 22.3912 2.8473 23.1875 3.15605C24.0125 3.47355 24.7075 3.90355 25.4025 4.59855C26.038 5.22306 26.5298 5.97848 26.8437 6.8123C27.1525 7.60855 27.3625 8.5173 27.425 9.8473C27.44 10.1798 27.4525 10.4573 27.4625 10.7373L27.47 10.9798C27.4922 11.8913 27.5018 12.803 27.4987 13.7148L27.5 14.6473V16.2848C27.5031 17.197 27.4935 18.1091 27.4712 19.0211L27.4637 19.2636C27.4537 19.5436 27.4412 19.8198 27.4262 20.1536C27.3637 21.4836 27.1512 22.3911 26.8437 23.1873C26.5308 24.022 26.0389 24.7781 25.4025 25.4023C24.7774 26.0377 24.0216 26.5295 23.1875 26.8436C22.3912 27.1523 21.4837 27.3623 20.1537 27.4248C19.82 27.4398 19.5437 27.4523 19.2637 27.4623L19.0212 27.4698C18.1093 27.492 17.1972 27.5016 16.285 27.4986L15.3525 27.4998H13.7162C12.8041 27.5029 11.8919 27.4933 10.98 27.4711L10.7375 27.4636C10.4408 27.4528 10.1441 27.4403 9.84749 27.4261C8.51749 27.3636 7.60999 27.1511 6.81249 26.8436C5.97834 26.5302 5.22279 26.0383 4.59874 25.4023C3.96255 24.7777 3.47027 24.0218 3.15624 23.1873C2.84749 22.3911 2.63749 21.4836 2.57499 20.1536C2.56107 19.8569 2.54857 19.5603 2.53749 19.2636L2.53124 19.0211C2.50819 18.1092 2.49778 17.197 2.49999 16.2848V13.7148C2.4965 12.8031 2.50567 11.8913 2.52749 10.9798L2.53624 10.7373C2.54624 10.4573 2.55874 10.1798 2.57374 9.8473C2.63624 8.51605 2.84624 7.6098 3.15499 6.8123C3.4692 5.97808 3.96244 5.22286 4.59999 4.5998C5.22361 3.96324 5.97869 3.47052 6.81249 3.15605C7.60999 2.8473 8.51624 2.6373 9.84749 2.5748L10.7375 2.5373L10.98 2.53105C11.8915 2.50802 12.8032 2.4976 13.715 2.4998L16.285 2.50105ZM15 8.75105C14.1719 8.73934 13.3497 8.89233 12.5812 9.20114C11.8127 9.50994 11.1133 9.9684 10.5235 10.5499C9.93379 11.1313 9.46549 11.8242 9.14585 12.5883C8.82621 13.3523 8.6616 14.1722 8.6616 15.0004C8.6616 15.8286 8.82621 16.6486 9.14585 17.4126C9.46549 18.1766 9.93379 18.8695 10.5235 19.451C11.1133 20.0325 11.8127 20.4909 12.5812 20.7997C13.3497 21.1085 14.1719 21.2615 15 21.2498C16.6576 21.2498 18.2473 20.5913 19.4194 19.4192C20.5915 18.2471 21.25 16.6574 21.25 14.9998C21.25 13.3422 20.5915 11.7525 19.4194 10.5804C18.2473 9.40828 16.6576 8.75105 15 8.75105ZM15 11.2511C15.4981 11.2419 15.9931 11.332 16.456 11.5163C16.9189 11.7006 17.3404 11.9752 17.696 12.3242C18.0515 12.6732 18.334 13.0896 18.5268 13.549C18.7196 14.0084 18.819 14.5016 18.8191 14.9998C18.8192 15.498 18.72 15.9912 18.5273 16.4507C18.3346 16.9102 18.0523 17.3266 17.6969 17.6757C17.3414 18.0248 16.92 18.2996 16.4571 18.4841C15.9943 18.6685 15.4994 18.7588 15.0012 18.7498C14.0067 18.7498 13.0528 18.3547 12.3496 17.6515C11.6463 16.9482 11.2512 15.9944 11.2512 14.9998C11.2512 14.0052 11.6463 13.0514 12.3496 12.3482C13.0528 11.6449 14.0067 11.2498 15.0012 11.2498L15 11.2511ZM21.5625 6.87605C21.1592 6.89219 20.7779 7.06374 20.4982 7.35476C20.2186 7.64579 20.0625 8.03372 20.0625 8.4373C20.0625 8.84088 20.2186 9.22881 20.4982 9.51984C20.7779 9.81086 21.1592 9.98241 21.5625 9.99855C21.9769 9.99855 22.3743 9.83393 22.6673 9.54091C22.9604 9.24788 23.125 8.85045 23.125 8.43605C23.125 8.02165 22.9604 7.62422 22.6673 7.3312C22.3743 7.03817 21.9769 6.87355 21.5625 6.87355V6.87605Z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                    <div class="ms-3">
+                                        <p class="mb-0">Instagram</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg width="24" height="24" viewBox="0 0 30 30" fill="none">
+                                        <path d="M27.5 15C27.5 8.1 21.9 2.5 15 2.5C8.1 2.5 2.5 8.1 2.5 15C2.5 21.05 6.8 26.0875 12.5 27.25V18.75H10V15H12.5V11.875C12.5 9.4625 14.4625 7.5 16.875 7.5H20V11.25H17.5C16.8125 11.25 16.25 11.8125 16.25 12.5V15H20V18.75H16.25V27.4375C22.5625 26.8125 27.5 21.4875 27.5 15Z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                    <div class="ms-3">
+                                        <p class="mb-0">Facebook</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="header-title d-flex flex-wrap align-items-center justify-content-between p-3 ">
+                            <div class="left">
+                                <h4 class="card-title header-title">Foydalanuvchi shahsiy ma'lumot</h4>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                            <div class="right">
+                                <button class="btn btn-icon btn-primary">
+                                    <span class="btn-inner">
+                                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round"/>
+                                            <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </button>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="mt-2">
+                                <h6 class="mb-1">Tug'ilgan sana:</h6>
+                                <p>{{ request.user.birth_date }}</p>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                            <div class="mt-2">
+                                <h6 class="mb-1">To'liq ismi:</h6>
+                                <p>{{ user.full_name }} {{ user.third_name }}</p>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                            <div class="mt-2">
+                                <h6 class="mb-1">Turar joyi:</h6>
+                                <p><a href="#" class="text-body">{{ user.accommodation }}</a></p>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                            <div class="mt-2">
+                                <h6 class="mb-1">Email manzili:</h6>
+                                <p><a href="#" class="text-body" target="_blank"> {{ user.email }} </a></p>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                            <div class="mt-2">
+                                <h6 class="mb-1">Jinsi:</h6>
+                                <p><a href="#" class="text-body">Erkak</a></p>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                            <div class="mt-2">
+                                <h6 class="mb-1">Passport berilgan sanasi:</h6>
+                                <p><a href="#" class="text-body">{{ user.passport_serial }}</a></p>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                            <div class="mt-2">
+                                <h6 class="mb-1">Passport seriasi va raqami:</h6>
+                                <p><a href="#" class="text-body">{{ user.passport_serial }}</a></p>
                             </div>
-                            <div class="cardmenu 2 col-3">
-                                <div class="cardmenu_image"><img src="https://i.redd.it/b3esnz5ra34y.jpg"/></div>
-                                <div class="cardmenu_title cardmenutitle-white">
-                                    <p>Card Title</p>
-                                </div>
+                            <div class="mt-2">
+                                <h6 class="mb-1">JShShIR raqami:</h6>
+                                <p><a href="#" class="text-body">{{ user.passport_issue_date }}</a></p>
+                            </div>
+                            <div class="mt-2">
+                                <h6 class="mb-1">JShShIR raqami:</h6>
+                                <p><a href="#" class="text-body">{{ user.passport_issue_date }}</a></p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="tab-pane fade" id="nav-univer-11" role="tabpanel" aria-labelledby="nav-univer-11-tab">
-                        <div>
-                            <div class="card">
-                                asdasd
+                </div>
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="header-title d-flex flex-wrap align-items-center justify-content-between p-3 ">
+                            <div class="left">
+                                <h4 class="card-title header-title">Foydalanuvchi HEMIS ma'lumot</h4>
+                            </div>
+                            <div class="right">
+                                <button class="btn btn-icon btn-success">
+                                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M4.8807 14.6713C4.74972 14.2784 4.32498 14.066 3.93202 14.197C3.53906 14.328 3.32669 14.7527 3.45768 15.1457L4.8807 14.6713ZM20.8807 15.1457C21.0117 14.7527 20.7993 14.328 20.4064 14.197C20.0134 14.066 19.5887 14.2784 19.4577 14.6713L20.8807 15.1457ZM4.16919 14.9085C3.45768 15.1457 3.45779 15.146 3.45791 15.1464C3.45796 15.1465 3.45809 15.1469 3.45819 15.1472C3.45839 15.1478 3.45862 15.1485 3.45889 15.1493C3.45942 15.1509 3.46007 15.1528 3.46086 15.1551C3.46242 15.1597 3.4645 15.1657 3.4671 15.1731C3.47229 15.188 3.47955 15.2084 3.48896 15.2341C3.50776 15.2854 3.53515 15.3576 3.57164 15.4477C3.64455 15.6279 3.75414 15.8805 3.90462 16.1814C4.20474 16.7817 4.67217 17.5836 5.34302 18.3886C6.68936 20.0043 8.88337 21.6585 12.1692 21.6585V20.1585C9.45501 20.1585 7.64902 18.8128 6.49536 17.4284C5.91621 16.7334 5.50864 16.0354 5.24626 15.5106C5.11549 15.2491 5.02195 15.0329 4.96206 14.8849C4.93214 14.811 4.91069 14.7543 4.89727 14.7177C4.89056 14.6994 4.88587 14.6861 4.88312 14.6783C4.88175 14.6744 4.88087 14.6718 4.88047 14.6706C4.88027 14.67 4.88019 14.6698 4.88023 14.6699C4.88025 14.67 4.88029 14.6701 4.88037 14.6704C4.88041 14.6705 4.8805 14.6707 4.88052 14.6708C4.88061 14.671 4.8807 14.6713 4.16919 14.9085ZM12.1692 21.6585C15.455 21.6585 17.649 20.0043 18.9954 18.3886C19.6662 17.5836 20.1336 16.7817 20.4338 16.1814C20.5842 15.8805 20.6938 15.6279 20.7667 15.4477C20.8032 15.3576 20.8306 15.2854 20.8494 15.2341C20.8588 15.2084 20.8661 15.188 20.8713 15.1731C20.8739 15.1657 20.876 15.1597 20.8775 15.1551C20.8783 15.1528 20.879 15.1509 20.8795 15.1493C20.8798 15.1485 20.88 15.1478 20.8802 15.1472C20.8803 15.1469 20.8804 15.1465 20.8805 15.1464C20.8806 15.146 20.8807 15.1457 20.1692 14.9085C19.4577 14.6713 19.4578 14.671 19.4579 14.6708C19.4579 14.6707 19.458 14.6705 19.458 14.6704C19.4581 14.6701 19.4581 14.67 19.4582 14.6699C19.4582 14.6698 19.4581 14.67 19.4579 14.6706C19.4575 14.6718 19.4566 14.6744 19.4553 14.6783C19.4525 14.6861 19.4478 14.6994 19.4411 14.7177C19.4277 14.7543 19.4062 14.811 19.3763 14.8849C19.3164 15.0329 19.2229 15.2491 19.0921 15.5106C18.8297 16.0354 18.4222 16.7334 17.843 17.4284C16.6894 18.8128 14.8834 20.1585 12.1692 20.1585V21.6585Z"
+                                            fill="currentColor"/>
+                                        <path d="M16.1692 15.4857L20.8122 13.981L22.2973 18.6312"
+                                            stroke="currentColor"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path
+                                            d="M20.0741 10.0265C20.1885 10.4246 20.604 10.6545 21.0021 10.5401C21.4002 10.4257 21.6302 10.0102 21.5157 9.61208L20.0741 10.0265ZM4.10797 8.88311C3.96065 9.27025 4.15507 9.7035 4.5422 9.85081C4.92933 9.99812 5.36259 9.80371 5.5099 9.41658L4.10797 8.88311ZM20.7949 9.81927C21.5157 9.61208 21.5156 9.61174 21.5155 9.61138C21.5155 9.61122 21.5154 9.61084 21.5153 9.61053C21.5151 9.60992 21.5149 9.60922 21.5147 9.60842C21.5142 9.60683 21.5136 9.60487 21.513 9.60254C21.5116 9.59789 21.5098 9.59178 21.5075 9.58425C21.5029 9.56919 21.4965 9.54847 21.4882 9.52245C21.4715 9.47042 21.4472 9.39713 21.4145 9.30554C21.3492 9.1225 21.2503 8.86554 21.1125 8.55855C20.8378 7.94628 20.4043 7.12546 19.7677 6.29307C18.4902 4.62255 16.3673 2.87795 13.0843 2.74047L13.0216 4.23916C15.7334 4.35272 17.4815 5.77284 18.5762 7.20429C19.1258 7.92289 19.5038 8.63736 19.744 9.17265C19.8637 9.43943 19.9481 9.65931 20.0018 9.80966C20.0286 9.88477 20.0476 9.94232 20.0595 9.97945C20.0654 9.99801 20.0696 10.0115 20.072 10.0194C20.0732 10.0234 20.074 10.026 20.0743 10.0272C20.0745 10.0278 20.0746 10.028 20.0745 10.0279C20.0745 10.0279 20.0745 10.0277 20.0744 10.0275C20.0744 10.0273 20.0743 10.0271 20.0743 10.027C20.0742 10.0268 20.0741 10.0265 20.7949 9.81927ZM13.0843 2.74047C9.8014 2.60299 7.5401 4.164 6.12735 5.72187C5.42339 6.49812 4.92282 7.27983 4.59785 7.86698C4.43491 8.16138 4.31485 8.40917 4.23446 8.58611C4.19424 8.67465 4.16385 8.74564 4.14292 8.7961C4.13245 8.82133 4.12433 8.84144 4.11853 8.85607C4.11562 8.86338 4.1133 8.86932 4.11154 8.87384C4.11066 8.8761 4.10992 8.87801 4.10933 8.87956C4.10903 8.88033 4.10877 8.88101 4.10854 8.88161C4.10843 8.8819 4.10828 8.88228 4.10823 8.88243C4.10809 8.88278 4.10797 8.88311 4.80893 9.14985C5.5099 9.41658 5.50979 9.41686 5.50969 9.41713C5.50967 9.41718 5.50957 9.41743 5.50953 9.41754C5.50944 9.41778 5.50939 9.41792 5.50936 9.41798C5.50932 9.4181 5.50941 9.41786 5.50963 9.41728C5.51008 9.41612 5.51107 9.41359 5.51261 9.40973C5.51568 9.40199 5.52093 9.38895 5.52839 9.37095C5.54334 9.33494 5.56713 9.27918 5.60012 9.20658C5.66615 9.06124 5.76865 8.84919 5.91025 8.59335C6.19436 8.08002 6.63078 7.39965 7.23849 6.72952C8.44906 5.3946 10.3098 4.1256 13.0216 4.23916L13.0843 2.74047Z"
+                                            fill="currentColor"/>
+                                        <path d="M8.82965 8.74048L4.12772 10.0496L2.8385 5.34131"
+                                            stroke="currentColor"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-library-11" role="tabpanel" aria-labelledby="nav-library-11-tab">
-                        <p><strong>This is some placeholder content the Contact tab's associated
-                            content.</strong></p>
-                    </div>
-                    <div class="tab-pane fade" id="nav-exam-11" role="tabpanel" aria-labelledby="nav-exam-11-tab">
-                        <p><strong>This is some placeholder content the Contact tab's associated
-                            content.</strong></p>
-                    </div>
-                    <div class="tab-pane fade" id="nav-edu-11" role="tabpanel" aria-labelledby="nav-edu-11-tab">
-                        <p><strong>This is some placeholder content the Contact tab's associated
-                            content.</strong></p>
-                    </div>
-                    <div class="tab-pane fade" id="nav-kpi-11" role="tabpanel" aria-labelledby="nav-kpi-11-tab">
-                        <p><strong>This is some placeholder content the Contact tab's associated
-                            content.</strong></p>
-                    </div>
-                    <div class="tab-pane fade" id="nav-contact-11" role="tabpanel" aria-labelledby="nav-contact-11-tab">
-                        <p><strong>This is some placeholder content the Contact tab's associated
-                            content.</strong></p>
-                    </div>
-                    <div class="tab-pane fade" id="nav-social-11" role="tabpanel" aria-labelledby="nav-social-11-tab">
-                        <div class="cards">
-                            <h1>
-                                Ijtimoiy tarmoqlar</h1>
-                            <div class="services row">
-                                <div class="content content-1 col-lg-4">
-                                    <div class="fab fa-facebook">
-                                    </div>
-                                    <h2>
-                                        Facebook</h2>
-                                    <p>
-                                        Facebook is a social networking site that easy to connect with family and
-                                        friends and created in 2004. </p>
-                                    <a href="#">Read More</a>
+                        <div class="card-body">
+                            <div class="mt-3">
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">ID raqam :</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.full_id }}</a></div>
                                 </div>
-                                <div class="content content-2 col-lg-4">
-                                    <div class="fab fa-whatsapp">
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Fakultet :</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.department }}</a>
                                     </div>
-                                    <h2>
-                                        WhatsApp</h2>
-                                    <p>
-                                        WhatsApp is a messaging app that lets users text, chat, and share media,
-                                        including voice messages and video</p>
-                                    <a href="#">Read More</a>
                                 </div>
-                                <div class="content content-3 col-lg-4">
-                                    <div class="fab fa-youtube">
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">O'quv rejasi :</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.department }}</a>
                                     </div>
-                                    <h2>
-                                        Youtube</h2>
-                                    <p>
-                                        YouTube is a free video sharing site that easy to watch online and create and
-                                        upload your own videos.</p>
-                                    <a href="#">Read More</a>
                                 </div>
-                                <div class="content content-1 col-lg-4">
-                                    <div class="fab fa-facebook">
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Mutaxassislik :</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.specialty }}</a>
                                     </div>
-                                    <h2>
-                                        Facebook</h2>
-                                    <p>
-                                        Facebook is a social networking site that easy to connect with family and
-                                        friends and created in 2004. </p>
-                                    <a href="#">Read More</a>
                                 </div>
-                                <div class="content content-2 col-lg-4">
-                                    <div class="fab fa-whatsapp">
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">O'quv yili:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.educationYear }}</a>
                                     </div>
-                                    <h2>
-                                        WhatsApp</h2>
-                                    <p>
-                                        WhatsApp is a messaging app that lets users text, chat, and share media,
-                                        including voice messages and video</p>
-                                    <a href="#">Read More</a>
                                 </div>
-                                <div class="content content-3 col-lg-4">
-                                    <div class="fab fa-youtube">
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Kirish yili:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.year_of_enter }}</a>
                                     </div>
-                                    <h2>
-                                        Youtube</h2>
-                                    <p>
-                                        YouTube is a free video sharing site that easy to watch online and create and
-                                        upload your own videos.</p>
-                                    <a href="#">Read More</a>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Davlat:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.country }}</a></div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Viloyat:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.province }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Tuman:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.district }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Fuqarolik:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.citizenship }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Talaba holati:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.studentStatus }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Hodim holati:</div>
+                                    <div class="col-6"><a href="#"
+                                        class="ms-3">{{ request.user.employeeStatus }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Xodim turi:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.employeeType }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Ta'lim shakli:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.educationForm }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Ta'lim turi:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.educationType }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="element-wrapper row">
+                                    <div class="element-name col-6">Bosqich:</div>
+                                    <div class="col-6"><a href="#" class="ms-3">{{ request.user.level }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2"></div>
             </div>
         </div>
-
     </div>
-    <!--/ Content -->
+    <div class="offcanvas offcanvas-bottom share-offcanvas" tabindex="-1" id="share-btn"
+        aria-labelledby="shareBottomLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="shareBottomLabel">Share</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body small">
+            <div class="d-flex flex-wrap align-items-center">
+                <div class="text-center me-3 mb-3">
+                    <img src="{% static 'assets/images/brands/08.png ' %}" class="img-fluid rounded mb-2" alt=""
+                        loading="lazy">
+                    <h6>Facebook</h6>
+                </div>
+                <div class="text-center me-3 mb-3">
+                    <img src="{% static 'assets/images/brands/09.png ' %}" class="img-fluid rounded mb-2" alt=""
+                        loading="lazy">
+                    <h6>Twitter</h6>
+                </div>
+                <div class="text-center me-3 mb-3">
+                    <img src="{% static 'assets/images/brands/10.png ' %}" class="img-fluid rounded mb-2" alt=""
+                        loading="lazy">
+                    <h6>Instagram</h6>
+                </div>
+                <div class="text-center me-3 mb-3">
+                    <img src="{% static 'assets/images/brands/11.png ' %}" class="img-fluid rounded mb-2" alt=""
+                        loading="lazy">
+                    <h6>Google Plus</h6>
+                </div>
+                <div class="text-center me-3 mb-3">
+                    <img src="{% static 'assets/images/brands/13.png ' %}" class="img-fluid rounded mb-2" alt=""
+                        loading="lazy">
+                    <h6>In</h6>
+                </div>
+                <div class="text-center me-3 mb-3">
+                    <img src="{% static 'assets/images/brands/12.png ' %}" class="img-fluid rounded mb-2" alt=""
+                        loading="lazy">
+                    <h6>YouTube</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ Content -->
 {% endblock body %}
 {% block script %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    {#    watch#}
-    <script>
-
-    </script>
-    {#    weather#}
-    {#    <script>#}
-    {#        $(document).ready(function () {#}
-    {#            $.ajax({#}
-    {#                url: "weather",#}
-    {#                method: "GET",#}
-    {#                success: function (data) {#}
-    {#                    // Ob havo ma'lumotlarini HTML elementlariga joylash#}
-    {#                    $("#temperature").text("" + data.temperature + "°C");#}
-    {#                    // Ikonani joylash uchun SVG kodini qo'shib, misol uchun:#}
-    {#                    $("#weather-icon").html('<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="35" viewBox="0 0 14 14" id="Sun-Cloud--Streamline-Core"><desc>Sun Cloud Streamline Icon: https://streamlinehq.com</desc><g id="Sun-Cloud--Streamline-Core"><path id="Ellipse 636" fill="#2859C5" d="M8.004 2.998a2.998 2.998 0 1 0 5.996 0 2.998 2.998 0 1 0 -5.996 0" stroke-width="1"></path><path id="Vector" fill="#8FBFFA" d="M4.5 5a4.5 4.5 0 0 0 0 9h6a2.5 2.5 0 0 0 0 -5 2.45 2.45 0 0 0 -1.17 0.3 0.24 0.24 0 0 1 -0.23 0 0.25 0.25 0 0 1 -0.14 -0.19A4.45 4.45 0 0 0 4.5 5Z" stroke-width="1"></path></g></svg>');#}
-    {#                },#}
-    {#                error: function (xhr, status, error) {#}
-    {#                    console.error(xhr.responseText);#}
-    {#                }#}
-    {#            });#}
-    {#        });#}
-    {#    </script>#}
-    <!-- Library Bundle Script -->
-    <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
-    <!-- Plugin Scripts -->
-    <!-- Flatpickr Script -->
-    <script src="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.js' %}"></script>
-    <script src="{% static 'assets/js/plugins/flatpickr.js' %}" defer></script>
-    <!-- NoUI Slider Script -->
-    <script src="{% static 'assets/vendor/noUiSilder/script/nouislider.min.js' %}"></script>
-    <!-- Slider-tab Script -->
-    <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
-    <script src="{% static 'assets/vendor/swiperSlider/swiper-bundle.min.js' %}s"></script>
-    <!-- Select2 Script -->
-    <script src="{% static 'assets/js/plugins/select2.js' %}" defer></script>
-    <!-- Lodash Utility -->
-    <script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
-    <!-- Utilities Functions -->
-    <script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
-    <!-- Settings Script -->
-    <script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
-    <!-- Settings Init Script -->
-    <script src="{% static 'assets/js/dashboard-setting.js' %}"></script>
-    <!-- External Library Bundle Script -->
-    <script src="{% static 'assets/js/core/external.min.js' %}"></script>
-    <!-- Widgetchart Script -->
-    <script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
-    <!-- Dashboard Script -->
-    <script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
-    <script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
-    <!-- Hopeui Script -->
-    <script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
-    <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
-    <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
-    <script src="{% static 'assets/js/blog.js' %}" defer=""></script>
-    <div class="flatpickr-calendar animate" tabindex="-1">
-        <div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg version="1.1"
-                                                                                                 xmlns="http://www.w3.org/2000/svg"
-                                                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                 viewBox="0 0 17 17"><g></g><path
-                d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span>
-            <div class="flatpickr-month">
-                <div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month"
-                                                             tabindex="-1">
-                    <option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option>
-                    <option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option>
-                    <option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option>
-                    <option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option>
-                    <option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option>
-                    <option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option>
-                    <option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option>
-                    <option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option>
-                    <option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option>
-                    <option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option>
-                </select>
-                    <div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1"
-                                                        aria-label="Year" min="2024"><span class="arrowUp"></span><span
-                            class="arrowDown"></span></div>
-                </div>
-            </div>
-            <span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path
-                    d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span>
-        </div>
-        <div class="flatpickr-innerContainer">
-            <div class="flatpickr-rContainer">
-                <div class="flatpickr-weekdays">
-                    <div class="flatpickr-weekdaycontainer">
-      <span class="flatpickr-weekday">
-        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span
-                            class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span
-                            class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
-      </span>
-                    </div>
-                </div>
-                <div class="flatpickr-days" tabindex="-1">
-                    <div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled"
-                                                    aria-label="February 25, 2024">25</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 26, 2024">26</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 27, 2024">27</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 28, 2024">28</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 29, 2024">29</span><span class="flatpickr-day flatpickr-disabled"
-                                                                          aria-label="March 1, 2024">1</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 2, 2024">2</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 3, 2024">3</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 4, 2024">4</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 5, 2024">5</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 6, 2024">6</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 7, 2024">7</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 8, 2024">8</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 9, 2024">9</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 10, 2024">10</span><span
-                            class="flatpickr-day today" aria-label="March 11, 2024" aria-current="date"
-                            tabindex="-1">11</span><span class="flatpickr-day " aria-label="March 12, 2024"
-                                                         tabindex="-1">12</span><span class="flatpickr-day "
-                                                                                      aria-label="March 13, 2024"
-                                                                                      tabindex="-1">13</span><span
-                            class="flatpickr-day " aria-label="March 14, 2024" tabindex="-1">14</span><span
-                            class="flatpickr-day " aria-label="March 15, 2024" tabindex="-1">15</span><span
-                            class="flatpickr-day " aria-label="March 16, 2024" tabindex="-1">16</span><span
-                            class="flatpickr-day " aria-label="March 17, 2024" tabindex="-1">17</span><span
-                            class="flatpickr-day " aria-label="March 18, 2024" tabindex="-1">18</span><span
-                            class="flatpickr-day " aria-label="March 19, 2024" tabindex="-1">19</span><span
-                            class="flatpickr-day " aria-label="March 20, 2024" tabindex="-1">20</span><span
-                            class="flatpickr-day " aria-label="March 21, 2024" tabindex="-1">21</span><span
-                            class="flatpickr-day " aria-label="March 22, 2024" tabindex="-1">22</span><span
-                            class="flatpickr-day " aria-label="March 23, 2024" tabindex="-1">23</span><span
-                            class="flatpickr-day " aria-label="March 24, 2024" tabindex="-1">24</span><span
-                            class="flatpickr-day " aria-label="March 25, 2024" tabindex="-1">25</span><span
-                            class="flatpickr-day " aria-label="March 26, 2024" tabindex="-1">26</span><span
-                            class="flatpickr-day " aria-label="March 27, 2024" tabindex="-1">27</span><span
-                            class="flatpickr-day " aria-label="March 28, 2024" tabindex="-1">28</span><span
-                            class="flatpickr-day " aria-label="March 29, 2024" tabindex="-1">29</span><span
-                            class="flatpickr-day " aria-label="March 30, 2024" tabindex="-1">30</span><span
-                            class="flatpickr-day " aria-label="March 31, 2024" tabindex="-1">31</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 1, 2024" tabindex="-1">1</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 2, 2024" tabindex="-1">2</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 3, 2024" tabindex="-1">3</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 4, 2024" tabindex="-1">4</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 5, 2024" tabindex="-1">5</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 6, 2024" tabindex="-1">6</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="flatpickr-calendar rangeMode animate" tabindex="-1">
-        <div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg version="1.1"
-                                                                                                 xmlns="http://www.w3.org/2000/svg"
-                                                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                 viewBox="0 0 17 17"><g></g><path
-                d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span>
-            <div class="flatpickr-month">
-                <div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month"
-                                                             tabindex="-1">
-                    <option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option>
-                    <option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option>
-                    <option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option>
-                    <option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option>
-                    <option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option>
-                    <option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option>
-                    <option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option>
-                    <option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option>
-                    <option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option>
-                    <option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option>
-                </select>
-                    <div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1"
-                                                        aria-label="Year" min="2024"><span class="arrowUp"></span><span
-                            class="arrowDown"></span></div>
-                </div>
-            </div>
-            <span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path
-                    d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span>
-        </div>
-        <div class="flatpickr-innerContainer">
-            <div class="flatpickr-rContainer">
-                <div class="flatpickr-weekdays">
-                    <div class="flatpickr-weekdaycontainer">
-      <span class="flatpickr-weekday">
-        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span
-                            class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span
-                            class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
-      </span>
-                    </div>
-                </div>
-                <div class="flatpickr-days" tabindex="-1">
-                    <div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled"
-                                                    aria-label="February 25, 2024">25</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 26, 2024">26</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 27, 2024">27</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 28, 2024">28</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 29, 2024">29</span><span class="flatpickr-day flatpickr-disabled"
-                                                                          aria-label="March 1, 2024">1</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 2, 2024">2</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 3, 2024">3</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 4, 2024">4</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 5, 2024">5</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 6, 2024">6</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 7, 2024">7</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 8, 2024">8</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 9, 2024">9</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 10, 2024">10</span><span
-                            class="flatpickr-day today" aria-label="March 11, 2024" aria-current="date"
-                            tabindex="-1">11</span><span class="flatpickr-day " aria-label="March 12, 2024"
-                                                         tabindex="-1">12</span><span class="flatpickr-day "
-                                                                                      aria-label="March 13, 2024"
-                                                                                      tabindex="-1">13</span><span
-                            class="flatpickr-day " aria-label="March 14, 2024" tabindex="-1">14</span><span
-                            class="flatpickr-day " aria-label="March 15, 2024" tabindex="-1">15</span><span
-                            class="flatpickr-day " aria-label="March 16, 2024" tabindex="-1">16</span><span
-                            class="flatpickr-day " aria-label="March 17, 2024" tabindex="-1">17</span><span
-                            class="flatpickr-day " aria-label="March 18, 2024" tabindex="-1">18</span><span
-                            class="flatpickr-day " aria-label="March 19, 2024" tabindex="-1">19</span><span
-                            class="flatpickr-day " aria-label="March 20, 2024" tabindex="-1">20</span><span
-                            class="flatpickr-day " aria-label="March 21, 2024" tabindex="-1">21</span><span
-                            class="flatpickr-day " aria-label="March 22, 2024" tabindex="-1">22</span><span
-                            class="flatpickr-day " aria-label="March 23, 2024" tabindex="-1">23</span><span
-                            class="flatpickr-day " aria-label="March 24, 2024" tabindex="-1">24</span><span
-                            class="flatpickr-day " aria-label="March 25, 2024" tabindex="-1">25</span><span
-                            class="flatpickr-day " aria-label="March 26, 2024" tabindex="-1">26</span><span
-                            class="flatpickr-day " aria-label="March 27, 2024" tabindex="-1">27</span><span
-                            class="flatpickr-day " aria-label="March 28, 2024" tabindex="-1">28</span><span
-                            class="flatpickr-day " aria-label="March 29, 2024" tabindex="-1">29</span><span
-                            class="flatpickr-day " aria-label="March 30, 2024" tabindex="-1">30</span><span
-                            class="flatpickr-day " aria-label="March 31, 2024" tabindex="-1">31</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 1, 2024" tabindex="-1">1</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 2, 2024" tabindex="-1">2</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 3, 2024" tabindex="-1">3</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 4, 2024" tabindex="-1">4</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 5, 2024" tabindex="-1">5</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 6, 2024" tabindex="-1">6</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="flatpickr-calendar animate" tabindex="-1">
-        <div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg version="1.1"
-                                                                                                 xmlns="http://www.w3.org/2000/svg"
-                                                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                 viewBox="0 0 17 17"><g></g><path
-                d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span>
-            <div class="flatpickr-month">
-                <div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month"
-                                                             tabindex="-1">
-                    <option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option>
-                    <option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option>
-                    <option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option>
-                    <option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option>
-                    <option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option>
-                    <option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option>
-                    <option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option>
-                    <option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option>
-                    <option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option>
-                    <option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option>
-                </select>
-                    <div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1"
-                                                        aria-label="Year" min="2024"><span class="arrowUp"></span><span
-                            class="arrowDown"></span></div>
-                </div>
-            </div>
-            <span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path
-                    d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span>
-        </div>
-        <div class="flatpickr-innerContainer">
-            <div class="flatpickr-rContainer">
-                <div class="flatpickr-weekdays">
-                    <div class="flatpickr-weekdaycontainer">
-      <span class="flatpickr-weekday">
-        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span
-                            class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span
-                            class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
-      </span>
-                    </div>
-                </div>
-                <div class="flatpickr-days" tabindex="-1">
-                    <div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled"
-                                                    aria-label="February 25, 2024">25</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 26, 2024">26</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 27, 2024">27</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 28, 2024">28</span><span
-                            class="flatpickr-day prevMonthDay flatpickr-disabled"
-                            aria-label="February 29, 2024">29</span><span class="flatpickr-day flatpickr-disabled"
-                                                                          aria-label="March 1, 2024">1</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 2, 2024">2</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 3, 2024">3</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 4, 2024">4</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 5, 2024">5</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 6, 2024">6</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 7, 2024">7</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 8, 2024">8</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 9, 2024">9</span><span
-                            class="flatpickr-day flatpickr-disabled" aria-label="March 10, 2024">10</span><span
-                            class="flatpickr-day today" aria-label="March 11, 2024" aria-current="date"
-                            tabindex="-1">11</span><span class="flatpickr-day " aria-label="March 12, 2024"
-                                                         tabindex="-1">12</span><span class="flatpickr-day "
-                                                                                      aria-label="March 13, 2024"
-                                                                                      tabindex="-1">13</span><span
-                            class="flatpickr-day " aria-label="March 14, 2024" tabindex="-1">14</span><span
-                            class="flatpickr-day " aria-label="March 15, 2024" tabindex="-1">15</span><span
-                            class="flatpickr-day " aria-label="March 16, 2024" tabindex="-1">16</span><span
-                            class="flatpickr-day " aria-label="March 17, 2024" tabindex="-1">17</span><span
-                            class="flatpickr-day " aria-label="March 18, 2024" tabindex="-1">18</span><span
-                            class="flatpickr-day " aria-label="March 19, 2024" tabindex="-1">19</span><span
-                            class="flatpickr-day " aria-label="March 20, 2024" tabindex="-1">20</span><span
-                            class="flatpickr-day " aria-label="March 21, 2024" tabindex="-1">21</span><span
-                            class="flatpickr-day " aria-label="March 22, 2024" tabindex="-1">22</span><span
-                            class="flatpickr-day " aria-label="March 23, 2024" tabindex="-1">23</span><span
-                            class="flatpickr-day " aria-label="March 24, 2024" tabindex="-1">24</span><span
-                            class="flatpickr-day " aria-label="March 25, 2024" tabindex="-1">25</span><span
-                            class="flatpickr-day " aria-label="March 26, 2024" tabindex="-1">26</span><span
-                            class="flatpickr-day " aria-label="March 27, 2024" tabindex="-1">27</span><span
-                            class="flatpickr-day " aria-label="March 28, 2024" tabindex="-1">28</span><span
-                            class="flatpickr-day " aria-label="March 29, 2024" tabindex="-1">29</span><span
-                            class="flatpickr-day " aria-label="March 30, 2024" tabindex="-1">30</span><span
-                            class="flatpickr-day " aria-label="March 31, 2024" tabindex="-1">31</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 1, 2024" tabindex="-1">1</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 2, 2024" tabindex="-1">2</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 3, 2024" tabindex="-1">3</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 4, 2024" tabindex="-1">4</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 5, 2024" tabindex="-1">5</span><span
-                            class="flatpickr-day nextMonthDay" aria-label="April 6, 2024" tabindex="-1">6</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="flatpickr-calendar hasTime noCalendar animate" tabindex="-1">
-        <div class="flatpickr-time" tabindex="-1">
-            <div class="numInputWrapper"><input class="numInput flatpickr-hour" type="number" aria-label="Hour"
-                                                tabindex="-1" step="1" min="1" max="12" maxlength="2"><span
-                    class="arrowUp"></span><span class="arrowDown"></span></div>
-            <span class="flatpickr-time-separator">:</span>
-            <div class="numInputWrapper"><input class="numInput flatpickr-minute" type="number" aria-label="Minute"
-                                                tabindex="-1" step="5" min="0" max="59" maxlength="2"><span
-                    class="arrowUp"></span><span class="arrowDown"></span></div>
-            <span class="flatpickr-am-pm" title="Click to toggle" tabindex="-1">PM</span></div>
-    </div>
-
+<!-- Library Bundle Script -->
+<script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+<!-- Plugin Scripts -->
+<!-- Tour plugin Start -->
+<script src="{% static 'assets/vendor/sheperd/dist/js/sheperd.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/tour.js' %}" defer></script>
+<!-- Flatpickr Script -->
+<script src="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/flatpickr.js' %}" defer></script>
+<!-- Slider-tab Script -->
+<script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+<!-- Select2 Script -->
+<script src="{% static 'assets/js/plugins/select2.js' %}" defer></script>
+<!-- Lodash Utility -->
+<script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+<!-- Utilities Functions -->
+<script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+<!-- Settings Script -->
+<script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+<!-- Settings Init Script -->
+<script src="{% static 'assets/js/setting-init.js' %}"></script>
+<!-- External Library Bundle Script -->
+<script src="{% static 'assets/js/core/external.min.js' %}"></script>
+<!-- Widgetchart Script -->
+<script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+<!-- Dashboard Script -->
+<script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+<!-- Hopeui Script -->
+<script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
 {% endblock script %}

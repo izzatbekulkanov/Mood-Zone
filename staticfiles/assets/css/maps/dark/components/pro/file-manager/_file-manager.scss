@@ -1,0 +1,16 @@
+.card-folder{
+    &:before{
+        background-color: $card-bg;
+    }
+}
+.iq-file-manager-table{
+    tbody{
+        tr{
+            &:hover{
+                .iq-recently-badge{
+                    background: $body-bg !important;
+                }
+            }
+        }
+    }
+}

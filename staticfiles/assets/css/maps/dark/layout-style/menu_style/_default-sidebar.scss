@@ -1,0 +1,42 @@
+.sidebar {
+    background-color: $card-bg;
+    .navbar-brand {
+        .logo-title {
+            color: $white;
+        }
+    }
+    .sidebar-header {
+        border-color: $border-color;
+    }
+}
+.sidebar-list{
+    .navbar-nav{
+        .nav-item{
+            .nav-link.static-item{
+                .default-icon{
+                    color: $light;
+                }
+            }
+        }
+    }
+}
+
+.sidebar.sidebar-color.sidebar-default {
+	.nav-link.active {
+		 color: var(--#{$variable-prefix}primary);
+		background-color: $white;
+	}
+	.nav-link[aria-expanded=true] {
+		 color: var(--#{$variable-prefix}primary);
+		background-color: $white;
+	}
+}
+.sidebar-base {
+	.nav-item {
+		.nav-link {
+			&:not(.disabled) {
+				color:$menu-color;
+			}
+		}
+	}
+}

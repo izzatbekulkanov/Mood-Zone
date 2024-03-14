@@ -1,0 +1,174 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
+    <!-- Flatpickr css -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/sheperd/dist/css/sheperd.css' %}">
+    <!-- Hope Ui Design System Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+    <!-- Dark Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+    <!-- Customizer Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+    <!-- RTL Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+          rel="stylesheet">
+{% endblock style %}
+{% block body %}
+    <!-- Content -->
+    <div class="content-inner pb-0 container" id="page_layout">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+                            <div class="check1">
+                                <div class="d-flex flex-wrap align-items-center mb-3 mb-sm-0">
+                                    <h4 class="me-2 h4">Namangan davlat pedagogika institutiga Xush kelibsiz !!!</h4>
+                                </div>
+                            </div>
+                            <div class="check2">Ong tarafda</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+               <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Parol almashtirish</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="acc-edit">
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label" for="uname">Oldingi parol:</label>
+                                <input type="text" class="form-control" id="uname" value="Elon Musk">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Yangi parol:</label>
+                                <input type="email" class="form-control" id="email" value="elonmusk@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="altemail">Parol tasdiqlash:</label>
+                                <input type="email" class="form-control" id="altemail" value="muskelon008@gmail.com">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn mm-bg-danger">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Ma'lumot to'ldirish</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="acc-edit">
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label" for="facebook">Facebook:</label>
+                                <input type="text" class="form-control" id="facebook" value="www.facebook.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="twitter">Twitter:</label>
+                                <input type="text" class="form-control" id="twitter" value="www.twitter.com">
+                            </div>
+                           
+                            <div class="form-group">
+                                <label class="form-label" for="instagram">Instagram:</label>
+                                <input type="text" class="form-control" id="instagram" value="www.instagram.com">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn mm-bg-danger">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+                   <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Social Media</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="acc-edit">
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label" for="facebook">Facebook:</label>
+                                <input type="text" class="form-control" id="facebook" value="www.facebook.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="twitter">Twitter:</label>
+                                <input type="text" class="form-control" id="twitter" value="www.twitter.com">
+                            </div>
+                           
+                            <div class="form-group">
+                                <label class="form-label" for="instagram">Instagram:</label>
+                                <input type="text" class="form-control" id="instagram" value="www.instagram.com">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn mm-bg-danger">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+        </div>
+
+    </div>
+    <!--/ Content -->
+{% endblock body %}
+{% block script %}
+    <!-- Library Bundle Script -->
+    <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+    <!-- Plugin Scripts -->
+    <!-- Tour plugin Start -->
+    <script src="{% static 'assets/vendor/sheperd/dist/js/sheperd.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/tour.js' %}" defer></script>
+    <!-- Flatpickr Script -->
+    <script src="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/flatpickr.js' %}" defer></script>
+    <!-- Slider-tab Script -->
+    <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+    <!-- Select2 Script -->
+    <script src="{% static 'assets/js/plugins/select2.js' %}" defer></script>
+    <!-- Lodash Utility -->
+    <script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+    <!-- Utilities Functions -->
+    <script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+    <!-- Settings Script -->
+    <script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+    <!-- Settings Init Script -->
+    <script src="{% static 'assets/js/setting-init.js' %}"></script>
+    <!-- External Library Bundle Script -->
+    <script src="{% static 'assets/js/core/external.min.js' %}"></script>
+    <!-- Widgetchart Script -->
+    <script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+    <!-- Dashboard Script -->
+    <script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+    <!-- Hopeui Script -->
+    <script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+{% endblock script %}

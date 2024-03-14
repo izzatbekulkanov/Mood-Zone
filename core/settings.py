@@ -1,5 +1,7 @@
-from pathlib import Path
 import os
+from pathlib import Path
+
+import sentry_sdk
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,10 +12,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-%rzkb*01#g2vxzo)i^617#6wdd3dx%)e-t8*v%oq#!7bpeofm('
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = ['*']
+DEBUG = True
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    "172.16.15.15",
+    # ...
+]
 
 # Application definition
 LOCAL_APPS = [
@@ -25,11 +31,17 @@ LOCAL_APPS = [
     'post'
 ]
 
+INSTALLED_OTHER_APPS = [
+    'django_extensions',
+    'jazzmin',
+    'crispy_forms',
+    'silk',
+    "debug_toolbar",
+    'rest_framework',
+]
+
 # Umumiy ilovalar (django.contrib va boshqa global ilovalar)
 GLOBAL_APPS = [
-    'jazzmin',
-    # global install package
-    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,10 +50,30 @@ GLOBAL_APPS = [
     'django.contrib.staticfiles',
     'django.utils.translation',
 ]
-INSTALLED_APPS = LOCAL_APPS + GLOBAL_APPS
+INSTALLED_APPS = LOCAL_APPS + INSTALLED_OTHER_APPS + GLOBAL_APPS
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'silk.middleware.SilkyMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -49,8 +81,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ROOT_URLCONF = 'core.urls'
+
+sentry_sdk.init(
+    dsn="https://examplePublicKey@o0.ingest.sentry.io/0",
+    enable_tracing=True,
+)
 
 TEMPLATES = [
     {
@@ -80,9 +117,6 @@ DATABASES = {
     }
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -98,9 +132,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Tashkent'
@@ -108,9 +139,6 @@ TIME_ZONE = 'Asia/Tashkent'
 USE_I18N = True
 
 USE_TZ = True
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -120,9 +148,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

@@ -1,27 +1,28 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
 
 from .models import CustomUser, StudentType, StudentStatus, Citizenship, District, Province, Country, EmployeeType, \
-    EmployeeStatus, Gender
+    EmployeeStatus, Gender, CustomGroup, StaffPosition
 
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
-    list_display = ['username', 'email', 'full_name', 'user_role', 'is_active', 'full_id']
-    list_filter = ['user_role', 'is_active']
-    search_fields = ['username', 'email', 'full_name' 'first_name', 'last_name', 'user_role', 'is_staff']
+    list_display = ['username', 'email', 'full_name', 'is_active', 'full_id']
+    list_filter = ['is_active']
+    search_fields = ['username', 'email', 'full_name' 'first_name', 'last_name', 'is_staff']
     fieldsets = (
-        (None, {'fields': ('username', 'email', 'password', 'password_save')}),
-        ('Personal info', {'fields': ('first_name', 'second_name', 'third_name', 'gender',  'full_name', 'user_role', 'image', 'imageFile','phone_number', 'birth_date')}),
+        (None, {'fields': ('username', 'email', 'password', 'password_save', 'employee_id_number')}),
+        ('Personal info', {'fields': ('first_name', 'second_name', 'third_name', 'gender',  'full_name', 'role_group' , 'image', 'imageFile','phone_number', 'birth_date')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        ('secret', {'fields': ('full_id', 'hash', 'token')}),
+        ('secret', {'fields': ('full_id', 'hash', 'token', 'user_type')}),
 
     )
 
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'email', 'password1', 'password2', 'full_name', 'user_role', 'image', 'phone_number',
+            'fields': ('username', 'email', 'password1', 'password2', 'full_name', 'image', 'phone_number',
                        'birth_date', 'is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}
          ),
 
@@ -46,6 +47,10 @@ class EmployeeStatusAdmin(admin.ModelAdmin):
 class EmployeeTypeAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
 
+
+@admin.register(StaffPosition)
+class StaffPosition(admin.ModelAdmin):
+    list_display = ('name', 'code')
 
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
@@ -75,3 +80,8 @@ class StudentTypeAdmin(admin.ModelAdmin):
 @admin.register(StudentStatus)
 class StudentStatusAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
+
+class CustomGroupAdmin(BaseGroupAdmin):
+    filter_horizontal = ['permissions']
+
+admin.site.register(CustomGroup, CustomGroupAdmin)

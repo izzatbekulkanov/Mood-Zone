@@ -1,0 +1,22 @@
+.ms-auto{
+    margin-left: unset !important;
+    &.iq-arrow-btn{
+        transform: rotate(180deg);
+    }
+}
+.iq-product-custom-card{
+    .iq-product-hover-img{
+        .iq-product-info{
+            left: 1rem;
+            right: unset;
+        }
+    }
+}
+
+//verticle slider
+.product-vertical-slider {
+    .slider__col {
+        margin-left: 1.5rem;
+        margin-right: unset;
+    }
+}

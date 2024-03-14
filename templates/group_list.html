@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guruhlar</title>
+</head>
+<body>
+    <h2>Guruhlar</h2>
+    <ul>
+        {% for group in groups %}
+        <li>{{ group.name }}</li>
+        <ul>
+            {% for permission in group.permissions.all %}
+            <li>{{ permission.name }}</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>

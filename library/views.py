@@ -18,7 +18,7 @@ def check_user_role(user, allowed_roles):
 def library_dashboard(request):
     """Bosh sahifa ko'rsatkichi."""
     # Foydalanuvchi admin yoki librarian bo'lsa
-    if check_user_role(request.user, ['admin', 'librarian']):
+    if request.user.is_authenticated and (request.user.is_staff or request.user.groups.filter(name='Admin').exists()):
         # Foydalanuvchi bilan bog'liq kutubxona obyekti
         user_library = request.user.library.library
 
@@ -43,14 +43,12 @@ def library_dashboard(request):
 
         return render(request, 'app/library/layout/index.html', context)
     else:
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
+        return HttpResponseForbidden("Sizga bu sahifaga kirish uchun ruxsat yo'q.")
 
 
 @login_required
 def book_list(request):
     """Kitoblar ro'yxati sahifasi."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
 
     return render(request, 'app/library/pages/book_list.html')
 
@@ -174,15 +172,12 @@ def change_book_status(request, book_id):
 @login_required
 def add_book_view(request):
     """Yangi kitob qo'shish sahifasi."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
     return render(request, 'app/library/pages/add_book.html')
 
 
 @login_required
 def save_book(request):
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga kitob kiritishga ruhsat yo'q.")
+
     if request.method == 'POST':
         title = request.POST.get('title')
         author = request.POST.get('author')
@@ -214,8 +209,7 @@ def save_book(request):
 @login_required
 def busy_book(request):
     """Band kitoblar ro'yxati sahifasi."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
+
     busy_books = BookLoan.objects.filter(status='pending')
     return render(request, 'app/library/pages/busy_book.html', {'busy_books': busy_books})
 
@@ -223,8 +217,6 @@ def busy_book(request):
 @login_required
 def online_book_list(request):
     """Online kitoblar ro'yhati."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
     online_books = OnlineBook.objects.all()
     return render(request, 'app/library/pages/online_book_list.html', {'online_books': online_books})
 
@@ -232,8 +224,6 @@ def online_book_list(request):
 @login_required
 def add_online_book(request):
     """Onlayn kitob qo'shish sahifasi."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
     if request.method == 'POST':
         form = OnlineBookForm(request.POST, request.FILES)
         if form.is_valid():
@@ -247,8 +237,6 @@ def add_online_book(request):
 @login_required
 def order_book(request):
     """Kitob buyurtma sahifasi."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
     pending_orders = BookOrder.objects.filter(status='pending')
     approved_orders = BookOrder.objects.filter(status='approved')
     canceled_orders = BookOrder.objects.filter(status='canceled')
@@ -265,8 +253,6 @@ def order_book(request):
 @login_required
 def followers_book(request):
     """Obunachilar ro'yxati sahifasi."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
     subscribers = CustomUser.objects.filter(user_role='book_subscriber')
     return render(request, 'app/library/pages/followers_book.html', {'subscribers': subscribers})
 
@@ -274,16 +260,12 @@ def followers_book(request):
 @login_required
 def add_followers_book(request):
     """Obunachiga kitob qo'shish sahifasi."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
     return render(request, 'app/library/pages/add_followers_book.html')
 
 
 @login_required
 def qarzdor_kitobhon(request):
     """Qarzdor kitoblar ro'yxati sahifasi."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
     no_return_users = BookLoan.objects.filter(status='not_returned').values_list('user__username', flat=True).distinct()
     return render(request, 'app/library/pages/qarzdor_kitobhon.html', {'no_return_users': no_return_users})
 
@@ -291,8 +273,6 @@ def qarzdor_kitobhon(request):
 @login_required
 def give_book(request):
     """Kitob olib borish qo'shish."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
     if request.method == 'POST':
         form = BookLoanForm(request.POST)
         if form.is_valid():
@@ -306,8 +286,6 @@ def give_book(request):
 @login_required
 def statistics_book(request):
     """Statistika sahifasi."""
-    if not check_user_role(request.user, ['admin', 'librarian']):
-        return HttpResponseForbidden("Sizga bu sahifaga kirish huquqi yo'q.")
     # Obunachilari soni
     subscribers_count = CustomUser.objects.filter(user_role='book_subscriber').count()
 

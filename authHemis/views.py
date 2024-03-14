@@ -1,11 +1,12 @@
+from datetime import datetime
+
 from django.contrib import messages
 from django.contrib.auth import logout, get_user_model, login
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import redirect
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from account.models import CustomUser
-from .client import oAuth2Client
+
 from core.settings import (
     CLIENT_SECRET,
     CLIENT_ID,
@@ -14,7 +15,7 @@ from core.settings import (
     TOKEN_URL,
     AUTHORIZE_URL,
 )
-from datetime import datetime
+from .client import oAuth2Client
 
 
 class OAuthAuthorizationView(APIView):
@@ -83,49 +84,88 @@ class OAuthCallbackView(APIView):
 
             # E-mail manzilini tekshirish va saqlash
             if email:
+                first_name = user_details.get('firstname', '')
+                second_name = user_details.get('surname', '')
+                id_number = user_details.get('id', '')  # id bilan
+                if id_number:
+                    username = (first_name + '_' + second_name + str(id_number)).lower()
+                else:
+                    # Agar id mavjud emas bo'lsa, boshqa identifikatsiya xususiyatidan foydalaning
+                    username = (first_name + '_' + second_name).lower()
                 user, created = CustomUser.objects.get_or_create(
                     email=email,
                     defaults={
                         'full_name': user_details.get('name', ''),
                         'first_name': user_details.get('firstname', ''),
                         'second_name': user_details.get('surname', ''),
-                        'username': user_details.get('login', ''),
+                        'username': username,
                         'third_name': user_details.get('patronymic', ''),
                         'birth_date': new_date_str,
                         'phone_number': user_details.get('phone', ''),
+                        'token': access_token,
                         'image': user_details.get('picture', ''),
                         # Boshqa ma'lumotlar
                     }
                 )
-                oauth_login(request, email)
+                oauth_login(request, email, user)  # Faydalanuvchini login qiling
             elif employee_id_number:
-                # E-mail manzili mavjud emas, employee_id_number dan email yaratish
-                email = f"{employee_id_number}@namspi.uz"
-                user_type = user_details.get('type', '')
-                if user_type == 'employee':
-                    user_type = '1'  # Hodim
+                # Tekshirish: employee_id_number ga teng foydalanuvchi mavjudmi?
+                existing_user = CustomUser.objects.filter(employee_id_number=employee_id_number).first()
+                if existing_user:
+                    first_name = user_details.get('firstname', '')
+                    second_name = user_details.get('surname', '')
+                    id_number = user_details.get('id', '')  # id bilan
+                    if id_number:
+                        username = (first_name + '_' + second_name + str(id_number)).lower()
+                    else:
+                        # Agar id mavjud emas bo'lsa, boshqa identifikatsiya xususiyatidan foydalaning
+                        username = (first_name + '_' + second_name).lower()
+                    # Foydalanuvchi malumotlarini yangilash
+                    existing_user.full_name = user_details.get('name', '')
+                    existing_user.first_name = user_details.get('firstname', '')
+                    existing_user.second_name = user_details.get('surname', '')
+                    existing_user.username = username
+                    existing_user.third_name = user_details.get('patronymic', '')
+                    existing_user.birth_date = new_date_str
+                    existing_user.phone_number = user_details.get('phone', '')
+                    existing_user.token = access_token
+                    existing_user.image = user_details.get('picture', '')
+                    existing_user.save()
+                    oauth_login(request, existing_user.email, existing_user)  # Faydalanuvchini login qiling
+                else:
+                    # Yangi foydalanuvchi yaratish
+                    email = f"{employee_id_number}@namspi.uz"
+                    user_type = user_details.get('type', '')
+                    first_name = user_details.get('firstname', '')
+                    second_name = user_details.get('surname', '')
+                    id_number = user_details.get('id', '')  # id bilan
+                    if id_number:
+                        username = (first_name + '_' + second_name + str(id_number)).lower()
+                    else:
+                        # Agar id mavjud emas bo'lsa, boshqa identifikatsiya xususiyatidan foydalaning
+                        username = (first_name + '_' + second_name).lower()
 
-                user, created = CustomUser.objects.get_or_create(
-                    email=email,
-                    defaults={
-                        'employee_id_number': user_details.get('employee_id_number', ''),
-                        'full_name': user_details.get('name', ''),
-                        'first_name': user_details.get('firstname', ''),
-                        'second_name': user_details.get('surname', ''),
-                        'username': user_details.get('login', ''),
-                        'third_name': user_details.get('patronymic', ''),
-                        'birth_date': new_date_str,
-                        'phone_number': user_details.get('phone', ''),
-                        'image': user_details.get('picture', ''),
-                        'user_type': user_type,  # Foydalanuvchi tipini kiritish
-                        # Boshqa ma'lumotlar
-                    }
-                )
-                oauth_login(request, email)
+                    if user_type == 'employee':
+                        user_type = '2'  # Hodim
 
-            # Foydalanuvchini avtorizatsiya qilish
-            user.backend = 'django.contrib.auth.backends.ModelBackend'  # Foydalanuvchi uchun kerakli backendni aniqlash
-            login(request, user)
+                    user, created = CustomUser.objects.get_or_create(
+                        email=email,
+                        defaults={
+                            'employee_id_number': employee_id_number,
+                            'full_name': user_details.get('name', ''),
+                            'first_name': user_details.get('firstname', ''),
+                            'second_name': user_details.get('surname', ''),
+                            'username': username,
+                            'third_name': user_details.get('patronymic', ''),
+                            'birth_date': new_date_str,
+                            'phone_number': user_details.get('phone', ''),
+                            'token': access_token,
+                            'image': user_details.get('picture', ''),
+                            'user_type': user_type,  # Foydalanuvchi tipini kiritish
+                            # Boshqa ma'lumotlar
+                        }
+                    )
+                    oauth_login(request, email, user)  # Faydalanuvchini login qiling
 
             # return Response(full_info, status=status.HTTP_200_OK)
             return redirect('index')
@@ -138,13 +178,16 @@ class OAuthCallbackView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-def oauth_login(request, email):
-    # Foydalanuvchi obyektini olish
-    user = get_object_or_404(CustomUser, email=email)
 
-    # Foydalanuvchini avtorizatsiya qilish
-    user.backend = 'django.contrib.auth.backends.ModelBackend'  # Foydalanuvchi uchun kerakli backendni aniqlash
+def oauth_login(request, email, user):
+    # Faydalanuvchi obyektini olish
+    # user = get_object_or_404(CustomUser, email=email)
+
+    # Faydalanuvchini avtorizatsiya qilish
+    user.backend = 'django.contrib.auth.backends.ModelBackend'  # Faydalanuvchi uchun kerakli backendni aniqlash
     login(request, user)
+
+
 def logout_view(request):
     logout(request)
     messages.success(request, 'Successfully logged out.')
