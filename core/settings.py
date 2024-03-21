@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 
-import sentry_sdk
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +19,6 @@ INTERNAL_IPS = [
 
 # Application definition
 LOCAL_APPS = [
-    'django_profiler',
     'authHemis',
     'account',
     'university',
@@ -33,7 +31,6 @@ INSTALLED_OTHER_APPS = [
     'django_extensions',
     'jazzmin',
     'crispy_forms',
-    'timeline_logger',
     "debug_toolbar",
     'rest_framework',
 ]
@@ -54,8 +51,6 @@ INSTALLED_APPS = LOCAL_APPS + INSTALLED_OTHER_APPS + GLOBAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'silk.middleware.SilkyMiddleware',
-    'logging_requests.middleware.LoggingRequestsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -65,14 +60,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-LOGGING_REQUESTS_STORAGE_CLASS = 'logging_requests.storage.DBLogStorage'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ROOT_URLCONF = 'core.urls'
 
-sentry_sdk.init(
-    dsn="https://examplePublicKey@o0.ingest.sentry.io/0",
-    enable_tracing=True,
-)
 
 TEMPLATES = [
     {

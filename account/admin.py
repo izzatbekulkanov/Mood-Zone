@@ -5,9 +5,6 @@ from django.contrib.auth.models import Permission
 from .models import CustomUser, StudentType, StudentStatus, Citizenship, District, Province, Country, EmployeeType, \
     EmployeeStatus, Gender, StaffPosition
 
-from logging_requests.models import LogEntry
-
-admin.site.register(LogEntry)
 
 
 class CustomUserAdmin(UserAdmin):
