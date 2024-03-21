@@ -43,10 +43,9 @@
             <div class="sidebar-border-profile-card mt-3">
                 <div class="sidebar-border-profile-body">
                     <div class="sidebar-btn">
-                            <span class="sidebar-btn-icon">
-                                
-                                <img class="w-100 h-100" src="{{ request.user.image }}" alt="">
-                            </span>
+                        <span class="sidebar-btn-icon">
+                        <img class="w-100 h-100" src="{{ request.user.image }}" alt="">
+                        </span>
                     </div>
                     <div class="sidebar-border-user-data d-flex flex-column">
                         <span class="sidebar-border-data sidebar-border-title mb-1">{{ request.user.full_name }}</span>
@@ -61,7 +60,7 @@
             <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
-                        <span class="default-icon">Main</span>
+                        <span class="default-icon">Asosiy</span>
                         <span class="mini-icon" data-bs-toggle="tooltip" title="Home" data-bs-placement="right">-</span>
                     </a>
                 </li>
@@ -149,252 +148,889 @@
                 <li>
                     <hr class="hr-horizontal">
                 </li>
+                {#            Universitet#}
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
-                        <span class="default-icon">Ish sahifasi</span>
+                        <span class="default-icon">Universitet</span>
                         <span class="mini-icon">-</span>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#mainUniversity" role="button"
+                       aria-expanded="false"
+                       aria-controls="mainUniversity">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="Database-Server-1--Streamline-Core">
+                                <path id="Subtract" fill="currentColor" fill-rule="evenodd"
+                                      d="M1.50003 0.407196c-0.828426 0 -1.4999976347 0.671574 -1.5000003765 1.499994v0.00001L0 4.83177c0 0.82843 0.671573 1.5 1.5 1.5h11c0.8284 0 1.5 -0.67157 1.5 -1.49999l0 -2.92458c0 -0.82843 -0.6715 -1.500004 -1.5 -1.500004H1.50003ZM0.0000296235 9.16822C0.0000323653 8.3398 0.671604 7.66823 1.50003 7.66823H12.5c0.8285 0 1.5 0.67157 1.5 1.5l0 2.92457c0 0.8284 -0.6716 1.5 -1.5 1.5h-11c-0.828427 0 -1.5 -0.6716 -1.5 -1.5l0.0000296235 -2.92458ZM2.04645 3.36949c0 -0.62132 0.50368 -1.125 1.125 -1.125s1.125 0.50368 1.125 1.125 -0.50368 1.125 -1.125 1.125 -1.125 -0.50368 -1.125 -1.125Zm0 7.26101c0 -0.6213 0.50368 -1.12498 1.125 -1.12498s1.125 0.50368 1.125 1.12498c0 0.6213 -0.50368 1.125 -1.125 1.125s-1.125 -0.5037 -1.125 -1.125ZM6.875 3.36949c0 -0.34518 0.27982 -0.625 0.625 -0.625H11c0.3452 0 0.625 0.27982 0.625 0.625s-0.2798 0.625 -0.625 0.625H7.5c-0.34518 0 -0.625 -0.27982 -0.625 -0.625ZM7.5 10.0055c-0.34518 0 -0.625 0.2798 -0.625 0.625s0.27982 0.625 0.625 0.625H11c0.3452 0 0.625 -0.2798 0.625 -0.625s-0.2798 -0.625 -0.625 -0.625H7.5Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Asosiy bo'lim</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="mainUniversity" data-bs-parent="#mainUniversity">
+                        <li class="nav-item {% if request.path == '/university/university_data' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/university/university_data' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">University data</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/department' %} active {% endif %} "
+                               href="{% url 'departments' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Bo'lim Data</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#products" role="button" aria-expanded="false"
+                       aria-controls="products">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="Pathfinder-Union--Streamline-Core">
+                                <path id="Union" fill="currentColor" fill-rule="evenodd"
+                                      d="M1.5 0h7c0.82843 0 1.5 0.671573 1.5 1.5V4h2.5c0.8284 0 1.5 0.67157 1.5 1.5v7c0 0.8284 -0.6716 1.5 -1.5 1.5h-7c-0.82843 0 -1.5 -0.6716 -1.5 -1.5V10H1.5C0.671573 10 0 9.32843 0 8.5v-7C0 0.671573 0.671573 0 1.5 0Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">O'quv tizimlari</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="products" data-bs-parent="#e-commerce">
+                        <li class="nav-item ">
+                            <a class="nav-link {% if request.path == '/' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">O'quv rejalar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Yo'nalishlar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Akademik guruhlar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Akademik guruhlar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#others" role="button" aria-expanded="false"
+                       aria-controls="others">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24"
+                                 width="24" id="Office-Worker--Streamline-Sharp">
+                                <path id="Union" fill="#2859c5" fill-rule="evenodd"
+                                      d="M17.735 12.766a3 3 0 0 0 -3 3v0.263h-2.25v6.987h10.5v-6.987h-2.25v-0.263a3 3 0 0 0 -3 -3Zm1 3.263v-0.263a1 1 0 0 0 -2 0v0.263h2Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                                <path id="Ellipse 411" fill="currentColor"
+                                      d="M6.98 8.5a8.47 8.47 0 0 0 -5.5 2.019V17h2.5v6h6v-8.715h2.5v-3.766A8.467 8.467 0 0 0 6.98 8.5Z"
+                                      stroke-width="1"></path>
+                                <path id="Ellipse 354" fill="currentColor" d="M3.98 4a3 3 0 1 0 6 0 3 3 0 1 0 -6 0"
+                                      stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Other</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="others" data-bs-parent="#others">
+                        <li class="nav-item {% if request.path == '/' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">University data</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">API KEY</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <hr class="hr-horizontal">
+                </li>
+                {#            Kutuhbona#}
+                <li class="nav-item static-item">
+                    <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+                        <span class="default-icon">Kutubhona</span>
+                        <span class="mini-icon">-</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#Book_list" role="button" aria-expanded="false"
+                       aria-controls="Book_list">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="Open-Book--Streamline-Core">
+                                <g id="Vector 1526">
+                                    <path fill="currentColor"
+                                          d="M1.49642 0.179297C4.12508 0.491169 6.43824 1.52628 7 2.08803 7.56176 1.52628 9.87492 0.491312 12.5036 0.179439 13.3262 0.0818366 14 0.759749 14 1.58818v7.99999c0 0.82843 -0.677 1.48863 -1.4921 1.63663 -1.8409 0.3342 -3.37196 1.217 -4.34871 1.9148 -0.67407 0.4815 -1.64499 0.4809 -2.31909 -0.0006 -0.97678 -0.6977 -2.50755 -1.5802 -4.34797 -1.9144C0.677027 11.0766 0 10.4165 0 9.58803v-8C0 0.759606 0.673762 0.0816941 1.49642 0.179297Z"
+                                          stroke-width="1"></path>
+                                </g>
+                                <path id="Intersect" fill="#2859c5"
+                                      d="M6.375 13.4046V1.65274c0.368 0.20612 0.88199 0.20613 1.25 0.00002V13.4048c-0.40314 0.1276 -0.84681 0.1275 -1.25 -0.0002Z"
+                                      stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Kitoblar</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="Book_list" data-bs-parent="#Book_list">
+                        <li class="nav-item {% if request.path == '/library/book_list' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/library/book_list' %} active {% endif %} "
+                               href="{% url 'book_list' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Kitoblar ro'yhati</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/library/add_book' %} active {% endif %} "
+                               href="{% url 'add_book' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Kitob qo'shish</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#followers_book" role="button"
+                       aria-expanded="false"
+                       aria-controls="followers_book">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="Class-Lesson--Streamline-Core">
+                                <path id="Union" fill="currentColor" fill-rule="evenodd"
+                                      d="M4.746 2.583a1.848 1.848 0 1 1 -3.695 0 1.848 1.848 0 0 1 3.695 0Zm2.32 3.096a1.027 1.027 0 0 1 0 2.055h-2.16l-0.752 5.404a1 1 0 0 1 -0.99 0.862H2.66a1 1 0 0 1 -0.994 -0.893l-0.282 -2.61h-0.172a0.964 0.964 0 0 1 -0.963 -0.963V8.328a2.649 2.649 0 0 1 2.65 -2.648h4.167Z"
+                                      clip-rule="currentColor" stroke-width="1"></path>
+                                <path id="Subtract" fill="#8fbffa" fill-rule="evenodd"
+                                      d="M7.259 8.976h5.143c0.745 0 1.348 -0.604 1.348 -1.349V1.35c0 -0.746 -0.604 -1.35 -1.348 -1.35H4.608a3.095 3.095 0 0 1 0.778 4.43h1.68a2.277 2.277 0 0 1 0.193 4.546Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Obunachilar</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18"
+                                 fill="currentColor"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="followers_book" data-bs-parent="#followers_book">
+                        <li class="nav-item {% if request.path == '/university/university_data' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/university/university_data' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Obunachilar ro'yhati</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Obunachi qo'shish</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#libraryServices" role="button"
+                       aria-expanded="false"
+                       aria-controls="libraryServices">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="18"
+                                 width="18" id="Empty-Clipboard--Streamline-Sharp">
+                                    <path id="Union" fill="currentColor" fill-rule="evenodd"
+                                          d="M22.0028 1.5917H1.9972V23.76H22.0028V1.5917Z" clip-rule="evenodd"
+                                          stroke-width="1"></path>
+                                    <path id="Rectangle 690" fill="#2859c5" d="M7.6745 0.24H16.3255V4.5655H7.6745V0.24Z"
+                                          stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Xizmatlar</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18"
+                                 fill="currentColor"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="libraryServices" data-bs-parent="#libraryServices">
+                        <li class="nav-item {% if request.path == '' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Kitob berish</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Qarzdorlar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#librarian" role="button" aria-expanded="false"
+                       aria-controls="librarian">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="No-Poverty--Streamline-Core">
+                                <path id="Union" fill="currentColor" fill-rule="evenodd"
+                                      d="M3.164 4.462a1.715 1.715 0 1 0 0 -3.431 1.715 1.715 0 0 0 0 3.43Zm7.672 0a1.715 1.715 0 1 0 0 -3.431 1.715 1.715 0 0 0 0 3.43Zm0 0.357a3.06 3.06 0 0 0 -1.898 0.656 2.959 2.959 0 0 1 0.95 2.917h3.521a0.5 0.5 0 0 0 0.5 -0.5 3.073 3.073 0 0 0 -3.073 -3.073Zm-7.672 0a3.06 3.06 0 0 1 1.898 0.656 2.959 2.959 0 0 0 -0.95 2.917H0.59a0.5 0.5 0 0 1 -0.5 -0.5A3.073 3.073 0 0 1 3.164 4.82ZM7 9.435a1.715 1.715 0 1 0 0 -3.43 1.715 1.715 0 0 0 0 3.43Zm-3.073 3.43a3.073 3.073 0 0 1 6.146 0 0.5 0.5 0 0 1 -0.5 0.5H4.427a0.5 0.5 0 0 1 -0.5 -0.5Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Kutubhonachilar</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="librarian" data-bs-parent="#librarian">
+                        <li class="nav-item {% if request.path == '/university/university_data' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/university/university_data' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Kutubhonachilar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Kutubhonachi qo'shish</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/library/librarys' %} active {% endif %}"  href="{% url 'library_views' %}" aria-expanded="false">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="Building-2--Streamline-Core">
+                                <path id="Union" fill="currentColor"
+                                      d="M7.5 6a0.5 0.5 0 0 0 -0.5 0.5v7a0.5 0.5 0 0 0 0.5 0.5h6a0.5 0.5 0 0 0 0.5 -0.5v-7a0.5 0.5 0 0 0 -0.5 -0.5h-6Z"
+                                      stroke-width="1"></path>
+                                <path id="Union_2" fill="currentColor"
+                                      d="M4.521 0.138a0.5 0.5 0 0 0 -0.69 0l-3.676 3.5A0.5 0.5 0 0 0 0 4v9.5a0.5 0.5 0 0 0 0.5 0.5h7.353a0.5 0.5 0 0 0 0.5 -0.5V4a0.5 0.5 0 0 0 -0.156 -0.362L4.521 0.138Z"
+                                      stroke-width="1"></path>
+                                <path id="Intersect" fill="currentColor" fill-rule="evenodd"
+                                      d="M5.176 14v-2a1 1 0 1 0 -2 0v2h2Z" clip-rule="evenodd"
+                                      stroke-width="1"></path>
+                                <path id="Union_3" fill="#2859c5" fill-rule="currentColor"
+                                      d="M2.798 4.53a0.625 0.625 0 1 0 0 1.25h2.757a0.625 0.625 0 1 0 0 -1.25H2.798Zm0 2.608a0.625 0.625 0 1 0 0 1.25h2.757a0.625 0.625 0 0 0 0 -1.25H2.798Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Kutubhonalar</span>
+                    </a>
+                </li>
+                <li>
+                    <hr class="hr-horizontal">
+                </li>
+                {#            Post yangiliklar#}
+                <li class="nav-item static-item">
+                    <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+                        <span class="default-icon">Post | Yangiliklar</span>
+                        <span class="mini-icon">-</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#Posts" role="button" aria-expanded="false"
+                       aria-controls="Posts">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="18"
+                                 width="18" id="Inbox-Post--Streamline-Sharp">
+                                <path id="Rectangle 853" fill="currentColor" d="M3 9a4 4 0 0 1 4 -4h14v11H3V9Z"
+                                      stroke-width="1"></path>
+                                <path id="Union" fill="#2859c5" fill-rule="evenodd"
+                                      d="M16 1h-3v2h2v7h2V1h-1Zm-5 15v7h2v-7h-2Z" clip-rule="evenodd"
+                                      stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Postlar</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="Posts" data-bs-parent="#Posts">
+                        <li class="nav-item {% if request.path == '/university/university_data' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/university/university_data' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Postlar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Maqolalar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">E'lonlar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Tasdiqlanmaganlar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <hr class="hr-horizontal">
+                </li>
+                {#            Imtihon#}
+                <li class="nav-item static-item">
+                    <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+                        <span class="default-icon">Imtihon</span>
+                        <span class="mini-icon">-</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#exam" role="button" aria-expanded="false"
+                       aria-controls="exam">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="Chat-Bubble-Square-Question--Streamline-Core">
+                                <path id="Subtract" fill="currentColor" fill-rule="evenodd"
+                                      d="M1.43935 0.43934C1.72065 0.158035 2.10219 0 2.50001 0H12.5c0.3978 0 0.7794 0.158035 1.0607 0.43934C13.842 0.720644 14 1.10217 14 1.5v10c0 0.3978 -0.158 0.7794 -0.4393 1.0607S12.8978 13 12.5 13H4.56156l-3.940282 0.9851c-0.177042 0.0442 -0.364136 -0.0115 -0.488129 -0.1454 -0.12399296 -0.1339 -0.1651889 -0.3247 -0.1074803 -0.4978l0.9743413 -2.923V1.5c0 -0.39782 0.15804 -0.779356 0.43934 -1.06066Zm5.69271 3.18979c0.18397 -0.0762 0.38641 -0.09614 0.58172 -0.05729 0.19531 0.03885 0.37471 0.13474 0.51551 0.27554 0.14081 0.14081 0.2367 0.32021 0.27555 0.51552 0.03885 0.1953 0.01891 0.39774 -0.05729 0.58172 -0.07621 0.18397 -0.20526 0.34122 -0.37083 0.45185 -0.16557 0.11063 -0.36023 0.16968 -0.55936 0.16968 -0.34518 0 -0.625 0.27982 -0.625 0.625v1.08788c0 0.34518 0.27982 0.625 0.625 0.625s0.625 -0.27982 0.625 -0.625v-0.55115c0.22221 -0.06404 0.43446 -0.1622 0.62882 -0.29208 0.37114 -0.24798 0.6604 -0.60045 0.83122 -1.01283 0.17081 -0.41238 0.2155 -0.86615 0.12842 -1.30394 -0.08708 -0.43778 -0.30202 -0.83991 -0.61764 -1.15553 -0.31563 -0.31562 -0.71776 -0.53056 -1.15554 -0.61764 -0.43778 -0.08709 -0.89155 -0.04239 -1.30393 0.12842 -0.41239 0.17082 -0.76485 0.46008 -1.01284 0.83121 -0.24798 0.37114 -0.38034 0.80747 -0.38034 1.25383 0 0.34518 0.27982 0.625 0.625 0.625s0.625 -0.27982 0.625 -0.625c0 -0.19913 0.05905 -0.39379 0.16968 -0.55936 0.11063 -0.16558 0.26788 -0.29462 0.45185 -0.37083Zm0.38534 6.99457c-0.49445 -0.0011 -0.89493 -0.4022 -0.89493 -0.89692 0 -0.49539 0.40159 -0.89698 0.89697 -0.89698 0.00067 0 0.00135 0 0.00202 0.00001 0.49445 0.0011 0.89493 0.40226 0.89493 0.89697 0 0.49542 -0.40158 0.89692 -0.89697 0.89692l-0.00202 0Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Savollar</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="exam" data-bs-parent="#exam">
+                        <li class="nav-item {% if request.path == '/university/university_data' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/university/university_data' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Savollar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Savol qo'shish</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#examMint" role="button" aria-expanded="false"
+                       aria-controls="examMint">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="Hand-Held-Tablet-Writing--Streamline-Core">
+                                <path id="Union" fill="currentColor" fill-rule="evenodd"
+                                      d="M1.718 1.594a0.197 0.197 0 0 0 -0.198 0.197v8.521h8.919V7.947a0.75 0.75 0 1 1 1.5 0v4.262c0 0.937 -0.76 1.697 -1.697 1.697H1.716c-0.937 0 -1.697 -0.76 -1.697 -1.697V1.791A1.699 1.699 0 0 1 1.718 0.094h6.156a0.75 0.75 0 0 1 0 1.5H1.718Zm1.894 1.413a0.625 0.625 0 1 0 0 1.25h1.894a0.625 0.625 0 1 0 0 -1.25H3.612ZM2.987 6.5c0 -0.345 0.28 -0.625 0.625 -0.625h0.947a0.625 0.625 0 1 1 0 1.25h-0.947a0.625 0.625 0 0 1 -0.625 -0.625Zm6.332 1.034a0.5 0.5 0 0 0 0.266 -0.14l4.099 -4.118a1 1 0 0 0 0 -1.42l-1.06 -1.06a1 1 0 0 0 -1.42 0L7.088 4.892a0.5 0.5 0 0 0 -0.14 0.273l-0.36 2.182a0.5 0.5 0 0 0 0.583 0.573l2.148 -0.386Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Imtihonlar</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="examMint" data-bs-parent="#examMint">
+                        <li class="nav-item {% if request.path == '/university/university_data' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/university/university_data' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Imtihonlar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Natijalar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <hr class="hr-horizontal">
                 </li>
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
-                        <span class="default-icon">Users</span>
+                        <span class="default-icon">Talaba</span>
+                        <span class="mini-icon">-</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#universityStudent" role="button"
+                       aria-expanded="false"
+                       aria-controls="universityStudent">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="18"
+                                 width="18" id="Office-Building-2--Streamline-Sharp">
+                                <path id="Rectangle 994" fill="#2859c5" d="M3 3.973h17.987V23H3z"
+                                      stroke-width="1"></path>
+                                <path id="Union" fill="currentColor" fill-rule="evenodd"
+                                      d="M13 3h9v20h-8v-6h-4v6H2V3h9V1h2v2Zm7 7v3h-4v-3h4Zm-6 0v3h-4v-3h4Zm-6 0v3H4v-3h4Zm12 -5v3h-4V5h4ZM10 5h4v3h-4V5ZM4 5h4v3H4V5Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Kutubhona</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="universityStudent" data-bs-parent="#universityStudent">
+                        <li class="nav-item {% if request.path == '/university/university_data' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/university/university_data' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Savollar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Savol qo'shish</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#examStudent" role="button"
+                       aria-expanded="false"
+                       aria-controls="examStudent">
+                        <i class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="Hand-Held-Tablet-Writing--Streamline-Core">
+                                <path id="Union" fill="currentColor" fill-rule="evenodd"
+                                      d="M1.718 1.594a0.197 0.197 0 0 0 -0.198 0.197v8.521h8.919V7.947a0.75 0.75 0 1 1 1.5 0v4.262c0 0.937 -0.76 1.697 -1.697 1.697H1.716c-0.937 0 -1.697 -0.76 -1.697 -1.697V1.791A1.699 1.699 0 0 1 1.718 0.094h6.156a0.75 0.75 0 0 1 0 1.5H1.718Zm1.894 1.413a0.625 0.625 0 1 0 0 1.25h1.894a0.625 0.625 0 1 0 0 -1.25H3.612ZM2.987 6.5c0 -0.345 0.28 -0.625 0.625 -0.625h0.947a0.625 0.625 0 1 1 0 1.25h-0.947a0.625 0.625 0 0 1 -0.625 -0.625Zm6.332 1.034a0.5 0.5 0 0 0 0.266 -0.14l4.099 -4.118a1 1 0 0 0 0 -1.42l-1.06 -1.06a1 1 0 0 0 -1.42 0L7.088 4.892a0.5 0.5 0 0 0 -0.14 0.273l-0.36 2.182a0.5 0.5 0 0 0 0.583 0.573l2.148 -0.386Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
+                            </svg>
+                        </i>
+                        <span class="item-name">Imtihonlar</span>
+                        <i class="right-icon">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
+                    </a>
+                    <ul class="sub-nav collapse" id="examStudent" data-bs-parent="#examStudent">
+                        <li class="nav-item {% if request.path == '/university/university_data' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/university/university_data' %} active {% endif %} "
+                               href="{% url 'university_data' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> P </i>
+                                <span class="item-name">Imtihonlar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Natijalar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <hr class="hr-horizontal">
+                </li>
+                {#            Foyalanuvchilar#}
+                <li class="nav-item static-item">
+                    <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
+                        <span class="default-icon">Foydalanuvchilar</span>
                         <span class="mini-icon">-</span>
                     </a>
                 </li>
                 {#               Xodimlar#}
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-auth" role="button"
-                       aria-expanded="false"
-                       aria-controls="sidebar-user">
-                        <i class="icon" data-bs-toggle="tooltip" title="Auth Skins" data-bs-placement="right">
-                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                 viewBox="0 0 24 24">
-                                <path d="M17.8877 10.8967C19.2827 10.7007 20.3567 9.50473 20.3597 8.05573C20.3597 6.62773 19.3187 5.44373 17.9537 5.21973"
-                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                                <path d="M19.7285 14.2505C21.0795 14.4525 22.0225 14.9255 22.0225 15.9005C22.0225 16.5715 21.5785 17.0075 20.8605 17.2815"
-                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M11.8867 14.6638C8.67273 14.6638 5.92773 15.1508 5.92773 17.0958C5.92773 19.0398 8.65573 19.5408 11.8867 19.5408C15.1007 19.5408 17.8447 19.0588 17.8447 17.1128C17.8447 15.1668 15.1177 14.6638 11.8867 14.6638Z"
-                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M11.8869 11.888C13.9959 11.888 15.7059 10.179 15.7059 8.069C15.7059 5.96 13.9959 4.25 11.8869 4.25C9.7779 4.25 8.0679 5.96 8.0679 8.069C8.0599 10.171 9.7569 11.881 11.8589 11.888H11.8869Z"
-                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                                <path d="M5.88509 10.8967C4.48909 10.7007 3.41609 9.50473 3.41309 8.05573C3.41309 6.62773 4.45409 5.44373 5.81909 5.21973"
-                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                      stroke-linejoin="round"/>
-                                <path d="M4.044 14.2505C2.693 14.4525 1.75 14.9255 1.75 15.9005C1.75 16.5715 2.194 17.0075 2.912 17.2815"
-                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                      stroke-linejoin="round"/>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#employee" role="button" aria-expanded="false"
+                       aria-controls="employee">
+                        <i class="icon">
+                            <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.34933 14.8577C5.38553 14.8577 2 15.47 2 17.9173C2 20.3665 5.364 20.9999 9.34933 20.9999C13.3131 20.9999 16.6987 20.3876 16.6987 17.9403C16.6987 15.4911 13.3347 14.8577 9.34933 14.8577Z"
+                                      fill="currentColor"></path>
+                                <path opacity="0.4"
+                                      d="M9.34935 12.5248C12.049 12.5248 14.2124 10.4062 14.2124 7.76241C14.2124 5.11865 12.049 3 9.34935 3C6.65072 3 4.48633 5.11865 4.48633 7.76241C4.48633 10.4062 6.65072 12.5248 9.34935 12.5248Z"
+                                      fill="currentColor"></path>
+                                <path opacity="0.4"
+                                      d="M16.1733 7.84873C16.1733 9.19505 15.7604 10.4513 15.0363 11.4948C14.961 11.6021 15.0275 11.7468 15.1586 11.7698C15.3406 11.7995 15.5275 11.8177 15.7183 11.8216C17.6165 11.8704 19.3201 10.6736 19.7907 8.87116C20.4884 6.19674 18.4414 3.79541 15.8338 3.79541C15.551 3.79541 15.2799 3.82416 15.0157 3.87686C14.9795 3.88453 14.9404 3.90177 14.9208 3.93244C14.8954 3.97172 14.914 4.02251 14.9394 4.05605C15.7232 5.13214 16.1733 6.44205 16.1733 7.84873Z"
+                                      fill="currentColor"></path>
+                                <path d="M21.779 15.1693C21.4316 14.4439 20.593 13.9465 19.3171 13.7022C18.7153 13.5585 17.0852 13.3544 15.5695 13.3831C15.547 13.386 15.5343 13.4013 15.5324 13.4109C15.5294 13.4262 15.5363 13.4492 15.5656 13.4655C16.2662 13.8047 18.9737 15.2804 18.6332 18.3927C18.6185 18.5288 18.729 18.6438 18.867 18.6246C19.5333 18.5317 21.2476 18.1704 21.779 17.0474C22.0735 16.4533 22.0735 15.7634 21.779 15.1693Z"
+                                      fill="currentColor"></path>
                             </svg>
                         </i>
-                        <span class="item-name">Xodimlar</span>
+                        <span class="item-name">Hodimlar</span>
                         <i class="right-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none"
-                                 viewBox="0 0 24 24"
-                                 stroke="currentColor">
+                            <svg class="submit icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                             </svg>
                         </i>
                     </a>
-                    <ul class="sub-nav collapse" id="sidebar-auth" data-bs-parent="#sidebar-menu">
+                    <ul class="sub-nav collapse" id="employee" data-bs-parent="#employee">
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-auth1" role="button"
-                               aria-expanded="false"
-                               aria-controls="sidebar-user">
-                                <i class="icon" data-bs-toggle="tooltip" title="Default" data-bs-placement="right">
-                                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
-                                         viewBox="0 0 24 24">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                              d="M9.59151 15.2068C13.2805 15.2068 16.4335 15.7658 16.4335 17.9988C16.4335 20.2318 13.3015 20.8068 9.59151 20.8068C5.90151 20.8068 2.74951 20.2528 2.74951 18.0188C2.74951 15.7848 5.88051 15.2068 9.59151 15.2068Z"
-                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                              d="M9.59157 12.0198C7.16957 12.0198 5.20557 10.0568 5.20557 7.63476C5.20557 5.21276 7.16957 3.24976 9.59157 3.24976C12.0126 3.24976 13.9766 5.21276 13.9766 7.63476C13.9856 10.0478 12.0356 12.0108 9.62257 12.0198H9.59157Z"
-                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                        <path d="M16.4829 10.8815C18.0839 10.6565 19.3169 9.28253 19.3199 7.61953C19.3199 5.98053 18.1249 4.62053 16.5579 4.36353"
-                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                        <path d="M18.5952 14.7322C20.1462 14.9632 21.2292 15.5072 21.2292 16.6272C21.2292 17.3982 20.7192 17.8982 19.8952 18.2112"
-                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
+                            <a class="nav-link {% if request.path == '/user/employee_list/' %} active {% endif %}"
+                               href="{% url 'employeeViews' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
                                     </svg>
                                 </i>
-                                <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Default"
-                                   data-bs-placement="right">DE</i>
-                                <span class="item-name">Xodimlar</span>
-                                <i class="right-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none"
-                                         viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </i>
+                                <i class="sidenav-mini-icon"> F </i>
+                                <span class="item-name">Hodimlar ro'yhati</span>
                             </a>
-                            <ul class="sub-nav collapse" id="sidebar-auth1" data-bs-parent="#sidebar-auth">
-                                {#                                Xodimlar ro'yhati#}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'employeeViews' %}">
-                                        <i class="icon">
-                                            <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                                                </g>
-                                            </svg>
-                                        </i>
-                                        <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Login"
-                                           data-bs-placement="right">L</i>
-                                        <span class="item-name">Xodimlar ro'yhati</span>
-                                    </a>
-                                </li>
-                                {#                            Xodim qo'shish#}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'create_employee' %}">
-                                        <i class="icon">
-                                            <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                                                </g>
-                                            </svg>
-                                        </i>
-                                        <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Register"
-                                           data-bs-placement="right">R</i>
-                                        <span class="item-name">Xodim qo'shish</span>
-                                    </a>
-                                </li>
-                                {#                                Statistika#}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="auth/confirm-mail.html">
-                                        <i class="icon">
-                                            <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                                                </g>
-                                            </svg>
-                                        </i>
-                                        <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Confirm Mail"
-                                           data-bs-placement="right">CM</i>
-                                        <span class="item-name">Statistika</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-auth2" role="button"
-                               aria-expanded="false"
-                               aria-controls="sidebar-user">
-                                <i class="icon" data-bs-toggle="tooltip" title="Animated" data-bs-placement="right">
-                                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
-                                         viewBox="0 0 24 24">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                              d="M9.59151 15.2068C13.2805 15.2068 16.4335 15.7658 16.4335 17.9988C16.4335 20.2318 13.3015 20.8068 9.59151 20.8068C5.90151 20.8068 2.74951 20.2528 2.74951 18.0188C2.74951 15.7848 5.88051 15.2068 9.59151 15.2068Z"
-                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                              d="M9.59157 12.0198C7.16957 12.0198 5.20557 10.0568 5.20557 7.63476C5.20557 5.21276 7.16957 3.24976 9.59157 3.24976C12.0126 3.24976 13.9766 5.21276 13.9766 7.63476C13.9856 10.0478 12.0356 12.0108 9.62257 12.0198H9.59157Z"
-                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                        <path d="M16.4829 10.8815C18.0839 10.6565 19.3169 9.28253 19.3199 7.61953C19.3199 5.98053 18.1249 4.62053 16.5579 4.36353"
-                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                        <path d="M18.5952 14.7322C20.1462 14.9632 21.2292 15.5072 21.2292 16.6272C21.2292 17.3982 20.7192 17.8982 19.8952 18.2112"
-                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
+                            <a class="nav-link {% if request.path == '/user/create_employee' %} active {% endif %}"
+                               href="{% url 'create_employee' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
                                     </svg>
                                 </i>
-                                <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Animated"
-                                   data-bs-placement="right">AN</i>
-                                <span class="item-name">Rahbariyat</span>
-                                <i class="right-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none"
-                                         viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </i>
+                                <i class="sidenav-mini-icon"> F </i>
+                                <span class="item-name">Hodim qo'shish</span>
                             </a>
-                            <ul class="sub-nav collapse" id="sidebar-auth2" data-bs-parent="#sidebar-auth">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="auth-pro/sign-in.html">
-                                        <i class="icon">
-                                            <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                                                </g>
-                                            </svg>
-                                        </i>
-                                        <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Sign In"
-                                           data-bs-placement="right"> SI </i>
-                                        <span class="item-name">Rektor</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="auth-pro/sign-up.html">
-                                        <i class="icon">
-                                            <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                                                </g>
-                                            </svg>
-                                        </i>
-                                        <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Sign up"
-                                           data-bs-placement="right"> S </i>
-                                        <span class="item-name">Bo'lim boshliqlari</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="auth-pro/email.html">
-                                        <i class="icon">
-                                            <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                                                </g>
-                                            </svg>
-                                        </i>
-                                        <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Email"
-                                           data-bs-placement="right"> E </i>
-                                        <span class="item-name">Dekanlar</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="auth-pro/lock-screen.html">
-                                        <i class="icon">
-                                            <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                                                </g>
-                                            </svg>
-                                        </i>
-                                        <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Lock Screen "
-                                           data-bs-placement="right"> LS </i>
-                                        <span class="item-name">Mutahasislar</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/library/busy_book' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> F </i>
+                                <span class="item-name">Hodim Turlari</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/library/busy_book' %} active {% endif %} "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> F </i>
+                                <span class="item-name">Statistika</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 {#                Talabalar#}
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-user" role="button"
+                    <a class="nav-link" data-bs-toggle="collapse" href="#students" role="button"
                        aria-expanded="false"
-                       aria-controls="sidebar-user">
+                       aria-controls="students">
                         <i class="icon" data-bs-toggle="tooltip" title="Users" data-bs-placement="right">
                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -427,7 +1063,7 @@
                             </svg>
                         </i>
                     </a>
-                    <ul class="sub-nav collapse" id="sidebar-user" data-bs-parent="#sidebar-menu">
+                    <ul class="sub-nav collapse" id="students" data-bs-parent="#students">
                         <li class="nav-item">
                             <a class="nav-link "
                                href="app/user-list.html">
@@ -480,28 +1116,85 @@
                         </li>
                     </ul>
                 </li>
-                {#                Statistika#}
+                {#            Adminlar#}
                 <li class="nav-item">
-                    <a class="nav-link "
-                       href="blank-page.html">
-                        <i class="icon" data-bs-toggle="tooltip" title="Blank Page" data-bs-placement="right">
-                            <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path opacity="0.4"
-                                      d="M16.191 2H7.81C4.77 2 3 3.78 3 6.83V17.16C3 20.26 4.77 22 7.81 22H16.191C19.28 22 21 20.26 21 17.16V6.83C21 3.78 19.28 2 16.191 2"
-                                      fill="currentColor"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M8.07999 6.64999V6.65999C7.64899 6.65999 7.29999 7.00999 7.29999 7.43999C7.29999 7.86999 7.64899 8.21999 8.07999 8.21999H11.069C11.5 8.21999 11.85 7.86999 11.85 7.42899C11.85 6.99999 11.5 6.64999 11.069 6.64999H8.07999ZM15.92 12.74H8.07999C7.64899 12.74 7.29999 12.39 7.29999 11.96C7.29999 11.53 7.64899 11.179 8.07999 11.179H15.92C16.35 11.179 16.7 11.53 16.7 11.96C16.7 12.39 16.35 12.74 15.92 12.74ZM15.92 17.31H8.07999C7.77999 17.35 7.48999 17.2 7.32999 16.95C7.16999 16.69 7.16999 16.36 7.32999 16.11C7.48999 15.85 7.77999 15.71 8.07999 15.74H15.92C16.319 15.78 16.62 16.12 16.62 16.53C16.62 16.929 16.319 17.27 15.92 17.31Z"
-                                      fill="currentColor"/>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#admins" role="button"
+                       aria-expanded="false"
+                       aria-controls="admins">
+                        <i class="icon" data-bs-toggle="tooltip" title="Users" data-bs-placement="right">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="18"
+                                 width="18" id="Vpn-Connection--Streamline-Core">
+                                <path id="Subtract" fill="currentColor" fill-rule="evenodd"
+                                      d="M0 1.53812C0 0.696591 0.694014 0 1.53623 0H12.4638C13.306 0 14 0.69659 14 1.53812v2.92559c0 4.25877 -2.5689 7.93029 -6.42423 9.42469 -0.34448 0.1613 -0.76355 0.1311 -1.11095 0.0151l-0.01198 -0.0042 -0.00942 -0.0035C2.57482 12.4052 0 8.63232 0 4.46371V1.53812ZM3.65545 5.1308c0.36092 -0.26747 1.62427 -0.90936 3.34216 -0.90936 1.71789 0 2.98125 0.64189 3.34219 0.90936 0.2773 0.20552 0.6687 0.14731 0.8742 -0.13002 0.2056 -0.27732 0.1474 -0.66875 -0.13 -0.87427 -0.5676 -0.42068 -2.08999 -1.15507 -4.08639 -1.15507 -1.99639 0 -3.51875 0.73439 -4.08641 1.15507 -0.27733 0.20552 -0.33554 0.59695 -0.13002 0.87427 0.20552 0.27733 0.59695 0.33554 0.87427 0.13002Zm3.34213 1.67413c-0.79563 0 -1.71243 0.38403 -2.06339 0.5791 -0.30171 0.16769 -0.68223 0.05905 -0.84993 -0.24266 -0.16769 -0.30171 -0.05905 -0.68223 0.24266 -0.84992 0.43805 -0.24347 1.57267 -0.73652 2.67066 -0.73652 1.09799 0 2.23262 0.49305 2.67066 0.73652 0.30171 0.16769 0.41036 0.54821 0.24266 0.84992 -0.16769 0.30171 -0.54821 0.41035 -0.84992 0.24266 -0.35097 -0.19507 -1.26776 -0.5791 -2.0634 -0.5791Zm-0.47154 2.82038c0.02775 -0.01542 0.10655 -0.05333 0.20832 -0.08622 0.10381 -0.03354 0.1968 -0.0505 0.26324 -0.0505 0.06645 0 0.15944 0.01696 0.26325 0.0505 0.10177 0.03289 0.18057 0.0708 0.20831 0.08622 0.30171 0.16769 0.68223 0.05905 0.84992 -0.24266 0.1677 -0.30171 0.05905 -0.68223 -0.24265 -0.84992 -0.17274 -0.09601 -0.61757 -0.29414 -1.07883 -0.29414 -0.46125 0 -0.90608 0.19813 -1.07882 0.29414 -0.30171 0.16769 -0.41035 0.54821 -0.24266 0.84992 0.16769 0.30171 0.54822 0.41035 0.84992 0.24266Z"
+                                      clip-rule="evenodd" stroke-width="1"></path>
                             </svg>
                         </i>
-                        <span class="item-name">Statistika</span>
+                        <span class="item-name">Adminlar</span>
+                        <i class="right-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </i>
                     </a>
+                    <ul class="sub-nav collapse" id="admins" data-bs-parent="#admins">
+                        <li class="nav-item">
+                            <a class="nav-link "
+                               href="app/user-list.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="User List"
+                                   data-bs-placement="right"> U
+                                </i>
+                                <span class="item-name">Talabalar ro'yhati</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link "
+                               href="#">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Add User"
+                                   data-bs-placement="right"> A
+                                </i>
+                                <span class="item-name">Talaba qo'shish</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link "
+                               href="app/user-profile.html">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="User Profile"
+                                   data-bs-placement="right"> U </i>
+                                <span class="item-name">statistika</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-
                 <li>
                     <hr class="hr-horizontal">
                 </li>
+                {#            Adminstrator#}
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                         <span class="default-icon">Adminstrator</span>
@@ -510,7 +1203,6 @@
                     </a>
                 </li>
                 {#                other#}
-
                 {#                Sayt boshqaruvi#}
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-maps" role="button"
@@ -536,24 +1228,7 @@
                     </a>
                     <ul class="sub-nav collapse" id="sidebar-maps" data-bs-parent="#sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link "
-                               href="">
-                                <i class="icon">
-                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <g>
-                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
-                                        </g>
-                                    </svg>
-                                </i>
-                                <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Google"
-                                   data-bs-placement="right"> G
-                                </i>
-                                <span class="item-name">API List</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link "
+                            <a class="nav-link {% if request.path == '/user/role_view' %} active {% endif %} "
                                href="{% url 'role_view' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
@@ -567,6 +1242,23 @@
                                    data-bs-placement="right"> G
                                 </i>
                                 <span class="item-name">Rollar</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/user/permissions' %} active {% endif %} "
+                               href="{% url 'permission_view' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon" data-bs-toggle="tooltip" title="Google"
+                                   data-bs-placement="right"> G
+                                </i>
+                                <span class="item-name">Huquqlar</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -700,7 +1392,8 @@
                 </li>
                 {#                Adminstrator#}
                 <li class="nav-item">
-                    <a class="nav-link " href="admin.html">
+                    <a class="nav-link "
+                       href="#">
                         <i class="icon" data-bs-toggle="tooltip" title="Admin & Permission" data-bs-placement="right">
                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -712,13 +1405,14 @@
                                       fill="currentColor"></path>
                             </svg>
                         </i>
-                        <span class="item-name">Admin</span>
+                        <span class="item-name">Other</span>
                     </a>
                 </li>
                 <li>
                     <hr class="hr-horizontal">
                 </li>
-            <li class="nav-item static-item">
+                {#            Ijtimoiy tarmoqlar#}
+                <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                         <span class="default-icon">Ijtimoiy tarmoqlar</span>
                         <span class="mini-icon" data-bs-toggle="tooltip" title="Elements"
@@ -762,8 +1456,6 @@
             </ul>
         </div>
     </div>
-
     <div class="sidebar-footer"></div>
-
 </aside>
 <!-- sidebar End -->

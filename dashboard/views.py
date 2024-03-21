@@ -22,5 +22,3 @@ def interactive_services(request):
 def edu_services(request):
     return  render(request, 'pages/edu_services.html' )
 
-def role_view(request):
-    return  render(request, 'pages/roles.html' )

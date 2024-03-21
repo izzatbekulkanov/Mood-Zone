@@ -1,0 +1,307 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
+<!-- Flatpickr css -->
+<link rel="stylesheet" href="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/vendor/sheperd/dist/css/sheperd.css' %}">
+<!-- Hope Ui Design System Css -->
+<link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+<!-- Custom Css -->
+<link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+<!-- Dark Css -->
+<link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+<!-- Customizer Css -->
+<link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+<!-- RTL Css -->
+<link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+{% endblock style %}
+{% block body %}
+<!-- Content -->
+<div class="content-inner pb-0 container" id="page_layout">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Huquqlar ro'yhati</h4>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive mt-4">
+                        <table id="basic-table" class="table table-striped mb-0" role="grid">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Permission</th>
+                                    <th>Content Type</th>
+                                    <th>Content Label</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody id="permission-list">
+                                <tr>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Permission</th>
+                                    <th>Content Name</th>
+                                    <th>Content label</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Permission name modal -->
+    <!-- Modal HTML -->
+    <div class="modal fade" id="edit-permission" tabindex="-1" aria-labelledby="editPermissionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editPermissionModalLabel">Permissionni Tahrirlash</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="editPermissionForm">{% csrf_token %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ Content -->
+{% endblock body %}
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    // Permissionlarni olish va jadvalga chiqarish
+    async function fetchAndDisplayPermissions() {
+        try {
+            const response = await fetch('/user/permissions_api');
+            const data_all = await response.json();
+            displayPermissions(data_all);
+            // Ma'lumotlar olinmagan holda `data_all` o'zgaruvchisi mavjud emas
+            // Buning uchun ma'lumotlarni olish funksiyasini ishga tushiramiz
+            return data_all;
+        } catch (error) {
+            console.error('Xatolik permissions_api bilan:', error);
+        }
+    }
+    
+    // Permissionlarni jadvalga chiqarish
+    async function displayPermissions(data_all) {
+        const permissionList = document.getElementById('permission-list');
+        permissionList.innerHTML = '';
+        data_all.permissions.forEach((data, index) => {
+            const row = document.createElement('tr');
+            row.className = index % 2 === 0 ? 'even' : 'odd';
+            row.innerHTML = `
+                <td>${data.id}</td>
+                <td>${data.name}</td>
+                <td>${data.codename}</td>
+                <td>${data.content_type_name}</td>
+                <td>${data.content_type_app_label}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#edit-permission" onclick="editPermission(${data.id})">
+                        Tahrirlash
+                    </button>
+    
+                </td>
+            `;
+            permissionList.appendChild(row);
+        });
+    }
+    
+    // Permissionni tahrirlash funksiyasi
+    async function editPermission(permissionId) {
+        try {
+            // Ma'lumotlarni olish uchun `fetchAndDisplayPermissions` funksiyasini ishga tushiramiz
+            const data_all = await fetchAndDisplayPermissions();
+            const contents_data = data_all.content_types;
+            const permissionData = data_all.permissions.find(data => data.id === permissionId);
+            const edit_permission_form = document.getElementById('editPermissionForm');
+    
+            // EditPermissionFormni HTML-i
+            let formHTML = `
+                <div class="modal-body">
+                    <input type="hidden" id="permissionId" value="${permissionData.id}">
+                    <div class="mb-3">
+                        <label for="editPermissionName" class="form-label">Permission Nomi</label>
+                        <input type="text" class="form-control" id="editPermissionName" value="${permissionData.name}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPermissionCodename" class="form-label">Codename</label>
+                        <input type="text" class="form-control" id="editPermissionCodename" value="${permissionData.codename}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPermissionContentType" class="form-label">Content Type<code>.O'zgartirilmasin</code></label>
+                        <select class="form-select" id="editPermissionContentType" required>
+            `;
+    
+            // Content Type optionlarni qo'shish
+            let selectedContentTypeAdded = false;
+            contents_data.forEach(content => {
+                if (content.id == permissionData.content_type_id) {
+                    formHTML += `<option value="${content.id}" selected>${content.name} (${content.app_label})</option>`;
+                    selectedContentTypeAdded = true;
+                } else {
+                    formHTML += `<option value="${content.id}">${content.name} (${content.app_label})</option>`;
+                }
+            });
+    
+            // Formni tugash va tugma qismi
+            formHTML += `
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="savePermission()">Save changes</button>
+                </div>
+            </form>
+            `;
+    
+            // HTML-ni HTML qo'shish
+            edit_permission_form.innerHTML = formHTML;
+            const permissionIdInput = edit_permission_form.querySelector('#permissionId');
+    
+        } catch (error) {
+            console.error('Xatolik permissionni tahrirlashda:', error);
+        }
+    }
+    
+    // Permissionni tahrirlash saqlash uchu serverga so'rov yuborishfunksiyasi
+    async function savePermission() {
+        try {
+            const edit_permission_form = document.getElementById('editPermissionForm');
+            const permissionIdInput = edit_permission_form.querySelector('#permissionId');
+            const permissionNameInput = edit_permission_form.querySelector('#editPermissionName');
+            const permissionCodenameInput = edit_permission_form.querySelector('#editPermissionCodename');
+            const permissionContentTypeInput = edit_permission_form.querySelector('#editPermissionContentType');
+    
+            // Ma'lumotlarni olish
+            const permissionId = permissionIdInput.value;
+            const permissionName = permissionNameInput.value;
+            const permissionCodename = permissionCodenameInput.value;
+            const permissionContentTypeId = permissionContentTypeInput.value;
+            
+            const csrfToken = getCSRFTokens();
+    
+            // Ma'lumotlarni saqlash uchun Django API ga POST so'rovi jo'natish
+            const response = await fetch('/user/save_permission', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken// Django XSRF token
+                },
+                body: JSON.stringify({
+                    id: permissionId,
+                    name: permissionName,
+                    codename: permissionCodename,
+                    content_type_id: permissionContentTypeId
+                })
+            });
+    
+            // Agar responsning status kodi 200 bo'lsa, ma'lumotlar muvaffaqiyatli saqlandi
+            if (response.status === 200) {
+                const responseData = await response.json();
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer);
+                        toast.addEventListener('mouseleave', Swal.resumeTimer);
+                    }
+                });
+
+                Toast.fire({
+                    icon: 'success',
+                    title: responseData.message
+                });
+                
+                
+                console.log(responseData)
+                console.log('Ma\'lumotlar muvaffaqiyatli saqlandi');
+                // Modal oynani yopish
+                $('#edit-permission').modal('hide');
+            } else {
+                console.error('Ma\'lumotlarni saqlashda xatolik yuz berdi:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Xatolik permissionni saqlashda:', error);
+        }
+    }
+    
+    // CSRF tokenni saqlash olish
+    function getCSRFTokens() {
+        const cookieValue = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('csrftoken='))
+            .split('=')[1];
+        return cookieValue;
+    }
+    
+    // CSRF tokenni olish
+    function getCSRFToken() {
+        const csrfTokenInput = document.querySelector('input[name="csrfmiddlewaretoken"]');
+        if (csrfTokenInput) {
+            return csrfTokenInput.value;
+        } else {
+            console.error('CSRF token topilmadi');
+            return null;
+        }
+    }
+    
+    // Dokument yuklandiğida permissionlarni olish
+    document.addEventListener('DOMContentLoaded', fetchAndDisplayPermissions);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Library Bundle Script -->
+<script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+<!-- Plugin Scripts -->
+<!-- Tour plugin Start -->
+<script src="{% static 'assets/vendor/sheperd/dist/js/sheperd.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/tour.js' %}" defer></script>
+<!-- Flatpickr Script -->
+<script src="{% static 'assets/vendor/flatpickr/dist/flatpickr.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/flatpickr.js' %}" defer></script>
+<!-- Slider-tab Script -->
+<script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+<!-- Select2 Script -->
+<script src="{% static 'assets/js/plugins/select2.js' %}" defer></script>
+<!-- Lodash Utility -->
+<script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+<!-- Utilities Functions -->
+<script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+<!-- Settings Script -->
+<script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+<!-- Settings Init Script -->
+<script src="{% static 'assets/js/setting-init.js' %}"></script>
+<!-- External Library Bundle Script -->
+<script src="{% static 'assets/js/core/external.min.js' %}"></script>
+<!-- Widgetchart Script -->
+<script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+<!-- Dashboard Script -->
+<script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+<!-- Hopeui Script -->
+<script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+{% endblock script %}

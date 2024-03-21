@@ -21,16 +21,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
           rel="stylesheet">
+    <style id="smooth-scrollbar-style">
+        [data-scrollbar] {
+          display: block;
+          position: relative;
+        }
+        
+        .scroll-content {
+          display: flow-root;
+          -webkit-transform: translate3d(0, 0, 0);
+                  transform: translate3d(0, 0, 0);
+        }
+        
+        .scrollbar-track {
+          position: absolute;
+          opacity: 0;
+          z-index: 1;
+          background: rgba(222, 222, 222, .75);
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+          -webkit-transition: opacity 0.5s 0.5s ease-out;
+                  transition: opacity 0.5s 0.5s ease-out;
+        }
+        .scrollbar-track.show,
+        .scrollbar-track:hover {
+          opacity: 1;
+          -webkit-transition-delay: 0s;
+                  transition-delay: 0s;
+        }
+        
+        .scrollbar-track-x {
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 8px;
+        }
+        .scrollbar-track-y {
+          top: 0;
+          right: 0;
+          width: 8px;
+          height: 100%;
+        }
+        .scrollbar-thumb {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 8px;
+          height: 8px;
+          background: rgba(0, 0, 0, .5);
+          border-radius: 4px;
+        }
+        </style>
 {% endblock style %}
 {% block body %}
     <!-- Content -->
     <div class="content-inner pb-0 container" id="page_layout">
         <div class="row">
-            <div class="col-12">
-                
-            </div>
-
-
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
@@ -45,544 +93,377 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between flex-wrap align-items-center">
-                                <div class="header-title">
-                                    <h4 class="card-title mb-0">Role & Permission</h4>
-                                </div>
-                                <div class="d-flex align-items-center gap-3">
-                                    <a href="#" class="text-center btn btn-primary d-flex gap-2" data-bs-toggle="modal"
-                                       data-bs-target="#new-permission">
-                                        <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                             viewBox="0 0 24 24"
-                                             stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                        </svg>
-                                        New Permission
-                                    </a>
-                                    <a href="#" class="text-center btn btn-primary d-flex gap-2" data-bs-toggle="modal"
-                                       data-bs-target="#new-role">
-                                        <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                             viewBox="0 0 24 24"
-                                             stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                        </svg>
-                                        New Role
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th class="text-center">ADMIN
-                                                <div style="float:right;">
-                                                    <a class="btn btn-sm btn-icon text-primary flex-end"
-                                                       data-bs-toggle="tooltip" title="Edit Admin" href="#">
-                                        <span class="btn-inner">
-                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                      d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                                <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
-                                                      stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                            </svg>
-                                        </span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-icon text-danger" data-bs-toggle="tooltip"
-                                                       title="Delete Admin" href="#">
-                                        <span class="btn-inner">
-                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                                                <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                                <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5"
-                                                      stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                            </svg>
-                                        </span>
-                                                    </a>
-                                                </div>
-                                            </th>
-                                            <th class="text-center">DEMO ADMIN
-                                                <div style="float:right;">
-                                                    <a class="btn btn-sm btn-icon text-primary flex-end"
-                                                       data-bs-toggle="tooltip" title="Edit Demo Admin" href="#">
-                                        <span class="btn-inner">
-                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                      d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                                <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
-                                                      stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                            </svg>
-                                        </span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-icon text-danger" data-bs-toggle="tooltip"
-                                                       title="Delete Demo Admin" href="#">
-                                        <span class="btn-inner">
-                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                                                <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                                <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5"
-                                                      stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                            </svg>
-                                        </span>
-                                                    </a>
-                                                </div>
-                                            </th>
-                                            <th class="text-center">USER
-                                                <div style="float:right;">
-                                                    <a class="btn btn-sm btn-icon text-primary flex-end"
-                                                       data-bs-toggle="tooltip" title="Edit User" href="#">
-                                        <span class="btn-inner">
-                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                      d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                                <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
-                                                      stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                            </svg>
-                                        </span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-icon text-danger" data-bs-toggle="tooltip"
-                                                       title="Delete User" href="#">
-                                        <span class="btn-inner">
-                                            <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                                                <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                                <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5"
-                                                      stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                      stroke-linejoin="round"></path>
-                                            </svg>
-                                        </span>
-                                                    </a>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td class="d-flex align-items-center justify-content-between">Role
-                                                <div>
-                                                    <a class="btn btn-sm btn-icon text-primary flex-end"
-                                                       data-bs-toggle="tooltip" title="Edit Role" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-icon text-danger " data-bs-toggle="tooltip"
-                                                       title="Delete Role" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                                                    <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M20.708 6.23975H3.75" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                    <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                        </tr>
-                                        <tr class="">
-                                            <td class="d-flex align-items-center justify-content-between">Role Add
-                                                <div>
-                                                    <a class="btn btn-sm btn-icon text-primary flex-end"
-                                                       data-bs-toggle="tooltip" title="Edit Role Add " href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-icon text-danger " data-bs-toggle="tooltip"
-                                                       title="Delete Role Add" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                                                    <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M20.708 6.23975H3.75" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                    <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                            </td>
-                                        </tr>
-                                        <tr class="">
-                                            <td class="d-flex align-items-center justify-content-between">Role List
-                                                <div>
-                                                    <a class="btn btn-sm btn-icon text-primary flex-end"
-                                                       data-bs-toggle="tooltip" title="Edit Role List" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-icon text-danger " data-bs-toggle="tooltip"
-                                                       title="Delete Role List" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                                                    <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M20.708 6.23975H3.75" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                    <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                        </tr>
-                                        <tr class="">
-                                            <td class="d-flex align-items-center justify-content-between">Permission
-                                                <div>
-                                                    <a class="btn btn-sm btn-icon text-primary flex-end"
-                                                       data-bs-toggle="tooltip" title="Edit Permission" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-icon text-danger " data-bs-toggle="tooltip"
-                                                       title="Delete Permission" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                                                    <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M20.708 6.23975H3.75" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                    <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                            </td>
-                                        </tr>
-                                        <tr class="">
-                                            <td class="d-flex align-items-center justify-content-between">Permission Add
-                                                <div>
-                                                    <a class="btn btn-sm btn-icon text-primary flex-end"
-                                                       data-bs-toggle="tooltip" title="Edit Add Permission" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-icon text-danger " data-bs-toggle="tooltip"
-                                                       title="Delete Add Permission" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                                                    <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M20.708 6.23975H3.75" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                    <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                            </td>
-                                        </tr>
-                                        <tr class="">
-                                            <td class="d-flex align-items-center justify-content-between">Permission
-                                                List
-                                                <div>
-                                                    <a class="btn btn-sm btn-icon text-primary flex-end"
-                                                       data-bs-toggle="tooltip" title="Edit Permission List" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                          d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-icon text-danger " data-bs-toggle="tooltip"
-                                                       title="Delete Permission List" href="#">
-                                            <span class="btn-inner">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-                                                    <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M20.708 6.23975H3.75" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                    <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973"
-                                                          stroke="currentColor" stroke-width="1.5"
-                                                          stroke-linecap="round" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                            <td class="text-center">
-                                                <input class="form-check-input" type="checkbox">
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="text-center">
-                                        <a href="admin.html" class="btn btn-primary">Save</a>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                    <div class="card-header d-flex justify-content-between flex-wrap align-items-center ">
+                        <div class="header-title">
+                            <h4 class="card-title mb-0">Role & Permission</h4>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <a href="#" class="text-center btn btn-success d-flex gap-2" data-bs-toggle="modal"
+                               data-bs-target="#new-role">
+                                <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                                Yangi ro'l yaratish
+                            </a>
                         </div>
                     </div>
-                </div>
-                <a href="{% url 'create_group' %}">yangi guruh yaratish</a>
-                <a href="{% url 'edit_profile' %}">foydalanuvchiga rol berish</a>
-                <!-- New Permission modal -->
-                <div class="modal fade" id="new-permission" data-bs-backdrop="static" data-bs-keyboard="false"
-                     tabindex="-1"
-                     aria-labelledby="staticBackdropPermissionLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropPermissionLabel">Add Permission</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label class="form-label">Permission title</label>
-                                    <input type="text" class="form-control" placeholder="Permission Title">
-                                </div>
-                                <div class="text-start">
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                                </div>
-                            </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive m-0">
+                            <table id="basic-table" class="table table-striped mb-0" role="grid">
+                                <thead>
+                                <tr>
+                                    <th>Rollar</th>
+                                    <th>Foydalanuvchilar</th>
+                                    <th>Tahrirlash</th>
+                                </tr>
+                                </thead>
+                                <tbody id="adminTableBody">
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <h6>role name</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="iq-media-group iq-media-group-1">
+                                            <a href="#" class="iq-media-1">
+                                                <div class="icon iq-icon-box-3 rounded-pill">SP</div>
+                                            </a>
+                                            <a href="#" class="iq-media-1">
+                                                <div class="icon iq-icon-box-3 rounded-pill">PP</div>
+                                            </a>
+                                            <a href="#" class="iq-media-1">
+                                                <div class="icon iq-icon-box-3 rounded-pill">MM</div>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>edit rule</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+            </div>
                 </div>
-                <!-- New Role modal -->
-                <div class="modal fade" id="new-role" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                     aria-labelledby="staticBackdropRoleLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropRoleLabel">Add Role</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                <div class="col-sm-6">
+                    <div class="card" id="cardAdminPermissions" style="display: none;">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title-permission">Nomi</h4> <span>Huquqlar ro'yhati</span>
                             </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label class="form-label">Role title</label>
-                                    <input type="text" class="form-control" placeholder="Role Title">
-                                </div>
-                                <div>
-                                    <span>Status</span>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="status" id="status-yes"
-                                               value="option2">
-                                        <label class="form-check-label" for="status-yes">
-                                            Yes
-                                        </label>
+                        </div>
+                        <div class="card-body table-fixed p-0 mt-2">
+                            <div class="table m-0 p-0">
+                                <table id="permission-basic-table" class="table table mb-0" role="grid">
+                                    <thead>
+                                        <tr>
+                                            <th>Huquq</th>
+                                            <th>Permission</th>
+                                            <th>
+                                                Tanlash
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <h6>Soft UI XD Version</h6>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="iq-media-group iq-media-group-1">
+                                                    <a href="#" class="iq-media-1">
+                                                        <div class="icon iq-icon-box-3 rounded-pill">SP</div>
+                                                    </a>
+                                                    <a href="#" class="iq-media-1">
+                                                        <div class="icon iq-icon-box-3 rounded-pill">PP</div>
+                                                    </a>
+                                                    <a href="#" class="iq-media-1">
+                                                        <div class="icon iq-icon-box-3 rounded-pill">MM</div>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check form-switch form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="switch2" checked="">
+                                                    <label class="pl-2 form-check-label" for="switch2">Tasdiqlash</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                    <div class="card m-2" id="save-permission-to-server">
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="status" id="status-no"
-                                               value="option2">
-                                        <label class="form-check-label" for="status-no">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="text-start mt-2">
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- New Role modal -->
+            <div class="modal fade" id="new-role" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropRoleLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="my_form">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropRoleLabel">Add Role</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label class="form-label" for="role-title">Rol nomi</label>
+                                    <!-- ID attributiga ega bo'lgan input element -->
+                                    <input type="text" id="role-title" class="form-control" placeholder="Role Title">
+                                </div>
+                                <div class="text-start mt-2">
+                                    <button type="button" class="btn btn-primary" onclick="createGroup()">Save</button>
+                                    <button type="button" class="btn btn-danger"  id="closeModalBtn" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-
-    </div>
     <!--/ Content -->
 {% endblock body %}
 {% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+
+    {#Yangi group qoshish va grouplarni royhatini chiqarish#}
+        async function fetchData() {
+            return fetch('/user/group_list_api')
+                .then(response => response.json())
+                .then(data => displayData(data))
+                .catch(error => console.error('Xatolik:', error));
+        }
+        async function displayData(groups) {
+            const tableBody = document.getElementById('adminTableBody');
+            tableBody.innerHTML = '';
+
+            groups.forEach(group => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <h6>${group.name}</h6>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="iq-media-group iq-media-group-1">
+                            ${group.users.length > 0 ? group.users.map(user => `
+                                <a href="#" class="iq-media-1">
+                                    <div class="icon iq-icon-box-3 rounded-pill">${user.initials}</div>
+                                </a>
+                            `).join('') : 'No user'}
+                        </div>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm" onclick="showPermissions(${group.id}, '${group.name}')">Tahrirlash</button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+        async function createGroup() {
+            const name = document.getElementById('role-title').value;
+            const formData = new FormData();
+            formData.append('name', name);
+
+            // CSRF tokenini qo'shish
+            const csrfToken = getCSRFToken();
+            if (csrfToken) {
+                formData.append('csrfmiddlewaretoken', csrfToken);
+            } else {
+                console.error('CSRF token not found');
+                return;
+            }
+
+            axios.post('create_group_api', formData)
+                .then(response => {
+                    document.getElementById('role-title').value = '';
+                    closeModal()
+                    fetchData()
+                    
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer);
+                            toast.addEventListener('mouseleave', Swal.resumeTimer);
+                        }
+                    });
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.success
+                    });
+                    console.log(response.data);
+                    // Ishlarga davom eting
+                })
+                .catch(error => {
+                    console.error(error);
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer);
+                            toast.addEventListener('mouseleave', Swal.resumeTimer);
+                        }
+                    });
+            
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Xatolik yuz berdi. Group yaratishda muammo ro\'y berdi.' // Error message
+                    });
+                    // Xatoliklarni ko'rsating
+                });
+            function closeModal() {
+            const modal = document.getElementById('new-role');
+            const modalBS = bootstrap.Modal.getInstance(modal);
+            modalBS.hide();
+            }
+        }
+        async function showPermissions(groupId, groupName) {
+            selectedGroupId = groupId; // selectedGroupId o'zgaruvchisiga groupId qiymatini uzatish
+            axios.get(`/user/groups/${groupId}`)
+                .then(response => {
+                    const permissions = response.data;
+                    displayPermissions(permissions, groupName, groupId);
+                })
+                .catch(error => {
+                    console.error('Error fetching group permissions:', error);
+                });
+        }
+        async function displayPermissions(permissions, groupName, groupId) {
+            // Jadvalga permissionlarni chiqaring
+            const tableBody = document.querySelector('#permission-basic-table tbody');
+            tableBody.innerHTML = '';
+        
+            permissions.forEach(permission => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${permission.name}</td>
+                    <td>${permission.permission}</td>
+                    <td>
+                        <div class="form-check form-switch form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="${permission.permission}" ${permission.selected ? 'checked' : ''}>
+                            <label class="pl-2 form-check-label" for="${permission.permission}"></label>
+                        </div>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        
+            // Saqlash tugmasini bosilganda permissionlar royhatini Groupga saqlash
+            document.getElementById('save-permission-to-server').innerHTML = `
+                <button type="button" class="btn btn-primary btn-sm btn-save-permissions hvr-shutter-out-horizontal" onclick="savePermissionsToServer(${groupId})" id="save-permissions-button">Saqlash</button>
+            `;
+        
+            // Jadvalni ko'rsatish
+            document.getElementById('cardAdminPermissions').style.display = 'block';
+            // Guruh nomini joylash
+            document.querySelector('.card-title-permission').innerText = groupName;
+        }
+
+        
+        async function savePermissionsToServer(groupId) {
+            const checkedPermissions = Array.from(document.querySelectorAll('#permission-basic-table tbody tr'))
+                .filter(row => row.querySelector('input[type="checkbox"]').checked)
+                .map(row => row.cells[0].innerText);
+        
+            const uncheckedPermissions = Array.from(document.querySelectorAll('#permission-basic-table tbody tr'))
+                .filter(row => !row.querySelector('input[type="checkbox"]').checked)
+                .map(row => row.cells[0].innerText);
+        
+            try {
+                const saveButton = document.getElementById('save-permission-to-server');
+                saveButton.innerHTML = `
+                    <div class="iq-loader-box loader_to">
+                      <div class="iq-loader-10 w-20"></div>
+                    </div>
+                `; // Saqlash tugmasining matnini 'Loading...' ga o'zgartirish
+        
+                const csrfToken = await getCSRFToken();
+                if (!csrfToken) {
+                    console.error('CSRF token not found');
+                    return;
+                }
+        
+                const response = await axios.post(`/user/groups/${groupId}/permissions`, {
+                    permissions: checkedPermissions,
+                    unchecked_permissions: uncheckedPermissions
+                }, {
+                    headers: {
+                        'X-CSRFToken': csrfToken
+                    }
+                });
+        
+                // Toast tuzilmasi orqali xabar chiqarish
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer);
+                        toast.addEventListener('mouseleave', Swal.resumeTimer);
+                    }
+                });
+        
+                Toast.fire({
+                    icon: 'success',
+                    title: response.data.success
+                });
+        
+                console.log('Permissions saved successfully:', response.data);
+                // Additional logic after saving permissions if needed
+        
+                // Saqlash tugmasini qayta ko'rsatish
+                saveButton.innerHTML = `
+                    <button type="button" class="btn btn-primary btn-sm btn-save-permissions" onclick="savePermissionsToServer(${groupId})" id="save-permissions-button">Yana saqlash</button>
+                `;
+            } catch (error) {
+                console.error('Error saving permissions:', error);
+                alert('Xatolik yuz berdi. Huquqlarni saqlashda muammo ro\'y berdi.');
+        
+                // Saqlash tugmasini qayta ko'rsatish
+                saveButton.innerHTML = `
+                    <button type="button" class="btn btn-primary btn-sm btn-save-permissions" onclick="savePermissionsToServer(${groupId})" id="save-permissions-button">Yana saqlash</button>
+                `;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {fetchData();});
+                // CSRF tokenini olish
+        function getCSRFToken() {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.startsWith('csrftoken=')) {
+                    return cookie.substring('csrftoken='.length, cookie.length);
+                }
+            }
+            return null;
+        }
+    </script>
+
     <!-- Library Bundle Script -->
     <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
     <!-- Plugin Scripts -->

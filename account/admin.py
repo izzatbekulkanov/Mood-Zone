@@ -1,9 +1,13 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
+from django.contrib.auth.models import Permission
 
 from .models import CustomUser, StudentType, StudentStatus, Citizenship, District, Province, Country, EmployeeType, \
-    EmployeeStatus, Gender, CustomGroup, StaffPosition
+    EmployeeStatus, Gender, StaffPosition
+
+from logging_requests.models import LogEntry
+
+admin.site.register(LogEntry)
 
 
 class CustomUserAdmin(UserAdmin):
@@ -13,7 +17,7 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ['username', 'email', 'full_name' 'first_name', 'last_name', 'is_staff']
     fieldsets = (
         (None, {'fields': ('username', 'email', 'password', 'password_save', 'employee_id_number')}),
-        ('Personal info', {'fields': ('first_name', 'second_name', 'third_name', 'gender',  'full_name', 'role_group' , 'image', 'imageFile','phone_number', 'birth_date')}),
+        ('Personal info', {'fields': ('first_name', 'second_name', 'third_name', 'gender',  'full_name', 'image', 'imageFile','phone_number', 'birth_date')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('secret', {'fields': ('full_id', 'hash', 'token', 'user_type')}),
 
@@ -31,7 +35,7 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
-
+admin.site.register(Permission)
 
 @admin.register(Gender)
 class GenderAdmin(admin.ModelAdmin):
@@ -81,7 +85,3 @@ class StudentTypeAdmin(admin.ModelAdmin):
 class StudentStatusAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
 
-class CustomGroupAdmin(BaseGroupAdmin):
-    filter_horizontal = ['permissions']
-
-admin.site.register(CustomGroup, CustomGroupAdmin)

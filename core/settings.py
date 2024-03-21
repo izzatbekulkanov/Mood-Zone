@@ -6,9 +6,6 @@ import sentry_sdk
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-%rzkb*01#g2vxzo)i^617#6wdd3dx%)e-t8*v%oq#!7bpeofm('
 
@@ -23,6 +20,7 @@ INTERNAL_IPS = [
 
 # Application definition
 LOCAL_APPS = [
+    'django_profiler',
     'authHemis',
     'account',
     'university',
@@ -35,7 +33,7 @@ INSTALLED_OTHER_APPS = [
     'django_extensions',
     'jazzmin',
     'crispy_forms',
-    'silk',
+    'timeline_logger',
     "debug_toolbar",
     'rest_framework',
 ]
@@ -52,27 +50,12 @@ GLOBAL_APPS = [
 ]
 INSTALLED_APPS = LOCAL_APPS + INSTALLED_OTHER_APPS + GLOBAL_APPS
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        '': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'silk.middleware.SilkyMiddleware',
+    # 'silk.middleware.SilkyMiddleware',
+    'logging_requests.middleware.LoggingRequestsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+LOGGING_REQUESTS_STORAGE_CLASS = 'logging_requests.storage.DBLogStorage'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ROOT_URLCONF = 'core.urls'
 

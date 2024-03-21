@@ -21,8 +21,11 @@ def validate_file_extension(value):
 class Library(models.Model):
     name = models.CharField(max_length=255, help_text="Kutubhona nomi")
     address = models.CharField(max_length=255, help_text="Manzili")
+    number = models.CharField(max_length=255, help_text="Kutubhona raqami")
     created_date = models.DateField(auto_now_add=True, help_text="Model yaratilgan sana")
     updated_date = models.DateField(auto_now=True, help_text="Model yangilangan sana")
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='libraries', help_text="Kutubhona yaratgan foydalanuvchi")
+    active = models.BooleanField(default=False, help_text="Kutubhona faol yoki emasligini ko'rsatadi")
 
     def __str__(self):
         return self.name

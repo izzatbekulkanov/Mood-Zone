@@ -1,0 +1,210 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block style %}
+    <!-- Library / Plugin Css Build -->
+    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
+    <!-- Hope Ui Design System Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+    <!-- Dark Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+    <!-- Customizer Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+    <!-- RTL Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+          rel="stylesheet">
+    <script type="text/javascript">window.hasMobileFirstExtension = true;</script>
+{% endblock style %}
+{% block body %}
+    <!-- Content -->
+    <div class="container-fluid content-inner pb-0" id="page_layout">
+        <div class="row">
+            <div class="card">
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <h4>Kutubhonalar</h4>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#addLibraryModal"
+                                type="submit">
+                        <span class="d-flex justify-content-center ">
+                            <svg class="icon-22" width="22" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                      d="M16.191 2H7.81C4.77 2 3 3.78 3 6.83V17.16C3 20.26 4.77 22 7.81 22H16.191C19.28 22 21 20.26 21 17.16V6.83C21 3.78 19.28 2 16.191 2Z"
+                                      fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M8.07996 6.6499V6.6599C7.64896 6.6599 7.29996 7.0099 7.29996 7.4399C7.29996 7.8699 7.64896 8.2199 8.07996 8.2199H11.069C11.5 8.2199 11.85 7.8699 11.85 7.4289C11.85 6.9999 11.5 6.6499 11.069 6.6499H8.07996ZM15.92 12.7399H8.07996C7.64896 12.7399 7.29996 12.3899 7.29996 11.9599C7.29996 11.5299 7.64896 11.1789 8.07996 11.1789H15.92C16.35 11.1789 16.7 11.5299 16.7 11.9599C16.7 12.3899 16.35 12.7399 15.92 12.7399ZM15.92 17.3099H8.07996C7.77996 17.3499 7.48996 17.1999 7.32996 16.9499C7.16996 16.6899 7.16996 16.3599 7.32996 16.1099C7.48996 15.8499 7.77996 15.7099 8.07996 15.7399H15.92C16.319 15.7799 16.62 16.1199 16.62 16.5299C16.62 16.9289 16.319 17.2699 15.92 17.3099Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                            <span class="ms-3 mb-0">Kutubhona kiritish</span>
+                        </span>
+                        </button>
+                    </div>
+                </div>
+                <div id='successMessage'>
+
+                </div>
+            </div>
+            <div class="content-inner container-fluid pb-0" id="page_layout">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="header-title">
+                                    <h4 class="card-title">Kutubhonalar ro'yhati</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="mb-3">Namangan davlat pedagogika instituti
+                                    <code>Tizimlashtirilgan kutubxona hizmati </code> kutubhonalar ro'yhati
+                                </p>
+                                <div class="table-responsive">
+                                    <table id="datatable" class="table table-striped" data-toggle="data-table">
+                                        <thead>
+                                        <tr>
+                                            <th>Kutubhona nomi</th>
+                                            <th>Kutubhona manzili</th>
+                                            <th>Kutubhonachi</th>
+                                            <th>Tahrirlash</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <th>Kutubhona nomi</th>
+                                            <th>Kutubhona manzili</th>
+                                            <th>Kutubhonachi</th>
+                                            <th>Tahrirlash</th>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addLibraryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Input</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form id="libraryForm"> {% csrf_token %}
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleInputDisabled1">Admin</label>
+                                    <input type="text" class="form-control" id="exampleInputDisabled1" disabled
+                                           value="{{ request.user.full_name }}">
+                                </div>
+                                <div class="card-body">
+                                    <!-- Kitob nomi -->
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="libraryName">Kutubhona
+                                            nomi:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="libraryName" name="name"
+                                                   placeholder="Kutubhona nomini kiriting" required>
+                                        </div>
+                                    </div>
+                                    <!-- Kutubhona manzili -->
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                               for="libraryAdress">Kutubhona manzili:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="libraryAdress"
+                                                   name="libraryAdress"
+                                                   placeholder="Kutubhona manzili kiriting" required>
+                                        </div>
+                                    </div>
+                                    <!-- Kitob ISBN raqami -->
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0"
+                                               for="libraryNumber">Kutubhona raqami:</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="libraryNumber"
+                                                   name="libraryNumber"
+                                                   placeholder="Kutubhona raqami" required>
+                                        </div>
+                                    </div>
+                                    <!-- Tasdiqlash checkbox -->
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="accepted"
+                                                   id="remebercheck2" name="status">
+                                            <label class="form-check-label" for="remebercheck2">Tasdiqlash</label>
+                                        </div>
+                                    </div>
+                                    <!-- Kitob ID -->
+                                    <input type="hidden" id="bookId" value="1" name="bookId">
+                                    <!-- Saqlash va chiqish tugmalar -->
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary" onclick="submitForm()">Saqlash
+                                        </button>
+                                        <button type="button" class="btn btn-danger" onclick="closeModal()">Chiqish
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/ Content -->
+{% endblock body %}
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'assets/js/App/library/add_library.js' %}"></script>
+
+    <!-- Library Bundle Script -->
+    <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+    <!-- Plugin Scripts -->
+    <!-- Slider-tab Script -->
+    <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+    <!-- Select2 Script -->
+    <script src="{% static 'assets/js/plugins/select2.js' %}" defer></script>
+
+
+    <!-- Lodash Utility -->
+    <script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+    <!-- Utilities Functions -->
+    <script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+    <!-- Settings Script -->
+    <script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+    <!-- Settings Init Script -->
+    <script src="{% static 'assets/js/setting-init.js' %}"></script>
+    <!-- External Library Bundle Script -->
+    <script src="{% static 'assets/js/core/external.min.js' %}"></script>
+    <!-- Widgetchart Script -->
+    <script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+    <!-- Dashboard Script -->
+    <script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+    <!-- Hopeui Script -->
+    <script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
+{% endblock script %}

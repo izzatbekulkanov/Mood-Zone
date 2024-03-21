@@ -6,6 +6,7 @@ from urllib.request import urlopen
 from django.contrib.auth.models import AbstractUser, BaseUserManager, Group, Permission
 from django.core.files import File
 from django.db import models
+from django.db.models.signals import post_save
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
@@ -178,7 +179,6 @@ class CustomUser(AbstractUser):
     curriculum = models.ForeignKey(Curriculum, on_delete=models.CASCADE, verbose_name="O'quv rejasi", null=True, blank=True)
     specialty = models.ForeignKey(Specialty, on_delete=models.CASCADE, verbose_name="Mutaxassislik", null=True, blank=True)
     group = models.ForeignKey(GroupUniver, on_delete=models.CASCADE, verbose_name="Guruh", null=True, blank=True)
-    role_group = models.ForeignKey('CustomGroup', on_delete=models.SET_NULL, null=True, blank=True, related_name='users')
     level = models.ForeignKey(Level, on_delete=models.CASCADE, verbose_name="Bosqich", null=True, blank=True)
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE, verbose_name="Semestr", null=True, blank=True)
     educationYear = models.ForeignKey(EducationYear, on_delete=models.CASCADE, verbose_name="O'quv yili", null=True, blank=True)
@@ -199,6 +199,7 @@ class CustomUser(AbstractUser):
     user_type = models.CharField(_('Turi'), choices=type_choice, default="1", max_length=20, blank=True, null=True)
     employeeType = models.ForeignKey(EmployeeType, on_delete=models.CASCADE, verbose_name="Xodim turi", blank=True, null=True)
     is_student = models.BooleanField(default=False, verbose_name="Talaba")
+    is_followers_book = models.BooleanField(default=False, verbose_name="is_followers_book")
     last_login = models.DateTimeField(default=timezone.now)
     last_activity = models.DateTimeField(null=True, blank=True)
     is_staff = models.BooleanField(default=False)
@@ -227,10 +228,3 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = ['username']  # username required field
 
 
-class CustomGroup(models.Model):
-    base_group = models.OneToOneField(Group, on_delete=models.CASCADE, parent_link=True)
-    permissions = models.ManyToManyField(Permission, blank=True, verbose_name="Ruxsatlar")
-    name = models.CharField(max_length=150, unique=True)
-
-    def __str__(self):
-        return self.name
