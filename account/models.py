@@ -210,6 +210,11 @@ class CustomUser(AbstractUser):
     passport_issue_date = models.DateField(null=True, blank=True)
     # Additional field
     full_id = models.CharField(max_length=255, null=True, blank=True, verbose_name="To'liq ID")
+    #Ijtimoiy tarmoqlar
+
+    telegram = models.URLField(null=True, blank=True, verbose_name="Telegram profil havolasi")
+    instagram = models.URLField(null=True, blank=True, verbose_name="Instagram profil havolasi")
+    facebook = models.URLField(null=True, blank=True, verbose_name="Facebook profil havolasi")
     def get_remote_image(self):
         if self.image and not self.imageFile:
             img_temp = NamedTemporaryFile(delete=True)

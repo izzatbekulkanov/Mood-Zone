@@ -64,12 +64,11 @@ def create_employee_from_api(request):
         'search': employee_id_number
     }
     try:
-        # Ma'lumotlarni olish
         response = requests.get(url, headers=headers, params=params)
-        # JSON javoblarni tekshirish
-        if response.status_code == 200:
 
+        if response.status_code == 200:
             data = response.json()
+
             for item in data.get('data', {}).get('items', []):
                 staffPosition_name = item.get('staffPosition', {}).get('name')
                 staffPosition_code = item.get('staffPosition', {}).get('code')
@@ -79,6 +78,7 @@ def create_employee_from_api(request):
                     filter_kwargs={'name': staffPosition_name},
                     defaults=defaults
                 )
+
             for item in data.get('data', {}).get('items', []):
                 employeeStatus_name = item.get('employeeStatus', {}).get('name')
                 employeeStatus_code = item.get('employeeStatus', {}).get('code')
@@ -98,49 +98,38 @@ def create_employee_from_api(request):
                     filter_kwargs={'name': employeeType_name},
                     defaults=defaults
                 )
+
             if 'data' in data:
                 item = data['data']['items'][0]
 
-                # Ta'lim turi ni aniqlash
                 employeeStatus_code = item.get('employeeStatus', {}).get('code')
                 employeeStatus, _ = EmployeeStatus.objects.get_or_create(code=employeeStatus_code)
 
-                # Ta'lim turi ni aniqlash
                 employeeType_code = item.get('employeeType', {}).get('code')
                 employeeType, _ = EmployeeType.objects.get_or_create(code=employeeType_code)
 
-                # Ta'lim turi ni aniqlash
                 StaffPosition_code = item.get('staffPosition', {}).get('code')
                 staffPosition, _ = StaffPosition.objects.get_or_create(code=StaffPosition_code)
 
-                # # Jinsini aniqlash
                 gender_code = item.get('gender', {}).get('code')
                 gender, _ = Gender.objects.get_or_create(code=gender_code)
 
-                # Ta'lim turi ni aniqlash
                 department_id = item.get('department', {}).get('id')
                 department, _ = Department.objects.get_or_create(codeID=department_id)
 
                 contract_date_timestamp = item.get('contract_date')
                 contract_date = datetime.utcfromtimestamp(contract_date_timestamp)
 
-                # created_at
                 created_at_timestamp = item.get('created_at')
                 created_at = datetime.utcfromtimestamp(created_at_timestamp)
 
-                # updated_at
                 updated_at_timestamp = item.get('updated_at')
                 updated_at = datetime.utcfromtimestamp(updated_at_timestamp)
 
-                # Rasmni URL sifatida saqlash
                 image_url = item.get('image')
 
-
-
-                # Ma'lumotlarni yangilash yoki yangi foydalanuvchi yaratish
                 existing_user = CustomUser.objects.filter(employee_id_number=employee_id_number).first()
                 if existing_user:
-                    # Faydalanuvchi malumotlarini yangilash
                     existing_user.full_name = item.get('full_name', '')
                     existing_user.short_name = item.get('short_name', '')
                     existing_user.first_name = item.get('first_name', '')
@@ -166,7 +155,6 @@ def create_employee_from_api(request):
                     return JsonResponse({'success': True, 'message': 'Foydalanuvchi ma\'lumotlari yangilandi'},
                                         status=200)
                 else:
-                    # Yangi foydalanuvchi yaratish
                     user, created = CustomUser.objects.get_or_create(
                         username=(item.get('first_name', '') + '_' + item.get('second_name', '') + str(
                             item.get('id', ''))).lower(),
@@ -195,18 +183,18 @@ def create_employee_from_api(request):
                         }
                     )
 
-                # Agar yangi foydalanuvchi yaratilsa, parolni yaratish va saqlash
                 if created:
-                    # Parolni yaratish
                     password = make_password(str(item.get('employee_id_number')) + 'namdpi')
                     user.set_password(password)
                     user.save()
+                    username = (item.get('first_name', '') + '_' + item.get('second_name', '') + str(
+                        item.get('id', ''))).lower()
 
-                    user = authenticate(request, email=request.POST.get('email'), password=request.POST.get('password'))
+                    user = authenticate(request, email=username, password=password)
                     if user is not None:
-                        # Foydalanuvchi avtorizatsiyadan o'tkazib, tizimga kirish
                         login(request, user)
-                        # Agar muvaffaqiyatli bo'lsa, muvaffaqiyatli xabar qaytarish
+                        return JsonResponse({'success': True, 'message': 'Tizimga muvaffaqiyatli kirdingiz'},
+                                            status=200)
                 return JsonResponse({'success': True, 'message': 'Ma\'lumotlar muvaffaqiyatli saqlandi'}, status=201)
             else:
                 return JsonResponse({'success': False, 'message': 'Ma\'lumotlar topilmadi'}, status=404)

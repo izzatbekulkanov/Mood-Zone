@@ -1,10 +1,8 @@
-
 {% extends 'main/base.html' %}
 {% load static %}
-
 {% block style %}
     <!-- Library / Plugin Css Build -->
-    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css ' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
     <!-- Hope Ui Design System Css -->
     <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
@@ -14,33 +12,331 @@
     <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
     <!-- Customizer Css -->
     <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
-    <!-- RTL Css -->
-    <link rel="stylesheet" href="{% static 'assets/css/rtl.min1fc6.css' %}">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'assets/css/social-app.min.css ' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/social-app.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}"/>
 {% endblock style %}
-
 {% block body %}
     <!-- Content -->
     <div class="container-fluid content-inner pb-0" id="page_layout">
         <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h4>Kitoblar</h4>
+                    <div id='successMessage'>
 
+                    </div>
+
+
+                    <div class="friend-list-tab mt-2">
+                        <ul class="nav nav-pills" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" data-bs-toggle="pill" href="#pill-all-friends"
+                                   data-bs-target="#all-friends" aria-selected="true" role="tab">Barcha kitoblar</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" data-bs-toggle="pill" href="#pill-recently-add"
+                                   data-bs-target="#recently-add" aria-selected="false" role="tab" tabindex="-1">Tasdiqlanmagan
+                                    kitoblar</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content iq-tab-fade-up">
+                            <div class="tab-pane fade active show" id="all-friends" role="tabpanel">
+                                <div class="card-body p-0">
+                                    <div class="row">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">Kitoblar ro'yhati</h5>
+                                            </div>
+                                            <div class="card-body px-0">
+                                                <div class="table-left-bordered table-responsive mt-3">
+                                                    <div id="datatable_wrapper"
+                                                         class="dataTables_wrapper dt-bootstrap5 no-footer">
+                                                        <div class="table-responsive my-3">
+                                                            <table class="table mb-0 dataTable no-footer" id="datatable"
+                                                                   data-toggle="data-table"
+                                                                   aria-describedby="datatable_info">
+                                                                <thead>
+                                                                <tr class="bg-white">
+                                                                    <th scope="col" class="sorting sorting_asc"
+                                                                        tabindex="0"
+                                                                        aria-controls="datatable" rowspan="1"
+                                                                        colspan="1" aria-sort="ascending"
+                                                                        aria-label="Profiles: activate to sort column descending">
+                                                                        Kitob
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Contact: activate to sort column ascending">
+                                                                        Kutubhona
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Email ID: activate to sort column ascending">
+                                                                        Kutubhonachi
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Country: activate to sort column ascending">
+                                                                        Kitob ID
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Purchases: activate to sort column ascending">
+                                                                        Kitob soni
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Status: activate to sort column ascending">
+                                                                        Yili
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Action: activate to sort column ascending">
+                                                                        Status
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Action: activate to sort column ascending">
+                                                                        Other
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody id="book-table-body">
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fadeactive show" id="recently-add" role="tabpanel">
+                                <div class="card-body p-0">
+                                    <div class="row">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">Kitoblar ro'yhati</h5>
+                                            </div>
+                                            <div class="card-body px-0">
+                                                <div class="table-left-bordered table-responsive mt-3">
+                                                    <div id="datatable_wrapper"
+                                                         class="dataTables_wrapper dt-bootstrap5 no-footer">
+                                                        <div class="table-responsive my-3">
+                                                            <table class="table mb-0 dataTable no-footer" id="datatable"
+                                                                   data-toggle="data-table"
+                                                                   aria-describedby="datatable_info">
+                                                                <thead>
+                                                                <tr class="bg-white">
+                                                                    <th scope="col" class="sorting sorting_asc"
+                                                                        tabindex="0"
+                                                                        aria-controls="datatable" rowspan="1"
+                                                                        colspan="1" aria-sort="ascending"
+                                                                        aria-label="Profiles: activate to sort column descending">
+                                                                        Kitob
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Contact: activate to sort column ascending">
+                                                                        Kutubhona
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Email ID: activate to sort column ascending">
+                                                                        Kutubhonachi
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Country: activate to sort column ascending">
+                                                                        Kitob ID
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Purchases: activate to sort column ascending">
+                                                                        Kitob soni
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Status: activate to sort column ascending">
+                                                                        Yili
+                                                                    </th>
+                                                                    <th scope="col" class="sorting" tabindex="0"
+                                                                        aria-controls="datatable"
+                                                                        rowspan="1" colspan="1"
+                                                                        aria-label="Action: activate to sort column ascending">
+                                                                        Status
+                                                                    </th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody id="book-table-body-rejected">
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="modal fade" id="exampleModalDefault" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true"></div>
+    <!--/ Kitobni Tasdiqlash Modal -->
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="confirmModal">
+
+            </div>
+        </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Input</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form id="bookForm">
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleInputDisabled1">Kutubhonachi</label>
+                                    <input type="text" class="form-control" id="exampleInputDisabled1" disabled
+                                           value="{{ request.user.full_name }}">
+                                </div>
+                                <div class="card-body">
+                                    <!-- Kitob nomi -->
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="BookName">Kitob
+                                            nomi:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="BookName" name="title"
+                                                   placeholder="Kitob nomini kiriting" required>
+                                        </div>
+                                    </div>
+                                    <!-- Kitob muallifi -->
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="author">Kitob
+                                            muallifi:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="author" name="author"
+                                                   placeholder="Kitob muallifini kiriting" required>
+                                        </div>
+                                    </div>
+                                    <!-- Kitob ISBN raqami -->
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="isbn">Kitob
+                                            ISBN raqami:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="isbn" name="isbn"
+                                                   placeholder="Kitob ISBN raqami" required>
+                                        </div>
+                                    </div>
+                                    <!-- Kitob rasmi -->
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="image">Kitob
+                                            rasmi (Mavjud bo'lsa):</label>
+                                        <div class="col-sm-9">
+                                            <input type="file" class="form-control" id="image" name="image"
+                                                   placeholder="Kitob rasmi">
+                                        </div>
+                                    </div>
+                                    <!-- Kitob chiqarilgan yili -->
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0">Kitob chiqarilgan
+                                            yil</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-select mb-3 shadow-none" id="publication_year"
+                                                    name="publication_year" required>
+                                                <option selected disabled>Kitob chiqarilgan yil</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- Kitob soni -->
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="quantity">Kitob
+                                            soni:</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="quantity" name="quantity"
+                                                   value="1" required>
+                                        </div>
+                                    </div>
+                                    <!-- Tasdiqlash checkbox -->
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="accepted"
+                                                   id="remebercheck2" name="status">
+                                            <label class="form-check-label" for="remebercheck2">Tasdiqlash</label>
+                                        </div>
+                                    </div>
+                                    <!-- Kitob ID -->
+                                    <input type="hidden" id="bookId" value="1" name="bookId">
+                                    <!-- Saqlash va chiqish tugmalar -->
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary" onclick="submitForm()">Saqlash
+                                        </button>
+                                        <button type="button" class="btn btn-danger" onclick="closeModal()">Chiqish
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--/ Content -->
 {% endblock body %}
-
 {% block script %}
+
+
+    <!-- Library Scriptlari  -->
+    <script src="{% static 'assets/js/App/library/library_app.js ' %}"></script>
+
     <!-- Library Bundle Script -->
     <script src="{% static 'assets/js/core/libs.min.js ' %}"></script>
     <!-- Plugin Scripts -->
+    <!-- Sweet-alert Script -->
+    <script src="{% static 'assets/vendor/sweetalert2/dist/sweetalert2.min.js' %}" async></script>
+    <script src="{% static 'assets/js/plugins/sweet-alert.js' %}" defer></script>
     <!-- Slider-tab Script -->
     <script src="{% static 'assets/js/plugins/slider-tabs.js ' %}"></script>
+    <!-- fslightbox Script -->
+    <script src="{% static 'assets/js/plugins/fslightbox.js' %}" defer></script>
     <!-- Lodash Utility -->
     <script src="{% static 'assets/vendor/lodash/lodash.min.js ' %}"></script>
     <!-- Utilities Functions -->
@@ -54,7 +350,7 @@
     <!-- Widgetchart Script -->
     <script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
     <!-- Dashboard Script -->
-    <script src="{% static 'assets/js/charts/dashboard1fc6.js' %}" defer></script>
+    <script src="{% static 'assets/js/charts/dashboard.js' %}" defer></script>
     <script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
     <!-- Hopeui Script -->
     <script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>

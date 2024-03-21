@@ -37,6 +37,7 @@ INSTALLED_OTHER_APPS = [
 
 # Umumiy ilovalar (django.contrib va boshqa global ilovalar)
 GLOBAL_APPS = [
+    'explorer',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,11 @@ GLOBAL_APPS = [
 ]
 INSTALLED_APPS = LOCAL_APPS + INSTALLED_OTHER_APPS + GLOBAL_APPS
 
+EXPLORER_DEFAULT_CONNECTION = 'default'
+
+EXPLORER_CONNECTIONS = {
+    'default': 'default',
+}
 
 
 MIDDLEWARE = [

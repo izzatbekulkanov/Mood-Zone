@@ -16,7 +16,7 @@ class CustomUserAdmin(UserAdmin):
         (None, {'fields': ('username', 'email', 'password', 'password_save', 'employee_id_number')}),
         ('Personal info', {'fields': ('first_name', 'second_name', 'third_name', 'gender',  'full_name', 'image', 'imageFile','phone_number', 'birth_date')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        ('secret', {'fields': ('full_id', 'hash', 'token', 'user_type')}),
+        ('secret', {'fields': ('full_id', 'hash', 'token', 'user_type', 'telegram', 'instagram', 'facebook')}),
 
     )
 

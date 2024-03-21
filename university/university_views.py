@@ -204,7 +204,7 @@ def save_curriculum_from_api(request):
 
 
 def save_group_from_api(request):
-    url = 'https://student.namspi.uz/rest/v1/data/group-list?limit=400'
+    url = 'https://student.namspi.uz/rest/v1/data/group-list?limit=10000'
     headers = {
         'accept': 'application/json',
         'Authorization': 'Bearer cbdfefbb283db3a219a7e7dcefd620b4'
