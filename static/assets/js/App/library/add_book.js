@@ -31,24 +31,38 @@ function displayLatestBooks(latest_books) {
             statusBadge = ''; // Boshqacha holat uchun
         }
         row.innerHTML = `
-                    <td class="sorting_1">
-                        <div class="d-flex align-items-center">
-                            <div class="media-support-info">
-                                <h5 class="iq-sub-label">${book.title}</h5>
-                                <p class="mb-0">${book.author}</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="text-dark">${book.library_name}</td>
-                    <td class="text-dark">${book.added_by}</td>
-                    <td class="text-dark">${book.book_id}</td>
-                    <td class="text-dark">${book.quantity}</td>
-                    <td class="text-dark">${book.created_at}</td>                    
-                    <td>${statusBadge}</td>`;
+            <td class="sorting_1">
+                <div class="d-flex align-items-center">
+                    <div class="media-support-info">
+                        <h5 class="iq-sub-label">${book.title}</h5>
+                    </div>
+                </div>
+            </td>
+            <td class="text-dark">${book.library_name}</td>
+            <td class="text-dark">${book.added_by}</td>
+            <td class="text-dark">
+            <select class="form-select" id="authorSelect${index}">
+                ${getAuthorsOptions(book.authors)} <!-- Mualliflar select elementiga o'rnatiladi -->
+            </select>
+            </td>
+            <td class="text-dark">${book.quantity}</td>
+            <td class="text-dark">${book.created_at}</td>                    
+            <td class="text-dark">${book.isbn}</td>
+            <td class="text-dark">${book.book_type}</td>`;
         tableBodyRejected.appendChild(row);
-
     });
 }
+
+// Mualliflar select elementiga optionlar qo'shish uchun yordamchi funksiya
+function getAuthorsOptions(authors) {
+    let options = '<option value="" selected disabled>Mualliflar</option>';
+    authors.forEach(author => {
+        options += `<option disabled>${author}</option>`;
+    });
+    return options;
+}
+
+
 
 function validateForm() {
     var isValid = true;
@@ -83,6 +97,7 @@ function submitForm() {
     if (validateForm()) {
         var bookForm = document.getElementById("bookForm");
         var formData = new FormData(bookForm);
+        console.log(formData)
 
         // Tasdiqlash belgisini tekshirib, agar belgi belgilangan bo'lsa 'accepted' qilib sozlash
         if (document.getElementById("remebercheck2").checked) {
@@ -138,23 +153,56 @@ function submitForm() {
     }
 }
 
-
-<!-- Yillarni tanlash Script -->
-var selectElement = document.getElementById("publication_year");
-var currentYear = new Date().getFullYear(); // Hozirgi yil
-var startYear = 2015; // Boshlang'ich yil
-var endYear = currentYear; // Oxirgi yil
-
-for (var year = startYear; year <= endYear; year++) {
-    var option = document.createElement("option");
-    option.value = year;
-    option.text = year;
-    selectElement.appendChild(option);
+function fetchBookType() {
+    fetch('get_book_types/')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            displayBookTypes(data);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
 }
+
+function displayBookTypes(bookTypes) {
+    var select = $('#bookType'); // select elementini tanlash
+    select.empty(); // elementni tozalash
+
+
+    // Select elementiga optionlar qo'shish
+    select.append($('<option>').text('Kitob turini tanlang').attr('disabled', 'disabled').attr('selected', 'selected'));
+    bookTypes.forEach(function(item) {
+        select.append($('<option>').attr('value', item.id).text(item.name));
+    });
+
+    // select elementi o'zgarishi
+    select.change(function() {
+        showCardBody();
+    });
+}
+
+// $(document).ready(function() {
+//     fetchBookType().then(data => displayBookTypes(data.book_types)).catch(error => console.error(error));
+// });
+
 
 <!-- Modalni yopish Script -->
 function closeModal() {
     $('#exampleModal').modal('hide');
 }
+function showCardBody() {
+    // card-body-book-input elementini tanlash
+    var cardBody = $('#card-body-book-input');
+    // display stilini block qilish
+    cardBody.css('display', 'block');
+
+}
+
+
 
 fetchData();

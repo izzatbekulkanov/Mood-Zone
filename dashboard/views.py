@@ -22,3 +22,9 @@ def interactive_services(request):
 def edu_services(request):
     return  render(request, 'pages/edu_services.html' )
 
+def administrator_services(request):
+    return render(request, 'pages/administrator.html')
+
+def error_page (request):
+    return render(request, 'main/error.html')
+

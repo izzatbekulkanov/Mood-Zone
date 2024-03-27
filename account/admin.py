@@ -9,13 +9,13 @@ from .models import CustomUser, StudentType, StudentStatus, Citizenship, Distric
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
-    list_display = ['username', 'email', 'full_name', 'is_active', 'full_id']
+    list_display = ['username', 'email', 'full_name', 'is_active', 'full_id', 'now_role']
     list_filter = ['is_active']
     search_fields = ['username', 'email', 'full_name' 'first_name', 'last_name', 'is_staff']
     fieldsets = (
         (None, {'fields': ('username', 'email', 'password', 'password_save', 'employee_id_number')}),
         ('Personal info', {'fields': ('first_name', 'second_name', 'third_name', 'gender',  'full_name', 'image', 'imageFile','phone_number', 'birth_date')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'now_role','is_superuser', 'groups', 'user_permissions')}),
         ('secret', {'fields': ('full_id', 'hash', 'token', 'user_type', 'telegram', 'instagram', 'facebook')}),
 
     )

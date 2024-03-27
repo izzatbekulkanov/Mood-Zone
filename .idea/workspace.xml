@@ -9,7 +9,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af7fa295-f941-4fdc-8e74-d3f2d3768204" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/assets/js/App/library/book_type.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/exam/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/library/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/library/pages/authors.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/library/pages/book_type.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app/university/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/main/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/administrator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/education.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/education.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/0002_customuser_facebook_customuser_instagram_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/roleViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/roleViews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/studentViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/studentViews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/bookViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/bookViews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/libraryViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/libraryViews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/authorsViews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/App/library/add_book.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/library/add_book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/App/library/add_library.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/library/add_library.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/App/university/create_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/App/users/create_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/library/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/layout/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/library/layout/loader.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/layout/loader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/library/pages/add_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/pages/add_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/library/pages/add_followers_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/pages/add_followers_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/library/pages/librarys.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/library/pages/librarys.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/post/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/post/layout/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/university/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/university/layout/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/university/pages/create_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/university/pages/create_student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/users/create_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/users/create_student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/hope-ui/html/dashboard/table/border-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hope-ui/html/dashboard/table/border-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/loader.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/loader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/roles.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/roles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/loader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/university_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/university_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/university/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/university/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +78,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSX File" />
-        <option value="CSS File" />
         <option value="TypeScript File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -51,30 +106,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.education.executor": "Run",
-    "Django tests.Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "main",
-    "ignore_missing_gitignore": "true",
-    "last_opened_file_path": "/home/ulkanov/Documents/GitHub/NamDPI",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.education.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: library.tests.LibraryModelsTestCase.test_onlinebook_creation.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ulkanov/Documents/GitHub/NamDPI&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\templates\app\university\pages" />
@@ -83,6 +138,7 @@
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\static\assets\vendor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/assets/js/App/users" />
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI" />
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\account" />
       <recent name="C:\Users\Admin\Documents\GitHub\NamDPI\users" />
@@ -178,6 +234,10 @@
       <workItem from="1710981573311" duration="4275000" />
       <workItem from="1711015384494" duration="6563000" />
       <workItem from="1711033619424" duration="139000" />
+      <workItem from="1711033767237" duration="1487000" />
+      <workItem from="1711035475017" duration="86427000" />
+      <workItem from="1711401021366" duration="30175000" />
+      <workItem from="1711553962807" duration="12268000" />
     </task>
     <servers />
   </component>
@@ -226,6 +286,21 @@
           <url>file://$PROJECT_DIR$/library/bookLeanViews.py</url>
           <line>8</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/static/assets/js/App/library/add_book.js</url>
+          <line>95</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/static/assets/js/App/library/add_book.js</url>
+          <line>66</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/static/assets/js/App/library/add_book.js</url>
+          <line>1</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

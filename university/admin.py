@@ -50,7 +50,7 @@ class EducationTypeAdmin(admin.ModelAdmin):
 # Curriculum
 @admin.register(Curriculum)
 class CurriculumAdmin(admin.ModelAdmin):
-    list_display = ('specialty', 'educationType', 'educationForm', 'name', 'semester_count', 'education_period')
+    list_display = ('specialty', 'educationType', 'educationForm', 'name', 'semester_count', 'education_period', 'codeID')
 
 # SubjectDetail
 @admin.register(SubjectDetail)

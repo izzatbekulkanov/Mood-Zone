@@ -1,11 +1,11 @@
 from django import forms
-from .models import Book, OnlineBook, BookLoan, BookOrder
+from .models import Book, OnlineBook, BookLoan, BookOrder, BookType
 
 
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ['title', 'author', 'quantity', 'publication_year', 'image', 'status']
+        fields = ['title', 'authors', 'quantity', 'publication_year', 'image', 'status']
 
     def __init__(self, *args, **kwargs):
         added_by = kwargs.pop('added_by', None)
@@ -19,6 +19,12 @@ class BookForm(forms.ModelForm):
             book.save()
         return book
 
+
+
+class BookTypeForm(forms.ModelForm):
+    class Meta:
+        model = BookType
+        fields = ['name']
 
 class OnlineBookForm(forms.ModelForm):
     class Meta:

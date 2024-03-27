@@ -24,6 +24,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/social-app.min.css' %}"/>
+    <style>
+            #book-table-body {
+                font-size: 14px; /* Matnlar pikselda 10 px bo'lsa qo'shing */
+                margin: 1px;
+                padding: 1px;
+                line-height: inherit;
+            }
+            
+        </style>
+
 {% endblock style %}
 {% block body %}
     <!-- Content -->
@@ -34,7 +44,7 @@
                     <div class="border-bottom pb-3 d-flex align-items-center justify-content-between">
                         <h5>Kitob kiritish</h5>
                         <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                type="submit">
+                                type="submit" onclick="fetchBookType()">
                         <span class="d-flex justify-content-center ">
                             <svg class="icon-22" width="22" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +71,7 @@
                                         <div id="datatable_wrapper"
                                              class="dataTables_wrapper dt-bootstrap5 no-footer">
                                             <div class="table-responsive my-3" id="library-loader">
-                                                <table class="table mb-0 dataTable no-footer" id="datatable"
+                                                <table class="table mb-0 dataTable no-footer m-0 p-0" id="datatable"
                                                        data-toggle="data-table"
                                                        aria-describedby="datatable_info">
                                                     <thead>
@@ -89,29 +99,35 @@
                                                             aria-controls="datatable"
                                                             rowspan="1" colspan="1"
                                                             aria-label="Country: activate to sort column ascending">
-                                                            Kitob ID
+                                                            Kitob mualliflari
                                                         </th>
                                                         <th scope="col" class="sorting" tabindex="0"
                                                             aria-controls="datatable"
                                                             rowspan="1" colspan="1"
-                                                            aria-label="Purchases: activate to sort column ascending">
+                                                            aria-label="Country: activate to sort column ascending">
                                                             Kitob soni
                                                         </th>
                                                         <th scope="col" class="sorting" tabindex="0"
                                                             aria-controls="datatable"
                                                             rowspan="1" colspan="1"
-                                                            aria-label="Status: activate to sort column ascending">
+                                                            aria-label="Purchases: activate to sort column ascending">
                                                             Kiritilgan sanasi
                                                         </th>
                                                         <th scope="col" class="sorting" tabindex="0"
                                                             aria-controls="datatable"
                                                             rowspan="1" colspan="1"
+                                                            aria-label="Status: activate to sort column ascending">
+                                                            ISBN raqami
+                                                        </th>
+                                                        <th scope="col" class="sorting" tabindex="0"
+                                                            aria-controls="datatable"
+                                                            rowspan="1" colspan="1"
                                                             aria-label="Action: activate to sort column ascending">
-                                                            Status
+                                                            Kitob turi
                                                         </th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody id="book-table-body">
+                                                    <tbody id="book-table-body" class="m-0 p-0">
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -136,70 +152,113 @@
                                         <div class="card-body">
                                             <form id="bookForm">
                                                 <div class="form-group">
-                                                    <label class="form-label"
-                                                           for="exampleInputDisabled1">Kutubhonachi</label>
-                                                    <input type="text" class="form-control" id="exampleInputDisabled1"
-                                                           disabled value="{{ request.user.full_name }}">
+                                                    <label class="form-label" for="exampleInputDisabled1">Kutubhonachi</label>
+                                                    <input type="text" class="form-control" id="exampleInputDisabled1" disabled value="{{ request.user.full_name }}">
                                                 </div>
-                                                <div class="card-body">
-                                                    {% csrf_token %}
+                                                <div class="form-group row">
+                                                    <label class="control-label col-sm-3 align-self-center mb-0" for="bookTyepe">Kitob Turi:</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-select" id="bookType" name="bookType">
+                                                            <option value="" selected disabled>Kitob turini tanlang</option>
+                                                            <option value=""></option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                {% csrf_token %}
+                                                <div class="card-body" id="card-body-book-input" style="display: none">
+                                                    
                                                     <div class="form-group row">
-                                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                                               for="BookName">Kitob nomi:</label>
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="BookName">Kitob nomi:</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="BookName"
-                                                                   name="title" placeholder="Kitob nomini kiriting"
-                                                                   required>
+                                                            <input type="text" class="form-control" id="BookName" name="title" placeholder="Kitob nomini kiriting" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                                               for="author">Kitob muallifi:</label>
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="author">Kitob muallifi:</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="author"
-                                                                   name="author" placeholder="Kitob muallifini kiriting"
-                                                                   required>
+                                                            <input type="text" class="form-control" id="author" name="author" placeholder="Kitob muallifini kiriting" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                                               for="isbn">Kitob ISBN raqami:</label>
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="isbn">Kitob ISBN raqami:</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="isbn"
-                                                                   name="isbn" placeholder="Kitob ISBN raqami" required>
+                                                            <input type="number" class="form-control" id="isbn" name="isbn" placeholder="Kitob ISBN raqami" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                                               for="image">Kitob rasmi (Mavjud bo'lsa):</label>
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="image">Kitob rasmi (Mavjud bo'lsa):</label>
                                                         <div class="col-sm-9">
-                                                            <input type="file" class="form-control" id="image"
-                                                                   name="image" placeholder="Kitob rasmi">
+                                                            <input type="file" class="form-control" id="image" name="image" placeholder="Kitob rasmi">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="control-label col-sm-3 align-self-center mb-0">Kitob
-                                                            chiqarilgan yil</label>
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="bookFile">Kitob fayli (faqat Word va PDF):</label>
                                                         <div class="col-sm-9">
-                                                            <select class="form-select mb-3 shadow-none"
-                                                                    id="publication_year" name="publication_year"
-                                                                    required>
-                                                                <option selected disabled>Kitob chiqarilgan yil</option>
+                                                            <input type="file" class="form-control" id="bookFile" name="bookFile" accept=".doc, .docx, .pdf">
+                                                            <small class="text-muted">Faqat Word va PDF formatlarini yuklab bo'ling.</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="publication_year">Kitob chiqarilgan yil:</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" class="form-control" id="publication_year" name="publication_year" placeholder="Kitob chiqarilgan yil">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="quantity">Kitob soni:</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" class="form-control" id="quantity" name="quantity" value="1" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="pages">Kitob betlar soni:</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" class="form-control" id="pages" name="pages" value="1" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="language">Kitob tili:</label>
+                                                        <div class="col-sm-9">
+                                                            <select class="form-select" id="language" name="language">
+                                                                <option value="" selected disabled>Tilni tanlang</option>
+                                                                <option value="en">Ingliz</option>
+                                                                <option value="tr">Turk</option>
+                                                                <option value="fr">Fransuz</option>
+                                                                <option value="uz">O'zbek</option>
+                                                                <option value="ru">Rus</option>
+                                                                <option value="de">Nemis</option>
+                                                                <option value="zh">Xitoy</option>
+                                                                <option value="es">Ispan</option>
+                                                                <option value="ko">Koreys</option>
+                                                                <option value="kk">Qozoq</option>
+                                                                <option value="ky">Qirg'iz</option>
+                                                                <option value="tg">Tojik</option>
                                                             </select>
                                                         </div>
                                                     </div>
+
                                                     <div class="form-group row">
-                                                        <label class="control-label col-sm-3 align-self-center mb-0"
-                                                               for="quantity">Kitob soni:</label>
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="publisher">Kitob nashriyoti nomi:</label>
                                                         <div class="col-sm-9">
-                                                            <input type="number" class="form-control" id="quantity"
-                                                                   name="quantity" value="1" required>
+                                                            <input type="text" class="form-control" id="publisher" name="publisher" placeholder="Kitob nashriyoti nomi">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="published_city">Kitob nash qilingan shahar:</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="published_city" name="published_city" placeholder="Kitob nash qilingan shahar">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="control-label col-sm-3 align-self-center mb-0" for="annotation">Kitob annotatsiyasi:</label>
+                                                        <div class="col-sm-9">
+                                                            <textarea class="form-control" id="annotation" name="annotation" rows="4" placeholder="Kitob annotatsiyasini kiriting"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                   value="accepted" id="remebercheck2" name="status">
+                                                            <input class="form-check-input" type="checkbox" value="accepted" id="remebercheck2" name="status">
                                                             <label class="form-check-label" for="remebercheck2">Tasdiqlash</label>
                                                         </div>
                                                     </div>
@@ -238,9 +297,6 @@
     <script src="{% static 'assets/js/plugins/sweet-alert.js' %}" defer></script>
     <!-- Slider-tab Script -->
     <script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
-    <!-- Uppy-tab Script -->
-    <script src="{% static 'assets/vendor/uppy/uppy.min.js' %}"></script>
-    <script src="{% static 'assets/js/plugins/uppy.js' %}" defer></script>
     <!-- Lodash Utility -->
     <script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
     <!-- Utilities Functions -->
@@ -261,7 +317,6 @@
     <script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
     <script src="{% static 'assets/js/sidebar1fc6.js' %}" defer></script>
     <script src="{% static 'assets/js/sticky-sidebar.js' %}"></script>
-    <script src="{% static 'assets/js/social.js' %}"></script>
     <!-- SweetAlert JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 {% endblock script %}

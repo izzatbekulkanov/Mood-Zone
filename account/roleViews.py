@@ -1,12 +1,13 @@
 import json
 
+from django.contrib import messages
 from django.contrib.auth.models import Group, Permission
 from django.contrib.contenttypes.models import ContentType
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, redirect, render
+from django.http import JsonResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-
-
+from django.shortcuts import redirect
 def group_list(request):
     groups = Group.objects.all().order_by('-id')  # Id bo'yicha teskari tartibda
     group_data = []
@@ -39,6 +40,19 @@ def create_group(request):
     else:
         return JsonResponse({'error': 'Only POST method is allowed'}, status=405)
 
+def create_default_groups(request):
+    # Grouplarni nomlari
+    group_names = ['Library', 'Post', 'University', 'KPI', 'Exam', 'Administrator', 'RTTM', 'Student']
+
+    try:
+        # Har bir group nomi uchun
+        for group_name in group_names:
+            # Agar bu nomda guruh mavjud bo'lmasa uni yaratamiz
+            if not Group.objects.filter(name=group_name).exists():
+                Group.objects.create(name=group_name)
+        return JsonResponse({'message': 'Grouplar muvaffaqiyatli yaratildi'}, status=200)
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
 
 def update_group(request, group_id):
     if request.method == 'PUT':
@@ -160,3 +174,21 @@ def save_permission(request):
             return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
     else:
         return JsonResponse({'status': 'error', 'message': 'Faqat POST so\'rovlarni qo\'llashingiz mumkin'}, status=405)
+
+
+@csrf_exempt
+def set_now_role(request):
+    if request.method == 'POST':
+        group_name = request.POST.get('now_role')
+
+        # Assuming you have a CustomUser model with a field named now_role
+        request.user.now_role = group_name
+        request.user.save()
+
+        # Add success message
+        messages.success(request, 'Successfully logged in.')
+
+        # Return success response
+        return JsonResponse({'message': 'Guruh nomi muvaffaqiyatli saqlandi'}, status=200)
+    else:
+        return JsonResponse({'error': 'Noto\'g\'ri so\'rov turi'}, status=400)

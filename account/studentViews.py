@@ -1,18 +1,14 @@
 from datetime import datetime
-
 import requests
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password
 from django.http import JsonResponse
-
-from account.models import CustomUser, Gender, Country, Province, District, Citizenship, StudentStatus, PaymentForm, \
-    StudentType, Accommodation
-from university.models import Department, Specialty, Level, Semester, EducationYear, University, EducationForm, \
-    EducationType, GroupUniver, Curriculum
+from account.models import CustomUser, Gender, Country, Province, District, Citizenship, StudentStatus, PaymentForm, StudentType, Accommodation
+from university.models import Department, Specialty, Level, Semester, EducationYear, University, EducationForm, EducationType, GroupUniver, Curriculum, EducationLang
 
 
 def save_student_from_api(request):
-    url = 'https://student.namspi.uz/rest/v1/data/student-list?page=30&limit=100'
+    url = 'https://student.namspi.uz/rest/v1/data/student-list'
     headers = {
         'accept': 'application/json',
         'Authorization': 'Bearer cbdfefbb283db3a219a7e7dcefd620b4'
@@ -31,8 +27,10 @@ def save_student_from_api(request):
         response = requests.get(url, headers=headers)
         response.raise_for_status()  # Agar status kod 200 bo'lmasa, xato qaytaradi
         data = response.json()
-        # if data:
-        #     return JsonResponse({'success': True, 'message': data}, status=201)
+        if data:
+            return JsonResponse({'success': True, 'message': data}, status=201)
+
+
 
         for item in data.get('data', {}).get('items', []):
             gender_name = item.get('gender', {}).get('name')
@@ -145,6 +143,7 @@ def save_student_from_api(request):
 
         # API-dan olingan ma'lumotlarni CustomUser modeliga saqlash
         for item in data.get('data', {}).get('items', []):
+            print('1')
             # Ta'lim turi ni aniqlash
             university_code = item.get('university', {}).get('code')
             university, _ = University.objects.get_or_create(code=university_code)
@@ -262,7 +261,6 @@ def save_student_from_api(request):
                     'created_at': created_at,
                     'updated_at': updated_at,
                     'hash': item.get('hash'),
-                    'user_type': 1,
                     'is_student': True,
                     'user_role': 'student',
                     'is_active': True,  # Active holatda
@@ -288,12 +286,24 @@ def create_student_from_api(request):
         'accept': 'application/json',
         'Authorization': 'Bearer cbdfefbb283db3a219a7e7dcefd620b4'
     }
+
+    def update_or_create(model, filter_kwargs, defaults=None):
+        obj, created = model.objects.get_or_create(**filter_kwargs, defaults=defaults)
+        if not created and defaults:
+            for key, value in defaults.items():
+                setattr(obj, key, value)
+            obj.save()
+        return obj, created
+
+
     # cURL so'rovi uchun parametrlar
     student_id_number = request.POST.get('student_id_number')
-    print(student_id_number)
     params = {
         'student_id_number': student_id_number
     }
+
+    # 'EducationForm' modelini o'zgartirish
+
 
     try:
         # Ma'lumotlarni olish
@@ -301,6 +311,7 @@ def create_student_from_api(request):
         # JSON javoblarni tekshirish
         if response.status_code == 200:
             data = response.json()
+
             if 'data' in data:
                 item = data['data']
 

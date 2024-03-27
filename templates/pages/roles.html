@@ -8,6 +8,8 @@
     <!-- Hope Ui Design System Css -->
     <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+    <!-- btn hover css -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/button-hover/css/hover-min.css' %}">
     <!-- Custom Css -->
     <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
     <!-- Dark Css -->
@@ -88,7 +90,14 @@
                                     <h4 class="me-2 h4">Namangan davlat pedagogika institutiga Xush kelibsiz !!!</h4>
                                 </div>
                             </div>
-                            <div class="check2">Ong tarafda</div>
+                            <div class="check2">
+                                <button class="me-4 btn btn-primary hvr-icon-drop" id="create-default-role">
+                                    Default Role Upload
+                                     <svg class="size-28 hvr-icon" viewBox="0 0 24 24" fill="none">
+                                        <path d="M10.869 16.6308C10.811 16.5743 10.563 16.3609 10.359 16.1622C9.076 14.9971 6.976 11.9576 6.335 10.3668C6.232 10.1252 6.014 9.51437 6 9.18802C6 8.8753 6.072 8.5772 6.218 8.29274C6.422 7.93814 6.743 7.65368 7.122 7.49781C7.385 7.39747 8.172 7.2416 8.186 7.2416C9.047 7.08573 10.446 7 11.992 7C13.465 7 14.807 7.08573 15.681 7.21335C15.695 7.22796 16.673 7.38383 17.008 7.55431C17.62 7.86702 18 8.47784 18 9.13151V9.18802C17.985 9.61374 17.605 10.509 17.591 10.509C16.949 12.0141 14.952 14.9834 13.625 16.1768C13.625 16.1768 13.284 16.5129 13.071 16.659C12.765 16.887 12.386 17 12.007 17C11.584 17 11.19 16.8724 10.869 16.6308Z" fill="currentColor" />
+                                      </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,235 +244,6 @@
     <!--/ Content -->
 {% endblock body %}
 {% block script %}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script>
-
-    {#Yangi group qoshish va grouplarni royhatini chiqarish#}
-        async function fetchData() {
-            return fetch('/user/group_list_api')
-                .then(response => response.json())
-                .then(data => displayData(data))
-                .catch(error => console.error('Xatolik:', error));
-        }
-        async function displayData(groups) {
-            const tableBody = document.getElementById('adminTableBody');
-            tableBody.innerHTML = '';
-
-            groups.forEach(group => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <h6>${group.name}</h6>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="iq-media-group iq-media-group-1">
-                            ${group.users.length > 0 ? group.users.map(user => `
-                                <a href="#" class="iq-media-1">
-                                    <div class="icon iq-icon-box-3 rounded-pill">${user.initials}</div>
-                                </a>
-                            `).join('') : 'No user'}
-                        </div>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-warning btn-sm" onclick="showPermissions(${group.id}, '${group.name}')">Tahrirlash</button>
-                    </td>
-                `;
-                tableBody.appendChild(row);
-            });
-        }
-        async function createGroup() {
-            const name = document.getElementById('role-title').value;
-            const formData = new FormData();
-            formData.append('name', name);
-
-            // CSRF tokenini qo'shish
-            const csrfToken = getCSRFToken();
-            if (csrfToken) {
-                formData.append('csrfmiddlewaretoken', csrfToken);
-            } else {
-                console.error('CSRF token not found');
-                return;
-            }
-
-            axios.post('create_group_api', formData)
-                .then(response => {
-                    document.getElementById('role-title').value = '';
-                    closeModal()
-                    fetchData()
-                    
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer);
-                            toast.addEventListener('mouseleave', Swal.resumeTimer);
-                        }
-                    });
-
-                    Toast.fire({
-                        icon: 'success',
-                        title: response.data.success
-                    });
-                    console.log(response.data);
-                    // Ishlarga davom eting
-                })
-                .catch(error => {
-                    console.error(error);
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer);
-                            toast.addEventListener('mouseleave', Swal.resumeTimer);
-                        }
-                    });
-            
-                    Toast.fire({
-                        icon: 'error',
-                        title: 'Xatolik yuz berdi. Group yaratishda muammo ro\'y berdi.' // Error message
-                    });
-                    // Xatoliklarni ko'rsating
-                });
-            function closeModal() {
-            const modal = document.getElementById('new-role');
-            const modalBS = bootstrap.Modal.getInstance(modal);
-            modalBS.hide();
-            }
-        }
-        async function showPermissions(groupId, groupName) {
-            selectedGroupId = groupId; // selectedGroupId o'zgaruvchisiga groupId qiymatini uzatish
-            axios.get(`/user/groups/${groupId}`)
-                .then(response => {
-                    const permissions = response.data;
-                    displayPermissions(permissions, groupName, groupId);
-                })
-                .catch(error => {
-                    console.error('Error fetching group permissions:', error);
-                });
-        }
-        async function displayPermissions(permissions, groupName, groupId) {
-            // Jadvalga permissionlarni chiqaring
-            const tableBody = document.querySelector('#permission-basic-table tbody');
-            tableBody.innerHTML = '';
-        
-            permissions.forEach(permission => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${permission.name}</td>
-                    <td>${permission.permission}</td>
-                    <td>
-                        <div class="form-check form-switch form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="${permission.permission}" ${permission.selected ? 'checked' : ''}>
-                            <label class="pl-2 form-check-label" for="${permission.permission}"></label>
-                        </div>
-                    </td>
-                `;
-                tableBody.appendChild(row);
-            });
-        
-            // Saqlash tugmasini bosilganda permissionlar royhatini Groupga saqlash
-            document.getElementById('save-permission-to-server').innerHTML = `
-                <button type="button" class="btn btn-primary btn-sm btn-save-permissions hvr-shutter-out-horizontal" onclick="savePermissionsToServer(${groupId})" id="save-permissions-button">Saqlash</button>
-            `;
-        
-            // Jadvalni ko'rsatish
-            document.getElementById('cardAdminPermissions').style.display = 'block';
-            // Guruh nomini joylash
-            document.querySelector('.card-title-permission').innerText = groupName;
-        }
-
-        
-        async function savePermissionsToServer(groupId) {
-            const checkedPermissions = Array.from(document.querySelectorAll('#permission-basic-table tbody tr'))
-                .filter(row => row.querySelector('input[type="checkbox"]').checked)
-                .map(row => row.cells[0].innerText);
-        
-            const uncheckedPermissions = Array.from(document.querySelectorAll('#permission-basic-table tbody tr'))
-                .filter(row => !row.querySelector('input[type="checkbox"]').checked)
-                .map(row => row.cells[0].innerText);
-        
-            try {
-                const saveButton = document.getElementById('save-permission-to-server');
-                saveButton.innerHTML = `
-                    <div class="iq-loader-box loader_to">
-                      <div class="iq-loader-10 w-20"></div>
-                    </div>
-                `; // Saqlash tugmasining matnini 'Loading...' ga o'zgartirish
-        
-                const csrfToken = await getCSRFToken();
-                if (!csrfToken) {
-                    console.error('CSRF token not found');
-                    return;
-                }
-        
-                const response = await axios.post(`/user/groups/${groupId}/permissions`, {
-                    permissions: checkedPermissions,
-                    unchecked_permissions: uncheckedPermissions
-                }, {
-                    headers: {
-                        'X-CSRFToken': csrfToken
-                    }
-                });
-        
-                // Toast tuzilmasi orqali xabar chiqarish
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer);
-                        toast.addEventListener('mouseleave', Swal.resumeTimer);
-                    }
-                });
-        
-                Toast.fire({
-                    icon: 'success',
-                    title: response.data.success
-                });
-        
-                console.log('Permissions saved successfully:', response.data);
-                // Additional logic after saving permissions if needed
-        
-                // Saqlash tugmasini qayta ko'rsatish
-                saveButton.innerHTML = `
-                    <button type="button" class="btn btn-primary btn-sm btn-save-permissions" onclick="savePermissionsToServer(${groupId})" id="save-permissions-button">Yana saqlash</button>
-                `;
-            } catch (error) {
-                console.error('Error saving permissions:', error);
-                alert('Xatolik yuz berdi. Huquqlarni saqlashda muammo ro\'y berdi.');
-        
-                // Saqlash tugmasini qayta ko'rsatish
-                saveButton.innerHTML = `
-                    <button type="button" class="btn btn-primary btn-sm btn-save-permissions" onclick="savePermissionsToServer(${groupId})" id="save-permissions-button">Yana saqlash</button>
-                `;
-            }
-        }
-        
-        document.addEventListener('DOMContentLoaded', () => {fetchData();});
-                // CSRF tokenini olish
-        function getCSRFToken() {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                if (cookie.startsWith('csrftoken=')) {
-                    return cookie.substring('csrftoken='.length, cookie.length);
-                }
-            }
-            return null;
-        }
-    </script>
-
     <!-- Library Bundle Script -->
     <script src="{% static 'assets/js/core/libs.min.js' %}"></script>
     <!-- Plugin Scripts -->

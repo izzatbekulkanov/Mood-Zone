@@ -149,6 +149,9 @@
                     <hr class="hr-horizontal">
                 </li>
                 {#            Universitet#}
+
+               {% if request.user.now_role == 'University' or request.user.now_role == 'Administrator' %}
+                
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                         <span class="default-icon">Universitet</span>
@@ -350,7 +353,10 @@
                 <li>
                     <hr class="hr-horizontal">
                 </li>
+            {% endif %}
+
                 {#            Kutuhbona#}
+            {% if request.user.now_role == 'Library' or request.user.now_role == 'Administrator' %}
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                         <span class="default-icon">Kutubhona</span>
@@ -412,6 +418,36 @@
                                 <span class="item-name">Kitob qo'shish</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/library/book_type_list' %} active {% endif %} "
+                               href="{% url 'book_type_list' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Kitob Turlari</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/library/authors' %} active {% endif %} "
+                               href="{% url 'book_author_list' %}">
+                                <i class="icon">
+                                    <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> 3D </i>
+                                <span class="item-name">Kitob Mualliflari</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -439,9 +475,9 @@
                         </i>
                     </a>
                     <ul class="sub-nav collapse" id="followers_book" data-bs-parent="#followers_book">
-                        <li class="nav-item {% if request.path == '' %} active {% endif %}">
-                            <a class="nav-link {% if request.path == '' %} active {% endif %} "
-                               href="{% url 'university_data' %}">
+                        <li class="nav-item {% if request.path == '/library/followers_book' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/library/followers_book' %} active {% endif %} "
+                               href="{% url 'followers_book' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -455,8 +491,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == '/university/users_data' %} active {% endif %} "
-                               href="#">
+                            <a class="nav-link {% if request.path == '/library/add_followers_book' %} active {% endif %} "
+                               href="{% url 'add_followers_book' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -465,7 +501,7 @@
                                         </g>
                                     </svg>
                                 </i>
-                                <i class="sidenav-mini-icon"> 3D </i>
+                                <i class="sidenav-mini-icon"> OQ </i>
                                 <span class="item-name">Obunachi qo'shish</span>
                             </a>
                         </li>
@@ -495,9 +531,9 @@
                         </i>
                     </a>
                     <ul class="sub-nav collapse" id="libraryServices" data-bs-parent="#libraryServices">
-                        <li class="nav-item {% if request.path == '' %} active {% endif %}">
-                            <a class="nav-link {% if request.path == '' %} active {% endif %} "
-                               href="{% url 'university_data' %}">
+                        <li class="nav-item {% if request.path == '/library/give_book' %} active {% endif %}">
+                            <a class="nav-link {% if request.path == '/library/give_book' %} active {% endif %} "
+                               href="{% url 'give_book' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -511,8 +547,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == '' %} active {% endif %} "
-                               href="#">
+                            <a class="nav-link {% if request.path == '/library/debtors_book' %} active {% endif %} "
+                               href="{% url 'qarzdor_kitobhon' %}">
                                 <i class="icon">
                                     <svg class="icon-10" width="10" viewBox="0 0 24 24" fill="currentColor"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -521,7 +557,7 @@
                                         </g>
                                     </svg>
                                 </i>
-                                <i class="sidenav-mini-icon"> 3D </i>
+                                <i class="sidenav-mini-icon"> QK </i>
                                 <span class="item-name">Qarzdorlar</span>
                             </a>
                         </li>
@@ -604,7 +640,10 @@
                 <li>
                     <hr class="hr-horizontal">
                 </li>
+            {% endif %}
                 {#            Post yangiliklar#}
+            {% if request.user.now_role == 'Post' or request.user.now_role == 'Administrator' %}
+
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                         <span class="default-icon">Post | Yangiliklar</span>
@@ -698,7 +737,10 @@
                 <li>
                     <hr class="hr-horizontal">
                 </li>
+            {% endif %}
                 {#            Imtihon#}
+            {% if request.user.now_role == 'Exam' or request.user.now_role == 'Administrator' %}
+            
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                         <span class="default-icon">Imtihon</span>
@@ -812,6 +854,11 @@
                 <li>
                     <hr class="hr-horizontal">
                 </li>
+            {% endif %}
+            
+{#            Student#}
+            {% if request.user.now_role == 'Student' or request.user.now_role == 'Administrator' %}
+            
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                         <span class="default-icon">Talaba</span>
@@ -929,6 +976,9 @@
                 <li>
                     <hr class="hr-horizontal">
                 </li>
+            {% endif %}
+            {% if request.user.now_role == 'RTTM' or request.user.now_role == 'Administrator' %}
+            
                 {#            Foyalanuvchilar#}
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
@@ -1194,7 +1244,9 @@
                 <li>
                     <hr class="hr-horizontal">
                 </li>
+            {% endif %}
                 {#            Adminstrator#}
+            {% if request.user.now_role == 'Administrator' %}
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
                         <span class="default-icon">Adminstrator</span>
@@ -1202,8 +1254,11 @@
                               data-bs-placement="right">-</span>
                     </a>
                 </li>
+            {% endif %}
                 {#                other#}
                 {#                Sayt boshqaruvi#}
+            {% if request.user.now_role == 'Administrator' %}
+            
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-maps" role="button"
                        aria-expanded="false"
@@ -1411,6 +1466,7 @@
                 <li>
                     <hr class="hr-horizontal">
                 </li>
+            {% endif %}
                 {#            Ijtimoiy tarmoqlar#}
                 <li class="nav-item static-item">
                     <a class="nav-link static-item disabled text-start" href="#" tabindex="-1">
@@ -1437,7 +1493,7 @@
                         </a>
                     </li>
                     <li class="ps-3">
-                        <a href="#">
+                        <a href="https://t.me/namspi">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
                                 <path d="M23.75 3.75C24.413 3.75 25.0489 4.01339 25.5178 4.48223C25.9866 4.95107 26.25 5.58696 26.25 6.25V23.75C26.25 24.413 25.9866 25.0489 25.5178 25.5178C25.0489 25.9866 24.413 26.25 23.75 26.25H6.25C5.58696 26.25 4.95107 25.9866 4.48223 25.5178C4.01339 25.0489 3.75 24.413 3.75 23.75V6.25C3.75 5.58696 4.01339 4.95107 4.48223 4.48223C4.95107 4.01339 5.58696 3.75 6.25 3.75H23.75ZM23.125 23.125V16.5C23.125 15.4192 22.6957 14.3828 21.9315 13.6185C21.1672 12.8543 20.1308 12.425 19.05 12.425C17.9875 12.425 16.75 13.075 16.15 14.05V12.6625H12.6625V23.125H16.15V16.9625C16.15 16 16.925 15.2125 17.8875 15.2125C18.3516 15.2125 18.7967 15.3969 19.1249 15.7251C19.4531 16.0533 19.6375 16.4984 19.6375 16.9625V23.125H23.125ZM8.6 10.7C9.15695 10.7 9.6911 10.4788 10.0849 10.0849C10.4788 9.6911 10.7 9.15695 10.7 8.6C10.7 7.4375 9.7625 6.4875 8.6 6.4875C8.03973 6.4875 7.50241 6.71007 7.10624 7.10624C6.71007 7.50241 6.4875 8.03973 6.4875 8.6C6.4875 9.7625 7.4375 10.7 8.6 10.7ZM10.3375 23.125V12.6625H6.875V23.125H10.3375Z"
                                       fill="currentColor"></path>

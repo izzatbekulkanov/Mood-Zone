@@ -168,6 +168,70 @@
             </div>
         </div>
     </div>
+    
+    <div class="modal fade" id="addLibrarianModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Input</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form id="addlibrarianForm"> {% csrf_token %}
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleInputDisabled1">Admin</label>
+                                    <input type="text" class="form-control" id="exampleInputDisabled1" disabled
+                                           value="{{ request.user.full_name }}">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="formLibraryName">Kutubhona nomi</label>
+                                    <input type="text" class="form-control" id="formLibraryName" disabled
+                                           value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="formLibraryAdress">Kutubhona manzili</label>
+                                    <input type="text" class="form-control" id="formLibraryAdress" disabled value="">
+                                    <input type="hidden" class="form-control" id="formLibraryid" value="">
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3 align-self-center mb-0" for="librarianName">Kutubhonachi:</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-select" id="librarianName" name="librarian" required>
+                                                <option value="" selected disabled>Tanlang...</option>
+                                                <!-- Kutubhonachilarni JSON formatida olish uchun JavaScript ishlatilishi mumkin -->
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tasdiqlash checkbox -->
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="accepted"
+                                                   id="remebercheck3" name="status">
+                                            <label class="form-check-label" for="remebercheck2">Tasdiqlash</label>
+                                        </div>
+                                    </div>
+                                    <!-- Saqlash va chiqish tugmalar -->
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary" onclick="addLibrarianForm()">Saqlash</button>
+                                        <button type="button" class="btn btn-danger" onclick="closeLibrarianModal()">Chiqish</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
 
     <!--/ Content -->
 {% endblock body %}

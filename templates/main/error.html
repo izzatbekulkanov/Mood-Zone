@@ -1,0 +1,186 @@
+<!doctype html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title data-setting="sad" data-rightJoin=" Kirishda hatolik">Error</title>
+    <meta name="description"
+          content="Hope UI Pro is a revolutionary Bootstrap Admin Dashboard Template and UI Components Library. The Admin Dashboard Template and UI Component features 8 modules.">
+    <meta name="keywords"
+          content="premium, admin, dashboard, template, bootstrap 5, clean ui, hope ui, admin dashboard,responsive dashboard, optimized dashboard, simple auth">
+    <meta name="author" content="Iqonic Design">
+    <meta name="DC.title" content="Hope UI Pro Simple | Responsive Bootstrap 5 Admin Dashboard Template">
+    <!-- Google Font Api KEY-->
+    <meta name="google_font_api" content="AIzaSyBG58yNdAjc20_8jAvLNSVi9E4Xhwjau_k">
+    <!-- Config Options -->
+    <meta name="setting_options"
+          content='{&quot;saveLocal&quot;:&quot;sessionStorage&quot;,&quot;storeKey&quot;:&quot;huisetting-html&quot;,&quot;setting&quot;:{&quot;app_name&quot;:{&quot;value&quot;:&quot;Hope UI&quot;},&quot;theme_scheme_direction&quot;:{&quot;value&quot;:&quot;ltr&quot;},&quot;theme_scheme&quot;:{&quot;value&quot;:&quot;light&quot;},&quot;theme_style_appearance&quot;:{&quot;value&quot;:[&quot;theme-default&quot;]},&quot;theme_color&quot;:{&quot;colors&quot;:{&quot;--{{ prefix }}primary&quot;:&quot;#3a57e8&quot;,&quot;--{{ prefix }}info&quot;:&quot;#08B1BA&quot;},&quot;value&quot;:&quot;theme-color-default&quot;},&quot;theme_transition&quot;:{&quot;value&quot;:&quot;theme-with-animation&quot;},&quot;theme_font_size&quot;:{&quot;value&quot;:&quot;theme-fs-md&quot;},&quot;page_layout&quot;:{&quot;value&quot;:&quot;container-fluid&quot;},&quot;header_navbar&quot;:{&quot;value&quot;:&quot;default&quot;},&quot;header_banner&quot;:{&quot;value&quot;:&quot;default&quot;},&quot;sidebar_color&quot;:{&quot;value&quot;:&quot;sidebar-white&quot;},&quot;card_color&quot;:{&quot;value&quot;:&quot;card-default&quot;},&quot;sidebar_type&quot;:{&quot;value&quot;:[]},&quot;sidebar_menu_style&quot;:{&quot;value&quot;:&quot;left-bordered&quot;},&quot;footer&quot;:{&quot;value&quot;:&quot;default&quot;},&quot;body_font_family&quot;:{&quot;value&quot;:null},&quot;heading_font_family&quot;:{&quot;value&quot;:null}}}'>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+    <!-- Library / Plugin Css Build -->
+    <link rel="stylesheet" href="{% static 'assets/css/core/libs.min.css' %}">
+    <!-- Hope Ui Design System Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/hope-ui.min1fc6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pro.min1fc6.css' %}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.min1fc6.css' %}">
+    <!-- Dark Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/dark.min1fc6.css' %}">
+    <!-- Customizer Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/customizer.min1fc6.css' %}">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .image-hover {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background-color: rgba(11, 53, 102, 0.49);
+            color: #fff; /* Matn rangi */
+            font-size: 50px; /* Matn o'lchami */
+        }
+
+        .image-hover:hover .hover-text {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class=" ">
+
+<div class="wrapper">
+    <div class="container-fluid p-0">
+        <div class="iq-maintenance text-center">
+            <a href="{% url 'index' %}" class="image-hover">
+                <img src="{% static 'assets/images/error/01.png' %}" class="img-fluid mb-4" alt="maintenance" loading="lazy"/>
+                <span class="hover-text">Uyga qaytish</span>
+            </a>
+
+
+            <div class="maintenance-bottom text-white pb-0">
+
+                <div class="bg-primary" style="background: transparent; height: 320px;">
+                    <div class="gradient-bottom">
+                        <div class="bottom-text general-zindex">
+                            <h1 class="mb-2 text-white">Sizda qandaydur muammo bor</h1>
+                            <p>Iltimos sizdagi muammolarni administratorga yozing va tez orada muammo bartaraf etiladi</p>
+                            <ul class="countdown d-flex justify-content-center align-items-center list-inline">
+                                <li>
+                                    <span data-day>0</span>Day
+                                </li>
+                                <li>
+                                    <span data-month>0</span>Month
+                                </li>
+                                <li>
+                                    <span data-year>0</span>Year
+                                </li>
+                                <li>
+                                    <span data-hour>0</span>Hour
+                                </li>
+                                <li>
+                                    <span data-minute>0</span>Minutes
+                                </li>
+                                <li>
+                                    <span data-second>0</span>Seconds
+                                </li>
+                            </ul>
+                            <div class="w-50 mx-auto mt-2">
+                                <div class="input-group search-input search-input">
+                                    <input type="text" class="form-control" placeholder="Enter your message">
+                                    <a href="#" class="btn bg-white text-primary">Xabar jo'natish</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c xl-circle">
+                            <div class="c lg-circle">
+                                <div class="c md-circle">
+                                    <div class="c sm-circle">
+                                        <div class="c xs-circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sign-bg">
+            <svg width="280" height="230" viewBox="0 0 431 398" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.05">
+                    <rect x="-157.085" y="193.773" width="543" height="77.5714" rx="38.7857"
+                          transform="rotate(-45 -157.085 193.773)" fill="#3B8AFF"/>
+                    <rect x="7.46875" y="358.327" width="543" height="77.5714" rx="38.7857"
+                          transform="rotate(-45 7.46875 358.327)"
+                          fill="#3B8AFF"/>
+                    <rect x="61.9355" y="138.545" width="310.286" height="77.5714" rx="38.7857"
+                          transform="rotate(45 61.9355 138.545)" fill="#3B8AFF"/>
+                    <rect x="62.3154" y="-190.173" width="543" height="77.5714" rx="38.7857"
+                          transform="rotate(45 62.3154 -190.173)"
+                          fill="#3B8AFF"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateDateTime() {
+        var now = new Date();
+        var day = now.getDate();
+        var month = now.getMonth() + 1;
+        var year = now.getFullYear();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+
+        document.querySelector('[data-day]').innerText = day;
+        document.querySelector('[data-month]').innerText = month;
+        document.querySelector('[data-year]').innerText = year;
+        document.querySelector('[data-hour]').innerText = hour;
+        document.querySelector('[data-minute]').innerText = minute;
+        document.querySelector('[data-second]').innerText = second;
+    }
+
+    // Her saniyede bir tarih ve saati güncelleyin
+    setInterval(updateDateTime, 1000);
+
+</script>
+<!-- Library Bundle Script -->
+<script src="{% static 'assets/js/core/libs.min.js' %}"></script>
+<!-- Plugin Scripts -->
+
+<!-- Slider-tab Script -->
+<script src="{% static 'assets/js/plugins/slider-tabs.js' %}"></script>
+
+
+<!-- Lodash Utility -->
+<script src="{% static 'assets/vendor/lodash/lodash.min.js' %}"></script>
+<!-- Utilities Functions -->
+<script src="{% static 'assets/js/iqonic-script/utility.min.js' %}"></script>
+<!-- Settings Script -->
+<script src="{% static 'assets/js/iqonic-script/setting.min.js' %}"></script>
+<!-- Settings Init Script -->
+<script src="{% static 'assets/js/setting-init.js' %}"></script>
+<!-- External Library Bundle Script -->
+<script src="{% static 'assets/js/core/external.min.js' %}"></script>
+<!-- Widgetchart Script -->
+<script src="{% static 'assets/js/charts/widgetcharts1fc6.js' %}" defer></script>
+<!-- Dashboard Script -->
+<script src="{% static 'assets/js/charts/dashboard.js' %}" defer></script>
+<script src="{% static 'assets/js/charts/alternate-dashboard1fc6.js' %}" defer></script>
+<!-- Hopeui Script -->
+<script src="{% static 'assets/js/hope-ui1fc6.js' %}" defer></script>
+<script src="{% static 'assets/js/hope-uipro1fc6.js' %}" defer></script>
+</body>
+</html>

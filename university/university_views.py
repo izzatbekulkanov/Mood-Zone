@@ -204,45 +204,71 @@ def save_curriculum_from_api(request):
 
 
 def save_group_from_api(request):
-    url = 'https://student.namspi.uz/rest/v1/data/group-list?limit=10000'
+    url = 'https://student.namspi.uz/rest/v1/data/group-list'
     headers = {
         'accept': 'application/json',
         'Authorization': 'Bearer cbdfefbb283db3a219a7e7dcefd620b4'
     }
 
+    def update_or_create(model, filter_kwargs, defaults=None):
+        obj, created = model.objects.get_or_create(**filter_kwargs, defaults=defaults)
+        if not created and defaults:
+            for key, value in defaults.items():
+                setattr(obj, key, value)
+            obj.save()
+        return obj, created
+
     try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        data = response.json()
+        page_number = 1  # Boshlang'ich sahifa raqami
+        while True:
+            # Sahifani olish uchun so'rov yaratish
+            query_params = {'page': page_number, 'limit': 200}
+            response = requests.get(url, headers=headers, params=query_params)
+            response.raise_for_status()
+            data = response.json()
 
-        for item in data.get('data', {}).get('items', []):
-            # Ta'lim turi ni aniqlash
-            education_lang_code = item.get('educationLang', {}).get('code')
-            education_lang, _ = EducationLang.objects.get_or_create(code=education_lang_code)
+            # pageCount ni chiqarish
+            pagination_data = data.get('data', {}).get('pagination')
+            page_count = pagination_data.get('pageCount')
 
-            # Fakultetni aniqlash
-            department_code = item.get('department', {}).get('id')
-            department, _ = Department.objects.get_or_create(codeID=department_code)
 
-            # Yo'nalishni aniqlash
-            specialty_id = item.get('specialty', {}).get('id')
-            specialty, _ = Specialty.objects.get_or_create(codeID=specialty_id)
 
-            # Ta'lim rejani aniqlash
-            # curriculum_id = item.get('_curriculum')
-            # curriculum, _ = Curriculum.objects.get_or_create(codeID=curriculum_id)
+            # Ma'lumotlarni qabul qilish va saqlash
+            for item in data.get('data', {}).get('items', []):
+                education_lang_name = item.get('educationLang', {}).get('name')
+                education_lang_code = item.get('educationLang', {}).get('code')
+                defaults = {'code': education_lang_code}
+                obj, created = update_or_create(
+                    EducationLang,
+                    filter_kwargs={'name': education_lang_name},
+                    defaults=defaults
+                )
 
-            # Guruh obyektini yaratish va saqlash
-            GroupUniver.objects.update_or_create(
-                codeID=item.get('id'),
-                defaults={
-                    'name': item.get('name'),
-                    'educationLang': education_lang,
-                    'department': department,
-                    'specialty': specialty,
-                    # 'curriculum': curriculum,
-                }
-            )
+                education_lang_code = item.get('educationLang', {}).get('code')
+                education_lang, _ = EducationLang.objects.get_or_create(code=education_lang_code)
+
+                department_code = item.get('department', {}).get('id')
+                department, _ = Department.objects.get_or_create(codeID=department_code)
+
+                specialty_id = item.get('specialty', {}).get('id')
+                specialty, _ = Specialty.objects.get_or_create(codeID=specialty_id)
+
+                GroupUniver.objects.update_or_create(
+                    codeID=item.get('id'),
+                    defaults={
+                        'name': item.get('name'),
+                        'educationLang': education_lang,
+                        'department': department,
+                        'specialty': specialty,
+                    }
+                )
+
+            # Keyingi sahifaga o'tish
+            if page_number >= page_count:
+                print(page_count)
+                break  # Bo'sh sahifa, dastur to'xtaydi
+            else:
+                page_number += 1  # Keyingi sahifaga o'tish
 
         return JsonResponse({'success': True, 'message': 'Ma\'lumotlar muvaffaqiyatli saqlandi'}, status=201)
     except Exception as e:

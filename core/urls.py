@@ -8,7 +8,8 @@ from explorer import urls as explorer_url
 urlpatterns = [
     path('django/', admin.site.urls),  # admin site
     path('user/', include('account.urls')),
-    path('dashboard/', include('dashboard.urls')),
+    path('exam/', include('exam.urls')),
+    path('', include('dashboard.urls')),
     path('library/', include('library.urls')),
     path('post/', include('post.urls')),
     path('admin/', include('authHemis.urls')),

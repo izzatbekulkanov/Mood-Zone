@@ -186,7 +186,7 @@ class CustomUser(AbstractUser):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yaratilgan vaqti")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="O'zgartirilgan vaqti")
     hash = models.CharField(null=True, blank=True, max_length=255, verbose_name="Hash")
-
+    now_role = models.CharField(null=True, blank=True, max_length=255, verbose_name="Foydalanuvchining hozirgi vaqtdagi roli")
     username = models.CharField(null=True, blank=True, max_length=9, unique=True)
     email = models.EmailField(('email address'), unique=True)
     age = models.PositiveIntegerField(null=True, blank=True)

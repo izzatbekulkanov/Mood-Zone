@@ -3,20 +3,26 @@ from io import BytesIO
 import random
 import string
 from django.core.exceptions import ValidationError
+from django.core.files.storage import default_storage
 from django.db import models
 from django.core.files import File
 from django.utils import timezone
 import barcode
 from barcode.writer import ImageWriter
 from account.models import CustomUser
+from django.utils.translation import gettext_lazy as _
+
 
 
 def validate_file_extension(value):
     """Faylning formatini tekshirish uchun validator."""
-    if value.content_type not in ['application/pdf', 'application/msword',
-                                  'application/vnd.openxmlformats-officedocument.wordprocessingml.document']:
-        raise ValidationError("Faqat PDF va Word formatidagi fayllarni yuklash mumkin.")
-
+    content_type = getattr(value, 'content_type', None)
+    if content_type:
+        if content_type not in ['application/pdf', 'application/msword',
+                                      'application/vnd.openxmlformats-officedocument.wordprocessingml.document']:
+            raise ValidationError(_("Faqat PDF va Word formatidagi fayllarni yuklash mumkin."))
+    else:
+        raise ValidationError(_("Faylning formatini aniqlashda xatolik yuzaga keldi. Content type topilmadi."))
 
 class Library(models.Model):
     name = models.CharField(max_length=255, help_text="Kutubhona nomi")
@@ -33,7 +39,7 @@ class Library(models.Model):
 
 def generate_book_id():
     """Kitob identifikatorini avtomatik tarzda yaratish."""
-    return '309' + ''.join(random.choices(string.digits, k=6))
+    return '451' + ''.join(random.choices(string.digits, k=6))
 
 
 def generate_barcode_book(book_id):
@@ -44,18 +50,73 @@ def generate_barcode_book(book_id):
     code128.write(buffer)
     return buffer.getvalue()
 
+class Author(models.Model):
+    """Muallif modeli."""
+    name = models.CharField(max_length=255, help_text="Muallifning ismi")
+    phone_number = models.CharField(max_length=300, blank=True, null=True,help_text="Muallifning telefon raqami")
+    image = models.ImageField(upload_to='author_image/', blank=True, null=True, help_text="Kitob muallifining rasmi (mavjud bo'lsa)")
+    email = models.EmailField(max_length=300, blank=True, null=True,help_text="Muallifning email")
+    author_code = models.CharField(max_length=50, unique=True, help_text="Muallif belgisi", null=True, blank=True)
+    is_active = models.BooleanField(default=True, help_text="Muallifning holati")
+    created_at = models.DateTimeField(auto_now_add=True, help_text="Yaratilgan vaqt")
+    updated_at = models.DateTimeField(auto_now=True, help_text="Yangilangan vaqt")
+
+    @property
+    def book_count(self):
+        return self.books.count()
+
+    def __str__(self):
+        return self.name
+
+class BookType(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    image = models.ImageField(upload_to='book_type_covers/', blank=True, null=True, help_text="Kitob turi rasmi (mavjud bo'lsa)")
+    created_at = models.DateTimeField(default=timezone.now, help_text="Yaratilgan vaqt")
+    updated_at = models.DateTimeField(auto_now=True, help_text="Yangilangan vaqt")
+    is_active = models.BooleanField(default=True, help_text="Aktiv yoki noqulayligi")
+
+    def image_url(self):
+        if self.image:
+            return default_storage.url(self.image.name)
+        return None
+
+    @property
+    def book_count(self):
+        return self.books.count()  # kitoblar sonini hisoblash
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.pk and not BookType.objects.exists():
+            self.name = 'Kitob'
+        super().save(*args, **kwargs)
+
 
 class Book(models.Model):
+    LANGUAGE_CHOICES = [
+        ('en', 'Ingliz'),
+        ('tr', 'Turk'),
+        ('fr', 'Fransuz'),
+        ('uz', "O'zbek"),
+        ('ru', 'Rus'),
+        ('de', 'Nemis'),
+        ('zh', 'Xitoy'),
+        ('es', 'Ispan'),
+        ('ko', 'Koreys'),
+        ('kk', 'Qozoq'),
+        ('ky', 'Qirg\'iz'),
+        ('tg', 'Tojik'),
+    ]
     """Kitob modeli."""
     title = models.CharField(max_length=255, help_text="Kitobning sarlavhasi")
-    author = models.CharField(max_length=255, help_text="Kitobning muallifi")
+    authors = models.ManyToManyField(Author, related_name='books', help_text="Kitobning mualliflari")
     quantity = models.IntegerField(default=0, help_text="Kitoblar soni")
     available_quantity = models.IntegerField(help_text="Qolgan Kitoblar soni", null=True, blank=True)
     book_id = models.CharField(max_length=9, unique=True, default=generate_book_id, help_text="Kitob identifikatori")
     barcode_book = models.ImageField(upload_to='barcode_books/', blank=True, null=True,
                                      help_text="Kitob QR kod (mavjud bo'lsa)")
     image = models.ImageField(upload_to='book_covers/', blank=True, null=True, help_text="Kitob rasmi (mavjud bo'lsa)")
-    publication_year = models.IntegerField(help_text="Kitobning nashr yili")
     created_at = models.DateTimeField(auto_now_add=True, help_text="Kitob yaratilgan vaqti")
     updated_at = models.DateTimeField(auto_now=True, help_text="Kitob oxirgi yangilanish vaqti")
     library = models.ForeignKey('Library', on_delete=models.CASCADE, related_name='books', null=True, blank=True,
@@ -65,8 +126,17 @@ class Book(models.Model):
     added_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='added_books',
                                  help_text="Kitobni qo'shgan foydalanuvchi")
     isbn = models.CharField(max_length=20, blank=True, null=True, help_text="Kitobning ISBN raqami")
-    file = models.FileField(upload_to='book_files/', validators=[validate_file_extension],
-                            help_text="Kitob fayli (faqat Word va PDF)")
+    file = models.FileField(upload_to='book_files/', null=True, blank=True ,validators=[validate_file_extension], help_text="Kitob fayli (faqat Word va PDF)")
+
+    book_type = models.ForeignKey(BookType, on_delete=models.CASCADE, related_name='books', blank=True, null=True,
+                                  help_text="Kitob turining nomi")
+
+    language = models.CharField(max_length=100, choices=LANGUAGE_CHOICES, help_text="Kitob tili")
+    publisher = models.CharField(max_length=255, help_text="Kitob nashriyoti nomi")
+    published_city = models.CharField(max_length=255, help_text="Kitob nash qilingan shahar")
+    annotation = models.TextField(help_text="Kitob annotatsiyasi")
+    pages = models.IntegerField(help_text="Kitob betlar soni")
+    publication_year = models.IntegerField(help_text="Kitob nash qilingan yil")
 
     def __str__(self):
         return self.title
@@ -80,6 +150,7 @@ class Book(models.Model):
             image_filename = f"{self.book_id}.png"
             self.barcode_book.save(image_filename, File(BytesIO(generate_barcode_book(self.book_id))), save=False)
         return super().save(*args, **kwargs)
+
 
 
 class BookLoan(models.Model):
@@ -99,6 +170,7 @@ class BookLoan(models.Model):
         ('1_year', '1 yil'),
         ('2_years', '2 yil'),
     ]
+
     """Kitob berish modeli."""
     book = models.ForeignKey('Book', on_delete=models.CASCADE, help_text="Kitob")
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, help_text="Foydalanuvchi")
@@ -146,13 +218,17 @@ class BookLoan(models.Model):
 
 
 class AdminLibrary(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='library')
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='library')
     library = models.ForeignKey('Library', on_delete=models.CASCADE, related_name='librarians')
     created_at = models.DateTimeField(auto_now_add=True, help_text="Kutubhonaga admin tayinlangan vaqti")
     updated_at = models.DateTimeField(auto_now=True, help_text="Kutubhonaga admin oxirgi tayinlangan vaqti")
+    is_active = models.BooleanField(default=True, help_text="Aktivmi yoki noqulaymi")
+    is_deleted = models.BooleanField(default=False, help_text="O'chirilganmi yoki yo'qmi")
 
     def __str__(self):
         return f"{self.user.username}'s Library"
+
+
 
 
 def assign_library_to_librarians():
@@ -166,12 +242,10 @@ def assign_library_to_librarians():
 
 class OnlineBook(models.Model):
     """Onlayn kitob modeli."""
-    online_book_id = models.CharField(max_length=9, default=generate_book_id, unique=True,
-                                      help_text="Onlayn kitob identifikatori")
+    online_book_id = models.CharField(max_length=9, default=generate_book_id, unique=True, help_text="Onlayn kitob identifikatori")
     name = models.CharField(max_length=255, help_text="Onlayn kitob nomi")
     content = models.TextField(help_text="Onlayn kitob mazmuni")
-    file = models.FileField(upload_to='online_books/', validators=[validate_file_extension],
-                            help_text="Onlayn kitob fayli")
+    file = models.FileField(upload_to='online_books/', validators=[validate_file_extension], help_text="Onlayn kitob fayli")
     created_date = models.DateTimeField(auto_now_add=True, help_text="Onlayn kitob yaratilgan vaqti")
     updated_date = models.DateTimeField(auto_now=True, help_text="Model yangilangan sana")
 

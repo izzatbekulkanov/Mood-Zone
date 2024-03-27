@@ -4,7 +4,7 @@ from django.urls import path
 from .employeeViews import employee_views, employee_list_json, create_employee_view, get_employee_info, \
     create_employee_from_api
 from .roleViews import group_list, create_group, group_permissions, save_group_permissions, permissions_api, \
-    save_permission
+    save_permission, create_default_groups, set_now_role
 from .studentViews import save_student_from_api, create_student_from_api, get_student_info
 from .views import (login_view, role_view, create_student, student_list, permission_view)
 
@@ -32,11 +32,13 @@ role_permissions = [
     path('permissions', permission_view, name='permission_view'),
     path('group_list_api', group_list, name='group_list'),
     path('create_group_api', create_group, name='create_group'),
+    path('create_default_groups/', create_default_groups, name='create_default_groups'),
     path('groups/<int:group_id>', group_permissions, name='group_permissions'),
     path('groups/<int:group_id>/permissions', save_group_permissions, name='save_group_permissions'),
     path('csrf/', get_token),
     path('permissions_api', permissions_api, name='permissions_api'),
     path('save_permission', save_permission, name='save_permission'),
+    path('set_now_role/', set_now_role, name='set_now_role'),
 
 ]
 
