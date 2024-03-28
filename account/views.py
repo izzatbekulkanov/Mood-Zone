@@ -1,6 +1,6 @@
 # Create your views here.
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from django.shortcuts import redirect
@@ -25,6 +25,10 @@ def login_view(request):
             messages.error(request, 'Invalid email or password.')
     return render(request, 'register/login.html')  # Change 'your_app' to your app name
 
+def logout_view(request):
+    logout(request)
+    messages.success(request, 'Successfully logged out.')
+    return redirect('login')  # Foydalanuvchi avtorizatsiyadan chiqqandan so'ng o'tkaziladigan URL
 
 def role_view(request):
     return render(request, 'pages/roles.html')

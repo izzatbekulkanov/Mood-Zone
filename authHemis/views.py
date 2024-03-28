@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.contrib import messages
-from django.contrib.auth import logout, get_user_model, login
+from django.contrib.auth import get_user_model, login
 from django.shortcuts import redirect
 from rest_framework import status
 from rest_framework.response import Response
@@ -187,8 +187,3 @@ def oauth_login(request, email, user):
     user.backend = 'django.contrib.auth.backends.ModelBackend'  # Faydalanuvchi uchun kerakli backendni aniqlash
     login(request, user)
 
-
-def logout_view(request):
-    logout(request)
-    messages.success(request, 'Successfully logged out.')
-    return redirect('login')  # Foydalanuvchi avtorizatsiyadan chiqqandan so'ng o'tkaziladigan URL

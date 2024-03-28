@@ -4,6 +4,7 @@ from .authorsViews import get_authors
 from .bookLeanViews import get_user_by_student_id, get_book_by_student_id, book_loan_library
 from .bookViews import save_book, book_list_json, change_book_status, edit_book, get_book_types, create_book_type, \
     save_book_type_image
+from .followersViews import create_follower_from_api
 from .libraryViews import create_library_json, libraries_list, get_library_users, add_librarian, \
     soft_delete_admin_library, send_library_group_users
 from .views import (library_dashboard,
@@ -64,5 +65,9 @@ library_urls = [
     path('send_library_group_users', send_library_group_users, name='send_library_group_users')
 ]
 
+follower_urls = [
+    path('create_follower_from_api', create_follower_from_api, name='create_follower_from_api'),
+]
+
 # Combining both URL lists into urlpatterns
-urlpatterns = book_urls + author_urls +library_urls
+urlpatterns = book_urls + author_urls +library_urls + follower_urls

@@ -2,9 +2,9 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import Permission
 
+from university.models import Level
 from .models import CustomUser, StudentType, StudentStatus, Citizenship, District, Province, Country, EmployeeType, \
-    EmployeeStatus, Gender, StaffPosition
-
+    EmployeeStatus, Gender, StaffPosition, PaymentForm, Accommodation
 
 
 class CustomUserAdmin(UserAdmin):
@@ -15,9 +15,8 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'email', 'password', 'password_save', 'employee_id_number')}),
         ('Personal info', {'fields': ('first_name', 'second_name', 'third_name', 'gender',  'full_name', 'image', 'imageFile','phone_number', 'birth_date')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'now_role','is_superuser', 'groups', 'user_permissions')}),
-        ('secret', {'fields': ('full_id', 'hash', 'token', 'user_type', 'telegram', 'instagram', 'facebook')}),
-
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'now_role','is_superuser', 'is_followers_book' ,'groups', 'user_permissions')}),
+        ('secret', {'fields': ('full_id', 'hash', 'token', 'user_type', 'student_id_number' ,'telegram', 'instagram', 'facebook')}),
     )
 
     add_fieldsets = (
@@ -36,6 +35,17 @@ admin.site.register(Permission)
 
 @admin.register(Gender)
 class GenderAdmin(admin.ModelAdmin):
+    list_display = ('code', 'name')
+
+@admin.register(Accommodation)
+class AccommodationAdmin(admin.ModelAdmin):
+    list_display = ('code', 'name')
+
+
+
+
+@admin.register(PaymentForm)
+class PaymentFormAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
 
 

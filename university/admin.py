@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import University, Department, Specialty, GroupUniver, EducationLang, Semester, Level, EducationForm, \
-    EducationType, Curriculum, SubjectDetail, TrainingType, Subject
+    EducationType, Curriculum, SubjectDetail, TrainingType, Subject, EducationYear
+
 
 # University
 @admin.register(University)
@@ -56,6 +57,11 @@ class CurriculumAdmin(admin.ModelAdmin):
 @admin.register(SubjectDetail)
 class SubjectDetailAdmin(admin.ModelAdmin):
     list_display = ('trainingType', 'academic_load')
+
+
+@admin.register(EducationYear)
+class EducationYearAdmin(admin.ModelAdmin):
+    list_display = ('name', 'code')
 
 # TrainingType
 @admin.register(TrainingType)

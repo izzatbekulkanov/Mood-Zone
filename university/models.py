@@ -51,7 +51,7 @@ class Department(models.Model):
 
 
 class Specialty(models.Model):
-    codeID = models.CharField(max_length=255, verbose_name="Yo'nalish nomi")
+    codeID = models.CharField(max_length=255, verbose_name="Yo'nalish ID raqami")
     name = models.CharField(max_length=255, verbose_name="Yo'nalish nomi")
     code = models.CharField(max_length=50, verbose_name="Yo'nalish kodi")
     department = models.ForeignKey(Department, on_delete=models.CASCADE)

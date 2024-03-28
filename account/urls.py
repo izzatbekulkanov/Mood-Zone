@@ -6,10 +6,12 @@ from .employeeViews import employee_views, employee_list_json, create_employee_v
 from .roleViews import group_list, create_group, group_permissions, save_group_permissions, permissions_api, \
     save_permission, create_default_groups, set_now_role
 from .studentViews import save_student_from_api, create_student_from_api, get_student_info
-from .views import (login_view, role_view, create_student, student_list, permission_view)
+from .views import (login_view, role_view, create_student, student_list, permission_view, logout_view)
 
 login_patterns = [
     path('login', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
+
 ]
 
 student_patterns = [
